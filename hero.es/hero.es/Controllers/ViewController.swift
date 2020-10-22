@@ -9,7 +9,7 @@ import UIKit
 
 class ViewController: UIViewController {
     @IBAction func openTesteController() {
-        if let viewController = TesteViewController.getViewController() {
+        if let viewController = HeroDetailsViewController.getViewController() {
             present(viewController, animated: true, completion: nil)
         }
     }

@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tabBar contentMode="scaleToFill" itemPositioning="fill" translatesAutoresizingMaskIntoConstraints="NO" id="SJj-Ax-vgg">
-                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <rect key="frame" x="0.0" y="779" width="414" height="83"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <items>
                                     <tabBarItem title="Heroes" id="aLe-6Z-BDS">
@@ -40,54 +40,36 @@
                                 </items>
                             </tabBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gep-Z4-7jO">
-                                <rect key="frame" x="0.0" y="44" width="414" height="769"/>
+                                <rect key="frame" x="0.0" y="189" width="414" height="590"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="98" id="VLz-dZ-6ol">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="98"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="VLz-dZ-6ol" id="bZ4-wX-Pm1">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="98"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="YYL-V4-DYP">
-                                                    <rect key="frame" x="12" y="5" width="115" height="89"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                </imageView>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Hero Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuL-pl-dlb">
-                                                    <rect key="frame" x="143" y="11" width="108" height="27"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BtU-bB-3ZH">
-                                                    <rect key="frame" x="348" y="34" width="46" height="30"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <state key="normal" title="Button"/>
-                                                </button>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Number of Comics" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLy-EG-EmD">
-                                                    <rect key="frame" x="143" y="39" width="143" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="7gY-gw-sNa">
+                                <rect key="frame" x="16" y="64" width="382" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lBG-91-532">
+                                <rect key="frame" x="75.5" y="136" width="263" height="32"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Marvel"/>
+                                    <segment title="DC Comics"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="aE0-54-zaV"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="aE0-54-zaV" firstAttribute="trailing" secondItem="7gY-gw-sNa" secondAttribute="trailing" constant="16" id="5EG-dF-CQx"/>
+                            <constraint firstItem="Gep-Z4-7jO" firstAttribute="top" secondItem="lBG-91-532" secondAttribute="bottom" constant="22" id="5I4-zW-bOP"/>
                             <constraint firstItem="SJj-Ax-vgg" firstAttribute="leading" secondItem="aE0-54-zaV" secondAttribute="leading" id="77q-hg-SJB"/>
                             <constraint firstItem="SJj-Ax-vgg" firstAttribute="top" secondItem="Gep-Z4-7jO" secondAttribute="bottom" id="Hid-hf-JOQ"/>
+                            <constraint firstItem="7gY-gw-sNa" firstAttribute="leading" secondItem="xqe-zJ-Hdx" secondAttribute="leading" constant="16" id="N8g-TF-TjC"/>
                             <constraint firstItem="SJj-Ax-vgg" firstAttribute="bottom" secondItem="aE0-54-zaV" secondAttribute="bottom" id="OVJ-lV-DLF"/>
-                            <constraint firstItem="Gep-Z4-7jO" firstAttribute="top" secondItem="aE0-54-zaV" secondAttribute="top" id="PU0-GL-6kP"/>
                             <constraint firstItem="SJj-Ax-vgg" firstAttribute="trailing" secondItem="aE0-54-zaV" secondAttribute="trailing" id="RGd-yM-sz1"/>
                             <constraint firstItem="Gep-Z4-7jO" firstAttribute="leading" secondItem="aE0-54-zaV" secondAttribute="leading" id="TGg-wN-dhW"/>
+                            <constraint firstItem="7gY-gw-sNa" firstAttribute="top" secondItem="aE0-54-zaV" secondAttribute="top" constant="20" id="UvC-zG-qLL"/>
+                            <constraint firstItem="lBG-91-532" firstAttribute="centerX" secondItem="xqe-zJ-Hdx" secondAttribute="centerX" id="d5G-li-3eE"/>
+                            <constraint firstItem="lBG-91-532" firstAttribute="top" secondItem="7gY-gw-sNa" secondAttribute="bottom" constant="16" id="fZu-0G-1KO"/>
                             <constraint firstAttribute="trailing" secondItem="Gep-Z4-7jO" secondAttribute="trailing" id="ulR-c3-JcK"/>
                         </constraints>
                     </view>
@@ -100,7 +82,7 @@
     <resources>
         <image name="book" catalog="system" width="128" height="102"/>
         <image name="gear" catalog="system" width="128" height="119"/>
-        <image name="person" catalog="system" width="32" height="32"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <image name="star" catalog="system" width="128" height="116"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

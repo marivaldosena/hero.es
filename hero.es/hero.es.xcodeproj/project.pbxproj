@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C97B903725411037004233F2 /* HeroesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97B903625411037004233F2 /* HeroesListViewController.swift */; };
 		C98D7CFB254058CD00D95BC8 /* HeroListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D7CF9254058CD00D95BC8 /* HeroListTableViewCell.swift */; };
 		C98D7CFC254058CD00D95BC8 /* HeroListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98D7CFA254058CD00D95BC8 /* HeroListTableViewCell.xib */; };
 		C98D7D072540702300D95BC8 /* HeroDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C98D7D062540702300D95BC8 /* HeroDetails.storyboard */; };
@@ -41,6 +42,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C97B903625411037004233F2 /* HeroesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListViewController.swift; sourceTree = "<group>"; };
 		C98D7CF9254058CD00D95BC8 /* HeroListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListTableViewCell.swift; sourceTree = "<group>"; };
 		C98D7CFA254058CD00D95BC8 /* HeroListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroListTableViewCell.xib; sourceTree = "<group>"; };
 		C98D7D062540702300D95BC8 /* HeroDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HeroDetails.storyboard; sourceTree = "<group>"; };
@@ -101,7 +103,7 @@
 			isa = PBXGroup;
 			children = (
 				C9B14373253FBA410013DC42 /* Main.storyboard */,
-				C98D7D132540884C00D95BC8 /* New Group */,
+				C98D7D132540884C00D95BC8 /* HeroDetails */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -115,13 +117,12 @@
 			path = HeroCell;
 			sourceTree = "<group>";
 		};
-		C98D7D132540884C00D95BC8 /* New Group */ = {
+		C98D7D132540884C00D95BC8 /* HeroDetails */ = {
 			isa = PBXGroup;
 			children = (
 				C98D7D062540702300D95BC8 /* HeroDetails.storyboard */,
-				C98D7D0B2540704C00D95BC8 /* HeroDetailsViewController.swift */,
 			);
-			path = "New Group";
+			path = HeroDetails;
 			sourceTree = "<group>";
 		};
 		C9B14361253FBA400013DC42 = {
@@ -189,7 +190,9 @@
 		C9B143A7253FD6AA0013DC42 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C98D7D0B2540704C00D95BC8 /* HeroDetailsViewController.swift */,
 				C9B14371253FBA400013DC42 /* ViewController.swift */,
+				C97B903625411037004233F2 /* HeroesListViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -331,6 +334,7 @@
 				C9B14378253FBA410013DC42 /* hero_es.xcdatamodeld in Sources */,
 				C98D7D0C2540704C00D95BC8 /* HeroDetailsViewController.swift in Sources */,
 				C98D7CFB254058CD00D95BC8 /* HeroListTableViewCell.swift in Sources */,
+				C97B903725411037004233F2 /* HeroesListViewController.swift in Sources */,
 				C9B1436E253FBA400013DC42 /* AppDelegate.swift in Sources */,
 				C9B14370253FBA400013DC42 /* SceneDelegate.swift in Sources */,
 			);
