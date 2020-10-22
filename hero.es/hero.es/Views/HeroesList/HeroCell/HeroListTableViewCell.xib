@@ -23,7 +23,7 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marvel" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Lh-DO-D2y">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Marvel" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Lh-DO-D2y">
                         <rect key="frame" x="146" y="46" width="181" height="20.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -103,6 +103,13 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="favoriteButtonImageView" destination="W4i-f3-8eO" id="77k-4s-mSp"/>
+                <outlet property="heroDescriptionLabel" destination="0Lh-DO-D2y" id="ew1-Ar-gsD"/>
+                <outlet property="heroImageView" destination="8Vs-Yu-lMi" id="gYp-UF-AcB"/>
+                <outlet property="heroNameLabel" destination="fSM-xX-wrq" id="iPq-Cf-wqp"/>
+                <outlet property="shareButtonImageView" destination="Ifm-Ob-zwo" id="0Yh-2a-y7T"/>
+            </connections>
             <point key="canvasLocation" x="199.27536231884059" y="139.28571428571428"/>
         </tableViewCell>
     </objects>

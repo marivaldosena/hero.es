@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Heroes List View Controller-->
         <scene sceneID="43b-ZH-aiB">
             <objects>
-                <viewController id="n2p-Pf-HJA" sceneMemberID="viewController">
+                <viewController id="n2p-Pf-HJA" customClass="HeroesListViewController" customModule="hero_es" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xqe-zJ-Hdx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -76,6 +76,9 @@
                             <constraint firstAttribute="trailing" secondItem="Gep-Z4-7jO" secondAttribute="trailing" id="ulR-c3-JcK"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="heroListTableViewCollection" destination="Gep-Z4-7jO" id="TmY-BA-TeV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2F0-4a-0gC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

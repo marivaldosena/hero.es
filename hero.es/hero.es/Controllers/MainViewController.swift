@@ -9,7 +9,7 @@ import UIKit
 
 class MainViewController: UIViewController {
     @IBAction func openTesteController() {
-        if let viewController = HeroDetailsViewController.getViewController() {
+        if let viewController = HeroesListViewController    .getViewController() {
             present(viewController, animated: true, completion: nil)
         }
     }
@@ -18,7 +18,5 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
         
     }
-
-    
 }
 
