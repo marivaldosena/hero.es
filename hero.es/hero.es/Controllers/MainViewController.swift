@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MainViewController: UIViewController {
     @IBAction func openTesteController() {
         if let viewController = HeroDetailsViewController.getViewController() {
             present(viewController, animated: true, completion: nil)

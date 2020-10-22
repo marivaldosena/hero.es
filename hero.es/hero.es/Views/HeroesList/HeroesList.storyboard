@@ -18,20 +18,23 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tabBar contentMode="scaleToFill" itemPositioning="fill" translatesAutoresizingMaskIntoConstraints="NO" id="SJj-Ax-vgg">
-                                <rect key="frame" x="0.0" y="779" width="414" height="83"/>
+                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="eeO-DX-GbN"/>
+                                </constraints>
                                 <items>
                                     <tabBarItem title="Heroes" id="aLe-6Z-BDS">
-                                        <imageReference key="image" image="person" catalog="system" symbolScale="large"/>
-                                        <imageReference key="landscapeImage" image="person" catalog="system" symbolScale="large"/>
+                                        <imageReference key="image" image="person.3" catalog="system" symbolScale="large"/>
+                                        <imageReference key="landscapeImage" image="person.3" catalog="system" symbolScale="large"/>
                                     </tabBarItem>
                                     <tabBarItem title="Comics" id="X48-wh-95P">
                                         <imageReference key="image" image="book" catalog="system" symbolScale="large"/>
                                         <imageReference key="landscapeImage" image="book" catalog="system" symbolScale="large"/>
                                     </tabBarItem>
                                     <tabBarItem title="Favorites" id="Dzf-Nd-nSg">
-                                        <imageReference key="image" image="star" catalog="system" symbolScale="large"/>
-                                        <imageReference key="landscapeImage" image="star" catalog="system" symbolScale="large"/>
+                                        <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
+                                        <imageReference key="landscapeImage" image="heart" catalog="system" symbolScale="large"/>
                                     </tabBarItem>
                                     <tabBarItem title="Config" id="W6f-WQ-eCB">
                                         <imageReference key="image" image="gear" catalog="system" symbolScale="large"/>
@@ -40,7 +43,7 @@
                                 </items>
                             </tabBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gep-Z4-7jO">
-                                <rect key="frame" x="0.0" y="189" width="414" height="590"/>
+                                <rect key="frame" x="0.0" y="189" width="414" height="613"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="7gY-gw-sNa">
@@ -82,8 +85,8 @@
     <resources>
         <image name="book" catalog="system" width="128" height="102"/>
         <image name="gear" catalog="system" width="128" height="119"/>
-        <image name="person" catalog="system" width="128" height="117"/>
-        <image name="star" catalog="system" width="128" height="116"/>
+        <image name="heart" catalog="system" width="128" height="109"/>
+        <image name="person.3" catalog="system" width="128" height="62"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
