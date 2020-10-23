@@ -10,7 +10,7 @@ import UIKit
 class MainViewController: UIViewController {
     @IBAction func openTesteController() {
         if let viewController = HeroesListViewController    .getViewController() {
-            present(viewController, animated: true, completion: nil)
+            navigationController?.pushViewController(viewController, animated: true)
         }
     }
 

@@ -41,11 +41,19 @@ extension HeroesListViewController {
             self.heroTableView?.reloadData()
         }
     }
+    
+    func goToDetails(_ item: Hero) {
+        if let viewController = HeroDetailsViewController.getViewController(item) {
+            navigationController?.pushViewController(viewController, animated: true)
+        }
+    }
 }
 
 //MARK: - HeroesListViewController: UITableViewDelegate
 extension HeroesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let item = self.itemsList[indexPath.row]
+        self.goToDetails(item)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

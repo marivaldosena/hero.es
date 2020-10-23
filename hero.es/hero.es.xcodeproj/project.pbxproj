@@ -27,6 +27,9 @@
 		C9B89A5525420C97002946CA /* SeedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89A5425420C97002946CA /* SeedProtocol.swift */; };
 		C9B89A5A25420D4F002946CA /* HeroSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89A5925420D4F002946CA /* HeroSeed.swift */; };
 		C9B89A62254213B3002946CA /* Searchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89A61254213B3002946CA /* Searchable.swift */; };
+		C9CD7E3725433083001E5E54 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD7E3625433082001E5E54 /* CreateAccountViewController.swift */; };
+		C9CD7E3C254330B1001E5E54 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */; };
+		C9CD7E43254341EC001E5E54 /* AppTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD7E42254341E7001E5E54 /* AppTabBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +76,9 @@
 		C9B89A5425420C97002946CA /* SeedProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedProtocol.swift; sourceTree = "<group>"; };
 		C9B89A5925420D4F002946CA /* HeroSeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroSeed.swift; sourceTree = "<group>"; };
 		C9B89A61254213B3002946CA /* Searchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchable.swift; sourceTree = "<group>"; };
+		C9CD7E3625433082001E5E54 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = hero.es/Views/CreateAccount/CreateAccountViewController.swift; sourceTree = SOURCE_ROOT; };
+		C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
+		C9CD7E42254341E7001E5E54 /* AppTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -185,6 +191,8 @@
 		C9B143A3253FD63B0013DC42 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C9CD7E40254340E5001E5E54 /* Shared */,
+				C9CD7E3525432FBC001E5E54 /* CreateAccount */,
 				C98D7CF72540586900D95BC8 /* Main */,
 				C9B89A312541F7D4002946CA /* HeroDetails */,
 				C98D7CF62540585600D95BC8 /* HeroesList */,
@@ -195,6 +203,7 @@
 		C9B143A7253FD6AA0013DC42 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C9CD7E3625433082001E5E54 /* CreateAccountViewController.swift */,
 				C98D7D0B2540704C00D95BC8 /* HeroDetailsViewController.swift */,
 				C9B14371253FBA400013DC42 /* MainViewController.swift */,
 				C97B903625411037004233F2 /* HeroesListViewController.swift */,
@@ -234,6 +243,30 @@
 				C9B89A61254213B3002946CA /* Searchable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		C9CD7E3525432FBC001E5E54 /* CreateAccount */ = {
+			isa = PBXGroup;
+			children = (
+				C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */,
+			);
+			path = CreateAccount;
+			sourceTree = "<group>";
+		};
+		C9CD7E40254340E5001E5E54 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C9CD7E412543411F001E5E54 /* AppTabBar */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		C9CD7E412543411F001E5E54 /* AppTabBar */ = {
+			isa = PBXGroup;
+			children = (
+				C9CD7E42254341E7001E5E54 /* AppTabBar.swift */,
+			);
+			path = AppTabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -344,6 +377,7 @@
 				C9B1437A253FBA6F0013DC42 /* Assets.xcassets in Resources */,
 				C98D7CFC254058CD00D95BC8 /* HeroListTableViewCell.xib in Resources */,
 				C9B143AC253FD78F0013DC42 /* HeroesList.storyboard in Resources */,
+				C9CD7E3C254330B1001E5E54 /* CreateAccount.storyboard in Resources */,
 				C9B89A3A2541F81D002946CA /* HeroDetails.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -374,7 +408,9 @@
 				C9B14378253FBA410013DC42 /* hero_es.xcdatamodeld in Sources */,
 				C9B89A4A25420B5E002946CA /* ItemProtocol.swift in Sources */,
 				C98D7D0C2540704C00D95BC8 /* HeroDetailsViewController.swift in Sources */,
+				C9CD7E3725433083001E5E54 /* CreateAccountViewController.swift in Sources */,
 				C9B89A4125420AF3002946CA /* Hero.swift in Sources */,
+				C9CD7E43254341EC001E5E54 /* AppTabBar.swift in Sources */,
 				C98D7CFB254058CD00D95BC8 /* HeroListTableViewCell.swift in Sources */,
 				C97B903725411037004233F2 /* HeroesListViewController.swift in Sources */,
 				C9B1436E253FBA400013DC42 /* AppDelegate.swift in Sources */,
