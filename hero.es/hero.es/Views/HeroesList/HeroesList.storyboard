@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n2p-Pf-HJA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -77,7 +77,8 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="heroListTableViewCollection" destination="Gep-Z4-7jO" id="TmY-BA-TeV"/>
+                        <outlet property="heroSearchBar" destination="7gY-gw-sNa" id="kQe-Xg-hhZ"/>
+                        <outlet property="heroTableView" destination="Gep-Z4-7jO" id="O71-4e-r4y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2F0-4a-0gC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

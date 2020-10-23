@@ -9,17 +9,21 @@ import UIKit
 
 //MARK: - HeroesListViewController: UIViewController
 class HeroesListViewController: UIViewController {
-    @IBOutlet weak var heroListTableViewCollection: UITableView?
+    @IBOutlet weak var heroTableView: UITableView?
+    @IBOutlet weak var heroSearchBar: UISearchBar?
     
+    private var allHeroes = HeroSeed.seed()
     private var itemsList = HeroSeed.seed()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        heroListTableViewCollection?.delegate = self
-        heroListTableViewCollection?.dataSource = self
+        heroTableView?.delegate = self
+        heroTableView?.dataSource = self
         
-        heroListTableViewCollection?.register(UINib(nibName: "HeroListTableViewCell", bundle: nil), forCellReuseIdentifier: "HeroCell")
+        heroTableView?.register(UINib(nibName: "HeroListTableViewCell", bundle: nil), forCellReuseIdentifier: "HeroCell")
+        
+        heroSearchBar?.delegate = self
     }
 }
 
@@ -31,12 +35,22 @@ extension HeroesListViewController {
         
         return viewController
     }
+    
+    func updateUIInterface() {
+        DispatchQueue.main.async {
+            self.heroTableView?.reloadData()
+        }
+    }
 }
 
-//MARK: -
+//MARK: - HeroesListViewController: UITableViewDelegate
 extension HeroesListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
 }
 
+//MARK: - HeroesListViewController: UITableViewDataSource
 extension HeroesListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.itemsList.count
@@ -49,5 +63,22 @@ extension HeroesListViewController: UITableViewDataSource {
         cell.configure(with: hero)
         
         return cell
+    }
+}
+
+extension HeroesListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        guard let term = searchBar.text else { return }
+        
+        self.itemsList = self.getFilteredHeroes(term: term)
+        self.updateUIInterface()
+    }
+    
+    private func getFilteredHeroes(term: String) -> [Hero] {
+        if !term.isEmpty {
+            return self.itemsList.filter { $0.searchBy(term: term) }
+        }
+        
+        return self.allHeroes
     }
 }
