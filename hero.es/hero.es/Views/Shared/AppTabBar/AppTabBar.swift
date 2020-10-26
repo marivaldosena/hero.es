@@ -13,7 +13,35 @@ class AppTabBar: UITabBar {
     @IBOutlet weak var favoritesTabBarItem: UITabBarItem?
     @IBOutlet weak var configTabBarItem: UITabBarItem?
 
-    @IBAction func heroesTabBarItemWasClicked() {
+    @IBAction func tabBarItemWasClicked(_ sender: UITabBarItem) {
         
+        switch (sender) {
+        case heroesTabBarItem:
+            self.goToHeroes()
+        case comicsTabBarItem:
+            self.goToComics()
+        case favoritesTabBarItem:
+            self.goToFavorites()
+        case configTabBarItem:
+            self.goToConfiguration()
+        default:
+            break
+        }
+    }
+    
+    private func goToHeroes() {
+        print("Go To Heroes")
+    }
+    
+    private func goToComics() {
+        print("Go To Comics")
+    }
+    
+    private func goToFavorites() {
+        print("Go To Favorites")
+    }
+    
+    private func goToConfiguration() {
+        print("Go To Configuration")
     }
 }

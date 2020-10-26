@@ -20,6 +20,7 @@
 		C9B14388253FBA7E0013DC42 /* hero_esTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B14387253FBA7E0013DC42 /* hero_esTests.swift */; };
 		C9B14393253FBA7E0013DC42 /* hero_esUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B14392253FBA7E0013DC42 /* hero_esUITests.swift */; };
 		C9B143AC253FD78F0013DC42 /* HeroesList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B143AB253FD78F0013DC42 /* HeroesList.storyboard */; };
+		C9B52A3A2543AFCD00F9957D /* AlertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B52A392543AFCD00F9957D /* AlertUtils.swift */; };
 		C9B89A352541F808002946CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B14373253FBA410013DC42 /* Main.storyboard */; };
 		C9B89A3A2541F81D002946CA /* HeroDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B89A392541F81D002946CA /* HeroDetails.storyboard */; };
 		C9B89A4125420AF3002946CA /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89A4025420AF3002946CA /* Hero.swift */; };
@@ -70,6 +71,7 @@
 		C9B14392253FBA7E0013DC42 /* hero_esUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hero_esUITests.swift; sourceTree = "<group>"; };
 		C9B14394253FBA7E0013DC42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9B143AB253FD78F0013DC42 /* HeroesList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HeroesList.storyboard; sourceTree = "<group>"; };
+		C9B52A392543AFCD00F9957D /* AlertUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtils.swift; sourceTree = "<group>"; };
 		C9B89A392541F81D002946CA /* HeroDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HeroDetails.storyboard; sourceTree = "<group>"; };
 		C9B89A4025420AF3002946CA /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		C9B89A4925420B5E002946CA /* ItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemProtocol.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 		C9B1436C253FBA400013DC42 /* hero.es */ = {
 			isa = PBXGroup;
 			children = (
+				C9B52A382543AFB600F9957D /* Utils */,
 				C9B89A4825420B50002946CA /* Protocols */,
 				C9B89A3F25420ADD002946CA /* Models */,
 				C9B89A4725420B47002946CA /* Seeds */,
@@ -209,6 +212,14 @@
 				C97B903625411037004233F2 /* HeroesListViewController.swift */,
 			);
 			path = Controllers;
+			sourceTree = "<group>";
+		};
+		C9B52A382543AFB600F9957D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C9B52A392543AFCD00F9957D /* AlertUtils.swift */,
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 		C9B89A312541F7D4002946CA /* HeroDetails */ = {
@@ -408,6 +419,7 @@
 				C9B14378253FBA410013DC42 /* hero_es.xcdatamodeld in Sources */,
 				C9B89A4A25420B5E002946CA /* ItemProtocol.swift in Sources */,
 				C98D7D0C2540704C00D95BC8 /* HeroDetailsViewController.swift in Sources */,
+				C9B52A3A2543AFCD00F9957D /* AlertUtils.swift in Sources */,
 				C9CD7E3725433083001E5E54 /* CreateAccountViewController.swift in Sources */,
 				C9B89A4125420AF3002946CA /* Hero.swift in Sources */,
 				C9CD7E43254341EC001E5E54 /* AppTabBar.swift in Sources */,

@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Zw8-zo-wZj">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -56,10 +56,10 @@
                                     </tabBarItem>
                                 </items>
                                 <connections>
-                                    <outlet property="comicsTabBarItem" destination="RC2-3r-PVD" id="j6a-jx-7Yr"/>
-                                    <outlet property="configTabBarItem" destination="AhS-9B-Gas" id="wdN-xT-Bp0"/>
-                                    <outlet property="favoritesTabBarItem" destination="akh-uX-Zgr" id="Mmv-02-jbd"/>
-                                    <outlet property="heroesTabBarItem" destination="zOR-1x-gx4" id="W0T-e2-LXN"/>
+                                    <outlet property="comicsTabBarItem" destination="RC2-3r-PVD" id="BtB-z5-ewe"/>
+                                    <outlet property="configTabBarItem" destination="AhS-9B-Gas" id="yW6-Hz-9Uh"/>
+                                    <outlet property="favoritesTabBarItem" destination="akh-uX-Zgr" id="G2S-BD-MHB"/>
+                                    <outlet property="heroesTabBarItem" destination="zOR-1x-gx4" id="RZE-G7-yfH"/>
                                 </connections>
                             </tabBar>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="MtN-Kn-4MF">
