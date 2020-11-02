@@ -2,8 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n2p-Pf-HJA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
-        <capability name="Image references" minToolsVersion="12.0"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -17,37 +16,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tabBar contentMode="scaleToFill" itemPositioning="fill" translatesAutoresizingMaskIntoConstraints="NO" id="SJj-Ax-vgg">
-                                <rect key="frame" x="0.0" y="802" width="414" height="60"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="eeO-DX-GbN"/>
-                                </constraints>
-                                <items>
-                                    <tabBarItem title="Heroes" id="aLe-6Z-BDS">
-                                        <imageReference key="image" image="person.3" catalog="system" symbolScale="large"/>
-                                        <imageReference key="landscapeImage" image="person.3" catalog="system" symbolScale="large"/>
-                                    </tabBarItem>
-                                    <tabBarItem title="Comics" id="X48-wh-95P">
-                                        <imageReference key="image" image="book" catalog="system" symbolScale="large"/>
-                                        <imageReference key="landscapeImage" image="book" catalog="system" symbolScale="large"/>
-                                    </tabBarItem>
-                                    <tabBarItem title="Favorites" id="Dzf-Nd-nSg">
-                                        <imageReference key="image" image="heart" catalog="system" symbolScale="large"/>
-                                        <imageReference key="landscapeImage" image="heart" catalog="system" symbolScale="large"/>
-                                    </tabBarItem>
-                                    <tabBarItem title="Config" id="W6f-WQ-eCB">
-                                        <imageReference key="image" image="gear" catalog="system" symbolScale="large"/>
-                                        <imageReference key="landscapeImage" image="gear" catalog="system" symbolScale="large"/>
-                                    </tabBarItem>
-                                </items>
-                            </tabBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gep-Z4-7jO">
-                                <rect key="frame" x="0.0" y="189" width="414" height="613"/>
+                                <rect key="frame" x="0.0" y="189" width="414" height="673"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
-                            <searchBar contentMode="redraw" searchBarStyle="minimal" translatesAutoresizingMaskIntoConstraints="NO" id="7gY-gw-sNa">
+                            <searchBar contentMode="redraw" searchBarStyle="minimal" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7gY-gw-sNa">
                                 <rect key="frame" x="16" y="64" width="382" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="fa7-L5-xpD"/>
+                                </constraints>
                                 <textInputTraits key="textInputTraits"/>
                             </searchBar>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="lBG-91-532">
@@ -64,11 +41,8 @@
                         <constraints>
                             <constraint firstItem="aE0-54-zaV" firstAttribute="trailing" secondItem="7gY-gw-sNa" secondAttribute="trailing" constant="16" id="5EG-dF-CQx"/>
                             <constraint firstItem="Gep-Z4-7jO" firstAttribute="top" secondItem="lBG-91-532" secondAttribute="bottom" constant="22" id="5I4-zW-bOP"/>
-                            <constraint firstItem="SJj-Ax-vgg" firstAttribute="leading" secondItem="aE0-54-zaV" secondAttribute="leading" id="77q-hg-SJB"/>
-                            <constraint firstItem="SJj-Ax-vgg" firstAttribute="top" secondItem="Gep-Z4-7jO" secondAttribute="bottom" id="Hid-hf-JOQ"/>
+                            <constraint firstItem="aE0-54-zaV" firstAttribute="bottom" secondItem="Gep-Z4-7jO" secondAttribute="bottom" id="7k8-7P-oKW"/>
                             <constraint firstItem="7gY-gw-sNa" firstAttribute="leading" secondItem="xqe-zJ-Hdx" secondAttribute="leading" constant="16" id="N8g-TF-TjC"/>
-                            <constraint firstItem="SJj-Ax-vgg" firstAttribute="bottom" secondItem="aE0-54-zaV" secondAttribute="bottom" id="OVJ-lV-DLF"/>
-                            <constraint firstItem="SJj-Ax-vgg" firstAttribute="trailing" secondItem="aE0-54-zaV" secondAttribute="trailing" id="RGd-yM-sz1"/>
                             <constraint firstItem="Gep-Z4-7jO" firstAttribute="leading" secondItem="aE0-54-zaV" secondAttribute="leading" id="TGg-wN-dhW"/>
                             <constraint firstItem="7gY-gw-sNa" firstAttribute="top" secondItem="aE0-54-zaV" secondAttribute="top" constant="20" id="UvC-zG-qLL"/>
                             <constraint firstItem="lBG-91-532" firstAttribute="centerX" secondItem="xqe-zJ-Hdx" secondAttribute="centerX" id="d5G-li-3eE"/>
@@ -87,10 +61,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="book" catalog="system" width="128" height="102"/>
-        <image name="gear" catalog="system" width="128" height="119"/>
-        <image name="heart" catalog="system" width="128" height="109"/>
-        <image name="person.3" catalog="system" width="128" height="62"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

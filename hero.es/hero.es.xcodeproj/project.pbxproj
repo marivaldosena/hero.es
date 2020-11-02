@@ -11,6 +11,8 @@
 		C98D7CFB254058CD00D95BC8 /* HeroListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D7CF9254058CD00D95BC8 /* HeroListTableViewCell.swift */; };
 		C98D7CFC254058CD00D95BC8 /* HeroListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98D7CFA254058CD00D95BC8 /* HeroListTableViewCell.xib */; };
 		C98D7D0C2540704C00D95BC8 /* HeroDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D7D0B2540704C00D95BC8 /* HeroDetailsViewController.swift */; };
+		C99441F525508225004F2D82 /* ComicsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99441F425508225004F2D82 /* ComicsList.storyboard */; };
+		C99441FD25508241004F2D82 /* ComicsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99441FC25508241004F2D82 /* ComicsListViewController.swift */; };
 		C9B1436E253FBA400013DC42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B1436D253FBA400013DC42 /* AppDelegate.swift */; };
 		C9B14370253FBA400013DC42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B1436F253FBA400013DC42 /* SceneDelegate.swift */; };
 		C9B14372253FBA400013DC42 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B14371253FBA400013DC42 /* MainViewController.swift */; };
@@ -55,6 +57,8 @@
 		C98D7CF9254058CD00D95BC8 /* HeroListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListTableViewCell.swift; sourceTree = "<group>"; };
 		C98D7CFA254058CD00D95BC8 /* HeroListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroListTableViewCell.xib; sourceTree = "<group>"; };
 		C98D7D0B2540704C00D95BC8 /* HeroDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailsViewController.swift; sourceTree = "<group>"; };
+		C99441F425508225004F2D82 /* ComicsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ComicsList.storyboard; sourceTree = "<group>"; };
+		C99441FC25508241004F2D82 /* ComicsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsListViewController.swift; sourceTree = "<group>"; };
 		C9B1436A253FBA400013DC42 /* hero.es.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hero.es.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B1436D253FBA400013DC42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9B1436F253FBA400013DC42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -134,6 +138,14 @@
 			path = HeroCell;
 			sourceTree = "<group>";
 		};
+		C99441F32550820C004F2D82 /* ComicsList */ = {
+			isa = PBXGroup;
+			children = (
+				C99441F425508225004F2D82 /* ComicsList.storyboard */,
+			);
+			path = ComicsList;
+			sourceTree = "<group>";
+		};
 		C9B14361253FBA400013DC42 = {
 			isa = PBXGroup;
 			children = (
@@ -194,11 +206,12 @@
 		C9B143A3253FD63B0013DC42 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C9CD7E40254340E5001E5E54 /* Shared */,
+				C99441F32550820C004F2D82 /* ComicsList */,
 				C9CD7E3525432FBC001E5E54 /* CreateAccount */,
-				C98D7CF72540586900D95BC8 /* Main */,
 				C9B89A312541F7D4002946CA /* HeroDetails */,
 				C98D7CF62540585600D95BC8 /* HeroesList */,
+				C98D7CF72540586900D95BC8 /* Main */,
+				C9CD7E40254340E5001E5E54 /* Shared */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -206,10 +219,11 @@
 		C9B143A7253FD6AA0013DC42 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				C99441FC25508241004F2D82 /* ComicsListViewController.swift */,
 				C9CD7E3625433082001E5E54 /* CreateAccountViewController.swift */,
 				C98D7D0B2540704C00D95BC8 /* HeroDetailsViewController.swift */,
-				C9B14371253FBA400013DC42 /* MainViewController.swift */,
 				C97B903625411037004233F2 /* HeroesListViewController.swift */,
+				C9B14371253FBA400013DC42 /* MainViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -389,6 +403,7 @@
 				C98D7CFC254058CD00D95BC8 /* HeroListTableViewCell.xib in Resources */,
 				C9B143AC253FD78F0013DC42 /* HeroesList.storyboard in Resources */,
 				C9CD7E3C254330B1001E5E54 /* CreateAccount.storyboard in Resources */,
+				C99441F525508225004F2D82 /* ComicsList.storyboard in Resources */,
 				C9B89A3A2541F81D002946CA /* HeroDetails.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -416,6 +431,7 @@
 			files = (
 				C9B14372253FBA400013DC42 /* MainViewController.swift in Sources */,
 				C9B89A62254213B3002946CA /* Searchable.swift in Sources */,
+				C99441FD25508241004F2D82 /* ComicsListViewController.swift in Sources */,
 				C9B14378253FBA410013DC42 /* hero_es.xcdatamodeld in Sources */,
 				C9B89A4A25420B5E002946CA /* ItemProtocol.swift in Sources */,
 				C98D7D0C2540704C00D95BC8 /* HeroDetailsViewController.swift in Sources */,

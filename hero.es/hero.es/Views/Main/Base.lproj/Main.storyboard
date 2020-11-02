@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JV7-yf-wDC">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -48,7 +48,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="openTesteController" destination="BYZ-38-t0r" eventType="touchUpInside" id="zbd-tR-S8l"/>
+                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TLJ-VG-Mh2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aw2-vB-AM1">
@@ -58,6 +58,9 @@
                                     <constraint firstAttribute="height" constant="40" id="lk2-GN-Gv8"/>
                                 </constraints>
                                 <state key="normal" title="Create Account"/>
+                                <connections>
+                                    <action selector="register:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vA1-jh-jRz"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have a account?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GhL-dq-xg9">
                                 <rect key="frame" x="32" y="761.5" width="170" height="20.5"/>
@@ -78,6 +81,9 @@
                                                     <constraint firstAttribute="height" constant="48" id="TJm-ik-qGw"/>
                                                 </constraints>
                                                 <state key="normal" image="Google"/>
+                                                <connections>
+                                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wnJ-tW-ZbU"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -96,6 +102,9 @@
                                                     <constraint firstAttribute="width" constant="48" id="e2u-OF-VWP"/>
                                                 </constraints>
                                                 <state key="normal" image="Facebook"/>
+                                                <connections>
+                                                    <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="meq-FB-yPU"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -145,6 +154,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mMf-58-0pZ"/>
+                    <connections>
+                        <outlet property="buttonCreateAccount" destination="Aw2-vB-AM1" id="dhy-36-NzG"/>
+                        <outlet property="buttonFacebook" destination="rnO-er-7hL" id="kwS-jT-HDe"/>
+                        <outlet property="buttonGoogle" destination="n0F-jT-dpB" id="ESd-mR-04d"/>
+                        <outlet property="buttonLoginWithEmail" destination="rLa-fc-CgK" id="JXo-fD-0rs"/>
+                        <outlet property="textFieldEmail" destination="s6C-7q-9yy" id="nUa-H7-69Q"/>
+                        <outlet property="textFieldPassword" destination="GA4-Rg-tYc" id="8A4-ud-Coj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
