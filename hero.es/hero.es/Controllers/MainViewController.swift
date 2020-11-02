@@ -45,18 +45,6 @@ class MainViewController: UIViewController {
         
     }
     
-    private func createTabBarItem(storyBoardName: String, tabName: String, iconName: String, tagNumber: Int) -> UIViewController? {
-        if let viewController = UIStoryboard(name: storyBoardName, bundle: nil).instantiateInitialViewController() {
-
-            viewController.tabBarItem = UITabBarItem(title: tabName, image: UIImage(systemName: iconName), tag: tagNumber)
-            
-            
-            return viewController
-        }
-        
-        return nil
-    }
-    
     private func login(with service: LoginServiceType) {
         switch service {
         case .email:
@@ -89,18 +77,17 @@ class MainViewController: UIViewController {
     private func doSuccessfullCredentialsLoginBehavior() {
         var arrayTabVC: [UIViewController] = []
         
-        if let heroesListVC = self.createTabBarItem(storyBoardName: "HeroesList", tabName: "Heroes", iconName: "person.3", tagNumber: 0) {
-            let navController = UINavigationController(rootViewController: heroesListVC)
-            heroesListVC.title = "Heroes"
-            arrayTabVC.append(navController)
+        if let heroesListVC = self.createTabBarItem(storyBoardName: "HeroesList", tabName: "Heroes", iconName: "person.3", tagNumber: 0, withNavigation: true) {
+            arrayTabVC.append(heroesListVC)
         }
         
-        if let comicsListVC = self.createTabBarItem(storyBoardName: "ComicsList", tabName: "Comics", iconName: "book", tagNumber: 1) {
-            let navController = UINavigationController(rootViewController: comicsListVC)
-            comicsListVC.title = "Comics"
-            arrayTabVC.append(navController)
+        if let comicsListVC = self.createTabBarItem(storyBoardName: "ComicsList", tabName: "Comics", iconName: "book", tagNumber: 1, withNavigation: true) {
+            arrayTabVC.append(comicsListVC)
         }
         
+        if let favoritesVC = self.createTabBarItem(storyBoardName: "Favorites", tabName: "Favorites", iconName: "book", tagNumber: 2, withNavigation: true) {
+            arrayTabVC.append(favoritesVC)
+        }
         
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = arrayTabVC
@@ -109,5 +96,28 @@ class MainViewController: UIViewController {
         navigationController?.pushViewController(tabBarController, animated: true)
     }
     
+    private func createTabBarItem(storyBoardName: String, tabName: String, iconName: String, tagNumber: Int) -> UIViewController? {
+        if let viewController = UIStoryboard(name: storyBoardName, bundle: nil).instantiateInitialViewController() {
+
+            viewController.tabBarItem = UITabBarItem(title: tabName, image: UIImage(systemName: iconName), tag: tagNumber)
+            
+            
+            return viewController
+        }
+        
+        return nil
+    }
     
+    private func createTabBarItem(storyBoardName: String, tabName: String, iconName: String, tagNumber: Int, withNavigation: Bool) -> UINavigationController? {
+        guard let viewController = self.createTabBarItem(storyBoardName: storyBoardName, tabName: tabName, iconName: iconName, tagNumber: tagNumber) else {
+            return nil
+        }
+        
+        let navController = UINavigationController(rootViewController: viewController)
+        viewController.title = tabName
+        
+        return navController
+    }
+        
+        
 }

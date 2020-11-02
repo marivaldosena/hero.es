@@ -13,6 +13,8 @@
 		C98D7D0C2540704C00D95BC8 /* HeroDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D7D0B2540704C00D95BC8 /* HeroDetailsViewController.swift */; };
 		C99441F525508225004F2D82 /* ComicsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99441F425508225004F2D82 /* ComicsList.storyboard */; };
 		C99441FD25508241004F2D82 /* ComicsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99441FC25508241004F2D82 /* ComicsListViewController.swift */; };
+		C99442092550C18B004F2D82 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99442082550C18B004F2D82 /* FavoritesViewController.swift */; };
+		C99442112550C19B004F2D82 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99442102550C19B004F2D82 /* Favorites.storyboard */; };
 		C9B1436E253FBA400013DC42 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B1436D253FBA400013DC42 /* AppDelegate.swift */; };
 		C9B14370253FBA400013DC42 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B1436F253FBA400013DC42 /* SceneDelegate.swift */; };
 		C9B14372253FBA400013DC42 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B14371253FBA400013DC42 /* MainViewController.swift */; };
@@ -59,6 +61,8 @@
 		C98D7D0B2540704C00D95BC8 /* HeroDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailsViewController.swift; sourceTree = "<group>"; };
 		C99441F425508225004F2D82 /* ComicsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ComicsList.storyboard; sourceTree = "<group>"; };
 		C99441FC25508241004F2D82 /* ComicsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsListViewController.swift; sourceTree = "<group>"; };
+		C99442082550C18B004F2D82 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesViewController.swift; path = hero.es/Views/Favorites/FavoritesViewController.swift; sourceTree = SOURCE_ROOT; };
+		C99442102550C19B004F2D82 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
 		C9B1436A253FBA400013DC42 /* hero.es.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hero.es.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B1436D253FBA400013DC42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C9B1436F253FBA400013DC42 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -146,6 +150,14 @@
 			path = ComicsList;
 			sourceTree = "<group>";
 		};
+		C99442072550C15C004F2D82 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				C99442102550C19B004F2D82 /* Favorites.storyboard */,
+			);
+			path = Favorites;
+			sourceTree = "<group>";
+		};
 		C9B14361253FBA400013DC42 = {
 			isa = PBXGroup;
 			children = (
@@ -208,6 +220,7 @@
 			children = (
 				C99441F32550820C004F2D82 /* ComicsList */,
 				C9CD7E3525432FBC001E5E54 /* CreateAccount */,
+				C99442072550C15C004F2D82 /* Favorites */,
 				C9B89A312541F7D4002946CA /* HeroDetails */,
 				C98D7CF62540585600D95BC8 /* HeroesList */,
 				C98D7CF72540586900D95BC8 /* Main */,
@@ -221,6 +234,7 @@
 			children = (
 				C99441FC25508241004F2D82 /* ComicsListViewController.swift */,
 				C9CD7E3625433082001E5E54 /* CreateAccountViewController.swift */,
+				C99442082550C18B004F2D82 /* FavoritesViewController.swift */,
 				C98D7D0B2540704C00D95BC8 /* HeroDetailsViewController.swift */,
 				C97B903625411037004233F2 /* HeroesListViewController.swift */,
 				C9B14371253FBA400013DC42 /* MainViewController.swift */,
@@ -399,6 +413,7 @@
 			files = (
 				C9B89A352541F808002946CA /* Main.storyboard in Resources */,
 				C9B1437D253FBA6F0013DC42 /* LaunchScreen.storyboard in Resources */,
+				C99442112550C19B004F2D82 /* Favorites.storyboard in Resources */,
 				C9B1437A253FBA6F0013DC42 /* Assets.xcassets in Resources */,
 				C98D7CFC254058CD00D95BC8 /* HeroListTableViewCell.xib in Resources */,
 				C9B143AC253FD78F0013DC42 /* HeroesList.storyboard in Resources */,
@@ -437,6 +452,7 @@
 				C98D7D0C2540704C00D95BC8 /* HeroDetailsViewController.swift in Sources */,
 				C9B52A3A2543AFCD00F9957D /* AlertUtils.swift in Sources */,
 				C9CD7E3725433083001E5E54 /* CreateAccountViewController.swift in Sources */,
+				C99442092550C18B004F2D82 /* FavoritesViewController.swift in Sources */,
 				C9B89A4125420AF3002946CA /* Hero.swift in Sources */,
 				C9CD7E43254341EC001E5E54 /* AppTabBar.swift in Sources */,
 				C98D7CFB254058CD00D95BC8 /* HeroListTableViewCell.swift in Sources */,
