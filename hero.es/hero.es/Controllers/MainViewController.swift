@@ -14,6 +14,13 @@ enum LoginServiceType {
     case email
 }
 
+enum TabBarItemTag {
+    static let heroes = 0
+    static let comics = 1
+    static let favorites = 2
+    static let config = 3
+}
+
 //MARK: - MainViewController: UIViewController
 class MainViewController: UIViewController {
     @IBOutlet weak var textFieldEmail: UITextField?
@@ -77,17 +84,22 @@ class MainViewController: UIViewController {
     private func doSuccessfullCredentialsLoginBehavior() {
         var arrayTabVC: [UIViewController] = []
         
-        if let heroesListVC = self.createTabBarItem(storyBoardName: "HeroesList", tabName: "Heroes", iconName: "person.3", tagNumber: 0, withNavigation: true) {
+        if let heroesListVC = self.createTabBarItem(storyBoardName: "HeroesList", tabName: "Heroes", iconName: "person.3", tagNumber: TabBarItemTag.heroes, withNavigation: true) {
             arrayTabVC.append(heroesListVC)
         }
         
-        if let comicsListVC = self.createTabBarItem(storyBoardName: "ComicsList", tabName: "Comics", iconName: "book", tagNumber: 1, withNavigation: true) {
+        if let comicsListVC = self.createTabBarItem(storyBoardName: "ComicsList", tabName: "Comics", iconName: "book", tagNumber: TabBarItemTag.comics, withNavigation: true) {
             arrayTabVC.append(comicsListVC)
         }
         
-        if let favoritesVC = self.createTabBarItem(storyBoardName: "Favorites", tabName: "Favorites", iconName: "book", tagNumber: 2, withNavigation: true) {
+        if let favoritesVC = self.createTabBarItem(storyBoardName: "Favorites", tabName: "Favorites", iconName: "book", tagNumber: TabBarItemTag.favorites, withNavigation: true) {
             arrayTabVC.append(favoritesVC)
         }
+        
+        if let favoritesVC = self.createTabBarItem(storyBoardName: "Config", tabName: "Config", iconName: "gear", tagNumber: TabBarItemTag.config, withNavigation: true) {
+            arrayTabVC.append(favoritesVC)
+        }
+        
         
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = arrayTabVC
