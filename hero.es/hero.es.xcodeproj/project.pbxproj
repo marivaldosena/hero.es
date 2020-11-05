@@ -34,6 +34,12 @@
 		C9CD7E3725433083001E5E54 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD7E3625433082001E5E54 /* CreateAccountViewController.swift */; };
 		C9CD7E3C254330B1001E5E54 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */; };
 		C9CD7E43254341EC001E5E54 /* AppTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD7E42254341E7001E5E54 /* AppTabBar.swift */; };
+		EB99AC042548E1610071B7FA /* ServiceHeroesMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC032548E1610071B7FA /* ServiceHeroesMock.swift */; };
+		EB99AC0C2548E1CE0071B7FA /* ServiceHeroes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC0B2548E1CE0071B7FA /* ServiceHeroes.swift */; };
+		EB99AC1C2548E7D00071B7FA /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC1B2548E7CF0071B7FA /* BaseModel.swift */; };
+		EB99AC212548E85C0071B7FA /* DataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC202548E85C0071B7FA /* DataClass.swift */; };
+		EB99AC262548E8E30071B7FA /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC252548E8E30071B7FA /* HeroModel.swift */; };
+		EB99AC2B2548E91A0071B7FA /* ThumbnailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC2A2548E91A0071B7FA /* ThumbnailModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +96,12 @@
 		C9CD7E3625433082001E5E54 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = hero.es/Views/CreateAccount/CreateAccountViewController.swift; sourceTree = SOURCE_ROOT; };
 		C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
 		C9CD7E42254341E7001E5E54 /* AppTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBar.swift; sourceTree = "<group>"; };
+		EB99AC032548E1610071B7FA /* ServiceHeroesMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHeroesMock.swift; sourceTree = "<group>"; };
+		EB99AC0B2548E1CE0071B7FA /* ServiceHeroes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHeroes.swift; sourceTree = "<group>"; };
+		EB99AC1B2548E7CF0071B7FA /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		EB99AC202548E85C0071B7FA /* DataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClass.swift; sourceTree = "<group>"; };
+		EB99AC252548E8E30071B7FA /* HeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
+		EB99AC2A2548E91A0071B7FA /* ThumbnailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailModel.swift; sourceTree = "<group>"; };
 		D855693BB74415451C6570AB /* Pods-hero.es-hero.esUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero.es-hero.esUITests.release.xcconfig"; path = "Target Support Files/Pods-hero.es-hero.esUITests/Pods-hero.es-hero.esUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EEEE578B12C2BE513762BA6E /* Pods-hero.es-hero.esUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero.es-hero.esUITests.debug.xcconfig"; path = "Target Support Files/Pods-hero.es-hero.esUITests/Pods-hero.es-hero.esUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F656F303EF472B101A239D1B /* Pods-hero.esTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero.esTests.release.xcconfig"; path = "Target Support Files/Pods-hero.esTests/Pods-hero.esTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -140,6 +152,8 @@
 		C98D7CF62540585600D95BC8 /* HeroesList */ = {
 			isa = PBXGroup;
 			children = (
+				EB99AC1A2548E7770071B7FA /* Model */,
+				EB99AC022548E14C0071B7FA /* Service */,
 				C98D7CF82540588200D95BC8 /* HeroCell */,
 				C9B143AB253FD78F0013DC42 /* HeroesList.storyboard */,
 			);
@@ -309,6 +323,26 @@
 				C9CD7E42254341E7001E5E54 /* AppTabBar.swift */,
 			);
 			path = AppTabBar;
+			sourceTree = "<group>";
+		};
+		EB99AC022548E14C0071B7FA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				EB99AC032548E1610071B7FA /* ServiceHeroesMock.swift */,
+				EB99AC0B2548E1CE0071B7FA /* ServiceHeroes.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		EB99AC1A2548E7770071B7FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB99AC1B2548E7CF0071B7FA /* BaseModel.swift */,
+				EB99AC202548E85C0071B7FA /* DataClass.swift */,
+				EB99AC252548E8E30071B7FA /* HeroModel.swift */,
+				EB99AC2A2548E91A0071B7FA /* ThumbnailModel.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		DDD40730ECCBB5FA172AD185 /* Frameworks */ = {
@@ -563,17 +597,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB99AC1C2548E7D00071B7FA /* BaseModel.swift in Sources */,
+				EB99AC212548E85C0071B7FA /* DataClass.swift in Sources */,
 				C9B14372253FBA400013DC42 /* MainViewController.swift in Sources */,
 				C9B89A62254213B3002946CA /* Searchable.swift in Sources */,
 				C9B14378253FBA410013DC42 /* hero_es.xcdatamodeld in Sources */,
+				EB99AC042548E1610071B7FA /* ServiceHeroesMock.swift in Sources */,
 				C9B89A4A25420B5E002946CA /* ItemProtocol.swift in Sources */,
 				C98D7D0C2540704C00D95BC8 /* HeroDetailsViewController.swift in Sources */,
 				C9B52A3A2543AFCD00F9957D /* AlertUtils.swift in Sources */,
+				EB99AC262548E8E30071B7FA /* HeroModel.swift in Sources */,
 				C9CD7E3725433083001E5E54 /* CreateAccountViewController.swift in Sources */,
 				C9B89A4125420AF3002946CA /* Hero.swift in Sources */,
 				C9CD7E43254341EC001E5E54 /* AppTabBar.swift in Sources */,
 				C98D7CFB254058CD00D95BC8 /* HeroListTableViewCell.swift in Sources */,
+				EB99AC2B2548E91A0071B7FA /* ThumbnailModel.swift in Sources */,
 				C97B903725411037004233F2 /* HeroesListViewController.swift in Sources */,
+				EB99AC0C2548E1CE0071B7FA /* ServiceHeroes.swift in Sources */,
 				C9B1436E253FBA400013DC42 /* AppDelegate.swift in Sources */,
 				C9B89A5525420C97002946CA /* SeedProtocol.swift in Sources */,
 				C9B14370253FBA400013DC42 /* SceneDelegate.swift in Sources */,
