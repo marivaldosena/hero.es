@@ -9,4 +9,5 @@ import Foundation
 
 struct ThumbnailModel: Codable {
     let path: String
+//    let extension: String
 }

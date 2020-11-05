@@ -10,7 +10,7 @@ import Foundation
 struct HeroModel: Codable {
     let id: Int
     let name: String
-    let resultDescription: String
+    let description: String
     let modified: Date
     let thumbnail: ThumbnailModel
     let resourceURI: String

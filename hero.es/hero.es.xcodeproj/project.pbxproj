@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -40,6 +40,8 @@
 		EB99AC212548E85C0071B7FA /* DataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC202548E85C0071B7FA /* DataClass.swift */; };
 		EB99AC262548E8E30071B7FA /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC252548E8E30071B7FA /* HeroModel.swift */; };
 		EB99AC2B2548E91A0071B7FA /* ThumbnailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC2A2548E91A0071B7FA /* ThumbnailModel.swift */; };
+		EB9F64992553B4AE00C527F9 /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9F64982553B4AE00C527F9 /* characters.json */; };
+		EB9F649A2553B4AE00C527F9 /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9F64982553B4AE00C527F9 /* characters.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -96,13 +98,14 @@
 		C9CD7E3625433082001E5E54 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = hero.es/Views/CreateAccount/CreateAccountViewController.swift; sourceTree = SOURCE_ROOT; };
 		C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
 		C9CD7E42254341E7001E5E54 /* AppTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBar.swift; sourceTree = "<group>"; };
+		D855693BB74415451C6570AB /* Pods-hero.es-hero.esUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero.es-hero.esUITests.release.xcconfig"; path = "Target Support Files/Pods-hero.es-hero.esUITests/Pods-hero.es-hero.esUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EB99AC032548E1610071B7FA /* ServiceHeroesMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHeroesMock.swift; sourceTree = "<group>"; };
 		EB99AC0B2548E1CE0071B7FA /* ServiceHeroes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHeroes.swift; sourceTree = "<group>"; };
 		EB99AC1B2548E7CF0071B7FA /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		EB99AC202548E85C0071B7FA /* DataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClass.swift; sourceTree = "<group>"; };
 		EB99AC252548E8E30071B7FA /* HeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
 		EB99AC2A2548E91A0071B7FA /* ThumbnailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailModel.swift; sourceTree = "<group>"; };
-		D855693BB74415451C6570AB /* Pods-hero.es-hero.esUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero.es-hero.esUITests.release.xcconfig"; path = "Target Support Files/Pods-hero.es-hero.esUITests/Pods-hero.es-hero.esUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EB9F64982553B4AE00C527F9 /* characters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
 		EEEE578B12C2BE513762BA6E /* Pods-hero.es-hero.esUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero.es-hero.esUITests.debug.xcconfig"; path = "Target Support Files/Pods-hero.es-hero.esUITests/Pods-hero.es-hero.esUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F656F303EF472B101A239D1B /* Pods-hero.esTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero.esTests.release.xcconfig"; path = "Target Support Files/Pods-hero.esTests/Pods-hero.esTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -145,7 +148,6 @@
 				AAEDB7B2F6D2DDBB49662914 /* Pods-hero.esTests.debug.xcconfig */,
 				F656F303EF472B101A239D1B /* Pods-hero.esTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -325,9 +327,20 @@
 			path = AppTabBar;
 			sourceTree = "<group>";
 		};
+		DDD40730ECCBB5FA172AD185 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6239196A25EB23AA7E43A44A /* Pods_hero_es.framework */,
+				4ED54396F039598B7D1EE2B9 /* Pods_hero_es_hero_esUITests.framework */,
+				3037F78379A5229D058B0292 /* Pods_hero_esTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		EB99AC022548E14C0071B7FA /* Service */ = {
 			isa = PBXGroup;
 			children = (
+				EB9F64972553B49000C527F9 /* Resources */,
 				EB99AC032548E1610071B7FA /* ServiceHeroesMock.swift */,
 				EB99AC0B2548E1CE0071B7FA /* ServiceHeroes.swift */,
 			);
@@ -345,14 +358,12 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		DDD40730ECCBB5FA172AD185 /* Frameworks */ = {
+		EB9F64972553B49000C527F9 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6239196A25EB23AA7E43A44A /* Pods_hero_es.framework */,
-				4ED54396F039598B7D1EE2B9 /* Pods_hero_es_hero_esUITests.framework */,
-				3037F78379A5229D058B0292 /* Pods_hero_esTests.framework */,
+				EB9F64982553B4AE00C527F9 /* characters.json */,
 			);
-			name = Frameworks;
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -470,6 +481,7 @@
 				C9B143AC253FD78F0013DC42 /* HeroesList.storyboard in Resources */,
 				C9CD7E3C254330B1001E5E54 /* CreateAccount.storyboard in Resources */,
 				C9B89A3A2541F81D002946CA /* HeroDetails.storyboard in Resources */,
+				EB9F64992553B4AE00C527F9 /* characters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -477,6 +489,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB9F649A2553B4AE00C527F9 /* characters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

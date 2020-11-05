@@ -17,6 +17,9 @@ class HeroesListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let service: BaseModel? = Utils.loadJson(with: "characters")
+        
 
         heroTableView?.delegate = self
         heroTableView?.dataSource = self
