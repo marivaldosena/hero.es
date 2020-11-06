@@ -9,17 +9,15 @@ import Foundation
 
 struct ServiceHeroesMock: ServicesHeroesProtocol {
     
-    func requestHeroes(name: String, completion: @escaping (Result<BaseModel, Error>) -> Void) {
-        print("DEBUG: Request heroes mock!!!")
-        
+    func requestHeroes(name: String, completion: @escaping (Swift.Result<[HeroModel], Error>) -> Void) {
         do {
             let path: String = Bundle.main.path(forResource: "characters", ofType: "json")!
             let jsonData: Data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
             let baseModel: BaseModel = try JSONDecoder().decode(BaseModel.self, from: jsonData)
-            
-            completion(Result.success(baseModel))
+            let heroes: [HeroModel] = baseModel.data.results
+            completion(Swift.Result.success(heroes))
         } catch {
-            completion(Result.failure(error))
+            completion(Swift.Result.failure(error))
         }
     }
 }

@@ -6,16 +6,15 @@
 //
 
 import Foundation
-import Alamofire
 
 protocol ServicesHeroesProtocol {
     
-    func requestHeroes(name: String, completion: @escaping(Result<BaseModel, Error>) -> Void)
+    func requestHeroes(name: String, completion: @escaping (Swift.Result<[HeroModel], Error>) -> Void)
     
 }
 
 struct ServicesHeroes: ServicesHeroesProtocol {
-    func requestHeroes(name: String, completion: @escaping (Result<BaseModel, Error>) -> Void) {
+    func requestHeroes(name: String, completion: @escaping (Swift.Result<[HeroModel], Error>) -> Void) {
         print("DEGUB: Request heroes!!")
     }
 }

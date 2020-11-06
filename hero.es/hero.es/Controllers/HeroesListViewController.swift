@@ -9,16 +9,29 @@ import UIKit
 
 //MARK: - HeroesListViewController: UIViewController
 class HeroesListViewController: UIViewController {
+    
     @IBOutlet weak var heroTableView: UITableView?
     @IBOutlet weak var heroSearchBar: UISearchBar?
     
-    private var allHeroes = HeroSeed.seed()
-    private var itemsList = HeroSeed.seed()
+    private var allHeroes: BaseModel? = Utils.loadJson(with: "characters")
+    private var itemsList: [HeroModel]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let service: BaseModel? = Utils.loadJson(with: "characters")
+        //let service: BaseModel? = Utils.loadJson(with: "characters")
+        
+        let service = ServiceHeroesMock()
+        
+        service.requestHeroes(name: "") { (result) in
+            switch result {
+            case .success(let heroModel):
+                self.itemsList = heroModel
+                print("DEBUG: Request mock success!!!")
+            case .failure(let error):
+                print("DEBUG: \(error.localizedDescription)")
+            }
+        }
         
 
         heroTableView?.delegate = self
@@ -45,7 +58,7 @@ extension HeroesListViewController {
         }
     }
     
-    func goToDetails(_ item: Hero) {
+    func goToDetails(_ item: HeroModel) {
         if let viewController = HeroDetailsViewController.getViewController(item) {
             navigationController?.pushViewController(viewController, animated: true)
         }
@@ -55,7 +68,9 @@ extension HeroesListViewController {
 //MARK: - HeroesListViewController: UITableViewDelegate
 extension HeroesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let item = self.itemsList[indexPath.row]
+        guard let results: [HeroModel] = itemsList else { return }
+        
+        let item = results[indexPath.row]
         self.goToDetails(item)
         tableView.deselectRow(at: indexPath, animated: true)
     }
@@ -64,13 +79,13 @@ extension HeroesListViewController: UITableViewDelegate {
 //MARK: - HeroesListViewController: UITableViewDataSource
 extension HeroesListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.itemsList.count
+        return self.itemsList?.count ?? 0
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HeroCell", for: indexPath) as! HeroListTableViewCell
         
-        let hero = itemsList[indexPath.row]
+        let hero = itemsList?[indexPath.row]
         cell.configure(with: hero)
         
         return cell
@@ -85,11 +100,12 @@ extension HeroesListViewController: UISearchBarDelegate {
         self.updateUIInterface()
     }
     
-    private func getFilteredHeroes(term: String) -> [Hero] {
+    private func getFilteredHeroes(term: String) -> [HeroModel]? {
         if !term.isEmpty {
-            return self.itemsList.filter { $0.searchBy(term: term) }
+            guard let results: [HeroModel] = itemsList else { return nil }
+            return results.filter { $0.searchBy(term: term) }
         }
         
-        return self.allHeroes
+        return self.allHeroes?.data.results
     }
 }

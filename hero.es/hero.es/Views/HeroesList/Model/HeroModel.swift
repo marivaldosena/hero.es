@@ -8,14 +8,18 @@
 import Foundation
 
 struct HeroModel: Codable {
-    let id: Int
+    let id: Double
     let name: String
     let description: String
-    let modified: Date
+    let modified: String
     let thumbnail: ThumbnailModel
     let resourceURI: String
 //    let comics, series: Comics
 //    let stories: Stories
 //    let events: Comics
 //    let urls: [URLElement]
+    
+    func searchBy(term: String) -> Bool {
+        return self.name.lowercased().contains(term.lowercased())
+    }
 }
