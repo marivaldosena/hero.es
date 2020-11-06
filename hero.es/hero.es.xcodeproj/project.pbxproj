@@ -11,6 +11,7 @@
 		5985F7943358F3A7B8D53404 /* Pods_hero_es_hero_esUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2772D5F6C7091E86502C0654 /* Pods_hero_es_hero_esUITests.framework */; };
 		685E5D9AAEC00A3C2C5508C2 /* Pods_hero_es.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D9EA24D74F6BDDBBED9E98 /* Pods_hero_es.framework */; };
 		C97B903725411037004233F2 /* HeroesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97B903625411037004233F2 /* HeroesListViewController.swift */; };
+		C98742552552C82D00E25F24 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C98742542552C82D00E25F24 /* GoogleService-Info.plist */; };
 		C98D7CFB254058CD00D95BC8 /* HeroListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D7CF9254058CD00D95BC8 /* HeroListTableViewCell.swift */; };
 		C98D7CFC254058CD00D95BC8 /* HeroListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98D7CFA254058CD00D95BC8 /* HeroListTableViewCell.xib */; };
 		C98D7D0C2540704C00D95BC8 /* HeroDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D7D0B2540704C00D95BC8 /* HeroDetailsViewController.swift */; };
@@ -37,7 +38,6 @@
 		C9B89A5525420C97002946CA /* SeedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89A5425420C97002946CA /* SeedProtocol.swift */; };
 		C9B89A5A25420D4F002946CA /* HeroSeed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89A5925420D4F002946CA /* HeroSeed.swift */; };
 		C9B89A62254213B3002946CA /* Searchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89A61254213B3002946CA /* Searchable.swift */; };
-		C9BCE7F32550DD2A00979E8E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9BCE7F22550DD2A00979E8E /* GoogleService-Info.plist */; };
 		C9CD7E3725433083001E5E54 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD7E3625433082001E5E54 /* CreateAccountViewController.swift */; };
 		C9CD7E3C254330B1001E5E54 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */; };
 		C9CD7E43254341EC001E5E54 /* AppTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD7E42254341E7001E5E54 /* AppTabBar.swift */; };
@@ -68,6 +68,7 @@
 		81C55C5D2DC85724B748FF2E /* Pods_hero_esTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hero_esTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D8E5A1CFF566C8FA17C41E6 /* Pods-hero.esTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero.esTests.release.xcconfig"; path = "Target Support Files/Pods-hero.esTests/Pods-hero.esTests.release.xcconfig"; sourceTree = "<group>"; };
 		C97B903625411037004233F2 /* HeroesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListViewController.swift; sourceTree = "<group>"; };
+		C98742542552C82D00E25F24 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C98D7CF9254058CD00D95BC8 /* HeroListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListTableViewCell.swift; sourceTree = "<group>"; };
 		C98D7CFA254058CD00D95BC8 /* HeroListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroListTableViewCell.xib; sourceTree = "<group>"; };
 		C98D7D0B2540704C00D95BC8 /* HeroDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailsViewController.swift; sourceTree = "<group>"; };
@@ -100,7 +101,6 @@
 		C9B89A5425420C97002946CA /* SeedProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedProtocol.swift; sourceTree = "<group>"; };
 		C9B89A5925420D4F002946CA /* HeroSeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroSeed.swift; sourceTree = "<group>"; };
 		C9B89A61254213B3002946CA /* Searchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchable.swift; sourceTree = "<group>"; };
-		C9BCE7F22550DD2A00979E8E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9CD7E3625433082001E5E54 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = hero.es/Views/CreateAccount/CreateAccountViewController.swift; sourceTree = SOURCE_ROOT; };
 		C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
 		C9CD7E42254341E7001E5E54 /* AppTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBar.swift; sourceTree = "<group>"; };
@@ -246,7 +246,7 @@
 				C9B14379253FBA6F0013DC42 /* Assets.xcassets */,
 				C9B1437B253FBA6F0013DC42 /* LaunchScreen.storyboard */,
 				C9B1437E253FBA6F0013DC42 /* Info.plist */,
-				C9BCE7F22550DD2A00979E8E /* GoogleService-Info.plist */,
+				C98742542552C82D00E25F24 /* GoogleService-Info.plist */,
 				C9B14376253FBA410013DC42 /* hero_es.xcdatamodeld */,
 			);
 			path = hero.es;
@@ -481,7 +481,7 @@
 				C98D7CFC254058CD00D95BC8 /* HeroListTableViewCell.xib in Resources */,
 				C9B143AC253FD78F0013DC42 /* HeroesList.storyboard in Resources */,
 				C9CD7E3C254330B1001E5E54 /* CreateAccount.storyboard in Resources */,
-				C9BCE7F32550DD2A00979E8E /* GoogleService-Info.plist in Resources */,
+				C98742552552C82D00E25F24 /* GoogleService-Info.plist in Resources */,
 				C99441F525508225004F2D82 /* ComicsList.storyboard in Resources */,
 				C9B89A3A2541F81D002946CA /* HeroDetails.storyboard in Resources */,
 			);

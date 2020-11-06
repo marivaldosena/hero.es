@@ -1,6 +1,0 @@
-framework module Pods_hero_es_hero_esUITests {
-  umbrella header "Pods-hero.es-hero.esUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

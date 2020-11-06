@@ -6,9 +6,17 @@ target 'hero.es' do
   use_frameworks!
 
   # Pods for hero.es
+  
+ 
+  # Firebase Core
+  pod 'Firebase/Core'
+
   # Firebase Auth
   pod 'Firebase/Auth'
 
+  # Firebase Firestore
+  pod 'Firebase/Firestore'
+  
   target 'hero.esTests' do
     inherit! :search_paths
     # Pods for testing
