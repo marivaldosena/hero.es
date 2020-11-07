@@ -2,7 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="H59-2y-Hpg">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -22,6 +22,14 @@
                                     <constraint firstAttribute="height" constant="350" id="TjX-qL-JqV"/>
                                 </constraints>
                             </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="TGl-99-8IU">
+                                <rect key="frame" x="32" y="450" width="350" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="GIl-12-Pfp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="yes" textContentType="name"/>
+                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="z4m-mc-OTw">
                                 <rect key="frame" x="32" y="520" width="350" height="40"/>
                                 <constraints>
@@ -51,15 +59,7 @@
                                     <action selector="createAccount:" destination="H59-2y-Hpg" eventType="touchUpInside" id="gd6-he-l6e"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="TGl-99-8IU">
-                                <rect key="frame" x="32" y="450" width="350" height="40"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="GIl-12-Pfp"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="yes" textContentType="name"/>
-                            </textField>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4G2-n4-ku4">
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4G2-n4-ku4">
                                 <rect key="frame" x="32" y="751" width="51" height="31"/>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree with the Terms of Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kx2-Cr-p3O">
@@ -80,7 +80,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Edh-Ol-95b">
-                                <rect key="frame" x="16" y="20" width="36" height="36"/>
+                                <rect key="frame" x="16" y="40" width="36" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="CoQ-SE-zmF"/>
                                     <constraint firstAttribute="width" constant="36" id="QxZ-Ew-SG3"/>
@@ -88,6 +88,9 @@
                                 <state key="normal" image="chevron.backward" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                 </state>
+                                <connections>
+                                    <action selector="goToHome:" destination="H59-2y-Hpg" eventType="touchUpInside" id="rUg-0y-HTX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="3B6-nF-OZH"/>
@@ -100,7 +103,7 @@
                             <constraint firstItem="3B6-nF-OZH" firstAttribute="trailing" secondItem="Su2-5z-sV3" secondAttribute="trailing" constant="32" id="A3Q-F5-COk"/>
                             <constraint firstItem="Edh-Ol-95b" firstAttribute="leading" secondItem="3B6-nF-OZH" secondAttribute="leading" constant="16" id="CPx-mK-YhD"/>
                             <constraint firstItem="6eu-5l-Yif" firstAttribute="leading" secondItem="3B6-nF-OZH" secondAttribute="leading" constant="32" id="CkX-fp-z6t"/>
-                            <constraint firstItem="Edh-Ol-95b" firstAttribute="top" secondItem="q2p-3V-BbQ" secondAttribute="top" constant="20" id="GL6-F0-oy5"/>
+                            <constraint firstItem="Edh-Ol-95b" firstAttribute="top" secondItem="q2p-3V-BbQ" secondAttribute="top" constant="40" id="GL6-F0-oy5"/>
                             <constraint firstItem="Su2-5z-sV3" firstAttribute="top" secondItem="3B6-nF-OZH" secondAttribute="top" constant="16" id="Hao-Ne-3eZ"/>
                             <constraint firstItem="3B6-nF-OZH" firstAttribute="trailing" secondItem="6eu-5l-Yif" secondAttribute="trailing" constant="32" id="L8H-g5-5rD"/>
                             <constraint firstItem="2VB-2t-NEE" firstAttribute="leading" secondItem="3B6-nF-OZH" secondAttribute="leading" constant="32" id="LWP-ua-Vaa"/>
@@ -121,6 +124,10 @@
                     </view>
                     <connections>
                         <outlet property="acceptTermsOfServiceSwitch" destination="4G2-n4-ku4" id="Zkl-6V-re7"/>
+                        <outlet property="createAccountButton" destination="6eu-5l-Yif" id="GUu-os-EBd"/>
+                        <outlet property="emailTextField" destination="z4m-mc-OTw" id="hrC-Z1-uJI"/>
+                        <outlet property="nameTextField" destination="TGl-99-8IU" id="Mdk-WL-gOb"/>
+                        <outlet property="passwordTextField" destination="hA4-q3-wtK" id="ZoG-cj-AKn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Pj-1Z-lim" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

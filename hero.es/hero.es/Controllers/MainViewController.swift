@@ -49,7 +49,10 @@ class MainViewController: UIViewController {
     }
     
     @IBAction func register(_ sender: UIButton) {
-        
+        if let viewController = UIStoryboard(name: "CreateAccount", bundle: nil).instantiateInitialViewController() as? CreateAccountViewController {
+            let navController = UINavigationController(rootViewController: viewController)
+            navigationController?.pushViewController(viewController, animated: true)
+        }
     }
     
     private func login(with service: LoginServiceType) {

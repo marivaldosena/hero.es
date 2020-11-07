@@ -25,4 +25,10 @@ struct AlertUtils {
     static func showAlert(_ viewController: UIViewController, _ alert: UIAlertController) {
         viewController.present(alert, animated: true, completion: nil)
     }
+    
+    static func displayMessage(_ view: UIViewController, title: String?, message: String?, okButton: String?) {
+        let alert = self.getAlertInstance(title: title, message: message, style: .alert)
+        self.addAction(alert, title: okButton, style: .default, handler: nil)
+        view.present(alert, animated: true, completion: nil)
+    }
 }
