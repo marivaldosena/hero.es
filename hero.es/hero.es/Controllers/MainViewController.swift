@@ -32,7 +32,6 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     @IBAction func login(_ sender: UIButton) {
@@ -51,7 +50,7 @@ class MainViewController: UIViewController {
     @IBAction func register(_ sender: UIButton) {
         if let viewController = UIStoryboard(name: "CreateAccount", bundle: nil).instantiateInitialViewController() as? CreateAccountViewController {
             let navController = UINavigationController(rootViewController: viewController)
-            navigationController?.pushViewController(viewController, animated: true)
+            navigationController?.pushViewController(navController, animated: true)
         }
     }
     
@@ -69,7 +68,16 @@ class MainViewController: UIViewController {
     }
     
     private func loginWithEmail() {
-        self.doSuccessfullCredentialsLoginBehavior()
+        if ValidatorService.isEmailValid(textFieldEmail) && ValidatorService.isPasswordValid(textFieldPassword) {
+            let email = ValidatorService.getNormalizedData(textFieldEmail)
+            let password = ValidatorService.getNormalizedData(textFieldPassword)
+            
+            FirebaseService.loginWithEmailAndPassword(email, password) {
+                self.doSuccessfullCredentialsLoginBehavior()
+            } failure: {
+                AlertUtils.displayMessage(self, title: "Login", message: "Login and/or password are wrong.", okButton: "OK")
+            }
+        }
     }
     
     private func loginWithGoogleAccount() {
@@ -85,30 +93,7 @@ class MainViewController: UIViewController {
     }
     
     private func doSuccessfullCredentialsLoginBehavior() {
-        var arrayTabVC: [UIViewController] = []
-        
-        if let heroesListVC = self.createTabBarItem(storyBoardName: "HeroesList", tabName: "Heroes", iconName: "person.3", tagNumber: TabBarItemTag.heroes, withNavigation: true) {
-            arrayTabVC.append(heroesListVC)
-        }
-        
-        if let comicsListVC = self.createTabBarItem(storyBoardName: "ComicsList", tabName: "Comics", iconName: "book", tagNumber: TabBarItemTag.comics, withNavigation: true) {
-            arrayTabVC.append(comicsListVC)
-        }
-        
-        if let favoritesVC = self.createTabBarItem(storyBoardName: "Favorites", tabName: "Favorites", iconName: "book", tagNumber: TabBarItemTag.favorites, withNavigation: true) {
-            arrayTabVC.append(favoritesVC)
-        }
-        
-        if let favoritesVC = self.createTabBarItem(storyBoardName: "Config", tabName: "Config", iconName: "gear", tagNumber: TabBarItemTag.config, withNavigation: true) {
-            arrayTabVC.append(favoritesVC)
-        }
-        
-        
-        let tabBarController = UITabBarController()
-        tabBarController.viewControllers = arrayTabVC
-            
-        
-        navigationController?.pushViewController(tabBarController, animated: true)
+        self.createTabBarNavigation()
     }
     
     private func createTabBarItem(storyBoardName: String, tabName: String, iconName: String, tagNumber: Int) -> UIViewController? {
@@ -133,6 +118,26 @@ class MainViewController: UIViewController {
         
         return navController
     }
+    
+    private func createTabBarNavigation() {
+        var arrayTabVC: [UIViewController] = []
         
+        let items = [
+            (storyboardName: "HeroesList", tabName: "Heroes", iconName: "person.3", tagNumber: TabBarItemTag.heroes),
+            (storyboardName: "ComicsList", tabName: "Comics", iconName: "book", tagNumber: TabBarItemTag.comics),
+            (storyboardName: "Favorites", tabName: "Favorites", iconName: "heart", tagNumber: TabBarItemTag.favorites),
+            (storyboardName: "Config", tabName: "Config", iconName: "gear", tagNumber: TabBarItemTag.config)
+        ]
         
+        for item in items {
+            if let viewController = self.createTabBarItem(storyBoardName: item.storyboardName, tabName: item.tabName, iconName: item.iconName, tagNumber: item.tagNumber, withNavigation: true) {
+                arrayTabVC.append(viewController)
+            }
+        }
+
+        let tabBarController = UITabBarController()
+        tabBarController.viewControllers = arrayTabVC
+            
+        navigationController?.pushViewController(tabBarController, animated: true)
+    }
 }

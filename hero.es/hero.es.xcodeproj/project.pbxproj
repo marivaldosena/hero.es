@@ -30,7 +30,8 @@
 		C9B14388253FBA7E0013DC42 /* hero_esTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B14387253FBA7E0013DC42 /* hero_esTests.swift */; };
 		C9B14393253FBA7E0013DC42 /* hero_esUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B14392253FBA7E0013DC42 /* hero_esUITests.swift */; };
 		C9B143AC253FD78F0013DC42 /* HeroesList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B143AB253FD78F0013DC42 /* HeroesList.storyboard */; };
-		C9B52A3A2543AFCD00F9957D /* AlertUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B52A392543AFCD00F9957D /* AlertUtils.swift */; };
+		C9B52A3A2543AFCD00F9957D /* UIKitUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B52A392543AFCD00F9957D /* UIKitUtils.swift */; };
+		C9B889532557245900E9A375 /* ValidatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B889522557245900E9A375 /* ValidatorService.swift */; };
 		C9B89A352541F808002946CA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B14373253FBA410013DC42 /* Main.storyboard */; };
 		C9B89A3A2541F81D002946CA /* HeroDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9B89A392541F81D002946CA /* HeroDetails.storyboard */; };
 		C9B89A4125420AF3002946CA /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89A4025420AF3002946CA /* Hero.swift */; };
@@ -41,7 +42,7 @@
 		C9CD7E3725433083001E5E54 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD7E3625433082001E5E54 /* CreateAccountViewController.swift */; };
 		C9CD7E3C254330B1001E5E54 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */; };
 		C9CD7E43254341EC001E5E54 /* AppTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD7E42254341E7001E5E54 /* AppTabBar.swift */; };
-		C9FAFB75255627DE002F6859 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FAFB74255627DE002F6859 /* StringUtils.swift */; };
+		C9FAFB75255627DE002F6859 /* FoundationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FAFB74255627DE002F6859 /* FoundationUtils.swift */; };
 		C9FAFB8325563D64002F6859 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FAFB8225563D64002F6859 /* FirebaseService.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,7 +97,8 @@
 		C9B14392253FBA7E0013DC42 /* hero_esUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hero_esUITests.swift; sourceTree = "<group>"; };
 		C9B14394253FBA7E0013DC42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9B143AB253FD78F0013DC42 /* HeroesList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HeroesList.storyboard; sourceTree = "<group>"; };
-		C9B52A392543AFCD00F9957D /* AlertUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertUtils.swift; sourceTree = "<group>"; };
+		C9B52A392543AFCD00F9957D /* UIKitUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitUtils.swift; sourceTree = "<group>"; };
+		C9B889522557245900E9A375 /* ValidatorService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorService.swift; sourceTree = "<group>"; };
 		C9B89A392541F81D002946CA /* HeroDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HeroDetails.storyboard; sourceTree = "<group>"; };
 		C9B89A4025420AF3002946CA /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		C9B89A4925420B5E002946CA /* ItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemProtocol.swift; sourceTree = "<group>"; };
@@ -106,7 +108,7 @@
 		C9CD7E3625433082001E5E54 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = hero.es/Controllers/CreateAccountViewController.swift; sourceTree = SOURCE_ROOT; };
 		C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
 		C9CD7E42254341E7001E5E54 /* AppTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBar.swift; sourceTree = "<group>"; };
-		C9FAFB74255627DE002F6859 /* StringUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
+		C9FAFB74255627DE002F6859 /* FoundationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationUtils.swift; sourceTree = "<group>"; };
 		C9FAFB8225563D64002F6859 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		F85A11331F4B3700DA65B21C /* Pods-hero.es-hero.esUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero.es-hero.esUITests.debug.xcconfig"; path = "Target Support Files/Pods-hero.es-hero.esUITests/Pods-hero.es-hero.esUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F9D9EA24D74F6BDDBBED9E98 /* Pods_hero_es.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hero_es.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -307,8 +309,8 @@
 		C9B52A382543AFB600F9957D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
-				C9B52A392543AFCD00F9957D /* AlertUtils.swift */,
-				C9FAFB74255627DE002F6859 /* StringUtils.swift */,
+				C9B52A392543AFCD00F9957D /* UIKitUtils.swift */,
+				C9FAFB74255627DE002F6859 /* FoundationUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -374,6 +376,7 @@
 		C9FAFB7C25563B39002F6859 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C9B889522557245900E9A375 /* ValidatorService.swift */,
 				C9FAFB8225563D64002F6859 /* FirebaseService.swift */,
 			);
 			path = Services;
@@ -627,13 +630,14 @@
 			files = (
 				C9B14372253FBA400013DC42 /* MainViewController.swift in Sources */,
 				C9B89A62254213B3002946CA /* Searchable.swift in Sources */,
+				C9B889532557245900E9A375 /* ValidatorService.swift in Sources */,
 				C99441FD25508241004F2D82 /* ComicsListViewController.swift in Sources */,
 				C9B14378253FBA410013DC42 /* hero_es.xcdatamodeld in Sources */,
 				C9B89A4A25420B5E002946CA /* ItemProtocol.swift in Sources */,
 				C98D7D0C2540704C00D95BC8 /* HeroDetailsViewController.swift in Sources */,
-				C9B52A3A2543AFCD00F9957D /* AlertUtils.swift in Sources */,
+				C9B52A3A2543AFCD00F9957D /* UIKitUtils.swift in Sources */,
 				C9CD7E3725433083001E5E54 /* CreateAccountViewController.swift in Sources */,
-				C9FAFB75255627DE002F6859 /* StringUtils.swift in Sources */,
+				C9FAFB75255627DE002F6859 /* FoundationUtils.swift in Sources */,
 				C99442162550CAFF004F2D82 /* ConfigViewController.swift in Sources */,
 				C99442092550C18B004F2D82 /* FavoritesViewController.swift in Sources */,
 				C9B89A4125420AF3002946CA /* Hero.swift in Sources */,
