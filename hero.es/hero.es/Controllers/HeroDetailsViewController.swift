@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 //MARK: - HeroDetailsViewController: UIViewController
 class HeroDetailsViewController: UIViewController {
@@ -17,7 +18,7 @@ class HeroDetailsViewController: UIViewController {
     @IBOutlet weak var favoriteButton: UIBarButtonItem?
     
     
-    private var item: Hero? = nil
+    private var item: HeroModel? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +26,7 @@ class HeroDetailsViewController: UIViewController {
         self.updateUIInterface()
     }
     
-    static func getViewController(_ item: Hero?) -> HeroDetailsViewController? {
+    static func getViewController(_ item: HeroModel?) -> HeroDetailsViewController? {
         guard let uiNavigationController = UIStoryboard(name: "HeroDetails", bundle: nil).instantiateInitialViewController() as? UINavigationController else {
             return nil
         }
@@ -48,7 +49,10 @@ extension HeroDetailsViewController {
         }
         
         DispatchQueue.main.async {
-            self.heroImageView?.image = UIImage(named: hero.imageName)
+            guard let url = URL(string: hero.thumbnail.url) else { return }
+            self.heroImageView?.kf.indicatorType = .activity
+            self.heroImageView?.kf.setImage(with: url)
+            
             self.heroNameLabel?.text = hero.name
             self.heroPublisherNameLabel?.text = "Marvel"
             self.heroDescriptionTextView?.text = hero.description

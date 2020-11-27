@@ -14,7 +14,7 @@ class HeroListTableViewCell: UITableViewCell {
     @IBOutlet weak var shareButtonImageView: UIImageView?
     @IBOutlet weak var favoriteButtonImageView: UIImageView?
     
-    private var item: Hero? = nil
+    private var item: HeroModel? = nil
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,7 +25,7 @@ class HeroListTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func configure(with item: Hero?) {
+    func configure(with item: HeroModel?) {
         guard let hero = item else { return }
         
         self.item = hero
@@ -40,7 +40,15 @@ class HeroListTableViewCell: UITableViewCell {
         
         //TODO: Add functionality to fetch image from Web
         DispatchQueue.main.async {
-            self.heroImageView?.image = UIImage(named: hero.imageName)
+//            self.heroImageView?.image = UIImage(named: hero.thumbnail.url)
+            
+            if let url = URL(string: hero.thumbnail.url) {
+                self.heroImageView?.kf.indicatorType = .activity
+                self.heroImageView?.kf.setImage(with: url)
+            } else {
+                self.heroImageView?.image = nil
+            }
+            
             self.heroNameLabel?.text = hero.name
             self.heroDescriptionLabel?.text = hero.description
         }

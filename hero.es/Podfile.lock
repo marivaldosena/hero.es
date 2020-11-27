@@ -1,4 +1,5 @@
 PODS:
+<<<<<<< HEAD
   - abseil/algorithm (0.20200225.0):
     - abseil/algorithm/algorithm (= 0.20200225.0)
     - abseil/algorithm/container (= 0.20200225.0)
@@ -376,5 +377,26 @@ SPEC CHECKSUMS:
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
 
 PODFILE CHECKSUM: e210bcc9c976a2e2bc128cc338daa32cb7fae9be
+=======
+  - Alamofire (5.2.2)
+  - Kingfisher (5.15.4):
+    - Kingfisher/Core (= 5.15.4)
+  - Kingfisher/Core (5.15.4)
+
+DEPENDENCIES:
+  - Alamofire (~> 5.2)
+  - Kingfisher (~> 5.0)
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Kingfisher
+
+SPEC CHECKSUMS:
+  Alamofire: 814429acc853c6c54ff123fc3d2ef66803823ce0
+  Kingfisher: 657dc1077e5bbbfff864194c79f29e35b722d062
+
+PODFILE CHECKSUM: a6c95d18baeb8f3233b8430898693e7691478f9a
+>>>>>>> feature/services-mock
 
 COCOAPODS: 1.10.0

@@ -10,6 +10,9 @@
 		549B6BC59707B9F0B36FE973 /* Pods_hero_esTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81C55C5D2DC85724B748FF2E /* Pods_hero_esTests.framework */; };
 		5985F7943358F3A7B8D53404 /* Pods_hero_es_hero_esUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2772D5F6C7091E86502C0654 /* Pods_hero_es_hero_esUITests.framework */; };
 		685E5D9AAEC00A3C2C5508C2 /* Pods_hero_es.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F9D9EA24D74F6BDDBBED9E98 /* Pods_hero_es.framework */; };
+		353697B1678FF0D2F1F9D367 /* Pods_hero_es_hero_esUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4ED54396F039598B7D1EE2B9 /* Pods_hero_es_hero_esUITests.framework */; };
+		3CA3952E19312C627D3FA471 /* Pods_hero_esTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3037F78379A5229D058B0292 /* Pods_hero_esTests.framework */; };
+		897575AD2F981D68EC08E7FA /* Pods_hero_es.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6239196A25EB23AA7E43A44A /* Pods_hero_es.framework */; };
 		C97B903725411037004233F2 /* HeroesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97B903625411037004233F2 /* HeroesListViewController.swift */; };
 		C98742552552C82D00E25F24 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C98742542552C82D00E25F24 /* GoogleService-Info.plist */; };
 		C98D7CFB254058CD00D95BC8 /* HeroListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D7CF9254058CD00D95BC8 /* HeroListTableViewCell.swift */; };
@@ -44,6 +47,14 @@
 		C9CD7E43254341EC001E5E54 /* AppTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD7E42254341E7001E5E54 /* AppTabBar.swift */; };
 		C9FAFB75255627DE002F6859 /* FoundationUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FAFB74255627DE002F6859 /* FoundationUtils.swift */; };
 		C9FAFB8325563D64002F6859 /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9FAFB8225563D64002F6859 /* FirebaseService.swift */; };
+		EB99AC042548E1610071B7FA /* ServiceHeroesMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC032548E1610071B7FA /* ServiceHeroesMock.swift */; };
+		EB99AC0C2548E1CE0071B7FA /* ServiceHeroes.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC0B2548E1CE0071B7FA /* ServiceHeroes.swift */; };
+		EB99AC1C2548E7D00071B7FA /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC1B2548E7CF0071B7FA /* BaseModel.swift */; };
+		EB99AC212548E85C0071B7FA /* DataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC202548E85C0071B7FA /* DataClass.swift */; };
+		EB99AC262548E8E30071B7FA /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC252548E8E30071B7FA /* HeroModel.swift */; };
+		EB99AC2B2548E91A0071B7FA /* ThumbnailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC2A2548E91A0071B7FA /* ThumbnailModel.swift */; };
+		EB9F64992553B4AE00C527F9 /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9F64982553B4AE00C527F9 /* characters.json */; };
+		EB9F649A2553B4AE00C527F9 /* characters.json in Resources */ = {isa = PBXBuildFile; fileRef = EB9F64982553B4AE00C527F9 /* characters.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,12 +75,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+<<<<<<< HEAD
 		2518CB40F3E47BB029DD3427 /* Pods-hero.es-hero.esUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero.es-hero.esUITests.release.xcconfig"; path = "Target Support Files/Pods-hero.es-hero.esUITests/Pods-hero.es-hero.esUITests.release.xcconfig"; sourceTree = "<group>"; };
 		2772D5F6C7091E86502C0654 /* Pods_hero_es_hero_esUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hero_es_hero_esUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		56259D78014D200E9265C529 /* Pods-hero.es.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero.es.release.xcconfig"; path = "Target Support Files/Pods-hero.es/Pods-hero.es.release.xcconfig"; sourceTree = "<group>"; };
 		6CF671E52F3F6F7FFDF8B9C3 /* Pods-hero.esTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero.esTests.debug.xcconfig"; path = "Target Support Files/Pods-hero.esTests/Pods-hero.esTests.debug.xcconfig"; sourceTree = "<group>"; };
 		81C55C5D2DC85724B748FF2E /* Pods_hero_esTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hero_esTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9D8E5A1CFF566C8FA17C41E6 /* Pods-hero.esTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero.esTests.release.xcconfig"; path = "Target Support Files/Pods-hero.esTests/Pods-hero.esTests.release.xcconfig"; sourceTree = "<group>"; };
+=======
+		114A2E751A6772E8BA62B133 /* Pods-hero.es.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero.es.debug.xcconfig"; path = "Target Support Files/Pods-hero.es/Pods-hero.es.debug.xcconfig"; sourceTree = "<group>"; };
+		3037F78379A5229D058B0292 /* Pods_hero_esTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hero_esTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		4ED54396F039598B7D1EE2B9 /* Pods_hero_es_hero_esUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hero_es_hero_esUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6239196A25EB23AA7E43A44A /* Pods_hero_es.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hero_es.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A3F5584865E247E45398C245 /* Pods-hero.es.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero.es.release.xcconfig"; path = "Target Support Files/Pods-hero.es/Pods-hero.es.release.xcconfig"; sourceTree = "<group>"; };
+		AAEDB7B2F6D2DDBB49662914 /* Pods-hero.esTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero.esTests.debug.xcconfig"; path = "Target Support Files/Pods-hero.esTests/Pods-hero.esTests.debug.xcconfig"; sourceTree = "<group>"; };
+>>>>>>> feature/services-mock
 		C97B903625411037004233F2 /* HeroesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListViewController.swift; sourceTree = "<group>"; };
 		C98742542552C82D00E25F24 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C98D7CF9254058CD00D95BC8 /* HeroListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListTableViewCell.swift; sourceTree = "<group>"; };
@@ -108,11 +128,24 @@
 		C9CD7E3625433082001E5E54 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = hero.es/Controllers/CreateAccountViewController.swift; sourceTree = SOURCE_ROOT; };
 		C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
 		C9CD7E42254341E7001E5E54 /* AppTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBar.swift; sourceTree = "<group>"; };
+<<<<<<< HEAD
 		C9FAFB74255627DE002F6859 /* FoundationUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoundationUtils.swift; sourceTree = "<group>"; };
 		C9FAFB8225563D64002F6859 /* FirebaseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		F85A11331F4B3700DA65B21C /* Pods-hero.es-hero.esUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero.es-hero.esUITests.debug.xcconfig"; path = "Target Support Files/Pods-hero.es-hero.esUITests/Pods-hero.es-hero.esUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		F9D9EA24D74F6BDDBBED9E98 /* Pods_hero_es.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hero_es.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FF93D6BB371CE1FCA5D5A313 /* Pods-hero.es.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero.es.debug.xcconfig"; path = "Target Support Files/Pods-hero.es/Pods-hero.es.debug.xcconfig"; sourceTree = "<group>"; };
+=======
+		D855693BB74415451C6570AB /* Pods-hero.es-hero.esUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero.es-hero.esUITests.release.xcconfig"; path = "Target Support Files/Pods-hero.es-hero.esUITests/Pods-hero.es-hero.esUITests.release.xcconfig"; sourceTree = "<group>"; };
+		EB99AC032548E1610071B7FA /* ServiceHeroesMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHeroesMock.swift; sourceTree = "<group>"; };
+		EB99AC0B2548E1CE0071B7FA /* ServiceHeroes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHeroes.swift; sourceTree = "<group>"; };
+		EB99AC1B2548E7CF0071B7FA /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		EB99AC202548E85C0071B7FA /* DataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClass.swift; sourceTree = "<group>"; };
+		EB99AC252548E8E30071B7FA /* HeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
+		EB99AC2A2548E91A0071B7FA /* ThumbnailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailModel.swift; sourceTree = "<group>"; };
+		EB9F64982553B4AE00C527F9 /* characters.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = characters.json; sourceTree = "<group>"; };
+		EEEE578B12C2BE513762BA6E /* Pods-hero.es-hero.esUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero.es-hero.esUITests.debug.xcconfig"; path = "Target Support Files/Pods-hero.es-hero.esUITests/Pods-hero.es-hero.esUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F656F303EF472B101A239D1B /* Pods-hero.esTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero.esTests.release.xcconfig"; path = "Target Support Files/Pods-hero.esTests/Pods-hero.esTests.release.xcconfig"; sourceTree = "<group>"; };
+>>>>>>> feature/services-mock
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,7 +153,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				685E5D9AAEC00A3C2C5508C2 /* Pods_hero_es.framework in Frameworks */,
+=======
+				897575AD2F981D68EC08E7FA /* Pods_hero_es.framework in Frameworks */,
+>>>>>>> feature/services-mock
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -128,7 +165,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				549B6BC59707B9F0B36FE973 /* Pods_hero_esTests.framework in Frameworks */,
+=======
+				3CA3952E19312C627D3FA471 /* Pods_hero_esTests.framework in Frameworks */,
+>>>>>>> feature/services-mock
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -136,13 +177,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+<<<<<<< HEAD
 				5985F7943358F3A7B8D53404 /* Pods_hero_es_hero_esUITests.framework in Frameworks */,
+=======
+				353697B1678FF0D2F1F9D367 /* Pods_hero_es_hero_esUITests.framework in Frameworks */,
+>>>>>>> feature/services-mock
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+<<<<<<< HEAD
 		4DFC60445E412489B8CD2448 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,10 +198,22 @@
 				2518CB40F3E47BB029DD3427 /* Pods-hero.es-hero.esUITests.release.xcconfig */,
 				6CF671E52F3F6F7FFDF8B9C3 /* Pods-hero.esTests.debug.xcconfig */,
 				9D8E5A1CFF566C8FA17C41E6 /* Pods-hero.esTests.release.xcconfig */,
+=======
+		C284B33920DA9F01C41A2029 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				114A2E751A6772E8BA62B133 /* Pods-hero.es.debug.xcconfig */,
+				A3F5584865E247E45398C245 /* Pods-hero.es.release.xcconfig */,
+				EEEE578B12C2BE513762BA6E /* Pods-hero.es-hero.esUITests.debug.xcconfig */,
+				D855693BB74415451C6570AB /* Pods-hero.es-hero.esUITests.release.xcconfig */,
+				AAEDB7B2F6D2DDBB49662914 /* Pods-hero.esTests.debug.xcconfig */,
+				F656F303EF472B101A239D1B /* Pods-hero.esTests.release.xcconfig */,
+>>>>>>> feature/services-mock
 			);
 			path = Pods;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		764AE905B8CC1CB601DDDD4F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -166,9 +224,13 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+=======
+>>>>>>> feature/services-mock
 		C98D7CF62540585600D95BC8 /* HeroesList */ = {
 			isa = PBXGroup;
 			children = (
+				EB99AC1A2548E7770071B7FA /* Model */,
+				EB99AC022548E14C0071B7FA /* Service */,
 				C98D7CF82540588200D95BC8 /* HeroCell */,
 				C9B143AB253FD78F0013DC42 /* HeroesList.storyboard */,
 			);
@@ -223,8 +285,13 @@
 				C9B14386253FBA7E0013DC42 /* hero.esTests */,
 				C9B14391253FBA7E0013DC42 /* hero.esUITests */,
 				C9B1436B253FBA400013DC42 /* Products */,
+<<<<<<< HEAD
 				4DFC60445E412489B8CD2448 /* Pods */,
 				764AE905B8CC1CB601DDDD4F /* Frameworks */,
+=======
+				C284B33920DA9F01C41A2029 /* Pods */,
+				DDD40730ECCBB5FA172AD185 /* Frameworks */,
+>>>>>>> feature/services-mock
 			);
 			sourceTree = "<group>";
 		};
@@ -373,6 +440,7 @@
 			path = AppTabBar;
 			sourceTree = "<group>";
 		};
+<<<<<<< HEAD
 		C9FAFB7C25563B39002F6859 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -380,6 +448,45 @@
 				C9FAFB8225563D64002F6859 /* FirebaseService.swift */,
 			);
 			path = Services;
+=======
+		DDD40730ECCBB5FA172AD185 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6239196A25EB23AA7E43A44A /* Pods_hero_es.framework */,
+				4ED54396F039598B7D1EE2B9 /* Pods_hero_es_hero_esUITests.framework */,
+				3037F78379A5229D058B0292 /* Pods_hero_esTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EB99AC022548E14C0071B7FA /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				EB9F64972553B49000C527F9 /* Resources */,
+				EB99AC032548E1610071B7FA /* ServiceHeroesMock.swift */,
+				EB99AC0B2548E1CE0071B7FA /* ServiceHeroes.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		EB99AC1A2548E7770071B7FA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				EB99AC1B2548E7CF0071B7FA /* BaseModel.swift */,
+				EB99AC202548E85C0071B7FA /* DataClass.swift */,
+				EB99AC252548E8E30071B7FA /* HeroModel.swift */,
+				EB99AC2A2548E91A0071B7FA /* ThumbnailModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		EB9F64972553B49000C527F9 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				EB9F64982553B4AE00C527F9 /* characters.json */,
+			);
+			path = Resources;
+>>>>>>> feature/services-mock
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -389,11 +496,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9B14397253FBA7E0013DC42 /* Build configuration list for PBXNativeTarget "hero.es" */;
 			buildPhases = (
+<<<<<<< HEAD
 				7FFD67700814E68F4D0A8777 /* [CP] Check Pods Manifest.lock */,
 				C9B14366253FBA400013DC42 /* Sources */,
 				C9B14367253FBA400013DC42 /* Frameworks */,
 				C9B14368253FBA400013DC42 /* Resources */,
 				F079EF8BA12BEE60604EAA86 /* [CP] Embed Pods Frameworks */,
+=======
+				9099B7DAD839AD2B2D283171 /* [CP] Check Pods Manifest.lock */,
+				C9B14366253FBA400013DC42 /* Sources */,
+				C9B14367253FBA400013DC42 /* Frameworks */,
+				C9B14368253FBA400013DC42 /* Resources */,
+				30FC09C849DE4FCCC6F40359 /* [CP] Embed Pods Frameworks */,
+>>>>>>> feature/services-mock
 			);
 			buildRules = (
 			);
@@ -408,7 +523,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9B1439A253FBA7E0013DC42 /* Build configuration list for PBXNativeTarget "hero.esTests" */;
 			buildPhases = (
+<<<<<<< HEAD
 				8AE267F28EA25A9F95D752EB /* [CP] Check Pods Manifest.lock */,
+=======
+				745B63AB86811A9DBD133E5B /* [CP] Check Pods Manifest.lock */,
+>>>>>>> feature/services-mock
 				C9B1437F253FBA7E0013DC42 /* Sources */,
 				C9B14380253FBA7E0013DC42 /* Frameworks */,
 				C9B14381253FBA7E0013DC42 /* Resources */,
@@ -427,11 +546,19 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C9B1439D253FBA7E0013DC42 /* Build configuration list for PBXNativeTarget "hero.esUITests" */;
 			buildPhases = (
+<<<<<<< HEAD
 				962AFCC015F94F003164D79C /* [CP] Check Pods Manifest.lock */,
 				C9B1438A253FBA7E0013DC42 /* Sources */,
 				C9B1438B253FBA7E0013DC42 /* Frameworks */,
 				C9B1438C253FBA7E0013DC42 /* Resources */,
 				F191ECD4705C8F41F93FE570 /* [CP] Embed Pods Frameworks */,
+=======
+				9EB9CA0F5AE3710F00047368 /* [CP] Check Pods Manifest.lock */,
+				C9B1438A253FBA7E0013DC42 /* Sources */,
+				C9B1438B253FBA7E0013DC42 /* Frameworks */,
+				C9B1438C253FBA7E0013DC42 /* Resources */,
+				4B1EFBD5A3E995222C4A9C05 /* [CP] Embed Pods Frameworks */,
+>>>>>>> feature/services-mock
 			);
 			buildRules = (
 			);
@@ -501,6 +628,7 @@
 				C98742552552C82D00E25F24 /* GoogleService-Info.plist in Resources */,
 				C99441F525508225004F2D82 /* ComicsList.storyboard in Resources */,
 				C9B89A3A2541F81D002946CA /* HeroDetails.storyboard in Resources */,
+				EB9F64992553B4AE00C527F9 /* characters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -508,6 +636,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB9F649A2553B4AE00C527F9 /* characters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,12 +650,17 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+<<<<<<< HEAD
 		7FFD67700814E68F4D0A8777 /* [CP] Check Pods Manifest.lock */ = {
+=======
+		30FC09C849DE4FCCC6F40359 /* [CP] Embed Pods Frameworks */ = {
+>>>>>>> feature/services-mock
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+<<<<<<< HEAD
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
@@ -544,11 +678,26 @@
 			showEnvVarsInLog = 0;
 		};
 		8AE267F28EA25A9F95D752EB /* [CP] Check Pods Manifest.lock */ = {
+=======
+				"${PODS_ROOT}/Target Support Files/Pods-hero.es/Pods-hero.es-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hero.es/Pods-hero.es-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hero.es/Pods-hero.es-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4B1EFBD5A3E995222C4A9C05 /* [CP] Embed Pods Frameworks */ = {
+>>>>>>> feature/services-mock
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+<<<<<<< HEAD
 			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
@@ -566,6 +715,20 @@
 			showEnvVarsInLog = 0;
 		};
 		962AFCC015F94F003164D79C /* [CP] Check Pods Manifest.lock */ = {
+=======
+				"${PODS_ROOT}/Target Support Files/Pods-hero.es-hero.esUITests/Pods-hero.es-hero.esUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hero.es-hero.esUITests/Pods-hero.es-hero.esUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hero.es-hero.esUITests/Pods-hero.es-hero.esUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		745B63AB86811A9DBD133E5B /* [CP] Check Pods Manifest.lock */ = {
+>>>>>>> feature/services-mock
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -580,19 +743,28 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+<<<<<<< HEAD
 				"$(DERIVED_FILE_DIR)/Pods-hero.es-hero.esUITests-checkManifestLockResult.txt",
+=======
+				"$(DERIVED_FILE_DIR)/Pods-hero.esTests-checkManifestLockResult.txt",
+>>>>>>> feature/services-mock
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+<<<<<<< HEAD
 		F079EF8BA12BEE60604EAA86 /* [CP] Embed Pods Frameworks */ = {
+=======
+		9099B7DAD839AD2B2D283171 /* [CP] Check Pods Manifest.lock */ = {
+>>>>>>> feature/services-mock
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+<<<<<<< HEAD
 				"${PODS_ROOT}/Target Support Files/Pods-hero.es/Pods-hero.es-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -605,11 +777,31 @@
 			showEnvVarsInLog = 0;
 		};
 		F191ECD4705C8F41F93FE570 /* [CP] Embed Pods Frameworks */ = {
+=======
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hero.es-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9EB9CA0F5AE3710F00047368 /* [CP] Check Pods Manifest.lock */ = {
+>>>>>>> feature/services-mock
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
+<<<<<<< HEAD
 				"${PODS_ROOT}/Target Support Files/Pods-hero.es-hero.esUITests/Pods-hero.es-hero.esUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -619,6 +811,22 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hero.es-hero.esUITests/Pods-hero.es-hero.esUITests-frameworks.sh\"\n";
+=======
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hero.es-hero.esUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+>>>>>>> feature/services-mock
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -628,14 +836,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EB99AC1C2548E7D00071B7FA /* BaseModel.swift in Sources */,
+				EB99AC212548E85C0071B7FA /* DataClass.swift in Sources */,
 				C9B14372253FBA400013DC42 /* MainViewController.swift in Sources */,
 				C9B89A62254213B3002946CA /* Searchable.swift in Sources */,
 				C9B889532557245900E9A375 /* ValidatorService.swift in Sources */,
 				C99441FD25508241004F2D82 /* ComicsListViewController.swift in Sources */,
 				C9B14378253FBA410013DC42 /* hero_es.xcdatamodeld in Sources */,
+				EB99AC042548E1610071B7FA /* ServiceHeroesMock.swift in Sources */,
 				C9B89A4A25420B5E002946CA /* ItemProtocol.swift in Sources */,
 				C98D7D0C2540704C00D95BC8 /* HeroDetailsViewController.swift in Sources */,
+<<<<<<< HEAD
 				C9B52A3A2543AFCD00F9957D /* UIKitUtils.swift in Sources */,
+=======
+				C9B52A3A2543AFCD00F9957D /* AlertUtils.swift in Sources */,
+				EB99AC262548E8E30071B7FA /* HeroModel.swift in Sources */,
+>>>>>>> feature/services-mock
 				C9CD7E3725433083001E5E54 /* CreateAccountViewController.swift in Sources */,
 				C9FAFB75255627DE002F6859 /* FoundationUtils.swift in Sources */,
 				C99442162550CAFF004F2D82 /* ConfigViewController.swift in Sources */,
@@ -644,7 +860,9 @@
 				C9FAFB8325563D64002F6859 /* FirebaseService.swift in Sources */,
 				C9CD7E43254341EC001E5E54 /* AppTabBar.swift in Sources */,
 				C98D7CFB254058CD00D95BC8 /* HeroListTableViewCell.swift in Sources */,
+				EB99AC2B2548E91A0071B7FA /* ThumbnailModel.swift in Sources */,
 				C97B903725411037004233F2 /* HeroesListViewController.swift in Sources */,
+				EB99AC0C2548E1CE0071B7FA /* ServiceHeroes.swift in Sources */,
 				C9B1436E253FBA400013DC42 /* AppDelegate.swift in Sources */,
 				C9B89A5525420C97002946CA /* SeedProtocol.swift in Sources */,
 				C9B14370253FBA400013DC42 /* SceneDelegate.swift in Sources */,
@@ -821,7 +1039,11 @@
 		};
 		C9B14398253FBA7E0013DC42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+<<<<<<< HEAD
 			baseConfigurationReference = FF93D6BB371CE1FCA5D5A313 /* Pods-hero.es.debug.xcconfig */;
+=======
+			baseConfigurationReference = 114A2E751A6772E8BA62B133 /* Pods-hero.es.debug.xcconfig */;
+>>>>>>> feature/services-mock
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -842,7 +1064,11 @@
 		};
 		C9B14399253FBA7E0013DC42 /* Release */ = {
 			isa = XCBuildConfiguration;
+<<<<<<< HEAD
 			baseConfigurationReference = 56259D78014D200E9265C529 /* Pods-hero.es.release.xcconfig */;
+=======
+			baseConfigurationReference = A3F5584865E247E45398C245 /* Pods-hero.es.release.xcconfig */;
+>>>>>>> feature/services-mock
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -863,7 +1089,11 @@
 		};
 		C9B1439B253FBA7E0013DC42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+<<<<<<< HEAD
 			baseConfigurationReference = 6CF671E52F3F6F7FFDF8B9C3 /* Pods-hero.esTests.debug.xcconfig */;
+=======
+			baseConfigurationReference = AAEDB7B2F6D2DDBB49662914 /* Pods-hero.esTests.debug.xcconfig */;
+>>>>>>> feature/services-mock
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -886,7 +1116,11 @@
 		};
 		C9B1439C253FBA7E0013DC42 /* Release */ = {
 			isa = XCBuildConfiguration;
+<<<<<<< HEAD
 			baseConfigurationReference = 9D8E5A1CFF566C8FA17C41E6 /* Pods-hero.esTests.release.xcconfig */;
+=======
+			baseConfigurationReference = F656F303EF472B101A239D1B /* Pods-hero.esTests.release.xcconfig */;
+>>>>>>> feature/services-mock
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -909,7 +1143,11 @@
 		};
 		C9B1439E253FBA7E0013DC42 /* Debug */ = {
 			isa = XCBuildConfiguration;
+<<<<<<< HEAD
 			baseConfigurationReference = F85A11331F4B3700DA65B21C /* Pods-hero.es-hero.esUITests.debug.xcconfig */;
+=======
+			baseConfigurationReference = EEEE578B12C2BE513762BA6E /* Pods-hero.es-hero.esUITests.debug.xcconfig */;
+>>>>>>> feature/services-mock
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -930,7 +1168,11 @@
 		};
 		C9B1439F253FBA7E0013DC42 /* Release */ = {
 			isa = XCBuildConfiguration;
+<<<<<<< HEAD
 			baseConfigurationReference = 2518CB40F3E47BB029DD3427 /* Pods-hero.es-hero.esUITests.release.xcconfig */;
+=======
+			baseConfigurationReference = D855693BB74415451C6570AB /* Pods-hero.es-hero.esUITests.release.xcconfig */;
+>>>>>>> feature/services-mock
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
