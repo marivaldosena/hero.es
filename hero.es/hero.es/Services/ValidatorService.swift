@@ -41,7 +41,7 @@ class ValidatorService {
         var result = false
         let email = getNormalizedData(emailTextField)
         
-        if ValidatorService.isValid(email, condition: { $0.isEmailValid }, failure: {
+        if ValidatorService.isValid(email, condition: { !$0.isEmpty }, failure: {
             ValidatorService.highlightErrorOn(emailTextField)
         }) {
             ValidatorService.clearErrorsOn(emailTextField)
