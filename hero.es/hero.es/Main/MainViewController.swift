@@ -32,6 +32,9 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        textFieldEmail?.delegate = self
+        textFieldPassword?.delegate = self
     }
     
     @IBAction func login(_ sender: UIButton) {
@@ -49,8 +52,8 @@ class MainViewController: UIViewController {
     
     @IBAction func register(_ sender: UIButton) {
         if let viewController = UIStoryboard(name: "CreateAccount", bundle: nil).instantiateInitialViewController() as? CreateAccountViewController {
-            let navController = UINavigationController(rootViewController: viewController)
-            navigationController?.pushViewController(navController, animated: true)
+            //let navController = UINavigationController(rootViewController: viewController)
+            navigationController?.pushViewController(viewController, animated: true)
         }
     }
     
@@ -139,5 +142,12 @@ class MainViewController: UIViewController {
         tabBarController.viewControllers = arrayTabVC
             
         navigationController?.pushViewController(tabBarController, animated: true)
+    }
+}
+
+// MARK: - MainViewController: UITextFieldDelegate
+extension MainViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
     }
 }

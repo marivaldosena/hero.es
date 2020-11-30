@@ -14,7 +14,6 @@
 		C98D7D0C2540704C00D95BC8 /* HeroDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D7D0B2540704C00D95BC8 /* HeroDetailsViewController.swift */; };
 		C99441F525508225004F2D82 /* ComicsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99441F425508225004F2D82 /* ComicsList.storyboard */; };
 		C99441FD25508241004F2D82 /* ComicsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99441FC25508241004F2D82 /* ComicsListViewController.swift */; };
-		C99442092550C18B004F2D82 /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99442082550C18B004F2D82 /* FavoritesViewController.swift */; };
 		C99442112550C19B004F2D82 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99442102550C19B004F2D82 /* Favorites.storyboard */; };
 		C99442162550CAFF004F2D82 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99442152550CAFF004F2D82 /* ConfigViewController.swift */; };
 		C994421C2550CB23004F2D82 /* Config.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C994421B2550CB23004F2D82 /* Config.storyboard */; };
@@ -36,7 +35,6 @@
 		C9B89A62254213B3002946CA /* Searchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89A61254213B3002946CA /* Searchable.swift */; };
 		C9CD7E3725433083001E5E54 /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD7E3625433082001E5E54 /* CreateAccountViewController.swift */; };
 		C9CD7E3C254330B1001E5E54 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */; };
-		C9CD7E43254341EC001E5E54 /* AppTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CD7E42254341E7001E5E54 /* AppTabBar.swift */; };
 		C9E1C52B2571E0050068EB7C /* FirebaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C5292571E0050068EB7C /* FirebaseService.swift */; };
 		C9E1C52C2571E0050068EB7C /* ValidatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C52A2571E0050068EB7C /* ValidatorService.swift */; };
 		C9E1C5512571E3E20068EB7C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9E1C5502571E3E10068EB7C /* GoogleService-Info.plist */; };
@@ -79,9 +77,8 @@
 		C98D7D0B2540704C00D95BC8 /* HeroDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailsViewController.swift; sourceTree = "<group>"; };
 		C99441F425508225004F2D82 /* ComicsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ComicsList.storyboard; sourceTree = "<group>"; };
 		C99441FC25508241004F2D82 /* ComicsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsListViewController.swift; sourceTree = "<group>"; };
-		C99442082550C18B004F2D82 /* FavoritesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = FavoritesViewController.swift; path = hero.es/Views/Favorites/FavoritesViewController.swift; sourceTree = SOURCE_ROOT; };
 		C99442102550C19B004F2D82 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
-		C99442152550CAFF004F2D82 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConfigViewController.swift; path = hero.es/Views/ConfigViewController.swift; sourceTree = SOURCE_ROOT; };
+		C99442152550CAFF004F2D82 /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConfigViewController.swift; path = hero.es/Config/ConfigViewController.swift; sourceTree = SOURCE_ROOT; };
 		C994421B2550CB23004F2D82 /* Config.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Config.storyboard; sourceTree = "<group>"; };
 		C9B1436A253FBA400013DC42 /* hero.es.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hero.es.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B1436D253FBA400013DC42 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -105,9 +102,8 @@
 		C9B89A5425420C97002946CA /* SeedProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedProtocol.swift; sourceTree = "<group>"; };
 		C9B89A5925420D4F002946CA /* HeroSeed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroSeed.swift; sourceTree = "<group>"; };
 		C9B89A61254213B3002946CA /* Searchable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Searchable.swift; sourceTree = "<group>"; };
-		C9CD7E3625433082001E5E54 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = hero.es/Controllers/CreateAccountViewController.swift; sourceTree = SOURCE_ROOT; };
+		C9CD7E3625433082001E5E54 /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = hero.es/CreateAccount/CreateAccountViewController.swift; sourceTree = SOURCE_ROOT; };
 		C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
-		C9CD7E42254341E7001E5E54 /* AppTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTabBar.swift; sourceTree = "<group>"; };
 		C9E1C5292571E0050068EB7C /* FirebaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FirebaseService.swift; sourceTree = "<group>"; };
 		C9E1C52A2571E0050068EB7C /* ValidatorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorService.swift; sourceTree = "<group>"; };
 		C9E1C5502571E3E10068EB7C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -176,6 +172,7 @@
 				EB99AC022548E14C0071B7FA /* Service */,
 				C98D7CF82540588200D95BC8 /* HeroCell */,
 				C9B143AB253FD78F0013DC42 /* HeroesList.storyboard */,
+				C97B903625411037004233F2 /* HeroesListViewController.swift */,
 			);
 			path = HeroesList;
 			sourceTree = "<group>";
@@ -184,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				C9B14373253FBA410013DC42 /* Main.storyboard */,
+				C9B14371253FBA400013DC42 /* MainViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -200,6 +198,7 @@
 		C99441F32550820C004F2D82 /* ComicsList */ = {
 			isa = PBXGroup;
 			children = (
+				C99441FC25508241004F2D82 /* ComicsListViewController.swift */,
 				C99441F425508225004F2D82 /* ComicsList.storyboard */,
 			);
 			path = ComicsList;
@@ -217,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				C994421B2550CB23004F2D82 /* Config.storyboard */,
+				C99442152550CAFF004F2D82 /* ConfigViewController.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -246,13 +246,15 @@
 		C9B1436C253FBA400013DC42 /* hero.es */ = {
 			isa = PBXGroup;
 			children = (
-				C9B52A382543AFB600F9957D /* Utils */,
-				C9B89A4825420B50002946CA /* Protocols */,
+				C99441F32550820C004F2D82 /* ComicsList */,
+				C994421A2550CB0E004F2D82 /* Config */,
+				C9CD7E3525432FBC001E5E54 /* CreateAccount */,
+				C99442072550C15C004F2D82 /* Favorites */,
+				C9B89A312541F7D4002946CA /* HeroDetails */,
+				C98D7CF62540585600D95BC8 /* HeroesList */,
+				C98D7CF72540586900D95BC8 /* Main */,
+				C9CD7E40254340E5001E5E54 /* Shared */,
 				C9B89A3F25420ADD002946CA /* Models */,
-				C9B89A4725420B47002946CA /* Seeds */,
-				C9E1C5492571E2BF0068EB7C /* Services */,
-				C9B143A3253FD63B0013DC42 /* Views */,
-				C9B143A7253FD6AA0013DC42 /* Controllers */,
 				C9B1436D253FBA400013DC42 /* AppDelegate.swift */,
 				C9B1436F253FBA400013DC42 /* SceneDelegate.swift */,
 				C9B14379253FBA6F0013DC42 /* Assets.xcassets */,
@@ -281,35 +283,6 @@
 			path = hero.esUITests;
 			sourceTree = "<group>";
 		};
-		C9B143A3253FD63B0013DC42 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				C99441F32550820C004F2D82 /* ComicsList */,
-				C994421A2550CB0E004F2D82 /* Config */,
-				C9CD7E3525432FBC001E5E54 /* CreateAccount */,
-				C99442072550C15C004F2D82 /* Favorites */,
-				C9B89A312541F7D4002946CA /* HeroDetails */,
-				C98D7CF62540585600D95BC8 /* HeroesList */,
-				C98D7CF72540586900D95BC8 /* Main */,
-				C9CD7E40254340E5001E5E54 /* Shared */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		C9B143A7253FD6AA0013DC42 /* Controllers */ = {
-			isa = PBXGroup;
-			children = (
-				C99441FC25508241004F2D82 /* ComicsListViewController.swift */,
-				C99442152550CAFF004F2D82 /* ConfigViewController.swift */,
-				C9CD7E3625433082001E5E54 /* CreateAccountViewController.swift */,
-				C99442082550C18B004F2D82 /* FavoritesViewController.swift */,
-				C98D7D0B2540704C00D95BC8 /* HeroDetailsViewController.swift */,
-				C97B903625411037004233F2 /* HeroesListViewController.swift */,
-				C9B14371253FBA400013DC42 /* MainViewController.swift */,
-			);
-			path = Controllers;
-			sourceTree = "<group>";
-		};
 		C9B52A382543AFB600F9957D /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +295,7 @@
 			isa = PBXGroup;
 			children = (
 				C9B89A392541F81D002946CA /* HeroDetails.storyboard */,
+				C98D7D0B2540704C00D95BC8 /* HeroDetailsViewController.swift */,
 			);
 			path = HeroDetails;
 			sourceTree = "<group>";
@@ -356,6 +330,7 @@
 			isa = PBXGroup;
 			children = (
 				C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */,
+				C9CD7E3625433082001E5E54 /* CreateAccountViewController.swift */,
 			);
 			path = CreateAccount;
 			sourceTree = "<group>";
@@ -363,17 +338,12 @@
 		C9CD7E40254340E5001E5E54 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				C9CD7E412543411F001E5E54 /* AppTabBar */,
+				C9B89A4825420B50002946CA /* Protocols */,
+				C9B89A4725420B47002946CA /* Seeds */,
+				C9E1C5492571E2BF0068EB7C /* Services */,
+				C9B52A382543AFB600F9957D /* Utils */,
 			);
 			path = Shared;
-			sourceTree = "<group>";
-		};
-		C9CD7E412543411F001E5E54 /* AppTabBar */ = {
-			isa = PBXGroup;
-			children = (
-				C9CD7E42254341E7001E5E54 /* AppTabBar.swift */,
-			);
-			path = AppTabBar;
 			sourceTree = "<group>";
 		};
 		C9E1C5492571E2BF0068EB7C /* Services */ = {
@@ -674,9 +644,7 @@
 				EB99AC262548E8E30071B7FA /* HeroModel.swift in Sources */,
 				C9CD7E3725433083001E5E54 /* CreateAccountViewController.swift in Sources */,
 				C99442162550CAFF004F2D82 /* ConfigViewController.swift in Sources */,
-				C99442092550C18B004F2D82 /* FavoritesViewController.swift in Sources */,
 				C9B89A4125420AF3002946CA /* Hero.swift in Sources */,
-				C9CD7E43254341EC001E5E54 /* AppTabBar.swift in Sources */,
 				C9E1C52B2571E0050068EB7C /* FirebaseService.swift in Sources */,
 				C98D7CFB254058CD00D95BC8 /* HeroListTableViewCell.swift in Sources */,
 				C9E1C52C2571E0050068EB7C /* ValidatorService.swift in Sources */,

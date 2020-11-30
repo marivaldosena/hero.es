@@ -20,6 +20,10 @@ class CreateAccountViewController: UIViewController {
         nameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
+        
+        nameTextField.delegate = self
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
     }
     
     @IBAction func createAccount(_ sender: UIButton) {
@@ -71,5 +75,12 @@ class CreateAccountViewController: UIViewController {
     
     private func askUserForAcceptingTermsOfService() {
         AlertUtils.displayMessage(self, title: "Create Account", message: "You should accept the Terms of Service.", okButton: "OK")
+    }
+}
+
+
+extension CreateAccountViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.endEditing(true)
     }
 }
