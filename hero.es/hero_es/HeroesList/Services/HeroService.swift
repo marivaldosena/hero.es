@@ -30,28 +30,37 @@ class HeroService {
                       completion: @escaping HeroServiceFinishHandlerType) {
         var modelsArray: [HeroModel] = []
         
+        // TODO: Refactor this method
         if persistentMethod != .online {
             modelsArray = repository.find(in: persistentMethod)
             // TODO: 1.1.2 Verificar no Realm
             
             if modelsArray.count > 0 {
                 completion(modelsArray, nil)
+            } else {
+                self.requestHeroes { (heroes, error) in
+                    if let heroes = heroes {
+                        self.saveAll(array: heroes)
+                        modelsArray = self.repository.find(in: persistentMethod)
+                    }
+                    completion(modelsArray, error)
+                }
             }
-        }
-        
-        self.requestHeroes { (heroes, error) in
-            if let error = error {
-                print(error.localizedDescription)
-                completion(modelsArray, error)
+        } else {
+            self.requestHeroes { (heroes, error) in
+                if let error = error {
+                    print(error.localizedDescription)
+                    completion(modelsArray, error)
+                }
+                
+                if let heroes = heroes {
+                    self.saveAll(array: heroes, in: persistentMethod)
+                    modelsArray = self.repository.find(in: persistentMethod)
+                    completion(modelsArray, error)
+                } else {
+                    completion(modelsArray, error)
+                }
             }
-            
-            if let heroes = heroes {
-                self.saveAll(array: heroes, in: persistentMethod)
-                modelsArray = self.repository.find(in: persistentMethod)
-                completion(modelsArray, error)
-            }
-            
-            completion(modelsArray, error)
         }
     }
     

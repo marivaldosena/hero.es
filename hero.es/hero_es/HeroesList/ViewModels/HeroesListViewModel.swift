@@ -18,7 +18,7 @@ class HeroesListViewModel {
     private var service = HeroService.shared
     weak var delegate: HeroListDelegate?
     
-    func getAllHeroes(in persistentMethod: PersistentMethodEnum = .coreData,
+    func loadAllHeroes(in persistentMethod: PersistentMethodEnum = .coreData,
                       completion: @escaping (_ heroes: [HeroModel], _ error: Error?) -> Void) {
         self.service.getAllHeroes(completion: { (heroes, error) in
             if let heroes = heroes {
@@ -29,9 +29,31 @@ class HeroesListViewModel {
         })
     }
     
-    func getAllHeroes(in persistentMethod: PersistentMethodEnum = .coreData) {
-        getAllHeroes { (heroes, error) in
+    func loadAllHeroes(in persistentMethod: PersistentMethodEnum = .coreData) {
+        loadAllHeroes { (heroes, error) in
             self.delegate?.getItemsListDidFinish(heroes, error)
         }
+    }
+    
+    func getAllHeroes(in persistentMethod: PersistentMethodEnum = .coreData) -> [HeroModel] {
+        var modelsArray: [HeroModel] = []
+        
+        DispatchQueue.global(qos: .background).sync {
+            loadAllHeroes { (heroes, _) in
+                modelsArray = heroes
+            }
+        }
+        
+        return modelsArray
+    }
+    
+    func search(term: String = "", in persistentMethod: PersistentMethodEnum = .coreData) -> [HeroModel] {
+        var modelsArray: [HeroModel] = []
+        if !term.isEmpty {
+            modelsArray = self.service.find(term: term, in: persistentMethod)
+        } else {
+            modelsArray = self.service.find()
+        }
+        return modelsArray
     }
 }

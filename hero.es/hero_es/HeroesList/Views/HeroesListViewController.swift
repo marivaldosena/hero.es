@@ -20,7 +20,7 @@ class HeroesListViewController: UIViewController {
         super.viewDidLoad()
         
         viewModel.delegate = self
-        viewModel.getAllHeroes()
+        viewModel.loadAllHeroes()
         
         heroTableView?.delegate = self
         heroTableView?.dataSource = self
@@ -56,8 +56,6 @@ extension HeroesListViewController {
 //MARK: - HeroesListViewController: UITableViewDelegate
 extension HeroesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let item = itemsList[
-//        self.goToDetails(item)
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }
@@ -82,13 +80,18 @@ extension HeroesListViewController: UITableViewDataSource {
 extension HeroesListViewController: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         guard let term = searchBar.text else { return }
-        
-        //self.itemsList = self.getFilteredHeroes(term: term)
-        self.updateUIInterface()
+        self.doHeroesSearch(term: term)
     }
     
-    private func getFilteredHeroes(term: String) -> [HeroModel]? {
-        return nil
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let term = searchBar.text else { return }
+        self.doHeroesSearch(term: term)
+        searchBar.resignFirstResponder()
+    }
+    
+    private func doHeroesSearch(term: String) {
+        itemsList = viewModel.search(term: term)
+        self.updateUIInterface()
     }
 }
 
