@@ -6,15 +6,16 @@ target 'hero_es' do
   use_frameworks!
 
   # Pods for hero.es
-
   pod 'Firebase/Core'
   pod 'Firebase/Auth'
   pod 'Firebase/Firestore'
   pod 'Alamofire', '~> 5.2'
   pod 'Kingfisher', '~> 5.0'
+  pod 'SwiftyJSON', '~> 5.0'
 
   target 'hero_esTests' do
     inherit! :search_paths
+    
     # Pods for testing
   end
 
