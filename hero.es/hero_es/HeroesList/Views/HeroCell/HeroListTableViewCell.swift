@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ShareHeroItemProtocol: class {
+    func shareHeroItem(_ item: HeroModel)
+}
+
 class HeroListTableViewCell: UITableViewCell {
     @IBOutlet weak var heroNameLabel: UILabel?
     @IBOutlet weak var heroDescriptionLabel: UILabel?
@@ -15,10 +19,15 @@ class HeroListTableViewCell: UITableViewCell {
     @IBOutlet weak var favoriteButtonImageView: UIImageView?
     
     private var item: HeroModel? = nil
+    weak var delegate: ShareHeroItemProtocol?
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+    }
+    
+    @objc func shareHeroItem() {
+        guard let hero = self.item else { return }
+        delegate?.shareHeroItem(hero)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -27,6 +36,10 @@ class HeroListTableViewCell: UITableViewCell {
     
     func configure(with item: HeroModel?) {
         guard let hero = item else { return }
+        
+        let shareButtonTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(shareHeroItem))
+        shareButtonImageView?.addGestureRecognizer(shareButtonTapRecognizer)
+        shareButtonImageView?.isUserInteractionEnabled = true
         
         self.item = hero
         self.updateUIInterface()
@@ -38,10 +51,7 @@ class HeroListTableViewCell: UITableViewCell {
             return
         }
         
-        //TODO: Add functionality to fetch image from Web
         DispatchQueue.main.async {
-//            self.heroImageView?.image = UIImage(named: hero.thumbnail.url)
-            
             if let url = URL(string: hero.thumbnail.url) {
                 self.heroImageView?.kf.indicatorType = .activity
                 self.heroImageView?.kf.setImage(with: url)

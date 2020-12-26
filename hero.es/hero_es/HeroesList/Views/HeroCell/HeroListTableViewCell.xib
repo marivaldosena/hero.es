@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -36,14 +35,14 @@
                                 <rect key="frame" x="0.0" y="0.0" width="70" height="75"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="square.and.arrow.up" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Ifm-Ob-zwo">
-                                        <rect key="frame" x="17" y="18.5" width="36" height="37"/>
+                                        <rect key="frame" x="14" y="15.5" width="42" height="43"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="36" id="Lrt-6C-wYu"/>
-                                            <constraint firstAttribute="width" constant="36" id="zP2-7W-KEZ"/>
+                                            <constraint firstAttribute="height" constant="42" id="Lrt-6C-wYu"/>
+                                            <constraint firstAttribute="width" constant="42" id="zP2-7W-KEZ"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="Ifm-Ob-zwo" firstAttribute="centerY" secondItem="uT3-Bg-1FJ" secondAttribute="centerY" id="5is-ZC-Nti"/>
                                     <constraint firstItem="Ifm-Ob-zwo" firstAttribute="centerX" secondItem="uT3-Bg-1FJ" secondAttribute="centerX" id="7qb-9q-0P4"/>
@@ -53,14 +52,14 @@
                                 <rect key="frame" x="0.0" y="75" width="70" height="75"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="heart" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="W4i-f3-8eO">
-                                        <rect key="frame" x="17" y="21" width="36" height="33.5"/>
+                                        <rect key="frame" x="14" y="18" width="42" height="39.5"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="36" id="Glq-O5-bVa"/>
-                                            <constraint firstAttribute="height" constant="36" id="xTO-4v-gw8"/>
+                                            <constraint firstAttribute="width" constant="42" id="Glq-O5-bVa"/>
+                                            <constraint firstAttribute="height" constant="42" id="xTO-4v-gw8"/>
                                         </constraints>
                                     </imageView>
                                 </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="W4i-f3-8eO" firstAttribute="centerY" secondItem="IGd-3d-J9t" secondAttribute="centerY" id="Wa8-hA-3hQ"/>
                                     <constraint firstItem="W4i-f3-8eO" firstAttribute="centerX" secondItem="IGd-3d-J9t" secondAttribute="centerX" id="frt-XF-sS5"/>
@@ -117,10 +116,7 @@
     </objects>
     <resources>
         <image name="HeroImage" width="212.5" height="212.5"/>
-        <image name="heart" catalog="system" width="128" height="109"/>
-        <image name="square.and.arrow.up" catalog="system" width="115" height="128"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
+        <image name="heart" catalog="system" width="64" height="54"/>
+        <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
     </resources>
 </document>

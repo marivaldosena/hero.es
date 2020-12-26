@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Kingfisher
 
 //MARK: - HeroesListViewController: UIViewController
 class HeroesListViewController: UIViewController {
@@ -24,7 +25,9 @@ class HeroesListViewController: UIViewController {
         
         heroTableView?.delegate = self
         heroTableView?.dataSource = self
-        heroTableView?.register(UINib(nibName: "HeroListTableViewCell", bundle: nil), forCellReuseIdentifier: "HeroCell")
+        heroTableView?.register(
+            UINib(nibName: "HeroListTableViewCell", bundle: nil),
+            forCellReuseIdentifier: "HeroCell")
         
         heroSearchBar?.delegate = self
     }
@@ -71,6 +74,7 @@ extension HeroesListViewController: UITableViewDataSource {
         
         let hero = itemsList[indexPath.row]
         cell.configure(with: hero)
+        cell.delegate = self
         
         return cell
     }
@@ -100,5 +104,24 @@ extension HeroesListViewController: HeroListDelegate {
     func getItemsListDidFinish(_ heroes: [HeroModel], _ error: Error?) {
         itemsList = heroes
         self.updateUIInterface()
+    }
+}
+
+// MARK: - HeroesListViewController: ShareHeroItemProtocol
+extension HeroesListViewController: ShareHeroItemProtocol {
+    func shareHeroItem(_ item: HeroModel) {
+        guard let heroUrl = URL(string: item.resourceURI) else { return }
+        let heroImage = UIImageView()
+        
+        if let imageUrl = URL(string: item.thumbnail.url) {
+            heroImage.kf.indicatorType = .activity
+            heroImage.kf.setImage(with: imageUrl)
+        }
+
+        guard let image = heroImage.image else { return }
+        
+        let itemsToShare = [item.name, heroUrl, image] as [Any]
+        let controller = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+        self.present(controller, animated: true, completion: nil)
     }
 }

@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n2p-Pf-HJA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="n2p-Pf-HJA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +17,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gep-Z4-7jO">
                                 <rect key="frame" x="0.0" y="189" width="414" height="673"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                             <searchBar contentMode="redraw" searchBarStyle="minimal" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7gY-gw-sNa">
                                 <rect key="frame" x="16" y="64" width="382" height="56"/>
@@ -36,8 +35,7 @@
                                 </segments>
                             </segmentedControl>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="aE0-54-zaV"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="aE0-54-zaV" firstAttribute="trailing" secondItem="7gY-gw-sNa" secondAttribute="trailing" constant="16" id="5EG-dF-CQx"/>
                             <constraint firstItem="Gep-Z4-7jO" firstAttribute="top" secondItem="lBG-91-532" secondAttribute="bottom" constant="22" id="5I4-zW-bOP"/>
@@ -49,6 +47,7 @@
                             <constraint firstItem="lBG-91-532" firstAttribute="top" secondItem="7gY-gw-sNa" secondAttribute="bottom" constant="16" id="fZu-0G-1KO"/>
                             <constraint firstAttribute="trailing" secondItem="Gep-Z4-7jO" secondAttribute="trailing" id="ulR-c3-JcK"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="aE0-54-zaV"/>
                     </view>
                     <connections>
                         <outlet property="heroSearchBar" destination="7gY-gw-sNa" id="kQe-Xg-hhZ"/>
@@ -60,9 +59,4 @@
             <point key="canvasLocation" x="137.68115942028987" y="135.9375"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
