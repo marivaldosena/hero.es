@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DataClass: Codable {
+struct DataClass {
     let offset: Int
     let limit: Int
     let total: Int

@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct BaseModel: Codable {
+struct BaseModel {
     let code: Int
     let status: String
     let copyright: String

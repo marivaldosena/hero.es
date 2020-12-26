@@ -12,7 +12,17 @@ class ComicsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        let container = DBManager.shared.getContainer()
+        let modelsArray = ComicHeroRelationshipCoreDataDAO(container: container).find(term: "agent")
+        print(modelsArray)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        let container = DBManager.shared.getContainer()
+        let modelsArray = ComicHeroRelationshipCoreDataDAO(container: container).find(term: "iron")
+        print(modelsArray)
     }
     
 

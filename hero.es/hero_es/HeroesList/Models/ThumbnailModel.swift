@@ -8,7 +8,7 @@
 import Foundation
 
 // MARK: - ThumbnailModel: Codable
-struct ThumbnailModel: Codable {
+struct ThumbnailModel {
     let path: String
     let ext: String
     

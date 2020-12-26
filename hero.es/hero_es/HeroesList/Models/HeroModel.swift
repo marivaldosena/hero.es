@@ -7,14 +7,15 @@
 
 import Foundation
 
-struct HeroModel: Codable {
+struct HeroModel {
     let id: Int
     let name: String
     let description: String
     let modified: String
     let thumbnail: ThumbnailModel
     let resourceURI: String
-    let numberOfComics: Int = 0
+    var numberOfComics: Int = 0
+    var relatedComics: [RelatedComicModel] = []
 //    let comics, series: Comics
 //    let stories: Stories
 //    let events: Comics

@@ -66,6 +66,10 @@ class HeroService {
     
     func save(model: HeroModel, in persistentMethod: PersistentMethodEnum = .coreData) {
         repository.save(hero: model, in: persistentMethod)
+        
+        if model.relatedComics.count > 0 {
+            saveAllRelatedComics(model.relatedComics, to: model, in: persistentMethod)
+        }
     }
     
     func saveAll(array: [HeroModel], in persistentMethod: PersistentMethodEnum = .coreData) {
@@ -89,5 +93,14 @@ class HeroService {
     func save(comic: RelatedComicModel,
               to hero: HeroModel,
               in persistentMethod: PersistentMethodEnum = .coreData) {
+        repository.save(comic: comic, to: hero, in: persistentMethod)
+    }
+    
+    func saveAllRelatedComics(_ comics: [RelatedComicModel],
+              to hero: HeroModel,
+              in persistentMethod: PersistentMethodEnum = .coreData) {
+        for comic in comics {
+            save(comic: comic, to: hero, in: persistentMethod)
+        }
     }
 }

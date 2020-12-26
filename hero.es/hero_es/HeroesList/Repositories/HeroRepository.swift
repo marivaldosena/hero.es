@@ -13,9 +13,16 @@ protocol RepositoryProtocol {
 
 struct HeroRepository {
     static var shared = HeroRepository()
-    private var heroDAO = HeroCoreDataDAO(container: DBManager.shared.getContainer())
+    private var heroDAO: HeroCoreDataDAO
+    private var relatedComicDAO: RelatedComicCoreDataDAO
+    private var comicHeroRelationshipDAO: ComicHeroRelationshipCoreDataDAO
     
-    private init() {}
+    private init() {
+        let container = DBManager.shared.getContainer()
+        heroDAO = HeroCoreDataDAO(container: container)
+        relatedComicDAO = RelatedComicCoreDataDAO(container: container)
+        comicHeroRelationshipDAO = ComicHeroRelationshipCoreDataDAO(container: container)
+    }
     
     mutating func save(hero: HeroModel, in persistentMethod: PersistentMethodEnum = .coreData) {
         switch persistentMethod {
@@ -26,7 +33,10 @@ struct HeroRepository {
         }
     }
     
-    func find(term: String? = nil, limit: Int = 20, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [HeroModel] {
+    func find(term: String? = nil,
+              limit: Int = 20,
+              offset: Int = 0,
+              in persistentMethod: PersistentMethodEnum = .coreData) -> [HeroModel] {
         var modelsArray: [HeroModel] = []
         switch persistentMethod {
         case .coreData:
@@ -38,7 +48,10 @@ struct HeroRepository {
         return modelsArray
     }
     
-    func find(term: String, limit: Int = 20, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [HeroModel] {
+    func find(term: String,
+              limit: Int = 20,
+              offset: Int = 0,
+              in persistentMethod: PersistentMethodEnum = .coreData) -> [HeroModel] {
         var modelsArray: [HeroModel] = []
         switch persistentMethod {
         case .coreData:
@@ -50,8 +63,17 @@ struct HeroRepository {
         return modelsArray
     }
     
+    func save(comic: RelatedComicModel,
+              to hero: HeroModel,
+              in persistentMethod: PersistentMethodEnum = .coreData) {
+        switch persistentMethod {
+        case .coreData: saveRelatedComicToHeroInCoreData(comic, to: hero)
+        default: break
+        }
+    }
+    
     private mutating func saveHeroInCoreData(_ hero: HeroModel) {
-        self.heroDAO.save(hero: hero)
+        self.heroDAO.save(hero)
     }
     
     private func findHeroesInCoreData(term: String? = nil) -> [HeroModel] {
@@ -61,16 +83,9 @@ struct HeroRepository {
         return heroDAO.find()
     }
     
-//    private func saveAllRelatedComics(hero: HeroModel, json: JSON) {
-//        let numberOfComics = json["available"].intValue
-//        let jsonArray = json["items"].arrayValue
-//
-//        for item in jsonArray {
-//            let name = item["name"].stringValue
-//            let resourceURI = item["resourceURI"].stringValue
-//            let id = getComicId(resourceURI: resourceURI)
-//
-//            let comic = RelatedComicModel(id: id, name: name, resourceURI: resourceURI)
-//        }
-//    }
+    private func saveRelatedComicToHeroInCoreData(_ comic: RelatedComicModel, to hero: HeroModel) {
+        relatedComicDAO.save(comic)
+        let comicHeroModel = ComicHeroModel(heroId: hero.id, comicId: comic.id)
+        comicHeroRelationshipDAO.save(comicHeroModel)
+    }
 }

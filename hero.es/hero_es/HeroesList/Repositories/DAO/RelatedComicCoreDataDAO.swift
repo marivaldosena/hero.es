@@ -1,22 +1,23 @@
 //
-//  HeroCoreDataDao.swift
+//  RelatedComicCoreDataDAO.swift
 //  hero_es
 //
-//  Created by Marivaldo Sena on 17/12/20.
+//  Created by Marivaldo Sena on 25/12/20.
 //
 
-import UIKit
+import Foundation
 import CoreData
 
-// MARK: - HeroCoreDataDAO: CoreDataDAOProtocol
-struct HeroCoreDataDAO: CoreDataDAOProtocol {
-    typealias Model = HeroModel
+// MARK: - RelatedComicCoreDataDAO: CoreDataDAOProtocol
+struct RelatedComicCoreDataDAO: CoreDataDAOProtocol {
+    typealias Model = RelatedComicModel
+    
     private var persistentContainer: NSPersistentContainer
     private var context: NSManagedObjectContext
     
     init(container: NSPersistentContainer) {
         self.persistentContainer = container
-        self.context = persistentContainer.viewContext
+        self.context = container.viewContext
     }
     
     func save(_ model: Model) {
@@ -25,45 +26,39 @@ struct HeroCoreDataDAO: CoreDataDAOProtocol {
                 return
             }
             
-            let dateFormatter = DateFormatter()
-            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SZZZZZ"
-            
-            let entity = HeroEntity(context: self.context)
+            let entity = ComicEntity(context: context)
             entity.id = Int64(model.id)
             entity.name = model.name
-            entity.descriptionText = model.description
-            entity.thumbnail = model.thumbnail.url
             entity.resourceURI = model.resourceURI
-            entity.modified = dateFormatter.date(from: model.modified) ?? Date()
-            entity.numberOfComics = Int64(model.numberOfComics)
             try context.save()
         } catch {
             print(error.localizedDescription)
         }
     }
     
-    func find(term: String? = nil, limit: Int = 0, offset: Int = 0) -> [Model] {
-        let request: NSFetchRequest<HeroEntity> = HeroEntity.fetchRequest()
-        var entitiesArray: [HeroEntity] = []
+    func find(term: String?, limit: Int = 0, offset: Int = 0) -> [Model] {
         var modelsArray: [Model] = []
+        var entitiesArray: [ComicEntity] = []
+        let request: NSFetchRequest<ComicEntity> = ComicEntity.fetchRequest()
         var predicate: NSPredicate? = nil
         
         if let term = term {
             predicate = NSPredicate(format: "name CONTAINS[cd] %@", term)
         }
         
+        if limit != 0 {
+            request.fetchLimit = limit
+        }
+        
         do {
             request.predicate = predicate
-            if limit != 0 {
-                request.fetchLimit = limit
-            }
             request.fetchOffset = offset
+            entitiesArray = try context.fetch(request)
             
-            entitiesArray = try self.context.fetch(request)
-            
-            entitiesArray.forEach { entity in
-                guard let model = HeroParser.from(coreData: entity) else { return }
-                modelsArray.append(model)
+            entitiesArray.forEach { (entity) in
+                if let model = RelatedComicParser.from(coreData: entity) {
+                    modelsArray.append(model)
+                }
             }
         } catch {
             print(error.localizedDescription)
@@ -74,16 +69,16 @@ struct HeroCoreDataDAO: CoreDataDAOProtocol {
     
     func find(id: Int) -> Model? {
         var model: Model? = nil
-        let request: NSFetchRequest<HeroEntity> = HeroEntity.fetchRequest()
+        let request: NSFetchRequest<ComicEntity> = ComicEntity.fetchRequest()
         let predicate = NSPredicate(format: "id == %i", id)
-        var entitiesArray: [HeroEntity] = []
+        var entitiesArray = [ComicEntity]()
         
         do {
             request.predicate = predicate
             entitiesArray = try self.context.fetch(request)
             
             if entitiesArray.count > 0 {
-                model = HeroParser.from(coreData: entitiesArray[0])
+                model = RelatedComicParser.from(coreData: entitiesArray[0])
             }
         } catch {
             print(error.localizedDescription)
