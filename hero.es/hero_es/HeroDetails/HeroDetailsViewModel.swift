@@ -23,10 +23,10 @@ struct HeroDetailsViewModel {
         return model?.name ?? "Unknown Hero"
     }
     
-    func getDescription() -> String {
+    func getDescription(_ gibberishIfEmpty: Bool = true) -> String {
         var description = model?.description ?? ""
         
-        if description.isEmpty {
+        if gibberishIfEmpty == true && description.isEmpty {
             description = """
             We have no words to say about this incredible hero! Literally.
             Maybe some gibberish may help to fill the void we left.
@@ -63,5 +63,13 @@ struct HeroDetailsViewModel {
         guard let url = URL(string: self.getUrlString()) else { return nil }
         
         return url
+    }
+    
+    func getNumberOfComics() -> Int {
+        return model?.numberOfComics ?? 0
+    }
+    
+    func getRelatedComics() -> [RelatedComicModel] {
+        return model?.relatedComics ?? []
     }
 }

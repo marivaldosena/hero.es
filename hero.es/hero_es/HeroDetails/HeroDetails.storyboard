@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="HeroImage" translatesAutoresizingMaskIntoConstraints="NO" id="Vec-oz-hrV">
-                                <rect key="frame" x="57" y="104" width="300.00000000000006" height="300.00000000000006"/>
+                                <rect key="frame" x="57" y="104" width="300" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="A1i-qu-aJR"/>
                                     <constraint firstAttribute="width" constant="300" id="pdG-Yk-wTs"/>

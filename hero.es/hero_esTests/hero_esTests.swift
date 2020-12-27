@@ -9,7 +9,6 @@ import XCTest
 @testable import hero_es
 
 class hero_esTests: XCTestCase {
-
     @available(iOS 13.4, macOS 10.15, *)
     func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
