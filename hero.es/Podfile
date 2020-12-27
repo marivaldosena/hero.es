@@ -1,0 +1,26 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '13.0'
+
+target 'hero_es' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  # Pods for hero.es
+  pod 'Firebase/Core'
+  pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
+  pod 'Alamofire', '~> 5.2'
+  pod 'Kingfisher', '~> 5.0'
+  pod 'SwiftyJSON', '~> 5.0'
+
+  target 'hero_esTests' do
+    inherit! :search_paths
+    
+    # Pods for testing
+  end
+
+  target 'hero_esUITests' do
+    # Pods for testing
+  end
+
+end

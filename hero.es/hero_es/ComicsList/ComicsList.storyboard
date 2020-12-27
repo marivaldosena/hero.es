@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="00O-lQ-ld6">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Comics List View Controller-->
+        <scene sceneID="XxB-mh-4Qp">
+            <objects>
+                <viewController id="00O-lQ-ld6" customClass="ComicsListViewController" customModule="hero_es" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2bT-Wd-Zel">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nw3-RA-Wpf">
+                                <rect key="frame" x="16" y="64" width="382" height="56"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="56" id="XVZ-iF-b7n"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Dnc-zR-6mf">
+                                <rect key="frame" x="75.5" y="136" width="263" height="32"/>
+                                <segments>
+                                    <segment title="All"/>
+                                    <segment title="Marvel"/>
+                                    <segment title="DC Comics"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eeX-uS-3St">
+                                <rect key="frame" x="0.0" y="189" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="w6r-rL-22e"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Dnc-zR-6mf" firstAttribute="centerX" secondItem="2bT-Wd-Zel" secondAttribute="centerX" id="64v-Pu-7hY"/>
+                            <constraint firstItem="eeX-uS-3St" firstAttribute="leading" secondItem="w6r-rL-22e" secondAttribute="leading" id="BAM-je-Olj"/>
+                            <constraint firstItem="eeX-uS-3St" firstAttribute="top" secondItem="Dnc-zR-6mf" secondAttribute="bottom" constant="22" id="Jrb-eu-O6I"/>
+                            <constraint firstItem="w6r-rL-22e" firstAttribute="trailing" secondItem="eeX-uS-3St" secondAttribute="trailing" id="cZ9-1t-MrZ"/>
+                            <constraint firstItem="w6r-rL-22e" firstAttribute="bottom" secondItem="eeX-uS-3St" secondAttribute="bottom" id="cmL-7p-a4m"/>
+                            <constraint firstItem="nw3-RA-Wpf" firstAttribute="leading" secondItem="w6r-rL-22e" secondAttribute="leading" constant="16" id="nVZ-ud-wgW"/>
+                            <constraint firstItem="nw3-RA-Wpf" firstAttribute="top" secondItem="w6r-rL-22e" secondAttribute="top" constant="20" id="uVi-Zp-QqL"/>
+                            <constraint firstItem="w6r-rL-22e" firstAttribute="trailing" secondItem="nw3-RA-Wpf" secondAttribute="trailing" constant="16" id="uai-ox-ctB"/>
+                            <constraint firstItem="Dnc-zR-6mf" firstAttribute="top" secondItem="nw3-RA-Wpf" secondAttribute="bottom" constant="16" id="uwW-4P-QaX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3gm-3c-LaX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-330.43478260869568" y="69.642857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
