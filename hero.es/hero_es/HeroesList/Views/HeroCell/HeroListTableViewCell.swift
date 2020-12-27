@@ -11,6 +11,7 @@ protocol ShareHeroItemProtocol: class {
     func shareHeroItem(_ item: HeroModel)
 }
 
+// MARK: - HeroListTableViewCell: UITableViewCell
 class HeroListTableViewCell: UITableViewCell {
     @IBOutlet weak var heroNameLabel: UILabel?
     @IBOutlet weak var heroDescriptionLabel: UILabel?
@@ -28,10 +29,6 @@ class HeroListTableViewCell: UITableViewCell {
     @objc func shareHeroItem() {
         guard let hero = self.item else { return }
         delegate?.shareHeroItem(hero)
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
     }
     
     func configure(with item: HeroModel?) {

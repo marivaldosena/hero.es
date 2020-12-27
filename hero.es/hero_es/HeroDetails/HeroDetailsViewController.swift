@@ -17,13 +17,23 @@ class HeroDetailsViewController: UIViewController {
     @IBOutlet weak var shareButton: UIButton?
     @IBOutlet weak var favoriteButton: UIBarButtonItem?
     
-    
-    private var item: HeroModel? = nil
+    private var viewModel: HeroDetailsViewModel? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         self.updateUIInterface()
+    }
+    
+    @IBAction func shareHeroItem(_ sender: UIButton) {
+        guard let heroName = viewModel?.getName() else { return }
+        guard let heroUrl = viewModel?.getUrl() else { return }
+        guard let heroImage = getHeroImage(urlString: viewModel?.getImageUrl()) else { return }
+        
+        let itemsToShare = [heroName, heroUrl, heroImage] as [Any]
+        let controller = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+        
+        self.present(controller, animated: true, completion: nil)
     }
     
     static func getViewController(_ item: HeroModel?) -> HeroDetailsViewController? {
@@ -35,36 +45,38 @@ class HeroDetailsViewController: UIViewController {
             return nil
         }
         
-        viewController.item = item
+        viewController.viewModel = HeroDetailsViewModel(with: item)
         return viewController
+    }
+    
+    private func displayHeroImage(urlString: String?) {
+        if let urlString = urlString {
+            if urlString != "HeroImage" {
+                guard let url = URL(string: urlString) else { return }
+                self.heroImageView?.kf.indicatorType = .activity
+                self.heroImageView?.kf.setImage(with: url)
+            } else {
+                self.heroImageView?.image = UIImage(named: urlString)
+            }
+        }
+    }
+    
+    private func getHeroImage(urlString: String?) -> UIImage? {
+        self.displayHeroImage(urlString: urlString)
+        return self.heroImageView?.image
     }
 }
 
 //MARK: - HeroDetailsViewController
 extension HeroDetailsViewController {
     func updateUIInterface() {
-        guard let hero = self.item else {
-            self.resetUIInterface()
-            return
-        }
+        title = viewModel?.getName()
         
         DispatchQueue.main.async {
-            guard let url = URL(string: hero.thumbnail.url) else { return }
-            self.heroImageView?.kf.indicatorType = .activity
-            self.heroImageView?.kf.setImage(with: url)
-            
-            self.heroNameLabel?.text = hero.name
-            self.heroPublisherNameLabel?.text = "Marvel"
-            self.heroDescriptionTextView?.text = hero.description
-        }
-    }
-    
-    func resetUIInterface() {
-        DispatchQueue.main.async {
-            self.heroImageView?.image = UIImage(named: "HeroImage")
-            self.heroNameLabel?.text = "Hero Name"
-            self.heroPublisherNameLabel?.text = "Marvel"
-            self.heroDescriptionTextView?.text = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda."
+            self.displayHeroImage(urlString: self.viewModel?.getImageUrl())
+            self.heroNameLabel?.text = self.viewModel?.getName()
+            self.heroPublisherNameLabel?.text = self.viewModel?.getPublisherName()
+            self.heroDescriptionTextView?.text = self.viewModel?.getDescription()
         }
     }
 }
