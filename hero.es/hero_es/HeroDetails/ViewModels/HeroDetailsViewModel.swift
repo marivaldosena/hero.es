@@ -7,6 +7,15 @@
 
 import Foundation
 
+enum HeroDetailsUIIdentifier: String {
+    case heroImage = "HeroImage"
+    case heroName = "HeroName"
+    case heroPublisher = "HeroPublisher"
+    case heroDescription = "HeroDescription"
+    case shareButton = "ShareButton"
+    case favoriteButton = "FavoriteButton"
+}
+
 protocol HeroDetailsDelegate: class {
     func heroItemDidSelect(_ item: HeroModel)
 }
@@ -71,5 +80,9 @@ struct HeroDetailsViewModel {
     
     func getRelatedComics() -> [RelatedComicModel] {
         return model?.relatedComics ?? []
+    }
+    
+    func getIdentifier(for view: HeroDetailsUIIdentifier) -> String {
+        return view.rawValue
     }
 }

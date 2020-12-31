@@ -20,7 +20,7 @@ target 'hero_es' do
   end
 
   target 'hero_esUITests' do
-    # Pods for testing
+    inherit! :complete
   end
 
 end

@@ -1,5 +1,5 @@
 //
-//  HeroDetailsViewModelTests.swift
+//  HeroDetailsViewModel_Tests.swift
 //  hero_esTests
 //
 //  Created by Marivaldo Sena on 27/12/20.
@@ -8,7 +8,7 @@
 import XCTest
 @testable import hero_es
 
-class HeroDetailsViewModelTests: XCTestCase {
+class HeroDetailsViewModel_Tests: XCTestCase {
     var viewModel: HeroDetailsViewModel? = nil
     let modelsArray = [
         HeroModel(
@@ -153,5 +153,4 @@ class HeroDetailsViewModelTests: XCTestCase {
             // Put the code you want to measure the time of here.
         }
     }
-
 }

@@ -23,12 +23,13 @@ class HeroDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         self.updateUIInterface()
+        self.setAllIdentifiers()
     }
     
     @IBAction func shareHeroItem(_ sender: UIButton) {
         guard let heroName = viewModel?.getName() else { return }
         guard let heroUrl = viewModel?.getUrl() else { return }
-        guard let heroImage = getHeroImage(urlString: viewModel?.getImageUrl()) else { return }
+        guard let heroImage = self.getHeroImage(urlString: viewModel?.getImageUrl()) else { return }
         
         let itemsToShare = [heroName, heroUrl, heroImage] as [Any]
         let controller = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
@@ -49,34 +50,12 @@ class HeroDetailsViewController: UIViewController {
         return viewController
     }
     
-    private func displayHeroImage(urlString: String?) {
-        if let urlString = urlString {
-            if urlString != "HeroImage" {
-                guard let url = URL(string: urlString) else { return }
-                self.heroImageView?.kf.indicatorType = .activity
-                self.heroImageView?.kf.setImage(with: url)
-            } else {
-                self.heroImageView?.image = UIImage(named: urlString)
-            }
-        }
+    func getViewModel() -> HeroDetailsViewModel? {
+        return self.viewModel
     }
     
-    private func getHeroImage(urlString: String?) -> UIImage? {
-        self.displayHeroImage(urlString: urlString)
-        return self.heroImageView?.image
-    }
-}
-
-//MARK: - HeroDetailsViewController
-extension HeroDetailsViewController {
-    func updateUIInterface() {
-        title = viewModel?.getName()
-        
-        DispatchQueue.main.async {
-            self.displayHeroImage(urlString: self.viewModel?.getImageUrl())
-            self.heroNameLabel?.text = self.viewModel?.getName()
-            self.heroPublisherNameLabel?.text = self.viewModel?.getPublisherName()
-            self.heroDescriptionTextView?.text = self.viewModel?.getDescription()
-        }
+    func setViewModel(_ viewModel: HeroDetailsViewModel) {
+        self.viewModel = viewModel
+        self.updateUIInterface()
     }
 }
