@@ -119,7 +119,6 @@ class MainViewController: UIViewController {
 
             viewController.tabBarItem = UITabBarItem(title: tabName, image: UIImage(systemName: iconName), tag: tagNumber)
             
-            
             return viewController
         }
         

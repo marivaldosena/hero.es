@@ -7,13 +7,13 @@
 
 import Foundation
 
-struct HeroModel {
-    let id: Int
-    let name: String
-    let description: String
-    let modified: String
-    let thumbnail: ThumbnailModel
-    let resourceURI: String
+struct HeroModel: ItemProtocol {
+    var id: Int
+    var name: String
+    var description: String
+    var modified: String
+    var thumbnail: ThumbnailModel
+    var resourceURI: String
     var numberOfComics: Int = 0
     var relatedComics: [RelatedComicModel] = []
 //    let comics, series: Comics
