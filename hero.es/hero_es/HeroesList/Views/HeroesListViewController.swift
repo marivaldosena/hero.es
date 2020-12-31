@@ -49,7 +49,7 @@ extension HeroesListViewController {
         }
     }
     
-    func goToDetails(_ item: HeroModel) {
+    func goToDetails(_ item: HeroModel?) {
         if let viewController = HeroDetailsViewController.getViewController(item) {
             navigationController?.pushViewController(viewController, animated: true)
         }
@@ -60,6 +60,9 @@ extension HeroesListViewController {
 extension HeroesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let item = itemsList[indexPath.row]
+        viewModel.setActiveHero(item)
+        goToDetails(item)
     }
 }
 

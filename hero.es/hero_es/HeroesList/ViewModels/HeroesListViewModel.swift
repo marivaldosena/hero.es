@@ -14,9 +14,15 @@ protocol HeroListDelegate: class {
 class HeroesListViewModel {
     private var modelsArray: [HeroModel] = []
     private var term: String? = nil
-    private var selectedModel: HeroModel?
+    private var activeHero: HeroModel?
     private var service = HeroService.shared
     weak var delegate: HeroListDelegate?
+    
+    init() {
+        if self.modelsArray.count > 0 {
+            self.activeHero = self.modelsArray[0]
+        }
+    }
     
     func loadAllHeroes(in persistentMethod: PersistentMethodEnum = .coreData,
                       completion: @escaping (_ heroes: [HeroModel], _ error: Error?) -> Void) {
@@ -55,5 +61,13 @@ class HeroesListViewModel {
             modelsArray = self.service.find()
         }
         return modelsArray
+    }
+    
+    func setActiveHero(_ item: HeroModel?) {
+        self.activeHero = item
+    }
+    
+    func getActiveHero() -> HeroModel? {
+        return self.activeHero
     }
 }
