@@ -8,8 +8,10 @@
 import UIKit
 import Kingfisher
 
-protocol ImageHolderProtocol: class {
-    func getImage(for: CellItemProtocol?) -> UIImage?
+// MARK: - ShareItemProtocol
+protocol ShareAndLikeItemProtocol: class {
+    func share(item: CellItemProtocol?)
+    func like(item: CellItemProtocol?)
 }
 
 // MARK: - ItemCell: UITableViewCell
@@ -21,19 +23,18 @@ class ItemCell: UITableViewCell {
     @IBOutlet weak var likeButton: UIButton!
     
     private var item: CellItemProtocol?
-    weak var imageHolder: ImageHolderProtocol?
+    weak var delegate: ShareAndLikeItemProtocol?
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
     @IBAction func shareItem(_ sender: UIButton) {
-        print("Sharing item")
+        delegate?.share(item: item)
     }
     
     @IBAction func likeItem(_ sender: UIButton) {
-        print("Liking item")
+        delegate?.like(item: item)
     }
 
     func configure(with item: CellItemProtocol?) {
@@ -44,6 +45,6 @@ class ItemCell: UITableViewCell {
     private func updateUIInterface() {
         itemName.text = item?.name ?? "Item Name"
         itemDescription.text = item?.description ?? "Item Description"
-        itemImageView.image = imageHolder?.getImage(for: item)
+        itemImageView.image = item?.getImage()
     }
 }

@@ -43,9 +43,23 @@ extension ComicsListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
+        
         let model = viewModel.getItem(at: indexPath.row)
         cell.configure(with: model)
-        cell.imageHolder = viewModel
+        cell.delegate = self
+        
         return cell
+    }
+}
+
+// MARK: - ComicsListViewController: ShareAndLikeItemProtocol
+extension ComicsListViewController: ShareAndLikeItemProtocol {
+    func share(item: CellItemProtocol?) {
+        guard let item = item else { return }
+        ShareItemUtils.share(item, on: self)
+    }
+    
+    func like(item: CellItemProtocol?) {
+        print("Liking item: \(item?.name)")
     }
 }

@@ -16,12 +16,12 @@ protocol ComicsListDelegate: class {
 
 // MARK: - ComicsListViewModel
 class ComicsListViewModel {
-    let service = ComicService.shared
+    var service: ComicServiceProtocol = ComicService.shared
     var modelsArray: [ComicModel] = []
     weak var delegate: ComicsListDelegate?
     
     func loadAllItems() {
-        service.requestComics { (models, error) in
+        service.loadAllItems { (models, error) in
             if let models = models {
                 self.modelsArray = models
                 self.delegate?.getItemsListDidLoad(models, nil)
@@ -36,12 +36,15 @@ class ComicsListViewModel {
     }
     
     func getImageUrl(for item: ComicModel?) -> URL? {
-        guard let url = URL(string: getImageUrlString(for: item)) else { return nil }
-        return url
+        return item?.getImageUrl()
     }
     
     func getAllItems() -> [ComicModel] {
-        return modelsArray
+        DispatchQueue.global(qos: .background).sync {
+            self.loadAllItems()
+        }
+        
+        return self.modelsArray
     }
     
     func getItem(at index: Int) -> ComicModel? {
@@ -54,27 +57,16 @@ class ComicsListViewModel {
         return model
     }
     
+    func getNumberOfItems() -> Int {
+        return self.modelsArray.count
+    }
+    
+    // MARK: - Private Methods
     private func isIndexAvailable(index: Int) -> Bool {
         if index > 0 && index < modelsArray.count {
             return true
         }
         
         return false
-    }
-}
-
-// MARK: - ComicsListViewModel: ImageHolderProtocol
-extension ComicsListViewModel: ImageHolderProtocol {
-    func getImage(for item: CellItemProtocol?) -> UIImage?  {
-        let imageView = UIImageView()
-        
-        if let url = getImageUrl(for: item as? ComicModel) {
-            imageView.kf.setImage(with: url)
-            imageView.kf.indicatorType = .activity
-        } else {
-            imageView.image = UIImage(named: "ComicImage")
-        }
-        
-        return imageView.image
     }
 }

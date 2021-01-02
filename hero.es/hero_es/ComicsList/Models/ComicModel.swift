@@ -17,8 +17,4 @@ struct ComicModel: CellItemProtocol {
     var pageCount: Int
     var thumbnailString: String
     var relatedHeroes: [RelatedHero] = []
-    
-    func searchBy(term: String) -> Bool {
-        return self.name.lowercased().contains(term.lowercased())
-    }
 }

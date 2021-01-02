@@ -10,6 +10,7 @@ import UIKit
 
 typealias ActionHandlerType = (UIAlertAction) -> Void
 
+// MARK: - AlertUtils
 struct AlertUtils {
     static func getAlertInstance(title: String?, message: String?, style: UIAlertController.Style) -> UIAlertController {
         let alert = UIAlertController.init(title: title, message: message, preferredStyle: style)
@@ -33,10 +34,48 @@ struct AlertUtils {
     }
 }
 
-
+// MARK: - UITextFieldUtils
 struct UITextFieldUtils {
     static func setFocus(on next: UITextField?, from previous: UITextField?) {
         previous?.resignFirstResponder()
         next?.becomeFirstResponder()
+    }
+}
+
+// MARK: - ShareItemUtils
+struct ShareItemUtils {
+    static func share(_ item: CellItemProtocol, on viewController: UIViewController) {
+        guard let image = item.getImage() else { return }
+        guard let url = item.getUrl() else { return }
+        
+        let itemsToShare: [Any] = [item.name, url, image]
+        let controller = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+        viewController.present(controller, animated: true, completion: nil)
+    }
+}
+
+// MARK: - ShareAndLikeItemProtocol
+extension CellItemProtocol {
+    func getImageUrl() -> URL? {
+        guard let url = URL(string: self.thumbnailString) else { return nil }
+        return url
+    }
+    
+    func getImage() -> UIImage?  {
+        let imageView = UIImageView()
+        
+        if let url = self.getImageUrl() {
+            imageView.kf.setImage(with: url)
+            imageView.kf.indicatorType = .activity
+        } else {
+            imageView.image = UIImage(named: "ComicImage")
+        }
+        
+        return imageView.image
+    }
+    
+    func getUrl() -> URL? {
+        guard let url = URL(string: self.resourceURI) else { return nil }
+        return url
     }
 }
