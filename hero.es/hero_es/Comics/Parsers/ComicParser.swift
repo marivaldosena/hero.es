@@ -8,7 +8,9 @@
 import Foundation
 import SwiftyJSON
 
+// MARK: - ComicParser
 struct ComicParser {
+    
     static func from(json: Data) -> [ComicModel] {
         var modelsArray: [ComicModel] = []
         
@@ -44,7 +46,7 @@ struct ComicParser {
         
         let thumbnailPath: String = json["thumbnail"]["path"].stringValue
         let thumbnailExtension: String = json["thumbnail"]["extension"].stringValue
-        var thumbnailString: String = "\(thumbnailPath).\(thumbnailExtension)"
+        let thumbnailString: String = "\(thumbnailPath).\(thumbnailExtension)"
         
         model = ComicModel(
             id: id,
@@ -56,6 +58,36 @@ struct ComicParser {
             pageCount: pageCount,
             thumbnailString: thumbnailString
         )
+        
+        return model
+    }
+    
+    static func from(coreData entity: ComicEntity) -> ComicModel? {
+        var model: ComicModel? = nil
+        
+        do {
+            let id: Int = Int(entity.id) ?? 0
+            let name: String = entity.name ?? ""
+            let resourceURI: String = entity.resourceURI ?? ""
+            let description: String = entity.descriptionText ?? ""
+            let modified: Date? = entity.modified
+            let upc: String = entity.upc ?? ""
+            let pageCount: Int = Int(entity.pageCount) ?? 0
+            let thumbnailString: String = entity.thumbnail ?? ""
+            
+            model = ComicModel(
+                id: id,
+                name: name,
+                resourceURI: resourceURI,
+                description: description,
+                modified: modified,
+                upc: upc,
+                pageCount: pageCount,
+                thumbnailString: thumbnailString
+            )
+//            let numberOfHeroes: Int = entity.numberOfHeroes ?? 0
+//            let relatedHeroes: [RelatedHeroModel] = []
+        }
         
         return model
     }

@@ -15,12 +15,5 @@ target 'hero_es' do
 
   target 'hero_esTests' do
     inherit! :search_paths
-    
-    # Pods for testing
   end
-
-  target 'hero_esUITests' do
-    inherit! :complete
-  end
-
 end

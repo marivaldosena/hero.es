@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="18G7016" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="ComicEntity" representedClassName="ComicEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="descriptionText" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="modified" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="numberOfHeroes" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="pageCount" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="resourceURI" optional="YES" attributeType="String"/>
+        <attribute name="thumbnail" optional="YES" attributeType="String"/>
+        <attribute name="upc" optional="YES" attributeType="String"/>
+        <relationship name="heroes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ComicHeroEntity" inverseName="comic" inverseEntity="ComicHeroEntity"/>
+        <relationship name="related_heroes" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RelatedHeroEntity" inverseName="comic" inverseEntity="RelatedHeroEntity"/>
+    </entity>
+    <entity name="ComicHeroEntity" representedClassName="ComicHeroEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="comicId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="heroId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="comic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ComicEntity" inverseName="heroes" inverseEntity="ComicEntity"/>
+        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HeroEntity" inverseName="comics" inverseEntity="HeroEntity"/>
+    </entity>
+    <entity name="HeroEntity" representedClassName="HeroEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="descriptionText" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="modified" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="numberOfComics" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="resourceURI" optional="YES" attributeType="String"/>
+        <attribute name="thumbnail" optional="YES" attributeType="String"/>
+        <relationship name="comics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ComicHeroEntity" inverseName="hero" inverseEntity="ComicHeroEntity"/>
+        <relationship name="related_comics" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="RelatedComicEntity" inverseName="hero" inverseEntity="RelatedComicEntity"/>
+    </entity>
+    <entity name="RelatedComicEntity" representedClassName="RelatedComicEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="heroId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="resourceURI" optional="YES" attributeType="String"/>
+        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="HeroEntity" inverseName="related_comics" inverseEntity="HeroEntity"/>
+    </entity>
+    <entity name="RelatedHeroEntity" representedClassName="RelatedHeroEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="comicId" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="resourceURI" optional="YES" attributeType="String"/>
+        <relationship name="comic" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ComicEntity" inverseName="related_heroes" inverseEntity="ComicEntity"/>
+    </entity>
+    <elements>
+        <element name="ComicHeroEntity" positionX="-708.078125" positionY="-126.80859375" width="128" height="103"/>
+        <element name="HeroEntity" positionX="-990.33984375" positionY="-163.1484375" width="128" height="178"/>
+        <element name="RelatedComicEntity" positionX="-993.33203125" positionY="119.875" width="128" height="118"/>
+        <element name="ComicEntity" positionX="-444.10546875" positionY="-176.05859375" width="128" height="208"/>
+        <element name="RelatedHeroEntity" positionX="-391.59765625" positionY="145.171875" width="128" height="118"/>
+    </elements>
+</model>

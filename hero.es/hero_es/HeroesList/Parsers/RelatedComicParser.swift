@@ -35,7 +35,7 @@ struct RelatedComicParser {
         return model
     }
     
-    static func from(coreData entity: ComicEntity) -> RelatedComicModel? {
+    static func from(coreData entity: RelatedComicEntity) -> RelatedComicModel? {
         var model: RelatedComicModel? = nil
         
         let id: Int = Int(entity.id)

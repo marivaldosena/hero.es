@@ -43,8 +43,8 @@ class ItemCell: UITableViewCell {
     }
     
     private func updateUIInterface() {
-        itemName.text = item?.name ?? "Item Name"
-        itemDescription.text = item?.description ?? "Item Description"
-        itemImageView.image = item?.getImage()
+        self.itemName.text = self.item?.name ?? "Item Name"
+        self.itemDescription.text = self.item?.description ?? "Item Description"
+        self.itemImageView.image = self.item?.getImage()
     }
 }

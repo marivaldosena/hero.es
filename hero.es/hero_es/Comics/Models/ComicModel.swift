@@ -16,5 +16,6 @@ struct ComicModel: CellItemProtocol {
     var upc: String
     var pageCount: Int
     var thumbnailString: String
-    var relatedHeroes: [RelatedHero] = []
+    var numberOfHeroes: Int = 0
+    var relatedHeroes: [RelatedHeroModel] = []
 }
