@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="00O-lQ-ld6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="00O-lQ-ld6">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -33,11 +32,10 @@
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eeX-uS-3St">
                                 <rect key="frame" x="0.0" y="189" width="414" height="673"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                             </tableView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="w6r-rL-22e"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Dnc-zR-6mf" firstAttribute="centerX" secondItem="2bT-Wd-Zel" secondAttribute="centerX" id="64v-Pu-7hY"/>
                             <constraint firstItem="eeX-uS-3St" firstAttribute="leading" secondItem="w6r-rL-22e" secondAttribute="leading" id="BAM-je-Olj"/>
@@ -49,16 +47,17 @@
                             <constraint firstItem="w6r-rL-22e" firstAttribute="trailing" secondItem="nw3-RA-Wpf" secondAttribute="trailing" constant="16" id="uai-ox-ctB"/>
                             <constraint firstItem="Dnc-zR-6mf" firstAttribute="top" secondItem="nw3-RA-Wpf" secondAttribute="bottom" constant="16" id="uwW-4P-QaX"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="w6r-rL-22e"/>
                     </view>
+                    <connections>
+                        <outlet property="comicsTableView" destination="eeX-uS-3St" id="d9k-Hy-a5M"/>
+                        <outlet property="searchBar" destination="nw3-RA-Wpf" id="sPc-Ge-Aw5"/>
+                        <outlet property="segmentedControl" destination="Dnc-zR-6mf" id="ApH-ok-R3K"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3gm-3c-LaX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-330.43478260869568" y="69.642857142857139"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>

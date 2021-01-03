@@ -28,14 +28,14 @@ struct RelatedComicParser {
         
         let name = json["name"].stringValue
         let resourceURI = json["resourceURI"].stringValue
-        let id = getComicId(resourceURI: resourceURI)
+        let id = ModelUtils.getId(resourceURI: resourceURI)
 
         model = RelatedComicModel(id: id, name: name, resourceURI: resourceURI)
         
         return model
     }
     
-    static func from(coreData entity: ComicEntity) -> RelatedComicModel? {
+    static func from(coreData entity: RelatedComicEntity) -> RelatedComicModel? {
         var model: RelatedComicModel? = nil
         
         let id: Int = Int(entity.id)
@@ -55,12 +55,5 @@ struct RelatedComicParser {
         model = ComicHeroModel(heroId: heroId, comicId: comicId)
         
         return model
-    }
-    
-    private static func getComicId(resourceURI: String) -> Int {
-        let tokens = resourceURI.split(separator: "/")
-        let id = Int(String(tokens[tokens.count - 1])) ?? 0
-        
-        return id
     }
 }
