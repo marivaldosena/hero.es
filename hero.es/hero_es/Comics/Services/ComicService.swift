@@ -21,7 +21,7 @@ protocol ServiceProtocol {
     func save(_ model: Model, in persistentMethod: PersistentMethodEnum)
     func save(_ array: [Model], in persistentMethod: PersistentMethodEnum)
     func save(_ relatedModel: RelatedModel, to model: Model, in persistentMethod: PersistentMethodEnum)
-    // func saveAllRelatedModels(_ relatedModels: [RelatedModel], to model: Model, in persistentMethod: PersistentMethodEnum)
+    func save(_ relatedModels: [RelatedModel], to model: Model, in persistentMethod: PersistentMethodEnum)
 }
 
 // MARK: - ComicServiceProtocol: ServiceProtocol
@@ -102,12 +102,17 @@ class ComicService: ComicServiceProtocol {
     }
     
     func save(_ relatedModel: RelatedHeroModel, to model: ComicModel, in persistentMethod: PersistentMethodEnum) {
-        // TODO: Implement this
+        if persistentMethod != .online {
+            repository.save([relatedModel], to: model, in: persistentMethod)
+        }
+        // TODO: Implement save online
     }
     
-    func saveAllRelatedModels(_ relatedModels: [RelatedHeroModel],
+    func save(_ relatedModels: [RelatedHeroModel],
                               to model: ComicModel,
                               in persistentMethod: PersistentMethodEnum) {
-        // TODO: Implement this
+        for item in relatedModels {
+            save(item, to: model, in: persistentMethod)
+        }
     }
 }

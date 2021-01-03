@@ -28,7 +28,7 @@ struct RelatedComicParser {
         
         let name = json["name"].stringValue
         let resourceURI = json["resourceURI"].stringValue
-        let id = getComicId(resourceURI: resourceURI)
+        let id = ModelUtils.getId(resourceURI: resourceURI)
 
         model = RelatedComicModel(id: id, name: name, resourceURI: resourceURI)
         
@@ -55,12 +55,5 @@ struct RelatedComicParser {
         model = ComicHeroModel(heroId: heroId, comicId: comicId)
         
         return model
-    }
-    
-    private static func getComicId(resourceURI: String) -> Int {
-        let tokens = resourceURI.split(separator: "/")
-        let id = Int(String(tokens[tokens.count - 1])) ?? 0
-        
-        return id
     }
 }

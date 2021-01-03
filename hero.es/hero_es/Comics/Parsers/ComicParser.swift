@@ -10,7 +10,6 @@ import SwiftyJSON
 
 // MARK: - ComicParser
 struct ComicParser {
-    
     static func from(json: Data) -> [ComicModel] {
         var modelsArray: [ComicModel] = []
         
@@ -59,6 +58,15 @@ struct ComicParser {
             thumbnailString: thumbnailString
         )
         
+        let relatedHeroes: [RelatedHeroModel] = RelatedHeroParser.from(
+            json: json["characters"],
+            comicId: model?.id ?? 0
+        )
+        let numberOfHeroes: Int = relatedHeroes.count
+        
+        model?.relatedHeroes = relatedHeroes
+        model?.numberOfHeroes = numberOfHeroes
+        
         return model
     }
     
@@ -66,13 +74,13 @@ struct ComicParser {
         var model: ComicModel? = nil
         
         do {
-            let id: Int = Int(entity.id) ?? 0
+            let id: Int = Int(entity.id)
             let name: String = entity.name ?? ""
             let resourceURI: String = entity.resourceURI ?? ""
             let description: String = entity.descriptionText ?? ""
             let modified: Date? = entity.modified
             let upc: String = entity.upc ?? ""
-            let pageCount: Int = Int(entity.pageCount) ?? 0
+            let pageCount: Int = Int(entity.pageCount)
             let thumbnailString: String = entity.thumbnail ?? ""
             
             model = ComicModel(
@@ -85,8 +93,6 @@ struct ComicParser {
                 pageCount: pageCount,
                 thumbnailString: thumbnailString
             )
-//            let numberOfHeroes: Int = entity.numberOfHeroes ?? 0
-//            let relatedHeroes: [RelatedHeroModel] = []
         }
         
         return model
