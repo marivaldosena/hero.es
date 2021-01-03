@@ -12,15 +12,15 @@ import CoreData
 struct ComicHeroRelationshipCoreDataDAO: CoreDataDAOProtocol {
     typealias Model = ComicHeroModel
     
-    private var persistentContainer: NSPersistentContainer
+    private var container: NSPersistentContainer
     private var context: NSManagedObjectContext
     
     init(container: NSPersistentContainer) {
-        self.persistentContainer = container
-        self.context = persistentContainer.viewContext
+        self.container = container
+        self.context = container.viewContext
     }
     
-    func save(_ model: Model) {
+    func save(_ model: ComicHeroModel) {
         do {
             if find(comicId: model.comicId, heroId: model.heroId) != nil {
                 return
@@ -36,13 +36,13 @@ struct ComicHeroRelationshipCoreDataDAO: CoreDataDAOProtocol {
         }
     }
     
-    func find(term: String?, limit: Int = 0, offset: Int = 0) -> [Model] {
-        var modelsArray: [Model] = []
+    func find(term: String?, limit: Int = 0, offset: Int = 0) -> [ComicHeroModel] {
+        var modelsArray: [ComicHeroModel] = []
         var entitiesArray: [ComicHeroEntity] = []
         let request: NSFetchRequest<ComicHeroEntity> = ComicHeroEntity.fetchRequest()
         
-        let heroesArray = HeroCoreDataDAO(container: persistentContainer).find(term: term)
-        let comicsArray = RelatedComicCoreDataDAO(container: persistentContainer).find(term: term)
+        let heroesArray = HeroCoreDataDAO(container: container).find(term: term)
+        let comicsArray = RelatedComicCoreDataDAO(container: container).find(term: term)
         
         var ids: [Int] = heroesArray.map { (hero) -> Int in
             return hero.id
@@ -75,12 +75,12 @@ struct ComicHeroRelationshipCoreDataDAO: CoreDataDAOProtocol {
         return modelsArray
     }
     
-    func find(id: Int) -> Model? {
+    func find(id: Int) -> ComicHeroModel? {
         return find(comicId: id, heroId: id)
     }
     
-    func find(comicId: Int, heroId: Int) -> Model? {
-        var model: Model? = nil
+    func find(comicId: Int, heroId: Int) -> ComicHeroModel? {
+        var model: ComicHeroModel? = nil
         let request: NSFetchRequest<ComicHeroEntity> = ComicHeroEntity.fetchRequest()
         let predicate = NSPredicate(format: "comicId == %i AND heroId == %i", comicId, heroId)
         var entitiesArray: [ComicHeroEntity] = []

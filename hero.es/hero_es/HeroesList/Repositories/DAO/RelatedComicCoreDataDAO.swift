@@ -26,7 +26,7 @@ struct RelatedComicCoreDataDAO: CoreDataDAOProtocol {
                 return
             }
             
-            let entity = ComicEntity(context: context)
+            let entity = RelatedComicEntity(context: context)
             entity.id = Int64(model.id)
             entity.name = model.name
             entity.resourceURI = model.resourceURI
@@ -38,8 +38,8 @@ struct RelatedComicCoreDataDAO: CoreDataDAOProtocol {
     
     func find(term: String?, limit: Int = 0, offset: Int = 0) -> [Model] {
         var modelsArray: [Model] = []
-        var entitiesArray: [ComicEntity] = []
-        let request: NSFetchRequest<ComicEntity> = ComicEntity.fetchRequest()
+        var entitiesArray: [RelatedComicEntity] = []
+        let request: NSFetchRequest<RelatedComicEntity> = RelatedComicEntity.fetchRequest()
         var predicate: NSPredicate? = nil
         
         if let term = term {
@@ -69,9 +69,9 @@ struct RelatedComicCoreDataDAO: CoreDataDAOProtocol {
     
     func find(id: Int) -> Model? {
         var model: Model? = nil
-        let request: NSFetchRequest<ComicEntity> = ComicEntity.fetchRequest()
+        let request: NSFetchRequest<RelatedComicEntity> = RelatedComicEntity.fetchRequest()
         let predicate = NSPredicate(format: "id == %i", id)
-        var entitiesArray = [ComicEntity]()
+        var entitiesArray = [RelatedComicEntity]()
         
         do {
             request.predicate = predicate

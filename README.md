@@ -3,6 +3,16 @@
 [xcode-image]: https://img.shields.io/badge/xcode-11.3-orange
 [cocoapods-image]: https://img.shields.io/badge/CocoaPods-1.10-orange
 
+<!-- Images -->
+[app-running-image]: ./assets/images/app-running.gif
+[comics-list-image]: ./assets/images/comics-list.png
+[configuration-image]: ./assets/images/configuration.png
+[heroes-details-image]: ./assets/images/heroes-details.png
+[heroes-list-image]: ./assets/images/heroes-list.png
+[home-image]: ./assets/images/home.png
+[registration-image]: ./assets/images/registration.png
+[unit-tests-image]: ./assets/images/unit-tests-coverage.png
+
 <!-- URLs -->
 [xcode-url]: https://developer.apple.com/xcode/
 [swift-url]: https://swift.org/
@@ -16,14 +26,16 @@
 [santander-mobile-coders-url]: https://www.becas-santander.com/pt/program/santander-coders-mobile-2020
 [digital-house-url]: https://www.digitalhouse.com/br/
 [curso-ios-url]: https://www.digitalhouse.com/br/curso/desenvolvimento-mobile-ios
-
+[marvel-api-url]: https://developer.marvel.com/
 # Digital House | Projeto Integrador | Heroes
-
-Projeto Integrador para obter o Certificado de Conclusão do curso de [Desenvolvimento Mobile iOS/Swift][curso-ios-url] pela [Digital House][digital-house-url] em parceria com o [Santander Mobile Coders][santander-mobile-coders-url].
 
 [![Swift][swift-image]][swift-url]
 [![Xcode][xcode-image]][xcode-url]
 [![CocoaPods][cocoapods-image]][cocoapods-url]
+
+Projeto Integrador para obter o Certificado de Conclusão do curso de [Desenvolvimento Mobile iOS/Swift][curso-ios-url] pela [Digital House][digital-house-url] em parceria com o [Santander Mobile Coders][santander-mobile-coders-url].
+
+Este projeto utiliza a API da [Marvel][marvel-api-url] como base. Dessa forma, a utilização deve estar em conformidade com os Termos de Uso dela.
 
 # Tópicos
 
@@ -136,37 +148,49 @@ As imagens abaixo mostram um pouco a respeito do aplicativo em funcionamento.
 
 Amostra do aplicativo em execução.
 
-![Aplicativo em Execução](./assets/images/app-rodando.gif)
+![Aplicativo em Execução][app-running-image]
 
 ## Tela Inicial
 
 Tela de início da aplicação. Permite o login social por meio do Facebook e do Google. Além disso, é possível navegar para o cadastro de usuário.
 
-![Tela Inicial](./assets/images/tela-inicial.png)
+![Tela Inicial][home-image]
 
 ## Cadastro
 
 Permite o cadastro de usuário por meio de e-mail e senha mediante o aceite dos Termos de Uso.
 
-![Cadastro](./assets/images/cadastro.png)
+![Cadastro][registration-image]
 
 ## Lista de Heróis
 
 Lista de todos os heróis disponíveis. É possível favoritar ou compartilhar, além de busca por termo.
 
-![Lista de Heróis](./assets/images/herois-lista.png)
+![Lista de Heróis][heroes-list-image]
 
 ## Detalhes de Herói
 
 Permite visualizar os detalhes do heróis e as revistas relacionadas. É possível favoritá-lo ou compartilhá-lo.
 
-![Detalhes de Herói](./assets/images/herois-detalhes.png)
+![Detalhes de Herói][heroes-details-image]
+
+## Lista de Revistas
+
+Mostra todas as revistas disponíveis. É possível compartilhar, filtrar e favoritar revistas.
+
+![Lista de Revistas][comics-list-image]
 
 ## Configuração
 
 Permite configurar os dados da conta, tais como: troca de senha exclusão de conta.
 
-![Configuração](./assets/images/configuracao.png)
+![Configuração][configuration-image]
+
+## Testes Unitários
+
+Abaixo mostra a cobertura atual dos testes unitários da aplicação.
+
+![Testes Unitários][unit-tests-image]
 
 [Voltar ao menu](#tópicos)
 
@@ -179,10 +203,10 @@ Para obter o Certificado de Conclusão, é necessário implementar o projeto ate
 - <span style="color: red;">&cross;</span> Deve possuir navegação entre telas (Navigation e Modal);
 - <span style="color: green;">&check;</span> Tratativas de erros;
 - <span style="color: green;">&check;</span> Deve consumir uma API;
-- <span style="color: red;">&cross;</span> Deve funcionar em modo offline;
-- <span style="color: red;">&cross;</span> A arquitetura deve ser MVVM;
+- <span style="color: green;">&check;</span> Deve funcionar em modo offline;
+- <span style="color: green;">&check;</span> A arquitetura deve ser MVVM;
 - <span style="color: red;">&cross;</span> O código precisa estar comentado;
-- <span style="color: red;">&cross;</span> Testes Unitários;
+- <span style="color: green;">&check;</span> Testes Unitários;
 - <span style="color: green;">&check;</span> O app deve conter, pelo menos, os seguintes componentes do UIKit: (UITextField, 
 UIButton, UILabel, UICollectionView e UITableView).
 - <span style="color: red;">&cross;</span> O app deve possuir as seguintes features:
