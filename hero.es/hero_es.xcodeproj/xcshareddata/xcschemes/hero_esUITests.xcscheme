@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1130"
+   LastUpgradeVersion = "1220"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -16,7 +16,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "C9B1438D253FBA7E0013DC42"
+               BlueprintIdentifier = "C9B56E75259D8069005D4C95"
                BuildableName = "hero_esUITests.xctest"
                BlueprintName = "hero_esUITests"
                ReferencedContainer = "container:hero_es.xcodeproj">
