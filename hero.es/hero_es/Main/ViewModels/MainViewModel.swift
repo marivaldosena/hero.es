@@ -10,13 +10,13 @@ import UIKit
 
 // MARK: - MainViewModel
 struct MainViewModel {
-    private let service: MainService
+    private let service: MainServiceProtocol
     
     init() {
         self.service = MainService()
     }
     
-    init(with service: MainService) {
+    init(with service: MainServiceProtocol) {
         self.service = service
     }
     

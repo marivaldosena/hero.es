@@ -38,13 +38,13 @@ extension MainViewController {
             let email = ValidatorService.getNormalizedData(emailTextField)
             let password = ValidatorService.getNormalizedData(passwordTextField)
             
-            AuthService.shared.loginWithEmailAndPassword(email, password) { (authCredentials, error) in
+            MainService.shared.loginWithEmailAndPassword(email, password) { (authCredentials, error) in
                 if let error = error {
                     print(error.localizedDescription)
                     AlertUtils.displayMessage(
                         self,
                         title: self.viewModel.getString(for: .loginButtonTitle),
-                        message: self.viewModel.getString(for: .loginError),
+                        message: self.viewModel.getString(for: .failedLoginMessage),
                         okButton: self.viewModel.getString(for: .positiveButton)
                     )
                 }
