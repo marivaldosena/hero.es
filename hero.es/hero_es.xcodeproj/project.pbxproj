@@ -71,6 +71,7 @@
 		C9D7E3E32586E58000D65E1E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D7E3E22586E58000D65E1E /* AuthService.swift */; };
 		C9D7E3E52587045F00D65E1E /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D7E3E42587045F00D65E1E /* AuthModel.swift */; };
 		C9D7E3E72587122E00D65E1E /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D7E3E62587122E00D65E1E /* AuthViewModel.swift */; };
+		C9DE0F4C25A525A800FC3A82 /* ComicDetailsViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DE0F4B25A525A800FC3A82 /* ComicDetailsViewModel_Tests.swift */; };
 		C9E1C52C2571E0050068EB7C /* ValidatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C52A2571E0050068EB7C /* ValidatorService.swift */; };
 		C9E1C5512571E3E20068EB7C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9E1C5502571E3E10068EB7C /* GoogleService-Info.plist */; };
 		C9E66C76258C2E0C00CF9F17 /* HeroRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E66C75258C2E0C00CF9F17 /* HeroRepository.swift */; };
@@ -174,6 +175,7 @@
 		C9D7E3E22586E58000D65E1E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		C9D7E3E42587045F00D65E1E /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		C9D7E3E62587122E00D65E1E /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		C9DE0F4B25A525A800FC3A82 /* ComicDetailsViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailsViewModel_Tests.swift; sourceTree = "<group>"; };
 		C9E1C52A2571E0050068EB7C /* ValidatorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorService.swift; sourceTree = "<group>"; };
 		C9E1C5502571E3E10068EB7C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9E66C75258C2E0C00CF9F17 /* HeroRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroRepository.swift; sourceTree = "<group>"; };
@@ -317,6 +319,7 @@
 		C945BD02259FF50000F8FCBC /* Comics */ = {
 			isa = PBXGroup;
 			children = (
+				C9DE0F4B25A525A800FC3A82 /* ComicDetailsViewModel_Tests.swift */,
 				C945BD03259FF61000F8FCBC /* ComicsListViewModel_Tests.swift */,
 				C9BF6C2325A14B3400469EBD /* MockComicService.swift */,
 			);
@@ -893,6 +896,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C945BD04259FF61000F8FCBC /* ComicsListViewModel_Tests.swift in Sources */,
+				C9DE0F4C25A525A800FC3A82 /* ComicDetailsViewModel_Tests.swift in Sources */,
 				C927C75C25990ECC00187456 /* HeroDetailsViewModel_Tests.swift in Sources */,
 				C9BF6C2425A14B3400469EBD /* MockComicService.swift in Sources */,
 			);

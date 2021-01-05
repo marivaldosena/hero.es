@@ -41,6 +41,7 @@ class ComicsListViewController: UIViewController {
     
     func updateTable(with array: [ComicModel]) {
         modelsArray = array
+        updateUIInterface()
     }
     
     func getItem(at index: Int) -> ComicModel {
