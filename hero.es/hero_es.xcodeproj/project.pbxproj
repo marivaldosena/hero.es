@@ -73,14 +73,19 @@
 		C9BF6C2425A14B3400469EBD /* MockComicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BF6C2325A14B3400469EBD /* MockComicService.swift */; };
 		C9C7CF7225977C1D004F9C4D /* ComicHeroRelationshipCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C7CF7125977C1B004F9C4D /* ComicHeroRelationshipCoreDataDAO.swift */; };
 		C9CD7E3C254330B1001E5E54 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */; };
+		C9D3B14A25A48F680055DE95 /* ComicDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9D3B14925A48F680055DE95 /* ComicDetails.storyboard */; };
+		C9D3B14C25A48FE80055DE95 /* ComicDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D3B14B25A48FE80055DE95 /* ComicDetailsViewController.swift */; };
 		C9D7E3E32586E58000D65E1E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D7E3E22586E58000D65E1E /* AuthService.swift */; };
 		C9D7E3E52587045F00D65E1E /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D7E3E42587045F00D65E1E /* AuthModel.swift */; };
 		C9D7E3E72587122E00D65E1E /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D7E3E62587122E00D65E1E /* AuthViewModel.swift */; };
+		C9DE0F4C25A525A800FC3A82 /* ComicDetailsViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DE0F4B25A525A800FC3A82 /* ComicDetailsViewModel_Tests.swift */; };
 		C9E1C52C2571E0050068EB7C /* ValidatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C52A2571E0050068EB7C /* ValidatorService.swift */; };
 		C9E1C5512571E3E20068EB7C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9E1C5502571E3E10068EB7C /* GoogleService-Info.plist */; };
 		C9E66C76258C2E0C00CF9F17 /* HeroRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E66C75258C2E0C00CF9F17 /* HeroRepository.swift */; };
 		C9E66C79258C2E4300CF9F17 /* HeroCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E66C78258C2E4300CF9F17 /* HeroCoreDataDAO.swift */; };
 		C9E66C7C258C357D00CF9F17 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E66C7B258C357D00CF9F17 /* DBManager.swift */; };
+		C9EEEFAC25A4D19200431984 /* ComicDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EEEFAB25A4D19100431984 /* ComicDetailsViewModel.swift */; };
+		C9EEEFAE25A4F0CF00431984 /* ComicDetailsViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EEEFAD25A4F0CE00431984 /* ComicDetailsViewController+Extensions.swift */; };
 		EB99AC042548E1610071B7FA /* ServiceHeroesMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC032548E1610071B7FA /* ServiceHeroesMock.swift */; };
 		EB99AC0C2548E1CE0071B7FA /* HeroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC0B2548E1CE0071B7FA /* HeroService.swift */; };
 		EB99AC1C2548E7D00071B7FA /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC1B2548E7CF0071B7FA /* BaseModel.swift */; };
@@ -179,14 +184,19 @@
 		C9BF6C2325A14B3400469EBD /* MockComicService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockComicService.swift; sourceTree = "<group>"; };
 		C9C7CF7125977C1B004F9C4D /* ComicHeroRelationshipCoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicHeroRelationshipCoreDataDAO.swift; sourceTree = "<group>"; };
 		C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
+		C9D3B14925A48F680055DE95 /* ComicDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ComicDetails.storyboard; sourceTree = "<group>"; };
+		C9D3B14B25A48FE80055DE95 /* ComicDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailsViewController.swift; sourceTree = "<group>"; };
 		C9D7E3E22586E58000D65E1E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
 		C9D7E3E42587045F00D65E1E /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
 		C9D7E3E62587122E00D65E1E /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		C9DE0F4B25A525A800FC3A82 /* ComicDetailsViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailsViewModel_Tests.swift; sourceTree = "<group>"; };
 		C9E1C52A2571E0050068EB7C /* ValidatorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorService.swift; sourceTree = "<group>"; };
 		C9E1C5502571E3E10068EB7C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9E66C75258C2E0C00CF9F17 /* HeroRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroRepository.swift; sourceTree = "<group>"; };
 		C9E66C78258C2E4300CF9F17 /* HeroCoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCoreDataDAO.swift; sourceTree = "<group>"; };
 		C9E66C7B258C357D00CF9F17 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		C9EEEFAB25A4D19100431984 /* ComicDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailsViewModel.swift; sourceTree = "<group>"; };
+		C9EEEFAD25A4F0CE00431984 /* ComicDetailsViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComicDetailsViewController+Extensions.swift"; sourceTree = "<group>"; };
 		E3B9DEA949D2073B5B912AEA /* Pods_hero_esTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hero_esTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB99AC032548E1610071B7FA /* ServiceHeroesMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHeroesMock.swift; sourceTree = "<group>"; };
 		EB99AC0B2548E1CE0071B7FA /* HeroService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroService.swift; sourceTree = "<group>"; };
@@ -240,8 +250,11 @@
 			children = (
 				C9AE6A0A259FA1B5000D3857 /* ItemCell */,
 				C99441F425508225004F2D82 /* ComicsList.storyboard */,
+				C9D3B14925A48F680055DE95 /* ComicDetails.storyboard */,
 				C99441FC25508241004F2D82 /* ComicsListViewController.swift */,
 				C97A236325A12E2100AD4C28 /* ComicsListViewController+Extensions.swift */,
+				C9D3B14B25A48FE80055DE95 /* ComicDetailsViewController.swift */,
+				C9EEEFAD25A4F0CE00431984 /* ComicDetailsViewController+Extensions.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -286,6 +299,7 @@
 			isa = PBXGroup;
 			children = (
 				C91CC74F259E4F3B0060B798 /* ComicsListViewModel.swift */,
+				C9EEEFAB25A4D19100431984 /* ComicDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -319,6 +333,7 @@
 		C945BD02259FF50000F8FCBC /* Comics */ = {
 			isa = PBXGroup;
 			children = (
+				C9DE0F4B25A525A800FC3A82 /* ComicDetailsViewModel_Tests.swift */,
 				C945BD03259FF61000F8FCBC /* ComicsListViewModel_Tests.swift */,
 				C9BF6C2325A14B3400469EBD /* MockComicService.swift */,
 			);
@@ -784,6 +799,7 @@
 				C9B1437D253FBA6F0013DC42 /* LaunchScreen.storyboard in Resources */,
 				C99442112550C19B004F2D82 /* Favorites.storyboard in Resources */,
 				C9B1437A253FBA6F0013DC42 /* Assets.xcassets in Resources */,
+				C9D3B14A25A48F680055DE95 /* ComicDetails.storyboard in Resources */,
 				C9E1C5512571E3E20068EB7C /* GoogleService-Info.plist in Resources */,
 				C98D7CFC254058CD00D95BC8 /* HeroListTableViewCell.xib in Resources */,
 				C9B143AC253FD78F0013DC42 /* HeroesList.storyboard in Resources */,
@@ -890,7 +906,9 @@
 				C9D7E3E52587045F00D65E1E /* AuthModel.swift in Sources */,
 				C94792F32596B915009888BE /* CoreDataDAOProtocol.swift in Sources */,
 				EB99AC212548E85C0071B7FA /* DataClass.swift in Sources */,
+				C9EEEFAC25A4D19200431984 /* ComicDetailsViewModel.swift in Sources */,
 				C91CC754259E54AE0060B798 /* ComicParser.swift in Sources */,
+				C9EEEFAE25A4F0CF00431984 /* ComicDetailsViewController+Extensions.swift in Sources */,
 				C91FA86125982919008CDBD1 /* HeroDetailsViewModel.swift in Sources */,
 				C9415877258E7D9F00CC81A6 /* ComicHeroModel.swift in Sources */,
 				C9B89A62254213B3002946CA /* Searchable.swift in Sources */,
@@ -908,6 +926,7 @@
 				C9E1C52C2571E0050068EB7C /* ValidatorService.swift in Sources */,
 				EB99AC2B2548E91A0071B7FA /* ThumbnailModel.swift in Sources */,
 				C97B903725411037004233F2 /* HeroesListViewController.swift in Sources */,
+				C9D3B14C25A48FE80055DE95 /* ComicDetailsViewController.swift in Sources */,
 				C9AE6A0D259FA257000D3857 /* ItemCell.swift in Sources */,
 				C9B76B2725A21EC1001596B1 /* RelatedHeroParser.swift in Sources */,
 				EB99AC0C2548E1CE0071B7FA /* HeroService.swift in Sources */,
@@ -943,6 +962,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C945BD04259FF61000F8FCBC /* ComicsListViewModel_Tests.swift in Sources */,
+				C9DE0F4C25A525A800FC3A82 /* ComicDetailsViewModel_Tests.swift in Sources */,
 				C927C75C25990ECC00187456 /* HeroDetailsViewModel_Tests.swift in Sources */,
 				C9BF6C2425A14B3400469EBD /* MockComicService.swift in Sources */,
 				C9A5A89E25A3DF2C00286EF2 /* MainViewModel_Tests.swift in Sources */,
@@ -1106,7 +1126,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 7N4P82U958;
 				INFOPLIST_FILE = hero_es/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1114,7 +1134,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.marivaldosena.heroes;
 				PRODUCT_NAME = hero.es;
 				SWIFT_VERSION = 5.0;
@@ -1130,7 +1150,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 3;
+				CURRENT_PROJECT_VERSION = 5;
 				DEVELOPMENT_TEAM = 7N4P82U958;
 				INFOPLIST_FILE = hero_es/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
@@ -1138,7 +1158,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.2;
+				MARKETING_VERSION = 1.4;
 				PRODUCT_BUNDLE_IDENTIFIER = com.github.marivaldosena.heroes;
 				PRODUCT_NAME = hero.es;
 				SWIFT_VERSION = 5.0;
