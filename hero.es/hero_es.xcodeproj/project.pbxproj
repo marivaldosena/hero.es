@@ -76,6 +76,8 @@
 		C9E66C76258C2E0C00CF9F17 /* HeroRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E66C75258C2E0C00CF9F17 /* HeroRepository.swift */; };
 		C9E66C79258C2E4300CF9F17 /* HeroCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E66C78258C2E4300CF9F17 /* HeroCoreDataDAO.swift */; };
 		C9E66C7C258C357D00CF9F17 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E66C7B258C357D00CF9F17 /* DBManager.swift */; };
+		C9EEEFAC25A4D19200431984 /* ComicDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EEEFAB25A4D19100431984 /* ComicDetailsViewModel.swift */; };
+		C9EEEFAE25A4F0CF00431984 /* ComicDetailsViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EEEFAD25A4F0CE00431984 /* ComicDetailsViewController+Extensions.swift */; };
 		EB99AC042548E1610071B7FA /* ServiceHeroesMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC032548E1610071B7FA /* ServiceHeroesMock.swift */; };
 		EB99AC0C2548E1CE0071B7FA /* HeroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC0B2548E1CE0071B7FA /* HeroService.swift */; };
 		EB99AC1C2548E7D00071B7FA /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC1B2548E7CF0071B7FA /* BaseModel.swift */; };
@@ -177,6 +179,8 @@
 		C9E66C75258C2E0C00CF9F17 /* HeroRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroRepository.swift; sourceTree = "<group>"; };
 		C9E66C78258C2E4300CF9F17 /* HeroCoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroCoreDataDAO.swift; sourceTree = "<group>"; };
 		C9E66C7B258C357D00CF9F17 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		C9EEEFAB25A4D19100431984 /* ComicDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailsViewModel.swift; sourceTree = "<group>"; };
+		C9EEEFAD25A4F0CE00431984 /* ComicDetailsViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComicDetailsViewController+Extensions.swift"; sourceTree = "<group>"; };
 		E3B9DEA949D2073B5B912AEA /* Pods_hero_esTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hero_esTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB99AC032548E1610071B7FA /* ServiceHeroesMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHeroesMock.swift; sourceTree = "<group>"; };
 		EB99AC0B2548E1CE0071B7FA /* HeroService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroService.swift; sourceTree = "<group>"; };
@@ -234,6 +238,7 @@
 				C99441FC25508241004F2D82 /* ComicsListViewController.swift */,
 				C97A236325A12E2100AD4C28 /* ComicsListViewController+Extensions.swift */,
 				C9D3B14B25A48FE80055DE95 /* ComicDetailsViewController.swift */,
+				C9EEEFAD25A4F0CE00431984 /* ComicDetailsViewController+Extensions.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -278,6 +283,7 @@
 			isa = PBXGroup;
 			children = (
 				C91CC74F259E4F3B0060B798 /* ComicsListViewModel.swift */,
+				C9EEEFAB25A4D19100431984 /* ComicDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -830,7 +836,9 @@
 				C9D7E3E52587045F00D65E1E /* AuthModel.swift in Sources */,
 				C94792F32596B915009888BE /* CoreDataDAOProtocol.swift in Sources */,
 				EB99AC212548E85C0071B7FA /* DataClass.swift in Sources */,
+				C9EEEFAC25A4D19200431984 /* ComicDetailsViewModel.swift in Sources */,
 				C91CC754259E54AE0060B798 /* ComicParser.swift in Sources */,
+				C9EEEFAE25A4F0CF00431984 /* ComicDetailsViewController+Extensions.swift in Sources */,
 				C91FA86125982919008CDBD1 /* HeroDetailsViewModel.swift in Sources */,
 				C9415877258E7D9F00CC81A6 /* ComicHeroModel.swift in Sources */,
 				C9B14372253FBA400013DC42 /* MainViewController.swift in Sources */,
