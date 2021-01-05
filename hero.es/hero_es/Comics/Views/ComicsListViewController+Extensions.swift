@@ -19,7 +19,10 @@ extension ComicsListViewController: ComicsListDelegate {
 // MARK: - ComicsListViewController: UITableViewDelegate
 extension ComicsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let model = getItem(at: indexPath.row)
         tableView.deselectRow(at: indexPath, animated: true)
+        guard let controller = ComicDetailsViewController.getController(model) else { return }
+        navigationController?.pushViewController(controller, animated: true)
     }
 }
 
