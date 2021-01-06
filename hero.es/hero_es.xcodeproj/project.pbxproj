@@ -23,6 +23,10 @@
 		C927C75C25990ECC00187456 /* HeroDetailsViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927C75B25990ECB00187456 /* HeroDetailsViewModel_Tests.swift */; };
 		C92FF70625A538FB0011F44F /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92FF70525A538FB0011F44F /* FavoritesViewController.swift */; };
 		C92FF70D25A53B0B0011F44F /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92FF70C25A53B0B0011F44F /* FavoriteModel.swift */; };
+		C92FF71125A5418F0011F44F /* FavoriteParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92FF71025A5418F0011F44F /* FavoriteParser.swift */; };
+		C92FF71325A544750011F44F /* FavoriteRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92FF71225A544750011F44F /* FavoriteRepository.swift */; };
+		C92FF71525A544B00011F44F /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92FF71425A544B00011F44F /* FavoriteService.swift */; };
+		C92FF71825A544C70011F44F /* FavoriteCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92FF71725A544C70011F44F /* FavoriteCoreDataDAO.swift */; };
 		C9415875258E7CD500CC81A6 /* PersistentMethodEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9415874258E7CD400CC81A6 /* PersistentMethodEnum.swift */; };
 		C9415877258E7D9F00CC81A6 /* ComicHeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9415876258E7D9F00CC81A6 /* ComicHeroModel.swift */; };
 		C9415879258E7DF000CC81A6 /* RelatedComicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9415878258E7DF000CC81A6 /* RelatedComicModel.swift */; };
@@ -131,6 +135,10 @@
 		C92FF70525A538FB0011F44F /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		C92FF70C25A53B0B0011F44F /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
 		C92FF70E25A53FE70011F44F /* hero_es_v04_add_favorite_entity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hero_es_v04_add_favorite_entity.xcdatamodel; sourceTree = "<group>"; };
+		C92FF71025A5418F0011F44F /* FavoriteParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteParser.swift; sourceTree = "<group>"; };
+		C92FF71225A544750011F44F /* FavoriteRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRepository.swift; sourceTree = "<group>"; };
+		C92FF71425A544B00011F44F /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
+		C92FF71725A544C70011F44F /* FavoriteCoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCoreDataDAO.swift; sourceTree = "<group>"; };
 		C9415874258E7CD400CC81A6 /* PersistentMethodEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentMethodEnum.swift; sourceTree = "<group>"; };
 		C9415876258E7D9F00CC81A6 /* ComicHeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicHeroModel.swift; sourceTree = "<group>"; };
 		C9415878258E7DF000CC81A6 /* RelatedComicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedComicModel.swift; sourceTree = "<group>"; };
@@ -344,6 +352,7 @@
 		C92FF70A25A53AC40011F44F /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				C92FF71425A544B00011F44F /* FavoriteService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -351,6 +360,8 @@
 		C92FF70B25A53ACF0011F44F /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
+				C92FF71625A544B60011F44F /* DAO */,
+				C92FF71225A544750011F44F /* FavoriteRepository.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -358,8 +369,17 @@
 		C92FF70F25A5408E0011F44F /* Parsers */ = {
 			isa = PBXGroup;
 			children = (
+				C92FF71025A5418F0011F44F /* FavoriteParser.swift */,
 			);
 			path = Parsers;
+			sourceTree = "<group>";
+		};
+		C92FF71625A544B60011F44F /* DAO */ = {
+			isa = PBXGroup;
+			children = (
+				C92FF71725A544C70011F44F /* FavoriteCoreDataDAO.swift */,
+			);
+			path = DAO;
 			sourceTree = "<group>";
 		};
 		C943A6F8258F95750051F3E7 /* ViewModels */ = {
@@ -973,9 +993,11 @@
 				C9B76B2925A2288E001596B1 /* ModelUtils.swift in Sources */,
 				C9D7E3E32586E58000D65E1E /* AuthService.swift in Sources */,
 				EB99AC042548E1610071B7FA /* ServiceHeroesMock.swift in Sources */,
+				C92FF71525A544B00011F44F /* FavoriteService.swift in Sources */,
 				C9B89A4A25420B5E002946CA /* ItemProtocol.swift in Sources */,
 				C98D7D0C2540704C00D95BC8 /* HeroDetailsViewController.swift in Sources */,
 				C9B52A3A2543AFCD00F9957D /* UIKitUtils.swift in Sources */,
+				C92FF71125A5418F0011F44F /* FavoriteParser.swift in Sources */,
 				C92FF70625A538FB0011F44F /* FavoritesViewController.swift in Sources */,
 				C9E66C79258C2E4300CF9F17 /* HeroCoreDataDAO.swift in Sources */,
 				EB99AC262548E8E30071B7FA /* HeroModel.swift in Sources */,
@@ -983,6 +1005,7 @@
 				C9E1C52C2571E0050068EB7C /* ValidatorService.swift in Sources */,
 				EB99AC2B2548E91A0071B7FA /* ThumbnailModel.swift in Sources */,
 				C97B903725411037004233F2 /* HeroesListViewController.swift in Sources */,
+				C92FF71825A544C70011F44F /* FavoriteCoreDataDAO.swift in Sources */,
 				C9D3B14C25A48FE80055DE95 /* ComicDetailsViewController.swift in Sources */,
 				C9AE6A0D259FA257000D3857 /* ItemCell.swift in Sources */,
 				C9B76B2725A21EC1001596B1 /* RelatedHeroParser.swift in Sources */,
@@ -994,6 +1017,7 @@
 				C9AE6A10259FB63D000D3857 /* CellItemProtocol.swift in Sources */,
 				C9A5A8C725A3E09F00286EF2 /* MainViewModel.swift in Sources */,
 				C9B9B4AF259D463900EE673F /* HeroDetailsViewController+Extensions.swift in Sources */,
+				C92FF71325A544750011F44F /* FavoriteRepository.swift in Sources */,
 				C9E66C7C258C357D00CF9F17 /* DBManager.swift in Sources */,
 				C9415875258E7CD500CC81A6 /* PersistentMethodEnum.swift in Sources */,
 				C943A6FA258F95DA0051F3E7 /* HeroesListViewModel.swift in Sources */,
