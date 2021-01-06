@@ -18,9 +18,17 @@ struct FavoriteCoreDataDAO: CoreDataDAOProtocol {
         self.context = container.viewContext
     }
     
+    
+    // MARK: - Public Methods
     func save(_ model: FavoriteModel) {
-        if find(id: model.id) != nil {
-            return
+        if model.itemType == .comic {
+            if find(id: model.id, itemType: .comic) != nil {
+                return
+            }
+        } else {
+            if find(id: model.id, itemType: .hero) != nil {
+                return
+            }
         }
         
         do {
@@ -39,15 +47,26 @@ struct FavoriteCoreDataDAO: CoreDataDAOProtocol {
     }
     
     func find(term: String? = nil, limit: Int = 0, offset: Int = 0) -> [FavoriteModel] {
+        return find(term: term, itemType: .all, limit: limit, offset: offset)
+    }
+    
+    func find(term: String? = nil, itemType: SearchItemType = .all,limit: Int = 0, offset: Int = 0) -> [FavoriteModel] {
         var modelsArray: [FavoriteModel] = []
         var entitiesArray: [FavoriteEntity] = []
+        var predicates: [NSPredicate] = []
         
         do {
             let request: NSFetchRequest<FavoriteEntity> = FavoriteEntity.fetchRequest()
             
             if let term = term {
-                request.predicate = NSPredicate(format: "name CONTAINS[cd] %@", term)
+                predicates.append(NSPredicate(format: "name CONTAINS[cd] %@", term))
             }
+            
+            if itemType != .all {
+                predicates.append(NSPredicate(format: "itemType MATCHES[cd] %@", "\(itemType)"))
+            }
+            
+            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
             
             if limit != 0 {
                 request.fetchLimit = limit
@@ -64,13 +83,25 @@ struct FavoriteCoreDataDAO: CoreDataDAOProtocol {
     }
     
     func find(id: Int) -> FavoriteModel? {
+        find(id: id, itemType: .all)
+    }
+    
+    func find(id: Int, itemType: SearchItemType = .all) -> FavoriteModel? {
         var model: FavoriteModel? = nil
         var entitiesArray: [FavoriteEntity] = []
+        var predicates: [NSPredicate] = []
         
         do {
             let request: NSFetchRequest = FavoriteEntity.fetchRequest()
-            request.predicate = NSPredicate(format: "id == %i", id)
+            
+            if itemType != .all {
+                predicates.append(NSPredicate(format: "itemType MATCHES[cd] %@", "\(itemType)"))
+            }
+            
+            predicates.append(NSPredicate(format: "id == %i", id))
             request.fetchLimit = 1
+            
+            request.predicate = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
             
             entitiesArray = try context.fetch(request)
             

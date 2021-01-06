@@ -19,42 +19,79 @@ struct FavoriteService {
     }
     
     func getItems(limit: Int = 0, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [FavoriteModel] {
-        // TODO: Implement this.
+        // TODO: Implement online version.
         switch persistentMethod {
         case .coreData:
-            return find(limit: limit, offset: offset, in: persistentMethod)
+            return getItems(itemType: .all, limit: limit, offset: offset, in: persistentMethod)
+        default:
+            return []
+        }
+    }
+    
+    func getItems(itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [FavoriteModel] {
+        // TODO: Implement online version.
+        switch persistentMethod {
+        case .coreData:
+            return find(itemType: itemType, limit: limit, offset: offset, in: persistentMethod)
         default:
             return []
         }
     }
     
     func find(id: Int, in persistentMethod: PersistentMethodEnum = .coreData) -> FavoriteModel? {
+        // TODO: Implement online version.
         switch persistentMethod {
-        case .coreData: return findOneInCoreData(id: id)
+        case .coreData: return find(id: id, itemType: .all, in: persistentMethod)
+        default: return nil
+        }
+    }
+    
+    func find(id: Int, itemType: SearchItemType = .all, in persistentMethod: PersistentMethodEnum = .coreData) -> FavoriteModel? {
+        // TODO: Implement online version.
+        switch persistentMethod {
+        case .coreData: return findOneInCoreData(id: id, itemType: itemType)
         default: return nil
         }
     }
     
     func find(limit: Int = 0, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [FavoriteModel] {
-        // TODO: Implement this.
+        // TODO: Implement online version.
         switch persistentMethod {
         case .coreData:
-            return findInCoreData(term: nil, limit: limit, offset: offset)
+            return find(itemType: .all, limit: limit, offset: offset)
+        default: return []
+        }
+    }
+    
+    func find(itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [FavoriteModel] {
+        // TODO: Implement online version.
+        switch persistentMethod {
+        case .coreData:
+            return findInCoreData(term: nil, itemType: itemType, limit: limit, offset: offset)
         default: return []
         }
     }
     
     func find(term: String, limit: Int = 0, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [FavoriteModel] {
-        // TODO: Implement this.
+        // TODO: Implement online version.
         switch persistentMethod {
         case .coreData:
-            return findInCoreData(term: term, limit: limit, offset: offset)
+            return find(term: term, itemType: .all, limit: limit, offset: offset)
+        default: return []
+        }
+    }
+    
+    func find(term: String, itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [FavoriteModel] {
+        // TODO: Implement online version.
+        switch persistentMethod {
+        case .coreData:
+            return findInCoreData(term: term, itemType: itemType, limit: limit, offset: offset)
         default: return []
         }
     }
     
     func save(_ model: FavoriteModel, in persistentMethod: PersistentMethodEnum = .coreData) {
-        // TODO: Implement this.
+        // TODO: Implement online version.
         switch persistentMethod {
         case .coreData:
             saveInCoreData(model)
@@ -73,15 +110,15 @@ struct FavoriteService {
         repository.save(model, in: .coreData)
     }
     
-    private func findInCoreData(term: String? = nil, limit: Int = 0, offset: Int = 0) -> [FavoriteModel] {
+    private func findInCoreData(term: String? = nil, itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0) -> [FavoriteModel] {
         if let term = term {
-            return repository.find(term: term, limit: limit, offset: offset, in: .coreData)
+            return repository.find(term: term, itemType: itemType, limit: limit, offset: offset, in: .coreData)
         }
         
-        return repository.find(limit: limit, offset: offset, in: .coreData)
+        return repository.find(itemType: itemType, limit: limit, offset: offset, in: .coreData)
     }
     
-    private func findOneInCoreData(id: Int) -> FavoriteModel? {
-        return repository.find(id: id, in: .coreData)
+    private func findOneInCoreData(id: Int, itemType: SearchItemType = .all) -> FavoriteModel? {
+        return repository.find(id: id, itemType: itemType, in: .coreData)
     }
 }

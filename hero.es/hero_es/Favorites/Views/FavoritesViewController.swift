@@ -29,19 +29,19 @@ class FavoritesViewController: UIViewController {
         print("Saving favorite hero")
         print("===========================================")
         
-        let comic = FavoriteModel(id: 2, itemType: .comic, name: "Comic", resourceURI: "resourceURI", thumbnailString: "thumbnailString", description: "description")
+        let comic = FavoriteModel(id: 1, itemType: .comic, name: "Comic", resourceURI: "resourceURI", thumbnailString: "thumbnailString", description: "description")
         service.save(comic)
         print("Saving favorite comic")
         print("===========================================")
         
-        modelsArray = service.find(term: "er")
+        modelsArray = service.find(term: "er", itemType: .hero)
         print(modelsArray)
         print("service.find(term: er)")
         print("===========================================")
         
-        let foundModel = service.find(id: 2)
+        let foundModel = service.find(id: 1)
         print(foundModel)
-        print("service.find(id: 2)")
+        print("service.find(id: 1)")
         print("===========================================")
     }
 }
