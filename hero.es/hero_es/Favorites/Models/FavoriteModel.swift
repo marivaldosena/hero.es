@@ -12,13 +12,11 @@ enum ItemType: String {
     case comic = "Comic"
 }
 
-struct FavoriteModel: ItemProtocol {
+struct FavoriteModel: CellItemProtocol {
     var id: Int
     var itemType: ItemType
     var name: String
     var resourceURI: String
-    
-    func searchBy(term: String) -> Bool {
-        return  self.name.lowercased().contains(term.lowercased())
-    }
+    var thumbnailString: String
+    var description: String
 }

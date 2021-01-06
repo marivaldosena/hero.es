@@ -130,6 +130,7 @@
 		C927C75B25990ECB00187456 /* HeroDetailsViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailsViewModel_Tests.swift; sourceTree = "<group>"; };
 		C92FF70525A538FB0011F44F /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		C92FF70C25A53B0B0011F44F /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
+		C92FF70E25A53FE70011F44F /* hero_es_v04_add_favorite_entity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hero_es_v04_add_favorite_entity.xcdatamodel; sourceTree = "<group>"; };
 		C9415874258E7CD400CC81A6 /* PersistentMethodEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentMethodEnum.swift; sourceTree = "<group>"; };
 		C9415876258E7D9F00CC81A6 /* ComicHeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicHeroModel.swift; sourceTree = "<group>"; };
 		C9415878258E7DF000CC81A6 /* RelatedComicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedComicModel.swift; sourceTree = "<group>"; };
@@ -354,6 +355,13 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		C92FF70F25A5408E0011F44F /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
 		C943A6F8258F95750051F3E7 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -469,6 +477,7 @@
 			isa = PBXGroup;
 			children = (
 				C92FF70925A53ABB0011F44F /* Models */,
+				C92FF70F25A5408E0011F44F /* Parsers */,
 				C92FF70B25A53ACF0011F44F /* Repositories */,
 				C92FF70A25A53AC40011F44F /* Services */,
 				C92FF70725A53A5D0011F44F /* Views */,
@@ -1299,11 +1308,12 @@
 		C921E2B4258E92C200E4E8DC /* hero_es.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				C92FF70E25A53FE70011F44F /* hero_es_v04_add_favorite_entity.xcdatamodel */,
 				C970291A25A0DB8E00133FE8 /* hero_es_v03_refactor_comic_entity.xcdatamodel */,
 				C94792F42596C6A4009888BE /* hero_es_v02_renaming_comic_entity.xcdatamodel */,
 				C921E2B5258E92C200E4E8DC /* hero_es.xcdatamodel */,
 			);
-			currentVersion = C970291A25A0DB8E00133FE8 /* hero_es_v03_refactor_comic_entity.xcdatamodel */;
+			currentVersion = C92FF70E25A53FE70011F44F /* hero_es_v04_add_favorite_entity.xcdatamodel */;
 			path = hero_es.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
