@@ -21,6 +21,8 @@
 		C925330B259F774400D2615B /* comics-list.json in Resources */ = {isa = PBXBuildFile; fileRef = C925330A259F774300D2615B /* comics-list.json */; };
 		C927C75A2598E64400187456 /* MasterDetailNavigationProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927C7592598E64400187456 /* MasterDetailNavigationProtocol.swift */; };
 		C927C75C25990ECC00187456 /* HeroDetailsViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C927C75B25990ECB00187456 /* HeroDetailsViewModel_Tests.swift */; };
+		C92FF70625A538FB0011F44F /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92FF70525A538FB0011F44F /* FavoritesViewController.swift */; };
+		C92FF70D25A53B0B0011F44F /* FavoriteModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92FF70C25A53B0B0011F44F /* FavoriteModel.swift */; };
 		C9415875258E7CD500CC81A6 /* PersistentMethodEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9415874258E7CD400CC81A6 /* PersistentMethodEnum.swift */; };
 		C9415877258E7D9F00CC81A6 /* ComicHeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9415876258E7D9F00CC81A6 /* ComicHeroModel.swift */; };
 		C9415879258E7DF000CC81A6 /* RelatedComicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9415878258E7DF000CC81A6 /* RelatedComicModel.swift */; };
@@ -126,6 +128,8 @@
 		C925330A259F774300D2615B /* comics-list.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "comics-list.json"; sourceTree = "<group>"; };
 		C927C7592598E64400187456 /* MasterDetailNavigationProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterDetailNavigationProtocol.swift; sourceTree = "<group>"; };
 		C927C75B25990ECB00187456 /* HeroDetailsViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailsViewModel_Tests.swift; sourceTree = "<group>"; };
+		C92FF70525A538FB0011F44F /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
+		C92FF70C25A53B0B0011F44F /* FavoriteModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteModel.swift; sourceTree = "<group>"; };
 		C9415874258E7CD400CC81A6 /* PersistentMethodEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentMethodEnum.swift; sourceTree = "<group>"; };
 		C9415876258E7D9F00CC81A6 /* ComicHeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicHeroModel.swift; sourceTree = "<group>"; };
 		C9415878258E7DF000CC81A6 /* RelatedComicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedComicModel.swift; sourceTree = "<group>"; };
@@ -312,6 +316,44 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		C92FF70725A53A5D0011F44F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C99442102550C19B004F2D82 /* Favorites.storyboard */,
+				C92FF70525A538FB0011F44F /* FavoritesViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C92FF70825A53A8A0011F44F /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C92FF70925A53ABB0011F44F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C92FF70C25A53B0B0011F44F /* FavoriteModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C92FF70A25A53AC40011F44F /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C92FF70B25A53ACF0011F44F /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		C943A6F8258F95750051F3E7 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -426,7 +468,11 @@
 		C99442072550C15C004F2D82 /* Favorites */ = {
 			isa = PBXGroup;
 			children = (
-				C99442102550C19B004F2D82 /* Favorites.storyboard */,
+				C92FF70925A53ABB0011F44F /* Models */,
+				C92FF70B25A53ACF0011F44F /* Repositories */,
+				C92FF70A25A53AC40011F44F /* Services */,
+				C92FF70725A53A5D0011F44F /* Views */,
+				C92FF70825A53A8A0011F44F /* ViewModels */,
 			);
 			path = Favorites;
 			sourceTree = "<group>";
@@ -902,6 +948,7 @@
 				C90A32DD25869F7300C3272C /* CreateAccountViewController.swift in Sources */,
 				C9E66C76258C2E0C00CF9F17 /* HeroRepository.swift in Sources */,
 				C90A32DB25869F5100C3272C /* ConfigViewController.swift in Sources */,
+				C92FF70D25A53B0B0011F44F /* FavoriteModel.swift in Sources */,
 				EB99AC1C2548E7D00071B7FA /* BaseModel.swift in Sources */,
 				C9D7E3E52587045F00D65E1E /* AuthModel.swift in Sources */,
 				C94792F32596B915009888BE /* CoreDataDAOProtocol.swift in Sources */,
@@ -920,6 +967,7 @@
 				C9B89A4A25420B5E002946CA /* ItemProtocol.swift in Sources */,
 				C98D7D0C2540704C00D95BC8 /* HeroDetailsViewController.swift in Sources */,
 				C9B52A3A2543AFCD00F9957D /* UIKitUtils.swift in Sources */,
+				C92FF70625A538FB0011F44F /* FavoritesViewController.swift in Sources */,
 				C9E66C79258C2E4300CF9F17 /* HeroCoreDataDAO.swift in Sources */,
 				EB99AC262548E8E30071B7FA /* HeroModel.swift in Sources */,
 				C98D7CFB254058CD00D95BC8 /* HeroListTableViewCell.swift in Sources */,
