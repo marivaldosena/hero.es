@@ -8,40 +8,51 @@
 import UIKit
 
 class FavoritesViewController: UIViewController {
+    @IBOutlet weak var tableView: UITableView!
     let service = FavoriteService.shared
     var modelsArray: [FavoriteModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print("===========================================")
+        tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell")
+        tableView.dataSource = self
+        tableView.delegate = self
+        
         modelsArray = service.getItems()
-        print(modelsArray)
-        print("service.getItems()")
-        print("===========================================")
+        updateUIInterface()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        print("===========================================")
-        let hero = FavoriteModel(id: 1, itemType: .hero, name: "Hero", resourceURI: "resourceURI", thumbnailString: "thumbnailString", description: "description")
-        service.save(hero)
-        print("Saving favorite hero")
-        print("===========================================")
         
-        let comic = FavoriteModel(id: 1, itemType: .comic, name: "Comic", resourceURI: "resourceURI", thumbnailString: "thumbnailString", description: "description")
-        service.save(comic)
-        print("Saving favorite comic")
-        print("===========================================")
+        modelsArray = service.getItems()
+        updateUIInterface()
+    }
+    
+    func updateUIInterface() {
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+}
+
+extension FavoritesViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension FavoritesViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return modelsArray.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        modelsArray = service.find(term: "er", itemType: .hero)
-        print(modelsArray)
-        print("service.find(term: er)")
-        print("===========================================")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
+        cell.configure(with: modelsArray[indexPath.row])
         
-        let foundModel = service.find(id: 1)
-        print(foundModel)
-        print("service.find(id: 1)")
-        print("===========================================")
+        return cell
     }
 }
