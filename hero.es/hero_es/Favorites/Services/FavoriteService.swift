@@ -99,6 +99,32 @@ struct FavoriteService {
         }
     }
     
+    func addFavorite(item: CellItemProtocol, itemType: SearchItemType = .hero, in persistentMethod: PersistentMethodEnum = .coreData) {
+        let favoriteType: ItemType
+        
+        switch itemType {
+        case .comic:
+            favoriteType = .comic
+        default:
+            favoriteType = .hero
+        }
+        
+        let model = FavoriteModel(
+            id: item.id,
+            itemType: favoriteType,
+            name: item.name,
+            resourceURI: item.resourceURI,
+            thumbnailString: item.thumbnailString,
+            description: item.description
+        )
+        
+        save(model, in: persistentMethod)
+    }
+    
+    func removeFavorite(item: CellItemProtocol, itemType: SearchItemType = .hero, in persistentMethod: PersistentMethodEnum = .coreData) {
+        
+    }
+    
     func save(_ array: [FavoriteModel], in persistentMethod: PersistentMethodEnum = .coreData) {
         for item in array {
             save(item, in: persistentMethod)
