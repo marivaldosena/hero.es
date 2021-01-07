@@ -30,7 +30,7 @@ struct FavoriteRepository {
     func find(itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [FavoriteModel] {
         switch persistentMethod {
         case .coreData:
-            return findInCoreData(itemType: .all, limit: limit, offset: offset, in: persistentMethod)
+            return findInCoreData(itemType: itemType, limit: limit, offset: offset, in: persistentMethod)
         default: return []
         }
     }

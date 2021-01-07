@@ -9,8 +9,8 @@ import UIKit
 
 class FavoritesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
-    let service = FavoriteService.shared
-    var modelsArray: [FavoriteModel] = []
+    @IBOutlet weak var filterSegmentedControl: UISegmentedControl!
+    var viewModel: FavoritesViewModel = FavoritesViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,40 +19,27 @@ class FavoritesViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        modelsArray = service.getItems()
+        viewModel.getItems()
         updateUIInterface()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        modelsArray = service.getItems()
+        viewModel.getItems()
         updateUIInterface()
     }
     
-    func updateUIInterface() {
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
+    @IBAction func filterFavorites(_ sender: UISegmentedControl) {
+        let selectedOption = sender.selectedSegmentIndex
+        
+        switch selectedOption {
+        case 1:
+            filterFavorites(option: .hero)
+        case 2:
+            filterFavorites(option: .comic)
+        default:
+            filterFavorites(option: .all)
         }
-    }
-}
-
-extension FavoritesViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-}
-
-extension FavoritesViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return modelsArray.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
-        cell.configure(with: modelsArray[indexPath.row])
-        
-        return cell
     }
 }
