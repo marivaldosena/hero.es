@@ -39,7 +39,19 @@ extension FavoritesViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         let model = viewModel.getItem(at: indexPath.row)
         cell.configure(with: model)
-        
+        cell.delegate = self
         return cell
+    }
+}
+
+// MARK: - FavoritesViewController: ShareAndLikeItemProtocol
+extension FavoritesViewController: ShareAndLikeItemProtocol {
+    func share(item: CellItemProtocol?) {
+        guard let item = item else { return }
+        ShareItemUtils.share(item, on: self)
+    }
+    
+    func like(item: CellItemProtocol?) {
+        print("Like this item")
     }
 }

@@ -28,7 +28,7 @@ struct FavoritesViewModel {
         return modelsArray.count
     }
     
-    func getItem(at index: Int) -> FavoriteModel? {
+    func getItem(at index: Int = 0) -> FavoriteModel? {
         if isIndexValid(index: index) {
             return modelsArray[index]
         }
@@ -37,7 +37,7 @@ struct FavoritesViewModel {
     
     // MARK: - Private Methods
     private func isIndexValid(index: Int) -> Bool {
-        if index > 0 && index < modelsArray.count {
+        if index >= 0 && index < modelsArray.count {
             return true
         }
         return false

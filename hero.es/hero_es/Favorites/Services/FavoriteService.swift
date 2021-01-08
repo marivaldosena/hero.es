@@ -99,30 +99,32 @@ struct FavoriteService {
         }
     }
     
-    func addFavorite(item: CellItemProtocol, itemType: SearchItemType = .hero, in persistentMethod: PersistentMethodEnum = .coreData) {
-        let favoriteType: ItemType
-        
-        switch itemType {
-        case .comic:
-            favoriteType = .comic
-        default:
-            favoriteType = .hero
+    func delete(_ model: FavoriteModel, in persistentMethod: PersistentMethodEnum = .coreData) {
+        // TODO: Implement online version.
+        switch persistentMethod {
+        case .coreData:
+            deleteInCoreData(model)
+        default: break
         }
-        
-        let model = FavoriteModel(
-            id: item.id,
-            itemType: favoriteType,
-            name: item.name,
-            resourceURI: item.resourceURI,
-            thumbnailString: item.thumbnailString,
-            description: item.description
-        )
+    }
+    
+    func addFavorite(_ item: CellItemProtocol, itemType: SearchItemType = .hero, in persistentMethod: PersistentMethodEnum = .coreData) {
+        guard let model = FavoriteParser.from(item, itemType: itemType) else { return }
         
         save(model, in: persistentMethod)
     }
     
-    func removeFavorite(item: CellItemProtocol, itemType: SearchItemType = .hero, in persistentMethod: PersistentMethodEnum = .coreData) {
-        
+    func addFavorite(_ model: FavoriteModel, in persistentMethod: PersistentMethodEnum = .coreData) {
+        save(model, in: persistentMethod)
+    }
+    
+    func deleteFavorite(_ item: CellItemProtocol, itemType: SearchItemType = .hero, in persistentMethod: PersistentMethodEnum = .coreData) {
+        guard let model = FavoriteParser.from(item, itemType: itemType) else { return }
+        deleteFavorite(model, in: persistentMethod)
+    }
+    
+    func deleteFavorite(_ model: FavoriteModel, in persistentMethod: PersistentMethodEnum = .coreData) {
+        delete(model, in: persistentMethod)
     }
     
     func save(_ array: [FavoriteModel], in persistentMethod: PersistentMethodEnum = .coreData) {
@@ -146,5 +148,9 @@ struct FavoriteService {
     
     private func findOneInCoreData(id: Int, itemType: SearchItemType = .all) -> FavoriteModel? {
         return repository.find(id: id, itemType: itemType, in: .coreData)
+    }
+    
+    private func deleteInCoreData(_ model: FavoriteModel) {
+        repository.delete(model)
     }
 }

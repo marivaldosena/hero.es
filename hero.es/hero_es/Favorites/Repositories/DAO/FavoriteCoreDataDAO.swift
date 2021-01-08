@@ -79,9 +79,8 @@ struct FavoriteCoreDataDAO: CoreDataDAOProtocol {
             let request: NSFetchRequest = FavoriteEntity.fetchRequest()
             
             request.fetchLimit = 1
-            
             request.predicate = getPredicates(id: id, itemType: itemType)
-            
+        
             entitiesArray = try context.fetch(request)
             
             if entitiesArray.count > 0 {
@@ -95,29 +94,40 @@ struct FavoriteCoreDataDAO: CoreDataDAOProtocol {
     }
     
     func exists(_ model: FavoriteModel) -> Bool {
-        if model.itemType == .comic {
-            if exists(id: model.id, itemType: .comic) {
-                return true
-            }
-        } else {
-            if exists(id: model.id, itemType: .hero) {
-                return true
-            }
-        }
-        return false
+        return exists(id: model.id, itemType: getItemType(of: model))
     }
     
     func exists(id: Int, itemType: SearchItemType = .hero) -> Bool {
         return find(id: id, itemType: itemType) != nil
     }
     
-//    func delete(id: Int, itemType: SearchItemType = .all) {
-//        if !exists(id: id, itemType: itemType) {
-//            return
-//        }
-//
-//        context.delete(<#T##object: NSManagedObject##NSManagedObject#>)
-//    }
+    func delete(_ model: FavoriteModel) {
+        if !exists(model) {
+            return
+        }
+        
+        delete(id: model.id, itemType: getItemType(of: model))
+    }
+    
+    func delete(id: Int, itemType: SearchItemType = .all) {
+        if !exists(id: id, itemType: itemType) {
+            return
+        }
+
+        do {
+            var request: NSFetchRequest<FavoriteEntity> =  FavoriteEntity.fetchRequest()
+            request.fetchLimit = 1
+            request.predicate = getPredicates(id: id, itemType: itemType)
+            
+            let entitiesArray: [FavoriteEntity] = try context.fetch(request)
+            
+            for entity in entitiesArray {
+                context.delete(entity)
+            }
+        } catch {
+            print(error.localizedDescription)
+        }
+    }
     
     // MARK: - Private Methods
     private func getPredicates(id: Int? = nil, term: String? = nil, itemType: SearchItemType = .all) -> NSCompoundPredicate {
@@ -138,5 +148,12 @@ struct FavoriteCoreDataDAO: CoreDataDAOProtocol {
         let result = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
         
         return result
+    }
+    
+    private func getItemType(of model: FavoriteModel) -> SearchItemType {
+        switch model.itemType {
+        case .comic: return .comic
+        default: return .hero
+        }
     }
 }

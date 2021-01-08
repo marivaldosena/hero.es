@@ -78,6 +78,28 @@ struct FavoriteRepository {
         }
     }
     
+    func delete(_ array: [FavoriteModel], in persistentMethod: PersistentMethodEnum = .coreData) {
+        for item in array {
+            delete(item, in: persistentMethod)
+        }
+    }
+    
+    func delete(_ model: FavoriteModel, in persistentMethod: PersistentMethodEnum = .coreData) {
+        switch persistentMethod {
+        case .coreData:
+            deleteInCoreData(model)
+        default: break
+        }
+    }
+    
+    func delete(id: Int, itemType: SearchItemType = .hero, in persistentMethod: PersistentMethodEnum = .coreData) {
+        switch persistentMethod {
+        case .coreData:
+            deleteInCoreData(id: id, itemType: itemType)
+        default: break
+        }
+    }
+    
     // MARK: - Private Methods
     private func findInCoreData(
         term: String? = nil,
@@ -102,7 +124,17 @@ struct FavoriteRepository {
         return favoriteCoreDataDAO.find(id: id, itemType: itemType)
     }
     
-    private func saveInCoreData(_ model: FavoriteModel, in persistentMethod: PersistentMethodEnum = .coreData) {
+    private func saveInCoreData(_ model: FavoriteModel) {
         favoriteCoreDataDAO.save(model)
+    }
+    
+    private func deleteInCoreData(_ model: FavoriteModel? = nil, id: Int? = nil, itemType: SearchItemType = .hero) {
+        if let model = model {
+            favoriteCoreDataDAO.delete(model)
+        }
+        
+        if let id = id {
+            favoriteCoreDataDAO.delete(id: id, itemType: itemType)
+        }
     }
 }

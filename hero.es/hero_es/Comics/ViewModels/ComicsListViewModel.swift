@@ -75,8 +75,8 @@ class ComicsListViewModel {
     }
     
     // MARK: - Private Methods
-    private func isIndexAvailable(index: Int) -> Bool {
-        if index > 0 && index < modelsArray.count {
+    private func isIndexAvailable(index: Int = 0) -> Bool {
+        if index >= 0 && index < modelsArray.count {
             return true
         }
         

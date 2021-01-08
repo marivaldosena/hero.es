@@ -40,4 +40,26 @@ struct FavoriteParser {
         
         return model
     }
+    
+    static func from(_ item: CellItemProtocol, itemType: SearchItemType = .hero) -> FavoriteModel? {
+        let favoriteItemType: ItemType
+        
+        switch itemType {
+        case .comic:
+            favoriteItemType = .comic
+        default:
+            favoriteItemType = .hero
+        }
+        
+        let model = FavoriteModel(
+            id: item.id,
+            itemType: favoriteItemType,
+            name: item.name,
+            resourceURI: item.resourceURI,
+            thumbnailString: item.thumbnailString,
+            description: item.description
+        )
+        
+        return model
+    }
 }
