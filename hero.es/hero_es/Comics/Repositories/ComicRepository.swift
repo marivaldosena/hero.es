@@ -37,6 +37,15 @@ struct ComicRepository {
         }
     }
     
+    func find(id: Int, in persistentMethod: PersistentMethodEnum = .coreData) -> ComicModel? {
+        switch persistentMethod {
+        case .coreData:
+            return findModelInCoreData(id: id)
+        default:
+            return nil
+        }
+    }
+    
     func save(_ model: ComicModel, in persistentMethod: PersistentMethodEnum = .coreData) {
         switch persistentMethod {
         case .coreData:
@@ -76,6 +85,10 @@ struct ComicRepository {
             return comicDAO.find(term: term, limit: limit, offset: offset)
         }
         return comicDAO.find()
+    }
+    
+    private func findModelInCoreData(id: Int) -> ComicModel? {
+        return comicDAO.find(id: id)
     }
     
     private func saveRelatedModelInCoreData(_ relatedModel: RelatedHeroModel, to model: ComicModel) {

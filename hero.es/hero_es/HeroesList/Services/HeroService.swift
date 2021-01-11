@@ -90,6 +90,10 @@ class HeroService {
         return repository.find(term: term, in: persistentMethod)
     }
     
+    func find(id: Int, in persistentMethod: PersistentMethodEnum = .coreData) -> HeroModel? {
+        return repository.find(id: id)
+    }
+    
     func save(comic: RelatedComicModel,
               to hero: HeroModel,
               in persistentMethod: PersistentMethodEnum = .coreData) {

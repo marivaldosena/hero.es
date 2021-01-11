@@ -22,8 +22,9 @@ class ItemCell: UITableViewCell {
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var likeButton: UIButton!
     
-    private var item: CellItemProtocol?
     weak var delegate: ShareAndLikeItemProtocol?
+    private var item: CellItemProtocol?
+    private var itemType: SearchItemType? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -37,14 +38,27 @@ class ItemCell: UITableViewCell {
         delegate?.like(item: item)
     }
 
-    func configure(with item: CellItemProtocol?) {
+    func configure(with item: CellItemProtocol?, itemType: SearchItemType? = nil) {
         self.item = item
+        self.itemType = itemType
         self.updateUIInterface()
     }
     
     private func updateUIInterface() {
-        self.itemName.text = self.item?.name ?? "Item Name"
-        self.itemDescription.text = self.item?.description ?? "Item Description"
-        self.itemImageView.image = self.item?.getImage()
+        DispatchQueue.main.async {
+            self.itemName.text = self.item?.name ?? "Item Name"
+            self.itemDescription.text = self.item?.description ?? "Item Description"
+            self.itemImageView.image = self.item?.getImage()
+            self.likeButton.setImage(self.getLikeButtonImage(), for: .normal)
+        }
+    }
+    
+    private func getLikeButtonImage() -> UIImage? {
+        if let item = item  {
+            if item.isFavorite() == true {
+                return UIImage(systemName: "heart.fill")
+            }
+        }
+        return UIImage(systemName: "heart")
     }
 }

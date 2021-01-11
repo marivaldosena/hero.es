@@ -11,6 +11,7 @@ protocol RepositoryProtocol {
     associatedtype Model
 }
 
+// MARK: - HeroRepository
 struct HeroRepository {
     static var shared = HeroRepository()
     private var heroDAO: HeroCoreDataDAO
@@ -24,6 +25,7 @@ struct HeroRepository {
         comicHeroRelationshipDAO = ComicHeroRelationshipCoreDataDAO(container: container)
     }
     
+    // MARK: - Public Methods
     mutating func save(hero: HeroModel, in persistentMethod: PersistentMethodEnum = .coreData) {
         switch persistentMethod {
         case .coreData: self.saveHeroInCoreData(hero)
@@ -63,6 +65,15 @@ struct HeroRepository {
         return modelsArray
     }
     
+    func find(id: Int, in persistentMethod: PersistentMethodEnum = .coreData) -> HeroModel? {
+        switch persistentMethod {
+        case .coreData:
+            return findHeroInCoreData(id: id)
+        default:
+            return nil
+        }
+    }
+    
     func save(comic: RelatedComicModel,
               to hero: HeroModel,
               in persistentMethod: PersistentMethodEnum = .coreData) {
@@ -72,6 +83,7 @@ struct HeroRepository {
         }
     }
     
+    // MARK: - Private Methods
     private mutating func saveHeroInCoreData(_ hero: HeroModel) {
         self.heroDAO.save(hero)
     }
@@ -81,6 +93,10 @@ struct HeroRepository {
             return heroDAO.find(term: term)
         }
         return heroDAO.find()
+    }
+    
+    private func findHeroInCoreData(id: Int) -> HeroModel? {
+        return heroDAO.find(id: id)
     }
     
     private func saveRelatedComicToHeroInCoreData(_ comic: RelatedComicModel, to hero: HeroModel) {
