@@ -88,6 +88,13 @@ class ComicService: ComicServiceProtocol {
         return repository.find(term: term, limit: limit, offset: offset, in: persistentMethod)
     }
     
+    func find(id: Int, in persistentMethod: PersistentMethodEnum = .coreData) -> ComicModel? {
+        if persistentMethod != .online {
+            return repository.find(id: id)
+        }
+        return nil
+    }
+    
     func save(_ model: ComicModel, in persistentMethod: PersistentMethodEnum) {
         if persistentMethod != .online {
             repository.save(model, in: persistentMethod)

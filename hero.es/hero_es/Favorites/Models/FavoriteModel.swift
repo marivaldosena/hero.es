@@ -7,11 +7,6 @@
 
 import Foundation
 
-enum ItemType: String {
-    case hero = "Hero"
-    case comic = "Comic"
-}
-
 struct FavoriteModel: CellItemProtocol {
     var id: Int
     var itemType: ItemType
