@@ -41,7 +41,7 @@ extension ComicsListViewController: UITableViewDataSource {
         // TODO: Refactor to use viewModel getItem(at:).
         // TODO: Also create a method for taking the current model when using pagination.
         let model = getItem(at: indexPath.row)
-        cell.configure(with: model)
+        cell.configure(with: model, itemType: .comic)
         cell.delegate = self
         
         return cell
@@ -57,7 +57,9 @@ extension ComicsListViewController: ShareAndLikeItemProtocol {
     
     func like(item: CellItemProtocol?) {
         guard let item = item else { return }
-        print("Liking item: \(item.name)")
+        let service = FavoriteService.shared
+        service.toggleFavorite(item, itemType: .comic)
+        updateUIInterface()
     }
 }
 

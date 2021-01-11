@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		97BBFED8148157A9D966CBD0 /* Pods_hero_es.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D5A7F0183D137FF349BEDD /* Pods_hero_es.framework */; };
 		C574CDE6D77D591316FB12A9 /* Pods_hero_esTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B9DEA949D2073B5B912AEA /* Pods_hero_esTests.framework */; };
+		C90A096625ABCBE100AE516B /* CellItemProtocol+Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A096525ABCBE100AE516B /* CellItemProtocol+Favorite.swift */; };
 		C90A32DB25869F5100C3272C /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A32DA25869F5100C3272C /* ConfigViewController.swift */; };
 		C90A32DD25869F7300C3272C /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A32DC25869F7300C3272C /* CreateAccountViewController.swift */; };
 		C91CC750259E4F3B0060B798 /* ComicsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91CC74F259E4F3B0060B798 /* ComicsListViewModel.swift */; };
@@ -124,6 +125,7 @@
 		A53A91EC05C7DA83D9A793FA /* Pods-hero_esUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero_esUITests.release.xcconfig"; path = "Target Support Files/Pods-hero_esUITests/Pods-hero_esUITests.release.xcconfig"; sourceTree = "<group>"; };
 		C27EDBEBA58BD96B9E1D1665 /* Pods-hero_esTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero_esTests.release.xcconfig"; path = "Target Support Files/Pods-hero_esTests/Pods-hero_esTests.release.xcconfig"; sourceTree = "<group>"; };
 		C48D4A66EF920A0858064E4F /* Pods-hero_es-hero_esUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero_es-hero_esUITests.debug.xcconfig"; path = "Target Support Files/Pods-hero_es-hero_esUITests/Pods-hero_es-hero_esUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		C90A096525ABCBE100AE516B /* CellItemProtocol+Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellItemProtocol+Favorite.swift"; sourceTree = "<group>"; };
 		C90A32DA25869F5100C3272C /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		C90A32DC25869F7300C3272C /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		C91CC74F259E4F3B0060B798 /* ComicsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsListViewModel.swift; sourceTree = "<group>"; };
@@ -349,6 +351,7 @@
 				C92FF70C25A53B0B0011F44F /* FavoriteModel.swift */,
 				C9BBE65B25A65E650034832F /* ItemType.swift */,
 				C9BBE65F25A65FA20034832F /* SearchItemType.swift */,
+				C90A096525ABCBE100AE516B /* CellItemProtocol+Favorite.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1017,6 +1020,7 @@
 				EB99AC262548E8E30071B7FA /* HeroModel.swift in Sources */,
 				C98D7CFB254058CD00D95BC8 /* HeroListTableViewCell.swift in Sources */,
 				C9E1C52C2571E0050068EB7C /* ValidatorService.swift in Sources */,
+				C90A096625ABCBE100AE516B /* CellItemProtocol+Favorite.swift in Sources */,
 				C9BBE66025A65FA20034832F /* SearchItemType.swift in Sources */,
 				EB99AC2B2548E91A0071B7FA /* ThumbnailModel.swift in Sources */,
 				C97B903725411037004233F2 /* HeroesListViewController.swift in Sources */,

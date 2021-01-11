@@ -100,6 +100,24 @@ struct FavoriteRepository {
         }
     }
     
+    func isFavorite(_ model: FavoriteModel, in persistentMethod: PersistentMethodEnum = .coreData) -> Bool {
+        switch persistentMethod {
+        case .coreData:
+            return isFavoriteInCoreData(model)
+        default:
+            return false
+        }
+    }
+    
+    func isFavorite(id: Int, itemType: SearchItemType = .hero, in persistentMethod: PersistentMethodEnum = .coreData) -> Bool {
+        switch persistentMethod {
+        case .coreData:
+            return isFavoriteInCoreData(id: id, itemType: itemType)
+        default:
+            return false
+        }
+    }
+    
     // MARK: - Private Methods
     private func findInCoreData(
         term: String? = nil,
@@ -136,5 +154,17 @@ struct FavoriteRepository {
         if let id = id {
             favoriteCoreDataDAO.delete(id: id, itemType: itemType)
         }
+    }
+    
+    private func isFavoriteInCoreData(_ model: FavoriteModel? = nil, id: Int? = nil, itemType: SearchItemType = .hero) -> Bool {
+        if let id = id {
+            return favoriteCoreDataDAO.isFavorite(id: id, itemType: itemType)
+        }
+        
+        if let model = model {
+            return favoriteCoreDataDAO.isFavorite(model)
+        }
+        
+        return false
     }
 }

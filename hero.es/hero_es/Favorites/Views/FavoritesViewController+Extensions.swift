@@ -16,7 +16,18 @@ extension FavoritesViewController {
         }
     }
     
-    func filterFavorites(option: SearchItemType) {
+    func filterFavorites() {
+        let selectedOption = filterSegmentedControl.selectedSegmentIndex
+        let option: SearchItemType
+        
+        switch selectedOption {
+        case 1:
+            option = .hero
+        case 2:
+            option = .comic
+        default:
+            option = .all
+        }
         viewModel.getItems(itemType: option)
         updateUIInterface()
     }
@@ -52,6 +63,10 @@ extension FavoritesViewController: ShareAndLikeItemProtocol {
     }
     
     func like(item: CellItemProtocol?) {
-        print("Like this item")
+        guard let item = item else { return }
+        guard let model = FavoriteParser.from(item) else { return }
+        let service = FavoriteService.shared
+        service.toggleFavorite(model)
+        filterFavorites()
     }
 }

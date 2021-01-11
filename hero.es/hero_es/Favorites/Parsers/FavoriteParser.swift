@@ -41,14 +41,21 @@ struct FavoriteParser {
         return model
     }
     
-    static func from(_ item: CellItemProtocol, itemType: SearchItemType = .hero) -> FavoriteModel? {
-        let favoriteItemType: ItemType
+    static func from(_ item: CellItemProtocol, itemType: SearchItemType? = nil) -> FavoriteModel? {
+        var favoriteItemType: ItemType
         
-        switch itemType {
-        case .comic:
-            favoriteItemType = .comic
-        default:
-            favoriteItemType = .hero
+        if let itemType = itemType {
+            if itemType == .comic {
+                favoriteItemType = .comic
+            } else {
+                favoriteItemType = .hero
+            }
+        } else {
+            if HeroService.shared.find(id: item.id) != nil {
+                favoriteItemType = .hero
+            } else {
+                favoriteItemType = .comic
+            }
         }
         
         let model = FavoriteModel(

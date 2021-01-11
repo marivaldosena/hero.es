@@ -31,6 +31,7 @@ class ComicsListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        viewModel.loadItems()
     }
     
     func updateUIInterface() {

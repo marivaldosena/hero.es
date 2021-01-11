@@ -31,15 +31,11 @@ class FavoritesViewController: UIViewController {
     }
     
     @IBAction func filterFavorites(_ sender: UISegmentedControl) {
-        let selectedOption = sender.selectedSegmentIndex
-        
-        switch selectedOption {
-        case 1:
-            filterFavorites(option: .hero)
-        case 2:
-            filterFavorites(option: .comic)
+        switch sender {
+        case filterSegmentedControl:
+            filterFavorites()
         default:
-            filterFavorites(option: .all)
+            break
         }
     }
 }
