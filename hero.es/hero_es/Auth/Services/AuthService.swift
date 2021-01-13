@@ -57,7 +57,7 @@ struct AuthService {
     }
     
     func loginWithEmailAndPassword(_ email: String, _ password: String, _ completion: @escaping AuthCompletionHandlerType) {
-        Auth.auth().signIn(withEmail: email, password: password) { (authResult, error) in
+        loginWith(email: email, password: password) { (authResult, error) in
             guard let user = authResult?.user else {
                 completion(nil, error)
                 return
@@ -105,6 +105,10 @@ struct AuthService {
         }
     }
     
+    func update(email oldEmail: String, withPassword oldPassword: String, completion: @escaping AuthCompletionHandlerType) {
+        // TODO: Implement this logic
+    }
+    
     // MARK: - Private Methods
     private func insertCreatedUserToUserTable(authCredentials: AuthCredentialsModel,
                                               completion: @escaping CompletionWithNullableErrorHandlerType) {
@@ -127,5 +131,9 @@ struct AuthService {
     
     private func saveUserDataInPreferences(authCredentials: AuthCredentialsModel) {
         AuthCredentialsParser.saveUserInPreferences(authCredentials: authCredentials)
+    }
+    
+    private func loginWith(email: String, password: String, completion: @escaping (AuthDataResult?, Error?) -> Void) {
+        Auth.auth().signIn(withEmail: email, password: password, completion: completion)
     }
 }

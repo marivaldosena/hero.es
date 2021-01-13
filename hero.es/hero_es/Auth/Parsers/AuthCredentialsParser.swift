@@ -1,46 +1,11 @@
 //
-//  AuthModel.swift
+//  AuthCredentialsParser.swift
 //  hero_es
 //
-//  Created by Marivaldo Sena on 13/12/20.
+//  Created by Marivaldo Sena on 13/01/21.
 //
 
 import Foundation
-
-enum GetUserFromEnumType {
-    case dictionary
-    case preferences
-}
-
-// MARK: - CreateAuthCredentialsModel
-struct CreateAuthCredentialsModel {
-    let username: String
-    let email: String
-    let password: String
-    
-    init(username: String, email: String, password: String) {
-        self.username = username
-        self.email = email
-        self.password = password
-    }
-}
-
-// MARK: - AuthCredentialsModel
-struct AuthCredentialsModel {
-    let userId: String
-    let username: String
-    let email: String
-    let lastLoginAt: Date
-    let registrationDate: Date
-    
-    init(userId: String, username: String, email: String, lastLoginAt: Date, registrationDate: Date) {
-        self.userId = userId
-        self.username = username
-        self.email = email
-        self.lastLoginAt = lastLoginAt
-        self.registrationDate = registrationDate
-    }
-}
 
 // MARK: - AuthCredentialsParser
 struct AuthCredentialsParser {

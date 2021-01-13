@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		97BBFED8148157A9D966CBD0 /* Pods_hero_es.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D5A7F0183D137FF349BEDD /* Pods_hero_es.framework */; };
-		BA24355C45A94149BCD81D6C /* Pods_hero_es_hero_esUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9C7CF8B79A07640363986DD7 /* Pods_hero_es_hero_esUITests.framework */; };
 		C574CDE6D77D591316FB12A9 /* Pods_hero_esTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B9DEA949D2073B5B912AEA /* Pods_hero_esTests.framework */; };
 		C90A32DB25869F5100C3272C /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A32DA25869F5100C3272C /* ConfigViewController.swift */; };
 		C90A32DD25869F7300C3272C /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A32DC25869F7300C3272C /* CreateAccountViewController.swift */; };
@@ -25,6 +24,11 @@
 		C94792F32596B915009888BE /* CoreDataDAOProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94792F22596B915009888BE /* CoreDataDAOProtocol.swift */; };
 		C954509D258AEA2B008E8E55 /* HeroParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C954509C258AEA2B008E8E55 /* HeroParser.swift */; };
 		C954509F258AECC3008E8E55 /* heroes-list.json in Resources */ = {isa = PBXBuildFile; fileRef = C954509E258AECC3008E8E55 /* heroes-list.json */; };
+		C9649F5225AE5EEF002D9D13 /* TempUpdateUserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9649F5125AE5EEF002D9D13 /* TempUpdateUserDataModel.swift */; };
+		C9649F5725AF32B4002D9D13 /* ConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9649F5625AF32B4002D9D13 /* ConfigService.swift */; };
+		C9649F5C25AF399F002D9D13 /* GetUserFromEnumType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9649F5B25AF399F002D9D13 /* GetUserFromEnumType.swift */; };
+		C9649F6125AF39D0002D9D13 /* CreateAuthCredentialsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9649F6025AF39D0002D9D13 /* CreateAuthCredentialsModel.swift */; };
+		C9649F6625AF3A9F002D9D13 /* AuthCredentialsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9649F6525AF3A9F002D9D13 /* AuthCredentialsParser.swift */; };
 		C97B903725411037004233F2 /* HeroesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97B903625411037004233F2 /* HeroesListViewController.swift */; };
 		C989107C25868FDA0089CE0B /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C989107B25868FDA0089CE0B /* MainViewModel.swift */; };
 		C98D7CFB254058CD00D95BC8 /* HeroListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D7CF9254058CD00D95BC8 /* HeroListTableViewCell.swift */; };
@@ -48,11 +52,10 @@
 		C9B89A5525420C97002946CA /* SeedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89A5425420C97002946CA /* SeedProtocol.swift */; };
 		C9B89A62254213B3002946CA /* Searchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89A61254213B3002946CA /* Searchable.swift */; };
 		C9B9B4AF259D463900EE673F /* HeroDetailsViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B9B4AE259D463900EE673F /* HeroDetailsViewController+Extensions.swift */; };
-		C9BEE9CE259D856C0064B981 /* HeroDetails_UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BEE9CD259D856C0064B981 /* HeroDetails_UITests.swift */; };
 		C9C7CF7225977C1D004F9C4D /* ComicHeroRelationshipCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C7CF7125977C1B004F9C4D /* ComicHeroRelationshipCoreDataDAO.swift */; };
 		C9CD7E3C254330B1001E5E54 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */; };
 		C9D7E3E32586E58000D65E1E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D7E3E22586E58000D65E1E /* AuthService.swift */; };
-		C9D7E3E52587045F00D65E1E /* AuthModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D7E3E42587045F00D65E1E /* AuthModel.swift */; };
+		C9D7E3E52587045F00D65E1E /* AuthCredentialsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D7E3E42587045F00D65E1E /* AuthCredentialsModel.swift */; };
 		C9D7E3E72587122E00D65E1E /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D7E3E62587122E00D65E1E /* AuthViewModel.swift */; };
 		C9E1C52C2571E0050068EB7C /* ValidatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C52A2571E0050068EB7C /* ValidatorService.swift */; };
 		C9E1C5512571E3E20068EB7C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9E1C5502571E3E10068EB7C /* GoogleService-Info.plist */; };
@@ -76,13 +79,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = C9B14369253FBA400013DC42;
 			remoteInfo = hero.es;
-		};
-		C9B56E7B259D8069005D4C95 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C9B14362253FBA400013DC42 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C9B14369253FBA400013DC42;
-			remoteInfo = hero_es;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -110,6 +106,11 @@
 		C94792F42596C6A4009888BE /* hero_es_v02_renaming_comic_entity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hero_es_v02_renaming_comic_entity.xcdatamodel; sourceTree = "<group>"; };
 		C954509C258AEA2B008E8E55 /* HeroParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroParser.swift; sourceTree = "<group>"; };
 		C954509E258AECC3008E8E55 /* heroes-list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "heroes-list.json"; sourceTree = "<group>"; };
+		C9649F5125AE5EEF002D9D13 /* TempUpdateUserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempUpdateUserDataModel.swift; sourceTree = "<group>"; };
+		C9649F5625AF32B4002D9D13 /* ConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigService.swift; sourceTree = "<group>"; };
+		C9649F5B25AF399F002D9D13 /* GetUserFromEnumType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserFromEnumType.swift; sourceTree = "<group>"; };
+		C9649F6025AF39D0002D9D13 /* CreateAuthCredentialsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAuthCredentialsModel.swift; sourceTree = "<group>"; };
+		C9649F6525AF3A9F002D9D13 /* AuthCredentialsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredentialsParser.swift; sourceTree = "<group>"; };
 		C97B903625411037004233F2 /* HeroesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListViewController.swift; sourceTree = "<group>"; };
 		C989107B25868FDA0089CE0B /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		C98D7CF9254058CD00D95BC8 /* HeroListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListTableViewCell.swift; sourceTree = "<group>"; };
@@ -132,7 +133,6 @@
 		C9B14389253FBA7E0013DC42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9B143AB253FD78F0013DC42 /* HeroesList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HeroesList.storyboard; sourceTree = "<group>"; };
 		C9B52A392543AFCD00F9957D /* UIKitUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitUtils.swift; sourceTree = "<group>"; };
-		C9B56E76259D8069005D4C95 /* hero_esUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hero_esUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9B56E7A259D8069005D4C95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9B89A392541F81D002946CA /* HeroDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HeroDetails.storyboard; sourceTree = "<group>"; };
 		C9B89A4925420B5E002946CA /* ItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemProtocol.swift; sourceTree = "<group>"; };
@@ -143,7 +143,7 @@
 		C9C7CF7125977C1B004F9C4D /* ComicHeroRelationshipCoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicHeroRelationshipCoreDataDAO.swift; sourceTree = "<group>"; };
 		C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
 		C9D7E3E22586E58000D65E1E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		C9D7E3E42587045F00D65E1E /* AuthModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthModel.swift; sourceTree = "<group>"; };
+		C9D7E3E42587045F00D65E1E /* AuthCredentialsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredentialsModel.swift; sourceTree = "<group>"; };
 		C9D7E3E62587122E00D65E1E /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		C9E1C52A2571E0050068EB7C /* ValidatorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorService.swift; sourceTree = "<group>"; };
 		C9E1C5502571E3E10068EB7C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -177,14 +177,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C574CDE6D77D591316FB12A9 /* Pods_hero_esTests.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C9B56E73259D8069005D4C95 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BA24355C45A94149BCD81D6C /* Pods_hero_es_hero_esUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,6 +252,72 @@
 			path = PresentationLayer;
 			sourceTree = "<group>";
 		};
+		C9649F4725AE5DAB002D9D13 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C994421B2550CB23004F2D82 /* Config.storyboard */,
+				C90A32DA25869F5100C3272C /* ConfigViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C9649F4B25AE5DB8002D9D13 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C9649F4F25AE5DE5002D9D13 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C9649F5125AE5EEF002D9D13 /* TempUpdateUserDataModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C9649F5025AE5EAB002D9D13 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C9649F5625AF32B4002D9D13 /* ConfigService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C9649F6A25AF3ABE002D9D13 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C9D7E3E22586E58000D65E1E /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C9649F6B25AF3AD9002D9D13 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C9D7E3E62587122E00D65E1E /* AuthViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C9649F6C25AF3AE7002D9D13 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				C9649F6525AF3A9F002D9D13 /* AuthCredentialsParser.swift */,
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
+		C9649F7025AF3AF6002D9D13 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C9D7E3E42587045F00D65E1E /* AuthCredentialsModel.swift */,
+				C9649F5B25AF399F002D9D13 /* GetUserFromEnumType.swift */,
+				C9649F6025AF39D0002D9D13 /* CreateAuthCredentialsModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		C98D7CF62540585600D95BC8 /* HeroesList */ = {
 			isa = PBXGroup;
 			children = (
@@ -312,8 +370,10 @@
 		C994421A2550CB0E004F2D82 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				C994421B2550CB23004F2D82 /* Config.storyboard */,
-				C90A32DA25869F5100C3272C /* ConfigViewController.swift */,
+				C9649F4F25AE5DE5002D9D13 /* Models */,
+				C9649F5025AE5EAB002D9D13 /* Services */,
+				C9649F4725AE5DAB002D9D13 /* Views */,
+				C9649F4B25AE5DB8002D9D13 /* ViewModels */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -335,7 +395,6 @@
 			children = (
 				C9B1436A253FBA400013DC42 /* hero.es.app */,
 				C9B14383253FBA7E0013DC42 /* hero_esTests.xctest */,
-				C9B56E76259D8069005D4C95 /* hero_esUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -449,9 +508,10 @@
 		C9D7E3E12586E55800D65E1E /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				C9D7E3E42587045F00D65E1E /* AuthModel.swift */,
-				C9D7E3E22586E58000D65E1E /* AuthService.swift */,
-				C9D7E3E62587122E00D65E1E /* AuthViewModel.swift */,
+				C9649F7025AF3AF6002D9D13 /* Models */,
+				C9649F6C25AF3AE7002D9D13 /* Parsers */,
+				C9649F6A25AF3ABE002D9D13 /* Services */,
+				C9649F6B25AF3AD9002D9D13 /* ViewModels */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -575,26 +635,6 @@
 			productReference = C9B14383253FBA7E0013DC42 /* hero_esTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		C9B56E75259D8069005D4C95 /* hero_esUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C9B56E7D259D8069005D4C95 /* Build configuration list for PBXNativeTarget "hero_esUITests" */;
-			buildPhases = (
-				A421D6966DDBCC2F54E59230 /* [CP] Check Pods Manifest.lock */,
-				C9B56E72259D8069005D4C95 /* Sources */,
-				C9B56E73259D8069005D4C95 /* Frameworks */,
-				C9B56E74259D8069005D4C95 /* Resources */,
-				65B355230D348B8669D7AF29 /* [CP] Embed Pods Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C9B56E7C259D8069005D4C95 /* PBXTargetDependency */,
-			);
-			name = hero_esUITests;
-			productName = hero_esUITests;
-			productReference = C9B56E76259D8069005D4C95 /* hero_esUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -609,10 +649,6 @@
 					};
 					C9B14382253FBA7E0013DC42 = {
 						CreatedOnToolsVersion = 12.0.1;
-						TestTargetID = C9B14369253FBA400013DC42;
-					};
-					C9B56E75259D8069005D4C95 = {
-						CreatedOnToolsVersion = 11.3.1;
 						TestTargetID = C9B14369253FBA400013DC42;
 					};
 				};
@@ -632,7 +668,6 @@
 			targets = (
 				C9B14369253FBA400013DC42 /* hero_es */,
 				C9B14382253FBA7E0013DC42 /* hero_esTests */,
-				C9B56E75259D8069005D4C95 /* hero_esUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -667,13 +702,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C9B56E74259D8069005D4C95 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -697,23 +725,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		65B355230D348B8669D7AF29 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-hero_es-hero_esUITests/Pods-hero_es-hero_esUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-hero_es-hero_esUITests/Pods-hero_es-hero_esUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hero_es-hero_esUITests/Pods-hero_es-hero_esUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		85C8F448F375A0F566383DC5 /* [CP] Check Pods Manifest.lock */ = {
@@ -755,28 +766,6 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hero_es/Pods-hero_es-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A421D6966DDBCC2F54E59230 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-hero_es-hero_esUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -784,11 +773,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C9649F6625AF3A9F002D9D13 /* AuthCredentialsParser.swift in Sources */,
 				C90A32DD25869F7300C3272C /* CreateAccountViewController.swift in Sources */,
 				C9E66C76258C2E0C00CF9F17 /* HeroRepository.swift in Sources */,
 				C90A32DB25869F5100C3272C /* ConfigViewController.swift in Sources */,
+				C9649F5725AF32B4002D9D13 /* ConfigService.swift in Sources */,
 				EB99AC1C2548E7D00071B7FA /* BaseModel.swift in Sources */,
-				C9D7E3E52587045F00D65E1E /* AuthModel.swift in Sources */,
+				C9649F5225AE5EEF002D9D13 /* TempUpdateUserDataModel.swift in Sources */,
+				C9D7E3E52587045F00D65E1E /* AuthCredentialsModel.swift in Sources */,
 				C94792F32596B915009888BE /* CoreDataDAOProtocol.swift in Sources */,
 				EB99AC212548E85C0071B7FA /* DataClass.swift in Sources */,
 				C91FA86125982919008CDBD1 /* HeroDetailsViewModel.swift in Sources */,
@@ -803,6 +795,7 @@
 				C9B52A3A2543AFCD00F9957D /* UIKitUtils.swift in Sources */,
 				C9E66C79258C2E4300CF9F17 /* HeroCoreDataDAO.swift in Sources */,
 				EB99AC262548E8E30071B7FA /* HeroModel.swift in Sources */,
+				C9649F5C25AF399F002D9D13 /* GetUserFromEnumType.swift in Sources */,
 				C98D7CFB254058CD00D95BC8 /* HeroListTableViewCell.swift in Sources */,
 				C9E1C52C2571E0050068EB7C /* ValidatorService.swift in Sources */,
 				EB99AC2B2548E91A0071B7FA /* ThumbnailModel.swift in Sources */,
@@ -817,6 +810,7 @@
 				C943A6FA258F95DA0051F3E7 /* HeroesListViewModel.swift in Sources */,
 				C927C75A2598E64400187456 /* MasterDetailNavigationProtocol.swift in Sources */,
 				C94792EF2596B1E7009888BE /* RelatedComicCoreDataDAO.swift in Sources */,
+				C9649F6125AF39D0002D9D13 /* CreateAuthCredentialsModel.swift in Sources */,
 				C9D7E3E72587122E00D65E1E /* AuthViewModel.swift in Sources */,
 				C9415879258E7DF000CC81A6 /* RelatedComicModel.swift in Sources */,
 				C9C7CF7225977C1D004F9C4D /* ComicHeroRelationshipCoreDataDAO.swift in Sources */,
@@ -835,14 +829,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C9B56E72259D8069005D4C95 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C9BEE9CE259D856C0064B981 /* HeroDetails_UITests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -850,11 +836,6 @@
 			isa = PBXTargetDependency;
 			target = C9B14369253FBA400013DC42 /* hero_es */;
 			targetProxy = C9B14384253FBA7E0013DC42 /* PBXContainerItemProxy */;
-		};
-		C9B56E7C259D8069005D4C95 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C9B14369253FBA400013DC42 /* hero_es */;
-			targetProxy = C9B56E7B259D8069005D4C95 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1093,59 +1074,6 @@
 			};
 			name = Release;
 		};
-		C9B56E7E259D8069005D4C95 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = C48D4A66EF920A0858064E4F /* Pods-hero_es-hero_esUITests.debug.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7N4P82U958;
-				INFOPLIST_FILE = hero_esUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.marivaldosena.hero-esUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_INCLUDE_PATHS = "";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(TEST_HOST)";
-				TEST_TARGET_NAME = hero_es;
-				TVOS_DEPLOYMENT_TARGET = 13.0;
-				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
-			};
-			name = Debug;
-		};
-		C9B56E7F259D8069005D4C95 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE327854AE97F86AFD175E5B /* Pods-hero_es-hero_esUITests.release.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7N4P82U958;
-				ENABLE_TESTABILITY = NO;
-				INFOPLIST_FILE = hero_esUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = "com.github.marivaldosena.hero-esUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				SWIFT_INCLUDE_PATHS = "";
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(TEST_HOST)";
-				TEST_TARGET_NAME = hero_es;
-				TVOS_DEPLOYMENT_TARGET = 13.0;
-				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1172,15 +1100,6 @@
 			buildConfigurations = (
 				C9B1439B253FBA7E0013DC42 /* Debug */,
 				C9B1439C253FBA7E0013DC42 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C9B56E7D259D8069005D4C95 /* Build configuration list for PBXNativeTarget "hero_esUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C9B56E7E259D8069005D4C95 /* Debug */,
-				C9B56E7F259D8069005D4C95 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
