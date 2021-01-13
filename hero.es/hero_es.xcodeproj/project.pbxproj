@@ -104,7 +104,6 @@
 		C9F5D4F425AF4A4400887AF3 /* Config.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9F5D4F125AF4A4300887AF3 /* Config.storyboard */; };
 		EB99AC042548E1610071B7FA /* ServiceHeroesMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC032548E1610071B7FA /* ServiceHeroesMock.swift */; };
 		EB99AC0C2548E1CE0071B7FA /* HeroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC0B2548E1CE0071B7FA /* HeroService.swift */; };
-		EB99AC1C2548E7D00071B7FA /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC1B2548E7CF0071B7FA /* BaseModel.swift */; };
 		EB99AC212548E85C0071B7FA /* DataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC202548E85C0071B7FA /* DataClass.swift */; };
 		EB99AC262548E8E30071B7FA /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC252548E8E30071B7FA /* HeroModel.swift */; };
 		EB99AC2B2548E91A0071B7FA /* ThumbnailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC2A2548E91A0071B7FA /* ThumbnailModel.swift */; };
@@ -233,7 +232,6 @@
 		E3B9DEA949D2073B5B912AEA /* Pods_hero_esTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hero_esTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB99AC032548E1610071B7FA /* ServiceHeroesMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHeroesMock.swift; sourceTree = "<group>"; };
 		EB99AC0B2548E1CE0071B7FA /* HeroService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroService.swift; sourceTree = "<group>"; };
-		EB99AC1B2548E7CF0071B7FA /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		EB99AC202548E85C0071B7FA /* DataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClass.swift; sourceTree = "<group>"; };
 		EB99AC252548E8E30071B7FA /* HeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
 		EB99AC2A2548E91A0071B7FA /* ThumbnailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailModel.swift; sourceTree = "<group>"; };
@@ -402,6 +400,7 @@
 		C943A6F8258F95750051F3E7 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				C91FA86025982919008CDBD1 /* HeroDetailsViewModel.swift */,
 				C943A6F9258F95DA0051F3E7 /* HeroesListViewModel.swift */,
 			);
 			path = ViewModels;
@@ -412,7 +411,10 @@
 			children = (
 				C98D7CF82540588200D95BC8 /* HeroCell */,
 				C9B143AB253FD78F0013DC42 /* HeroesList.storyboard */,
+				C9B89A392541F81D002946CA /* HeroDetails.storyboard */,
 				C97B903625411037004233F2 /* HeroesListViewController.swift */,
+				C98D7D0B2540704C00D95BC8 /* HeroDetailsViewController.swift */,
+				C9B9B4AE259D463900EE673F /* HeroDetailsViewController+Extensions.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -464,7 +466,7 @@
 			path = DAO;
 			sourceTree = "<group>";
 		};
-		C98D7CF62540585600D95BC8 /* HeroesList */ = {
+		C98D7CF62540585600D95BC8 /* Heroes */ = {
 			isa = PBXGroup;
 			children = (
 				EB99AC1A2548E7770071B7FA /* Models */,
@@ -474,7 +476,7 @@
 				C943A6FB258F99E70051F3E7 /* Views */,
 				C943A6F8258F95750051F3E7 /* ViewModels */,
 			);
-			path = HeroesList;
+			path = Heroes;
 			sourceTree = "<group>";
 		};
 		C98D7CF72540586900D95BC8 /* Main */ = {
@@ -615,8 +617,7 @@
 				C994421A2550CB0E004F2D82 /* Config */,
 				C9CD7E3525432FBC001E5E54 /* CreateAccount */,
 				C99442072550C15C004F2D82 /* Favorites */,
-				C9B89A312541F7D4002946CA /* HeroDetails */,
-				C98D7CF62540585600D95BC8 /* HeroesList */,
+				C98D7CF62540585600D95BC8 /* Heroes */,
 				C98D7CF72540586900D95BC8 /* Main */,
 				C9CD7E40254340E5001E5E54 /* Shared */,
 				C9B1436D253FBA400013DC42 /* AppDelegate.swift */,
@@ -649,15 +650,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		C9B89A312541F7D4002946CA /* HeroDetails */ = {
-			isa = PBXGroup;
-			children = (
-				C9B9B4B0259D476F00EE673F /* Views */,
-				C9B9B4B1259D478F00EE673F /* ViewModels */,
-			);
-			path = HeroDetails;
-			sourceTree = "<group>";
-		};
 		C9B89A4825420B50002946CA /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -668,24 +660,6 @@
 				C9B89A61254213B3002946CA /* Searchable.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		C9B9B4B0259D476F00EE673F /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				C9B89A392541F81D002946CA /* HeroDetails.storyboard */,
-				C98D7D0B2540704C00D95BC8 /* HeroDetailsViewController.swift */,
-				C9B9B4AE259D463900EE673F /* HeroDetailsViewController+Extensions.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		C9B9B4B1259D478F00EE673F /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				C91FA86025982919008CDBD1 /* HeroDetailsViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		C9BBE65625A65B330034832F /* ViewModels */ = {
@@ -843,7 +817,6 @@
 		EB99AC1A2548E7770071B7FA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EB99AC1B2548E7CF0071B7FA /* BaseModel.swift */,
 				C9415876258E7D9F00CC81A6 /* ComicHeroModel.swift */,
 				EB99AC202548E85C0071B7FA /* DataClass.swift */,
 				EB99AC252548E8E30071B7FA /* HeroModel.swift */,
@@ -1066,7 +1039,11 @@
 				C9E66C76258C2E0C00CF9F17 /* HeroRepository.swift in Sources */,
 				C92FF70D25A53B0B0011F44F /* FavoriteModel.swift in Sources */,
 				C926658125A7602E005D2509 /* FavoritesViewController+Extensions.swift in Sources */,
+<<<<<<< HEAD
 				EB99AC1C2548E7D00071B7FA /* BaseModel.swift in Sources */,
+=======
+				C9D7E3E52587045F00D65E1E /* AuthModel.swift in Sources */,
+>>>>>>> feature/refactoring
 				C94792F32596B915009888BE /* CoreDataDAOProtocol.swift in Sources */,
 				EB99AC212548E85C0071B7FA /* DataClass.swift in Sources */,
 				C9EEEFAC25A4D19200431984 /* ComicDetailsViewModel.swift in Sources */,
