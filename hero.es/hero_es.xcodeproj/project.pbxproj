@@ -10,7 +10,6 @@
 		97BBFED8148157A9D966CBD0 /* Pods_hero_es.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 55D5A7F0183D137FF349BEDD /* Pods_hero_es.framework */; };
 		C574CDE6D77D591316FB12A9 /* Pods_hero_esTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3B9DEA949D2073B5B912AEA /* Pods_hero_esTests.framework */; };
 		C90A096625ABCBE100AE516B /* CellItemProtocol+Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A096525ABCBE100AE516B /* CellItemProtocol+Favorite.swift */; };
-		C90A32DB25869F5100C3272C /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A32DA25869F5100C3272C /* ConfigViewController.swift */; };
 		C90A32DD25869F7300C3272C /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C90A32DC25869F7300C3272C /* CreateAccountViewController.swift */; };
 		C91CC750259E4F3B0060B798 /* ComicsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91CC74F259E4F3B0060B798 /* ComicsListViewModel.swift */; };
 		C91CC752259E52F30060B798 /* ComicModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C91CC751259E52F30060B798 /* ComicModel.swift */; };
@@ -39,11 +38,9 @@
 		C94792F32596B915009888BE /* CoreDataDAOProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94792F22596B915009888BE /* CoreDataDAOProtocol.swift */; };
 		C954509D258AEA2B008E8E55 /* HeroParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C954509C258AEA2B008E8E55 /* HeroParser.swift */; };
 		C954509F258AECC3008E8E55 /* heroes-list.json in Resources */ = {isa = PBXBuildFile; fileRef = C954509E258AECC3008E8E55 /* heroes-list.json */; };
-		C9649F5225AE5EEF002D9D13 /* TempUpdateUserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9649F5125AE5EEF002D9D13 /* TempUpdateUserDataModel.swift */; };
-		C9649F5725AF32B4002D9D13 /* ConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9649F5625AF32B4002D9D13 /* ConfigService.swift */; };
-		C9649F5C25AF399F002D9D13 /* GetUserFromEnumType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9649F5B25AF399F002D9D13 /* GetUserFromEnumType.swift */; };
-		C9649F6125AF39D0002D9D13 /* CreateAuthCredentialsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9649F6025AF39D0002D9D13 /* CreateAuthCredentialsModel.swift */; };
-		C9649F6625AF3A9F002D9D13 /* AuthCredentialsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9649F6525AF3A9F002D9D13 /* AuthCredentialsParser.swift */; };
+		C970291625A0D7B400133FE8 /* ComicRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970291525A0D7B400133FE8 /* ComicRepository.swift */; };
+		C970291925A0D9F200133FE8 /* ComicCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970291825A0D9F200133FE8 /* ComicCoreDataDAO.swift */; };
+		C97A236425A12E2100AD4C28 /* ComicsListViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97A236325A12E2100AD4C28 /* ComicsListViewController+Extensions.swift */; };
 		C97B903725411037004233F2 /* HeroesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C97B903625411037004233F2 /* HeroesListViewController.swift */; };
 		C98D7CFB254058CD00D95BC8 /* HeroListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98D7CF9254058CD00D95BC8 /* HeroListTableViewCell.swift */; };
 		C98D7CFC254058CD00D95BC8 /* HeroListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C98D7CFA254058CD00D95BC8 /* HeroListTableViewCell.xib */; };
@@ -51,7 +48,6 @@
 		C99441F525508225004F2D82 /* ComicsList.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99441F425508225004F2D82 /* ComicsList.storyboard */; };
 		C99441FD25508241004F2D82 /* ComicsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C99441FC25508241004F2D82 /* ComicsListViewController.swift */; };
 		C99442112550C19B004F2D82 /* Favorites.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99442102550C19B004F2D82 /* Favorites.storyboard */; };
-		C994421C2550CB23004F2D82 /* Config.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C994421B2550CB23004F2D82 /* Config.storyboard */; };
 		C999616B2587F3D7001156E3 /* TermsOfService.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C999616A2587F3D6001156E3 /* TermsOfService.storyboard */; };
 		C9A5A89E25A3DF2C00286EF2 /* MainViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A5A89C25A3DF2C00286EF2 /* MainViewModel_Tests.swift */; };
 		C9A5A89F25A3DF2C00286EF2 /* MockMainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A5A89D25A3DF2C00286EF2 /* MockMainService.swift */; };
@@ -80,13 +76,14 @@
 		C9B89A5525420C97002946CA /* SeedProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89A5425420C97002946CA /* SeedProtocol.swift */; };
 		C9B89A62254213B3002946CA /* Searchable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B89A61254213B3002946CA /* Searchable.swift */; };
 		C9B9B4AF259D463900EE673F /* HeroDetailsViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9B9B4AE259D463900EE673F /* HeroDetailsViewController+Extensions.swift */; };
+		C9BBE65825A65B670034832F /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBE65725A65B670034832F /* FavoritesViewModel.swift */; };
+		C9BBE65C25A65E650034832F /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBE65B25A65E650034832F /* ItemType.swift */; };
+		C9BBE66025A65FA20034832F /* SearchItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBE65F25A65FA20034832F /* SearchItemType.swift */; };
+		C9BF6C2425A14B3400469EBD /* MockComicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BF6C2325A14B3400469EBD /* MockComicService.swift */; };
 		C9C7CF7225977C1D004F9C4D /* ComicHeroRelationshipCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9C7CF7125977C1B004F9C4D /* ComicHeroRelationshipCoreDataDAO.swift */; };
 		C9CD7E3C254330B1001E5E54 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */; };
 		C9D3B14A25A48F680055DE95 /* ComicDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9D3B14925A48F680055DE95 /* ComicDetails.storyboard */; };
 		C9D3B14C25A48FE80055DE95 /* ComicDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D3B14B25A48FE80055DE95 /* ComicDetailsViewController.swift */; };
-		C9D7E3E32586E58000D65E1E /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D7E3E22586E58000D65E1E /* AuthService.swift */; };
-		C9D7E3E52587045F00D65E1E /* AuthCredentialsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D7E3E42587045F00D65E1E /* AuthCredentialsModel.swift */; };
-		C9D7E3E72587122E00D65E1E /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D7E3E62587122E00D65E1E /* AuthViewModel.swift */; };
 		C9DE0F4C25A525A800FC3A82 /* ComicDetailsViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9DE0F4B25A525A800FC3A82 /* ComicDetailsViewModel_Tests.swift */; };
 		C9E1C52C2571E0050068EB7C /* ValidatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C52A2571E0050068EB7C /* ValidatorService.swift */; };
 		C9E1C5512571E3E20068EB7C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9E1C5502571E3E10068EB7C /* GoogleService-Info.plist */; };
@@ -95,6 +92,16 @@
 		C9E66C7C258C357D00CF9F17 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E66C7B258C357D00CF9F17 /* DBManager.swift */; };
 		C9EEEFAC25A4D19200431984 /* ComicDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EEEFAB25A4D19100431984 /* ComicDetailsViewModel.swift */; };
 		C9EEEFAE25A4F0CF00431984 /* ComicDetailsViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EEEFAD25A4F0CE00431984 /* ComicDetailsViewController+Extensions.swift */; };
+		C9F5D4BA25AF47DA00887AF3 /* GetUserFromEnumType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F5D4B725AF47DA00887AF3 /* GetUserFromEnumType.swift */; };
+		C9F5D4BB25AF47DA00887AF3 /* AuthCredentialsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F5D4B825AF47DA00887AF3 /* AuthCredentialsModel.swift */; };
+		C9F5D4BC25AF47DA00887AF3 /* CreateAuthCredentialsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F5D4B925AF47DA00887AF3 /* CreateAuthCredentialsModel.swift */; };
+		C9F5D4C225AF483D00887AF3 /* AuthCredentialsParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F5D4C125AF483D00887AF3 /* AuthCredentialsParser.swift */; };
+		C9F5D4D225AF489A00887AF3 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F5D4D125AF489A00887AF3 /* AuthService.swift */; };
+		C9F5D4DD25AF48E000887AF3 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F5D4DC25AF48E000887AF3 /* AuthViewModel.swift */; };
+		C9F5D4EA25AF4A0D00887AF3 /* TempUpdateUserDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F5D4E925AF4A0D00887AF3 /* TempUpdateUserDataModel.swift */; };
+		C9F5D4F225AF4A4400887AF3 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F5D4EF25AF4A4300887AF3 /* ConfigViewController.swift */; };
+		C9F5D4F325AF4A4400887AF3 /* ConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F5D4F025AF4A4300887AF3 /* ConfigService.swift */; };
+		C9F5D4F425AF4A4400887AF3 /* Config.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9F5D4F125AF4A4300887AF3 /* Config.storyboard */; };
 		EB99AC042548E1610071B7FA /* ServiceHeroesMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC032548E1610071B7FA /* ServiceHeroesMock.swift */; };
 		EB99AC0C2548E1CE0071B7FA /* HeroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC0B2548E1CE0071B7FA /* HeroService.swift */; };
 		EB99AC1C2548E7D00071B7FA /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC1B2548E7CF0071B7FA /* BaseModel.swift */; };
@@ -124,7 +131,6 @@
 		C27EDBEBA58BD96B9E1D1665 /* Pods-hero_esTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero_esTests.release.xcconfig"; path = "Target Support Files/Pods-hero_esTests/Pods-hero_esTests.release.xcconfig"; sourceTree = "<group>"; };
 		C48D4A66EF920A0858064E4F /* Pods-hero_es-hero_esUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero_es-hero_esUITests.debug.xcconfig"; path = "Target Support Files/Pods-hero_es-hero_esUITests/Pods-hero_es-hero_esUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		C90A096525ABCBE100AE516B /* CellItemProtocol+Favorite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CellItemProtocol+Favorite.swift"; sourceTree = "<group>"; };
-		C90A32DA25869F5100C3272C /* ConfigViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
 		C90A32DC25869F7300C3272C /* CreateAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewController.swift; sourceTree = "<group>"; };
 		C91CC74F259E4F3B0060B798 /* ComicsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsListViewModel.swift; sourceTree = "<group>"; };
 		C91CC751259E52F30060B798 /* ComicModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicModel.swift; sourceTree = "<group>"; };
@@ -155,11 +161,10 @@
 		C94792F42596C6A4009888BE /* hero_es_v02_renaming_comic_entity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hero_es_v02_renaming_comic_entity.xcdatamodel; sourceTree = "<group>"; };
 		C954509C258AEA2B008E8E55 /* HeroParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroParser.swift; sourceTree = "<group>"; };
 		C954509E258AECC3008E8E55 /* heroes-list.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "heroes-list.json"; sourceTree = "<group>"; };
-		C9649F5125AE5EEF002D9D13 /* TempUpdateUserDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempUpdateUserDataModel.swift; sourceTree = "<group>"; };
-		C9649F5625AF32B4002D9D13 /* ConfigService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigService.swift; sourceTree = "<group>"; };
-		C9649F5B25AF399F002D9D13 /* GetUserFromEnumType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUserFromEnumType.swift; sourceTree = "<group>"; };
-		C9649F6025AF39D0002D9D13 /* CreateAuthCredentialsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAuthCredentialsModel.swift; sourceTree = "<group>"; };
-		C9649F6525AF3A9F002D9D13 /* AuthCredentialsParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredentialsParser.swift; sourceTree = "<group>"; };
+		C970291525A0D7B400133FE8 /* ComicRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicRepository.swift; sourceTree = "<group>"; };
+		C970291825A0D9F200133FE8 /* ComicCoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCoreDataDAO.swift; sourceTree = "<group>"; };
+		C970291A25A0DB8E00133FE8 /* hero_es_v03_refactor_comic_entity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hero_es_v03_refactor_comic_entity.xcdatamodel; sourceTree = "<group>"; };
+		C97A236325A12E2100AD4C28 /* ComicsListViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComicsListViewController+Extensions.swift"; sourceTree = "<group>"; };
 		C97B903625411037004233F2 /* HeroesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesListViewController.swift; sourceTree = "<group>"; };
 		C98D7CF9254058CD00D95BC8 /* HeroListTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroListTableViewCell.swift; sourceTree = "<group>"; };
 		C98D7CFA254058CD00D95BC8 /* HeroListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroListTableViewCell.xib; sourceTree = "<group>"; };
@@ -167,7 +172,6 @@
 		C99441F425508225004F2D82 /* ComicsList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ComicsList.storyboard; sourceTree = "<group>"; };
 		C99441FC25508241004F2D82 /* ComicsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicsListViewController.swift; sourceTree = "<group>"; };
 		C99442102550C19B004F2D82 /* Favorites.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Favorites.storyboard; sourceTree = "<group>"; };
-		C994421B2550CB23004F2D82 /* Config.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Config.storyboard; sourceTree = "<group>"; };
 		C999616A2587F3D6001156E3 /* TermsOfService.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TermsOfService.storyboard; sourceTree = "<group>"; };
 		C9A5A89C25A3DF2C00286EF2 /* MainViewModel_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel_Tests.swift; sourceTree = "<group>"; };
 		C9A5A89D25A3DF2C00286EF2 /* MockMainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMainService.swift; sourceTree = "<group>"; };
@@ -192,7 +196,9 @@
 		C9B14389253FBA7E0013DC42 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9B143AB253FD78F0013DC42 /* HeroesList.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HeroesList.storyboard; sourceTree = "<group>"; };
 		C9B52A392543AFCD00F9957D /* UIKitUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIKitUtils.swift; sourceTree = "<group>"; };
-		C9B56E7A259D8069005D4C95 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C9B76B2425A21B60001596B1 /* RelatedHeroCoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedHeroCoreDataDAO.swift; sourceTree = "<group>"; };
+		C9B76B2625A21EC1001596B1 /* RelatedHeroParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RelatedHeroParser.swift; sourceTree = "<group>"; };
+		C9B76B2825A2288E001596B1 /* ModelUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelUtils.swift; sourceTree = "<group>"; };
 		C9B89A392541F81D002946CA /* HeroDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = HeroDetails.storyboard; sourceTree = "<group>"; };
 		C9B89A4925420B5E002946CA /* ItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemProtocol.swift; sourceTree = "<group>"; };
 		C9B89A5425420C97002946CA /* SeedProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeedProtocol.swift; sourceTree = "<group>"; };
@@ -206,9 +212,6 @@
 		C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
 		C9D3B14925A48F680055DE95 /* ComicDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ComicDetails.storyboard; sourceTree = "<group>"; };
 		C9D3B14B25A48FE80055DE95 /* ComicDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailsViewController.swift; sourceTree = "<group>"; };
-		C9D7E3E22586E58000D65E1E /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
-		C9D7E3E42587045F00D65E1E /* AuthCredentialsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCredentialsModel.swift; sourceTree = "<group>"; };
-		C9D7E3E62587122E00D65E1E /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		C9DE0F4B25A525A800FC3A82 /* ComicDetailsViewModel_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailsViewModel_Tests.swift; sourceTree = "<group>"; };
 		C9E1C52A2571E0050068EB7C /* ValidatorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorService.swift; sourceTree = "<group>"; };
 		C9E1C5502571E3E10068EB7C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -217,6 +220,16 @@
 		C9E66C7B258C357D00CF9F17 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
 		C9EEEFAB25A4D19100431984 /* ComicDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailsViewModel.swift; sourceTree = "<group>"; };
 		C9EEEFAD25A4F0CE00431984 /* ComicDetailsViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComicDetailsViewController+Extensions.swift"; sourceTree = "<group>"; };
+		C9F5D4B725AF47DA00887AF3 /* GetUserFromEnumType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserFromEnumType.swift; sourceTree = "<group>"; };
+		C9F5D4B825AF47DA00887AF3 /* AuthCredentialsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCredentialsModel.swift; sourceTree = "<group>"; };
+		C9F5D4B925AF47DA00887AF3 /* CreateAuthCredentialsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateAuthCredentialsModel.swift; sourceTree = "<group>"; };
+		C9F5D4C125AF483D00887AF3 /* AuthCredentialsParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthCredentialsParser.swift; sourceTree = "<group>"; };
+		C9F5D4D125AF489A00887AF3 /* AuthService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		C9F5D4DC25AF48E000887AF3 /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		C9F5D4E925AF4A0D00887AF3 /* TempUpdateUserDataModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TempUpdateUserDataModel.swift; sourceTree = "<group>"; };
+		C9F5D4EF25AF4A4300887AF3 /* ConfigViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigViewController.swift; sourceTree = "<group>"; };
+		C9F5D4F025AF4A4300887AF3 /* ConfigService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigService.swift; sourceTree = "<group>"; };
+		C9F5D4F125AF4A4300887AF3 /* Config.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Config.storyboard; sourceTree = "<group>"; };
 		E3B9DEA949D2073B5B912AEA /* Pods_hero_esTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hero_esTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB99AC032548E1610071B7FA /* ServiceHeroesMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHeroesMock.swift; sourceTree = "<group>"; };
 		EB99AC0B2548E1CE0071B7FA /* HeroService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroService.swift; sourceTree = "<group>"; };
@@ -442,70 +455,13 @@
 			path = PresentationLayer;
 			sourceTree = "<group>";
 		};
-		C9649F4725AE5DAB002D9D13 /* Views */ = {
+		C970291725A0D9DD00133FE8 /* DAO */ = {
 			isa = PBXGroup;
 			children = (
-				C994421B2550CB23004F2D82 /* Config.storyboard */,
-				C90A32DA25869F5100C3272C /* ConfigViewController.swift */,
+				C970291825A0D9F200133FE8 /* ComicCoreDataDAO.swift */,
+				C9B76B2425A21B60001596B1 /* RelatedHeroCoreDataDAO.swift */,
 			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		C9649F4B25AE5DB8002D9D13 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		C9649F4F25AE5DE5002D9D13 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				C9649F5125AE5EEF002D9D13 /* TempUpdateUserDataModel.swift */,
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		C9649F5025AE5EAB002D9D13 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				C9649F5625AF32B4002D9D13 /* ConfigService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		C9649F6A25AF3ABE002D9D13 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-				C9D7E3E22586E58000D65E1E /* AuthService.swift */,
-			);
-			path = Services;
-			sourceTree = "<group>";
-		};
-		C9649F6B25AF3AD9002D9D13 /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				C9D7E3E62587122E00D65E1E /* AuthViewModel.swift */,
-			);
-			path = ViewModels;
-			sourceTree = "<group>";
-		};
-		C9649F6C25AF3AE7002D9D13 /* Parsers */ = {
-			isa = PBXGroup;
-			children = (
-				C9649F6525AF3A9F002D9D13 /* AuthCredentialsParser.swift */,
-			);
-			path = Parsers;
-			sourceTree = "<group>";
-		};
-		C9649F7025AF3AF6002D9D13 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-				C9D7E3E42587045F00D65E1E /* AuthCredentialsModel.swift */,
-				C9649F5B25AF399F002D9D13 /* GetUserFromEnumType.swift */,
-				C9649F6025AF39D0002D9D13 /* CreateAuthCredentialsModel.swift */,
-			);
-			path = Models;
+			path = DAO;
 			sourceTree = "<group>";
 		};
 		C98D7CF62540585600D95BC8 /* HeroesList */ = {
@@ -570,10 +526,9 @@
 		C994421A2550CB0E004F2D82 /* Config */ = {
 			isa = PBXGroup;
 			children = (
-				C9649F4F25AE5DE5002D9D13 /* Models */,
-				C9649F5025AE5EAB002D9D13 /* Services */,
-				C9649F4725AE5DAB002D9D13 /* Views */,
-				C9649F4B25AE5DB8002D9D13 /* ViewModels */,
+				C9F5D4FA25AF4A7500887AF3 /* Models */,
+				C9F5D4F725AF4A6400887AF3 /* Services */,
+				C9F5D4FB25AF4A8000887AF3 /* Views */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -771,10 +726,10 @@
 		C9D7E3E12586E55800D65E1E /* Auth */ = {
 			isa = PBXGroup;
 			children = (
-				C9649F7025AF3AF6002D9D13 /* Models */,
-				C9649F6C25AF3AE7002D9D13 /* Parsers */,
-				C9649F6A25AF3ABE002D9D13 /* Services */,
-				C9649F6B25AF3AD9002D9D13 /* ViewModels */,
+				C9F5D4C025AF47FF00887AF3 /* Models */,
+				C9F5D4CA25AF487700887AF3 /* Parsers */,
+				C9F5D4D525AF48B200887AF3 /* Services */,
+				C9F5D4E225AF48ED00887AF3 /* ViewModels */,
 			);
 			path = Auth;
 			sourceTree = "<group>";
@@ -814,6 +769,65 @@
 				C9B76B2825A2288E001596B1 /* ModelUtils.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		C9F5D4C025AF47FF00887AF3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C9F5D4B825AF47DA00887AF3 /* AuthCredentialsModel.swift */,
+				C9F5D4B925AF47DA00887AF3 /* CreateAuthCredentialsModel.swift */,
+				C9F5D4B725AF47DA00887AF3 /* GetUserFromEnumType.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C9F5D4CA25AF487700887AF3 /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				C9F5D4C125AF483D00887AF3 /* AuthCredentialsParser.swift */,
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
+		C9F5D4D525AF48B200887AF3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C9F5D4D125AF489A00887AF3 /* AuthService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C9F5D4E225AF48ED00887AF3 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C9F5D4DC25AF48E000887AF3 /* AuthViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C9F5D4F725AF4A6400887AF3 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C9F5D4F025AF4A4300887AF3 /* ConfigService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C9F5D4FA25AF4A7500887AF3 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C9F5D4E925AF4A0D00887AF3 /* TempUpdateUserDataModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C9F5D4FB25AF4A8000887AF3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C9F5D4F125AF4A4300887AF3 /* Config.storyboard */,
+				C9F5D4EF25AF4A4300887AF3 /* ConfigViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		EB99AC022548E14C0071B7FA /* Services */ = {
@@ -941,11 +955,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C994421C2550CB23004F2D82 /* Config.storyboard in Resources */,
 				C9B89A352541F808002946CA /* Main.storyboard in Resources */,
 				C9B1437D253FBA6F0013DC42 /* LaunchScreen.storyboard in Resources */,
 				C99442112550C19B004F2D82 /* Favorites.storyboard in Resources */,
 				C9B1437A253FBA6F0013DC42 /* Assets.xcassets in Resources */,
+				C9F5D4F425AF4A4400887AF3 /* Config.storyboard in Resources */,
 				C9D3B14A25A48F680055DE95 /* ComicDetails.storyboard in Resources */,
 				C9E1C5512571E3E20068EB7C /* GoogleService-Info.plist in Resources */,
 				C98D7CFC254058CD00D95BC8 /* HeroListTableViewCell.xib in Resources */,
@@ -1040,38 +1054,46 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C9649F6625AF3A9F002D9D13 /* AuthCredentialsParser.swift in Sources */,
+				C9A5A94625A3E54100286EF2 /* MainViewController.swift in Sources */,
+				C9A5A94725A3E54100286EF2 /* MainViewController+Extensions.swift in Sources */,
+				C9A5A92625A3E44D00286EF2 /* MessageType.swift in Sources */,
+				C9A5A92725A3E44D00286EF2 /* LoginServiceType.swift in Sources */,
+				C9A5A92825A3E44D00286EF2 /* TabBarItemTag.swift in Sources */,
+				C9A5A92B25A3E44D00286EF2 /* MainService.swift in Sources */,
+				C9F5D4D225AF489A00887AF3 /* AuthService.swift in Sources */,
+				C9F5D4EA25AF4A0D00887AF3 /* TempUpdateUserDataModel.swift in Sources */,
 				C90A32DD25869F7300C3272C /* CreateAccountViewController.swift in Sources */,
 				C9E66C76258C2E0C00CF9F17 /* HeroRepository.swift in Sources */,
-				C90A32DB25869F5100C3272C /* ConfigViewController.swift in Sources */,
-				C9649F5725AF32B4002D9D13 /* ConfigService.swift in Sources */,
+				C92FF70D25A53B0B0011F44F /* FavoriteModel.swift in Sources */,
+				C926658125A7602E005D2509 /* FavoritesViewController+Extensions.swift in Sources */,
 				EB99AC1C2548E7D00071B7FA /* BaseModel.swift in Sources */,
-				C9649F5225AE5EEF002D9D13 /* TempUpdateUserDataModel.swift in Sources */,
-				C9D7E3E52587045F00D65E1E /* AuthCredentialsModel.swift in Sources */,
 				C94792F32596B915009888BE /* CoreDataDAOProtocol.swift in Sources */,
 				EB99AC212548E85C0071B7FA /* DataClass.swift in Sources */,
 				C9EEEFAC25A4D19200431984 /* ComicDetailsViewModel.swift in Sources */,
 				C91CC754259E54AE0060B798 /* ComicParser.swift in Sources */,
 				C9EEEFAE25A4F0CF00431984 /* ComicDetailsViewController+Extensions.swift in Sources */,
+				C9F5D4F225AF4A4400887AF3 /* ConfigViewController.swift in Sources */,
 				C91FA86125982919008CDBD1 /* HeroDetailsViewModel.swift in Sources */,
 				C9415877258E7D9F00CC81A6 /* ComicHeroModel.swift in Sources */,
 				C9B89A62254213B3002946CA /* Searchable.swift in Sources */,
 				C91CC752259E52F30060B798 /* ComicModel.swift in Sources */,
 				C99441FD25508241004F2D82 /* ComicsListViewController.swift in Sources */,
+				C9F5D4F325AF4A4400887AF3 /* ConfigService.swift in Sources */,
 				C9B76B2925A2288E001596B1 /* ModelUtils.swift in Sources */,
-				C9D7E3E32586E58000D65E1E /* AuthService.swift in Sources */,
 				EB99AC042548E1610071B7FA /* ServiceHeroesMock.swift in Sources */,
 				C92FF71525A544B00011F44F /* FavoriteService.swift in Sources */,
 				C9B89A4A25420B5E002946CA /* ItemProtocol.swift in Sources */,
 				C98D7D0C2540704C00D95BC8 /* HeroDetailsViewController.swift in Sources */,
+				C9F5D4BB25AF47DA00887AF3 /* AuthCredentialsModel.swift in Sources */,
+				C9F5D4C225AF483D00887AF3 /* AuthCredentialsParser.swift in Sources */,
 				C9B52A3A2543AFCD00F9957D /* UIKitUtils.swift in Sources */,
 				C92FF71125A5418F0011F44F /* FavoriteParser.swift in Sources */,
 				C9BBE65825A65B670034832F /* FavoritesViewModel.swift in Sources */,
 				C92FF70625A538FB0011F44F /* FavoritesViewController.swift in Sources */,
 				C9E66C79258C2E4300CF9F17 /* HeroCoreDataDAO.swift in Sources */,
 				EB99AC262548E8E30071B7FA /* HeroModel.swift in Sources */,
-				C9649F5C25AF399F002D9D13 /* GetUserFromEnumType.swift in Sources */,
 				C98D7CFB254058CD00D95BC8 /* HeroListTableViewCell.swift in Sources */,
+				C9F5D4DD25AF48E000887AF3 /* AuthViewModel.swift in Sources */,
 				C9E1C52C2571E0050068EB7C /* ValidatorService.swift in Sources */,
 				C90A096625ABCBE100AE516B /* CellItemProtocol+Favorite.swift in Sources */,
 				C9BBE66025A65FA20034832F /* SearchItemType.swift in Sources */,
@@ -1079,11 +1101,13 @@
 				C97B903725411037004233F2 /* HeroesListViewController.swift in Sources */,
 				C92FF71825A544C70011F44F /* FavoriteCoreDataDAO.swift in Sources */,
 				C9D3B14C25A48FE80055DE95 /* ComicDetailsViewController.swift in Sources */,
+				C9F5D4BC25AF47DA00887AF3 /* CreateAuthCredentialsModel.swift in Sources */,
 				C9AE6A0D259FA257000D3857 /* ItemCell.swift in Sources */,
 				C9BBE65C25A65E650034832F /* ItemType.swift in Sources */,
 				C9B76B2725A21EC1001596B1 /* RelatedHeroParser.swift in Sources */,
 				EB99AC0C2548E1CE0071B7FA /* HeroService.swift in Sources */,
 				C9B1436E253FBA400013DC42 /* AppDelegate.swift in Sources */,
+				C9F5D4BA25AF47DA00887AF3 /* GetUserFromEnumType.swift in Sources */,
 				C9253305259F733800D2615B /* RelatedHeroModel.swift in Sources */,
 				C9B89A5525420C97002946CA /* SeedProtocol.swift in Sources */,
 				C9B14370253FBA400013DC42 /* SceneDelegate.swift in Sources */,
@@ -1096,8 +1120,7 @@
 				C943A6FA258F95DA0051F3E7 /* HeroesListViewModel.swift in Sources */,
 				C927C75A2598E64400187456 /* MasterDetailNavigationProtocol.swift in Sources */,
 				C94792EF2596B1E7009888BE /* RelatedComicCoreDataDAO.swift in Sources */,
-				C9649F6125AF39D0002D9D13 /* CreateAuthCredentialsModel.swift in Sources */,
-				C9D7E3E72587122E00D65E1E /* AuthViewModel.swift in Sources */,
+				C9B76B2525A21B60001596B1 /* RelatedHeroCoreDataDAO.swift in Sources */,
 				C91CC750259E4F3B0060B798 /* ComicsListViewModel.swift in Sources */,
 				C9415879258E7DF000CC81A6 /* RelatedComicModel.swift in Sources */,
 				C9C7CF7225977C1D004F9C4D /* ComicHeroRelationshipCoreDataDAO.swift in Sources */,
@@ -1118,6 +1141,9 @@
 				C945BD04259FF61000F8FCBC /* ComicsListViewModel_Tests.swift in Sources */,
 				C9DE0F4C25A525A800FC3A82 /* ComicDetailsViewModel_Tests.swift in Sources */,
 				C927C75C25990ECC00187456 /* HeroDetailsViewModel_Tests.swift in Sources */,
+				C9BF6C2425A14B3400469EBD /* MockComicService.swift in Sources */,
+				C9A5A89E25A3DF2C00286EF2 /* MainViewModel_Tests.swift in Sources */,
+				C9A5A89F25A3DF2C00286EF2 /* MockMainService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
