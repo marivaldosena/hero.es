@@ -99,7 +99,6 @@
 		C9EEEFAE25A4F0CF00431984 /* ComicDetailsViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EEEFAD25A4F0CE00431984 /* ComicDetailsViewController+Extensions.swift */; };
 		EB99AC042548E1610071B7FA /* ServiceHeroesMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC032548E1610071B7FA /* ServiceHeroesMock.swift */; };
 		EB99AC0C2548E1CE0071B7FA /* HeroService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC0B2548E1CE0071B7FA /* HeroService.swift */; };
-		EB99AC1C2548E7D00071B7FA /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC1B2548E7CF0071B7FA /* BaseModel.swift */; };
 		EB99AC212548E85C0071B7FA /* DataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC202548E85C0071B7FA /* DataClass.swift */; };
 		EB99AC262548E8E30071B7FA /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC252548E8E30071B7FA /* HeroModel.swift */; };
 		EB99AC2B2548E91A0071B7FA /* ThumbnailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB99AC2A2548E91A0071B7FA /* ThumbnailModel.swift */; };
@@ -223,7 +222,6 @@
 		E3B9DEA949D2073B5B912AEA /* Pods_hero_esTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hero_esTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB99AC032548E1610071B7FA /* ServiceHeroesMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceHeroesMock.swift; sourceTree = "<group>"; };
 		EB99AC0B2548E1CE0071B7FA /* HeroService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroService.swift; sourceTree = "<group>"; };
-		EB99AC1B2548E7CF0071B7FA /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
 		EB99AC202548E85C0071B7FA /* DataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataClass.swift; sourceTree = "<group>"; };
 		EB99AC252548E8E30071B7FA /* HeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
 		EB99AC2A2548E91A0071B7FA /* ThumbnailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailModel.swift; sourceTree = "<group>"; };
@@ -748,7 +746,6 @@
 		EB99AC1A2548E7770071B7FA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				EB99AC1B2548E7CF0071B7FA /* BaseModel.swift */,
 				C9415876258E7D9F00CC81A6 /* ComicHeroModel.swift */,
 				EB99AC202548E85C0071B7FA /* DataClass.swift */,
 				EB99AC252548E8E30071B7FA /* HeroModel.swift */,
@@ -970,7 +967,6 @@
 				C90A32DB25869F5100C3272C /* ConfigViewController.swift in Sources */,
 				C92FF70D25A53B0B0011F44F /* FavoriteModel.swift in Sources */,
 				C926658125A7602E005D2509 /* FavoritesViewController+Extensions.swift in Sources */,
-				EB99AC1C2548E7D00071B7FA /* BaseModel.swift in Sources */,
 				C9D7E3E52587045F00D65E1E /* AuthModel.swift in Sources */,
 				C94792F32596B915009888BE /* CoreDataDAOProtocol.swift in Sources */,
 				EB99AC212548E85C0071B7FA /* DataClass.swift in Sources */,
