@@ -26,10 +26,15 @@ class HeroesListViewController: UIViewController {
         heroTableView?.delegate = self
         heroTableView?.dataSource = self
         heroTableView?.register(
-            UINib(nibName: "HeroListTableViewCell", bundle: nil),
-            forCellReuseIdentifier: "HeroCell")
+            UINib(nibName: "ItemCell", bundle: nil),
+            forCellReuseIdentifier: "ItemCell")
         
         heroSearchBar?.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.loadAllHeroes()
     }
 }
 
@@ -73,7 +78,7 @@ extension HeroesListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "HeroCell", for: indexPath) as! HeroListTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         
         let hero = itemsList[indexPath.row]
         cell.configure(with: hero)
@@ -110,21 +115,17 @@ extension HeroesListViewController: HeroListDelegate {
     }
 }
 
-// MARK: - HeroesListViewController: ShareHeroItemProtocol
-extension HeroesListViewController: ShareHeroItemProtocol {
-    func shareHeroItem(_ item: HeroModel) {
-        guard let heroUrl = URL(string: item.resourceURI) else { return }
-        let heroImage = UIImageView()
-        
-        if let imageUrl = URL(string: item.thumbnail.url) {
-            heroImage.kf.indicatorType = .activity
-            heroImage.kf.setImage(with: imageUrl)
-        }
-
-        guard let image = heroImage.image else { return }
-        
-        let itemsToShare = [item.name, heroUrl, image] as [Any]
-        let controller = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
-        self.present(controller, animated: true, completion: nil)
+// MARK: - HeroesListViewController: ShareAndLikeItemProtocol
+extension HeroesListViewController: ShareAndLikeItemProtocol {
+    func share(item: CellItemProtocol?) {
+        guard let item = item else { return }
+        ShareItemUtils.share(item, on: self)
+    }
+    
+    func like(item: CellItemProtocol?) {
+        guard let item = item else { return }
+        let service = FavoriteService.shared
+        service.toggleFavorite(item, itemType: .hero)
+        updateUIInterface()
     }
 }

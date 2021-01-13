@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum HeroDetailsUIIdentifier: String {
     case heroImage = "HeroImage"
@@ -47,8 +48,16 @@ struct HeroDetailsViewModel {
         return description
     }
     
-    func getImageUrl() -> String {
-        return model?.thumbnail.url ?? "HeroImage"
+    func getImageUrlString() -> String {
+        return model?.thumbnailString ?? "HeroImage"
+    }
+    
+    func getImageUrl() -> URL? {
+        return model?.getImageUrl()
+    }
+    
+    func getImage() -> UIImage? {
+        return model?.getImage()
     }
     
     func getPublisherName() -> String {

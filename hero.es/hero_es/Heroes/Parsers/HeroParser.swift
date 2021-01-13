@@ -46,13 +46,13 @@ struct HeroParser {
             
             let thumbnailPath = json["thumbnail"]["path"].stringValue
             let thumbnailExtension = json["thumbnail"]["extension"].stringValue
-            let thumbnail = ThumbnailModel(path: thumbnailPath, ext: thumbnailExtension)
+            let thumbnail = "\(thumbnailPath).\(thumbnailExtension)"
             
             model = HeroModel(id: id,
                               name: name,
                               description: description,
                               modified: modified,
-                              thumbnail: thumbnail,
+                              thumbnailString: thumbnail,
                               resourceURI: resourceURI)
             
             relatedComics = RelatedComicParser.from(json: json["comics"])
@@ -83,7 +83,7 @@ struct HeroParser {
                 modified = ""
             }
             
-            let thumbnail = ThumbnailModel.from(string: entity.thumbnail ?? "")
+            let thumbnail = entity.thumbnail ?? ""
             let resourceURI = entity.resourceURI ?? ""
             let numberOfComics: Int = Int(entity.numberOfComics)
             
@@ -91,7 +91,7 @@ struct HeroParser {
                               name: name,
                               description: description,
                               modified: modified,
-                              thumbnail: thumbnail,
+                              thumbnailString: thumbnail,
                               resourceURI: resourceURI,
                               numberOfComics: numberOfComics)
             

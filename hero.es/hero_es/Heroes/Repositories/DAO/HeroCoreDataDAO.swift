@@ -32,7 +32,7 @@ struct HeroCoreDataDAO: CoreDataDAOProtocol {
             entity.id = Int64(model.id)
             entity.name = model.name
             entity.descriptionText = model.description
-            entity.thumbnail = model.thumbnail.url
+            entity.thumbnail = model.thumbnailString
             entity.resourceURI = model.resourceURI
             entity.modified = dateFormatter.date(from: model.modified) ?? Date()
             entity.numberOfComics = Int64(model.numberOfComics)

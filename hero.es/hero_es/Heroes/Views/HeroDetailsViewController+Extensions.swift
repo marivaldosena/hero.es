@@ -15,34 +15,16 @@ extension HeroDetailsViewController {
         title = viewModel.getName()
         
         DispatchQueue.main.async {
-            self.displayHeroImage(urlString: viewModel.getImageUrl())
+            self.heroImageView?.image = viewModel.getImage()
             self.heroNameLabel?.text = viewModel.getName()
             self.heroPublisherNameLabel?.text = viewModel.getPublisherName()
             self.heroDescriptionTextView?.text = viewModel.getDescription()
         }
     }
     
-    func displayHeroImage(urlString: String?) {
-        if let urlString = urlString {
-            if urlString != "HeroImage" {
-                guard let url = URL(string: urlString) else { return }
-                self.heroImageView?.kf.indicatorType = .activity
-                self.heroImageView?.kf.setImage(with: url)
-            } else {
-                self.heroImageView?.image = UIImage(named: urlString)
-            }
-        }
-    }
-    
-    func getHeroImage(urlString: String?) -> UIImage? {
-        self.displayHeroImage(urlString: urlString)
-        return self.heroImageView?.image
-    }
-    
-    
     func setAllIdentifiers() {
         guard let viewModel = self.getViewModel() else { return }
-        
+    
         heroImageView?.accessibilityIdentifier = viewModel.getIdentifier(for: .heroImage)
         heroNameLabel?.accessibilityIdentifier = viewModel.getIdentifier(for: .heroName)
         heroPublisherNameLabel?.accessibilityIdentifier = viewModel.getIdentifier(for: .heroPublisher)

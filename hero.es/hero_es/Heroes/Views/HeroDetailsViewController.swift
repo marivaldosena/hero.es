@@ -26,23 +26,8 @@ class HeroDetailsViewController: UIViewController {
         self.setAllIdentifiers()
     }
     
-    @IBAction func shareHeroItem(_ sender: UIButton) {
-        guard let heroName = viewModel?.getName() else { return }
-        guard let heroUrl = viewModel?.getUrl() else { return }
-        guard let heroImage = self.getHeroImage(urlString: viewModel?.getImageUrl()) else { return }
-        
-        let itemsToShare = [heroName, heroUrl, heroImage] as [Any]
-        let controller = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
-        
-        self.present(controller, animated: true, completion: nil)
-    }
-    
     static func getViewController(_ item: HeroModel?) -> HeroDetailsViewController? {
-        guard let uiNavigationController = UIStoryboard(name: "HeroDetails", bundle: nil).instantiateInitialViewController() as? UINavigationController else {
-            return nil
-        }
-        
-        guard let viewController = uiNavigationController.topViewController as? HeroDetailsViewController else {
+        guard let viewController = UIStoryboard(name: "HeroDetails", bundle: nil).instantiateInitialViewController() as? HeroDetailsViewController else {
             return nil
         }
         
