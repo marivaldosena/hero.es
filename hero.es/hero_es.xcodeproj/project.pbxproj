@@ -392,6 +392,7 @@
 		C943A6F8258F95750051F3E7 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				C91FA86025982919008CDBD1 /* HeroDetailsViewModel.swift */,
 				C943A6F9258F95DA0051F3E7 /* HeroesListViewModel.swift */,
 			);
 			path = ViewModels;
@@ -402,7 +403,10 @@
 			children = (
 				C98D7CF82540588200D95BC8 /* HeroCell */,
 				C9B143AB253FD78F0013DC42 /* HeroesList.storyboard */,
+				C9B89A392541F81D002946CA /* HeroDetails.storyboard */,
 				C97B903625411037004233F2 /* HeroesListViewController.swift */,
+				C98D7D0B2540704C00D95BC8 /* HeroDetailsViewController.swift */,
+				C9B9B4AE259D463900EE673F /* HeroDetailsViewController+Extensions.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -454,7 +458,7 @@
 			path = DAO;
 			sourceTree = "<group>";
 		};
-		C98D7CF62540585600D95BC8 /* HeroesList */ = {
+		C98D7CF62540585600D95BC8 /* Heroes */ = {
 			isa = PBXGroup;
 			children = (
 				EB99AC1A2548E7770071B7FA /* Models */,
@@ -464,7 +468,7 @@
 				C943A6FB258F99E70051F3E7 /* Views */,
 				C943A6F8258F95750051F3E7 /* ViewModels */,
 			);
-			path = HeroesList;
+			path = Heroes;
 			sourceTree = "<group>";
 		};
 		C98D7CF72540586900D95BC8 /* Main */ = {
@@ -604,8 +608,7 @@
 				C994421A2550CB0E004F2D82 /* Config */,
 				C9CD7E3525432FBC001E5E54 /* CreateAccount */,
 				C99442072550C15C004F2D82 /* Favorites */,
-				C9B89A312541F7D4002946CA /* HeroDetails */,
-				C98D7CF62540585600D95BC8 /* HeroesList */,
+				C98D7CF62540585600D95BC8 /* Heroes */,
 				C98D7CF72540586900D95BC8 /* Main */,
 				C9CD7E40254340E5001E5E54 /* Shared */,
 				C9B1436D253FBA400013DC42 /* AppDelegate.swift */,
@@ -638,15 +641,6 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
-		C9B89A312541F7D4002946CA /* HeroDetails */ = {
-			isa = PBXGroup;
-			children = (
-				C9B9B4B0259D476F00EE673F /* Views */,
-				C9B9B4B1259D478F00EE673F /* ViewModels */,
-			);
-			path = HeroDetails;
-			sourceTree = "<group>";
-		};
 		C9B89A4825420B50002946CA /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -657,24 +651,6 @@
 				C9B89A61254213B3002946CA /* Searchable.swift */,
 			);
 			path = Protocols;
-			sourceTree = "<group>";
-		};
-		C9B9B4B0259D476F00EE673F /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				C9B89A392541F81D002946CA /* HeroDetails.storyboard */,
-				C98D7D0B2540704C00D95BC8 /* HeroDetailsViewController.swift */,
-				C9B9B4AE259D463900EE673F /* HeroDetailsViewController+Extensions.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		C9B9B4B1259D478F00EE673F /* ViewModels */ = {
-			isa = PBXGroup;
-			children = (
-				C91FA86025982919008CDBD1 /* HeroDetailsViewModel.swift */,
-			);
-			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		C9BBE65625A65B330034832F /* ViewModels */ = {
