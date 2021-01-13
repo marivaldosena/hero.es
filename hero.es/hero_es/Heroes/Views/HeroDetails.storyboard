@@ -100,7 +100,7 @@
     </scenes>
     <resources>
         <image name="HeroImage" width="212.5" height="212.5"/>
-        <image name="heart" catalog="system" width="64" height="54"/>
-        <image name="square.and.arrow.up" catalog="system" width="56" height="64"/>
+        <image name="heart" catalog="system" width="32" height="32"/>
+        <image name="square.and.arrow.up" catalog="system" width="32" height="32"/>
     </resources>
 </document>
