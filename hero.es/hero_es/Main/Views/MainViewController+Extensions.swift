@@ -27,6 +27,7 @@ extension MainViewController {
     func doLoginIfCredentialsAreCorrect() {
         if AuthService.shared.getCurrentUser() != nil {
             DispatchQueue.main.async {
+                self.clearFields()
                 self.createTabBarNavigation()
             }
         }
@@ -67,9 +68,10 @@ extension MainViewController {
     }
     
     private func createTabBarNavigation() {
-        guard let heroesController = viewModel.getController(for: .heroes) else { return }
-        guard let comicsController = viewModel.getController(for: .comics) else { return }
-        guard let favoritesController = viewModel.getController(for: .favorites) else { return }
+        guard let heroesController = viewModel.getController(for: .heroes, withNagigation: true) else { return }
+        guard let comicsController = viewModel.getController(for: .comics, withNagigation: true) else { return }
+        guard let favoritesController = viewModel.getController(for: .favorites, withNagigation: true) else { return }
+        // TODO: Fix ConfigViewController to work with both and navigation and not
         guard let configController = viewModel.getController(for: .config) else { return }
         
         let arrayTabVC: [UIViewController] = [
@@ -84,6 +86,11 @@ extension MainViewController {
             
         navigationController?.pushViewController(tabBarController, animated: true)
     }
+    
+    private func clearFields() {
+        emailTextField.text = nil
+        passwordTextField.text = nil
+    }
 }
 
 // MARK: - MainViewController: UITextFieldDelegate
@@ -96,6 +103,9 @@ extension MainViewController: UITextFieldDelegate {
             UITextFieldUtils.setFocus(on: passwordTextField, from: emailTextField)
         case passwordTextField:
             UITextFieldUtils.setFocus(on: nil, from: passwordTextField)
+            passwordTextField.resignFirstResponder()
+            loginWithEmailButton.becomeFirstResponder()
+            login(with: .email)
         default:
             UITextFieldUtils.setFocus(on: nil, from: nil)
         }

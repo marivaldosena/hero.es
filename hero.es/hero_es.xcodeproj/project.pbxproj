@@ -59,7 +59,7 @@
 		C9A5A89E25A3DF2C00286EF2 /* MainViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A5A89C25A3DF2C00286EF2 /* MainViewModel_Tests.swift */; };
 		C9A5A89F25A3DF2C00286EF2 /* MockMainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A5A89D25A3DF2C00286EF2 /* MockMainService.swift */; };
 		C9A5A8C725A3E09F00286EF2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A5A8C625A3E09F00286EF2 /* MainViewModel.swift */; };
-		C9A5A92625A3E44D00286EF2 /* MessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A5A92025A3E44C00286EF2 /* MessageType.swift */; };
+		C9A5A92625A3E44D00286EF2 /* MainMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A5A92025A3E44C00286EF2 /* MainMessageType.swift */; };
 		C9A5A92725A3E44D00286EF2 /* LoginServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A5A92125A3E44C00286EF2 /* LoginServiceType.swift */; };
 		C9A5A92825A3E44D00286EF2 /* TabBarItemTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A5A92225A3E44C00286EF2 /* TabBarItemTag.swift */; };
 		C9A5A92B25A3E44D00286EF2 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A5A92525A3E44D00286EF2 /* MainService.swift */; };
@@ -176,7 +176,7 @@
 		C9A5A89C25A3DF2C00286EF2 /* MainViewModel_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel_Tests.swift; sourceTree = "<group>"; };
 		C9A5A89D25A3DF2C00286EF2 /* MockMainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMainService.swift; sourceTree = "<group>"; };
 		C9A5A8C625A3E09F00286EF2 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewModel.swift; path = ViewModels/MainViewModel.swift; sourceTree = "<group>"; };
-		C9A5A92025A3E44C00286EF2 /* MessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageType.swift; sourceTree = "<group>"; };
+		C9A5A92025A3E44C00286EF2 /* MainMessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMessageType.swift; sourceTree = "<group>"; };
 		C9A5A92125A3E44C00286EF2 /* LoginServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceType.swift; sourceTree = "<group>"; };
 		C9A5A92225A3E44C00286EF2 /* TabBarItemTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemTag.swift; sourceTree = "<group>"; };
 		C9A5A92525A3E44D00286EF2 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
@@ -574,7 +574,7 @@
 			isa = PBXGroup;
 			children = (
 				C9A5A92125A3E44C00286EF2 /* LoginServiceType.swift */,
-				C9A5A92025A3E44C00286EF2 /* MessageType.swift */,
+				C9A5A92025A3E44C00286EF2 /* MainMessageType.swift */,
 				C9A5A92225A3E44C00286EF2 /* TabBarItemTag.swift */,
 			);
 			path = Models;
@@ -994,7 +994,7 @@
 			files = (
 				C9A5A94625A3E54100286EF2 /* MainViewController.swift in Sources */,
 				C9A5A94725A3E54100286EF2 /* MainViewController+Extensions.swift in Sources */,
-				C9A5A92625A3E44D00286EF2 /* MessageType.swift in Sources */,
+				C9A5A92625A3E44D00286EF2 /* MainMessageType.swift in Sources */,
 				C972A3EB25AF65B500D2A349 /* HeroDetailsViewController.swift in Sources */,
 				C9A5A92725A3E44D00286EF2 /* LoginServiceType.swift in Sources */,
 				C9A5A92825A3E44D00286EF2 /* TabBarItemTag.swift in Sources */,
