@@ -9,4 +9,5 @@ import Foundation
 
 enum AuthErrorEnumType: Error {
     case noUidAvailable
+    case googleLoginError
 }

@@ -56,7 +56,20 @@ extension MainViewController {
     }
     
     private func loginWithGoogleAccount() {
-        
+        GoogleAuthService().loginWithGoogle(self, { (authCredentials, error) in
+            if let error = error {
+                AlertUtils.displayMessage(
+                    self,
+                    title: "Google Login Error",
+                    message: "\(error.localizedDescription)",
+                    okButton: "Ok"
+                )
+            }
+            
+            if let _ = authCredentials {
+                self.doLoginIfCredentialsAreCorrect()
+            }
+        })
     }
     
     private func loginWithFacebookAccount() {
@@ -70,7 +83,7 @@ extension MainViewController {
                 )
             }
             
-            if let authCredentials = authCredentials {
+            if let _ = authCredentials {
                 self.doLoginIfCredentialsAreCorrect()
             }
         }

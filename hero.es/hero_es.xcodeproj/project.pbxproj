@@ -31,6 +31,7 @@
 		C92FF71525A544B00011F44F /* FavoriteService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92FF71425A544B00011F44F /* FavoriteService.swift */; };
 		C92FF71825A544C70011F44F /* FavoriteCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C92FF71725A544C70011F44F /* FavoriteCoreDataDAO.swift */; };
 		C9415875258E7CD500CC81A6 /* PersistentMethodEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9415874258E7CD400CC81A6 /* PersistentMethodEnum.swift */; };
+		C944B98625B1C49A00CBD68A /* GoogleAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944B98525B1C49A00CBD68A /* GoogleAuthService.swift */; };
 		C945BD04259FF61000F8FCBC /* ComicsListViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945BD03259FF61000F8FCBC /* ComicsListViewModel_Tests.swift */; };
 		C94792F32596B915009888BE /* CoreDataDAOProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94792F22596B915009888BE /* CoreDataDAOProtocol.swift */; };
 		C970291625A0D7B400133FE8 /* ComicRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970291525A0D7B400133FE8 /* ComicRepository.swift */; };
@@ -149,6 +150,7 @@
 		C92FF71425A544B00011F44F /* FavoriteService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteService.swift; sourceTree = "<group>"; };
 		C92FF71725A544C70011F44F /* FavoriteCoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCoreDataDAO.swift; sourceTree = "<group>"; };
 		C9415874258E7CD400CC81A6 /* PersistentMethodEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentMethodEnum.swift; sourceTree = "<group>"; };
+		C944B98525B1C49A00CBD68A /* GoogleAuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleAuthService.swift; sourceTree = "<group>"; };
 		C945BD03259FF61000F8FCBC /* ComicsListViewModel_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicsListViewModel_Tests.swift; sourceTree = "<group>"; };
 		C94792F22596B915009888BE /* CoreDataDAOProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDAOProtocol.swift; sourceTree = "<group>"; };
 		C94792F42596C6A4009888BE /* hero_es_v02_renaming_comic_entity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hero_es_v02_renaming_comic_entity.xcdatamodel; sourceTree = "<group>"; };
@@ -775,6 +777,7 @@
 				C91FDB5025B11511003BE7C8 /* AuthService.swift */,
 				C9F5D4D125AF489A00887AF3 /* EmailAuthService.swift */,
 				C91FDB4E25B1097B003BE7C8 /* FacebookAuthService.swift */,
+				C944B98525B1C49A00CBD68A /* GoogleAuthService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -834,6 +837,7 @@
 				C9B14367253FBA400013DC42 /* Frameworks */,
 				C9B14368253FBA400013DC42 /* Resources */,
 				8E26BA1F20AF34219724D2D1 /* [CP] Embed Pods Frameworks */,
+				09EB4A9C12F0CA3770540771 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -933,6 +937,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		09EB4A9C12F0CA3770540771 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hero_es/Pods-hero_es-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hero_es/Pods-hero_es-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hero_es/Pods-hero_es-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		34FD8F878F9775DB63591A5B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -1075,6 +1096,7 @@
 				C970291625A0D7B400133FE8 /* ComicRepository.swift in Sources */,
 				C972A3E225AF64D600D2A349 /* HeroesListViewModel.swift in Sources */,
 				C91FDB5325B13AEB003BE7C8 /* AuthErrorEnumType.swift in Sources */,
+				C944B98625B1C49A00CBD68A /* GoogleAuthService.swift in Sources */,
 				C970291925A0D9F200133FE8 /* ComicCoreDataDAO.swift in Sources */,
 				C921E2B6258E92C200E4E8DC /* hero_es.xcdatamodeld in Sources */,
 			);
