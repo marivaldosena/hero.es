@@ -25,7 +25,7 @@ extension MainViewController {
     }
     
     func doLoginIfCredentialsAreCorrect() {
-        if AuthService.shared.getCurrentUser() != nil {
+        if EmailAuthService.shared.getCurrentUser() != nil {
             DispatchQueue.main.async {
                 self.clearFields()
                 self.createTabBarNavigation()
@@ -60,11 +60,20 @@ extension MainViewController {
     }
     
     private func loginWithFacebookAccount() {
-        
-    }
-    
-    private func createAccount() {
-        
+        FacebookAuthService().loginWithFacebook(self) { (authCredentials, error) in
+            if let error = error {
+                AlertUtils.displayMessage(
+                    self,
+                    title: "Facebook Login Error",
+                    message: "\(error.localizedDescription)",
+                    okButton: "Ok"
+                )
+            }
+            
+            if let authCredentials = authCredentials {
+                self.doLoginIfCredentialsAreCorrect()
+            }
+        }
     }
     
     private func createTabBarNavigation() {

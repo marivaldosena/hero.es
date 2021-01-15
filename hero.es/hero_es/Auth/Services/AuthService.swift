@@ -2,7 +2,7 @@
 //  AuthService.swift
 //  hero_es
 //
-//  Created by Marivaldo Sena on 13/12/20.
+//  Created by Marivaldo Sena on 14/01/21.
 //
 
 import Foundation
@@ -12,44 +12,39 @@ import Firebase
 typealias AuthCompletionHandlerType = (_ user: AuthCredentialsModel?, _ error: Error?) -> Void
 typealias CompletionWithNullableErrorHandlerType = (_ isFinished: Bool, _ error: Error?) -> Void
 
+// MARK: - AuthServiceProtocol
+protocol AuthServiceProtocol {
+    func createAccount(createCredentials: CreateAuthCredentialsModel, userId: String?, completion: @escaping AuthCompletionHandlerType)
+    func getCurrentUser() -> AuthCredentialsModel?
+    func logout(completion: CompletionWithNullableErrorHandlerType)
+}
+
 // MARK: - AuthService
-struct AuthService {
+class AuthService: AuthServiceProtocol {
     private let db = Firestore.firestore()
-    static let shared = AuthService()
+    static var shared = AuthService()
     
     // MARK: - Public Methods
-    func createAccount(createCredentials: CreateAuthCredentialsModel, completion: @escaping AuthCompletionHandlerType) {
-        Auth.auth().createUser(withEmail: createCredentials.email,
-                               password: createCredentials.password) { (authResult, error) in
-            if let error = error {
-                completion(nil, error)
-            }
-            
-            guard let authResult = authResult else {
-                completion(nil, error)
-                return
-            }
-            
-            let user = authResult.user
-            let username = user.displayName ?? createCredentials.username
-            let email = user.email ?? createCredentials.email
-            let registrationDate = Date()
-            
-            let authCredentials = AuthCredentialsModel(userId: user.uid,
-                                                       username: username,
-                                                       email: email,
-                                                       lastLoginAt: registrationDate,
-                                                       registrationDate: registrationDate)
-
-            
-            self.insertCreatedUserToUserTable(authCredentials: authCredentials) { isFinished, error in
-                if let error = error { completion(nil, error) }
-            }
-            
-            self.saveUserDataInPreferences(authCredentials: authCredentials)
-            
-            completion(authCredentials, nil)
+    func createAccount(createCredentials: CreateAuthCredentialsModel, userId: String? = nil, completion: @escaping AuthCompletionHandlerType) {
+        let username = createCredentials.username
+        let email = createCredentials.email
+        let registrationDate = Date()
+        
+        let authCredentials = AuthCredentialsModel(
+            userId: userId,
+            username: username,
+            email: email,
+            lastLoginAt: registrationDate,
+            registrationDate: registrationDate
+        )
+        
+        self.insertCreatedUserToUserTable(authCredentials: authCredentials) { isFinished, error in
+            if let error = error { completion(nil, error) }
         }
+        
+        self.saveUserDataInPreferences(authCredentials: authCredentials)
+        
+        completion(authCredentials, nil)
     }
     
     func getCurrentUser() -> AuthCredentialsModel? {
@@ -112,20 +107,24 @@ struct AuthService {
     // MARK: - Private Methods
     private func insertCreatedUserToUserTable(authCredentials: AuthCredentialsModel,
                                               completion: @escaping CompletionWithNullableErrorHandlerType) {
-        let data: [String: Any] = [
-            "userId": authCredentials.userId,
-            "username": authCredentials.username,
-            "email": authCredentials.email,
-            "lastLoginAt": Date().timeIntervalSince1970,
-            "registrationDate": Date().timeIntervalSince1970
-        ]
-        
-        db.collection("users").document(authCredentials.userId).setData(data) { error in
-            if let error = error {
-                completion(true, error)
-            } else {
-                completion(true, nil)
+        if let userId = authCredentials.userId {
+            let data: [String: Any] = [
+                "userId": userId,
+                "username": authCredentials.username,
+                "email": authCredentials.email,
+                "lastLoginAt": Date().timeIntervalSince1970,
+                "registrationDate": Date().timeIntervalSince1970
+            ]
+            
+            db.collection("users").document(userId).setData(data) { error in
+                if let error = error {
+                    completion(true, error)
+                } else {
+                    completion(true, nil)
+                }
             }
+        } else {
+            completion(false, AuthErrorEnumType.noUidAvailable)
         }
     }
     

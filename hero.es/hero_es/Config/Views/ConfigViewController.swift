@@ -31,7 +31,7 @@ class ConfigViewController: UIViewController {
     }
     
     @IBAction func logoutUser(_ sender: UIButton) {
-        AuthService.shared.logout { isFinished, error in
+        EmailAuthService.shared.logout { isFinished, error in
             if isFinished {
                 if let error = error {
                     print(error.localizedDescription)

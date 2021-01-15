@@ -9,13 +9,13 @@ import Foundation
 
 // MARK: - AuthCredentialsModel
 struct AuthCredentialsModel {
-    let userId: String
+    let userId: String?
     let username: String
     let email: String
     let lastLoginAt: Date
     let registrationDate: Date
     
-    init(userId: String, username: String, email: String, lastLoginAt: Date, registrationDate: Date) {
+    init(userId: String?, username: String, email: String, lastLoginAt: Date, registrationDate: Date) {
         self.userId = userId
         self.username = username
         self.email = email

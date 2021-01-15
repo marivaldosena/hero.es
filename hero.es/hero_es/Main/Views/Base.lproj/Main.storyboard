@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17506" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JV7-yf-wDC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="JV7-yf-wDC">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17505"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -40,9 +38,9 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLa-fc-CgK">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLa-fc-CgK">
                                 <rect key="frame" x="32" y="422" width="350" height="36"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="Ary-1V-kmF"/>
                                 </constraints>
@@ -53,9 +51,9 @@
                                     <action selector="login:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TLJ-VG-Mh2"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aw2-vB-AM1">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Aw2-vB-AM1">
                                 <rect key="frame" x="32" y="818" width="350" height="36"/>
-                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="lk2-GN-Gv8"/>
                                 </constraints>
@@ -88,7 +86,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="n0F-jT-dpB" firstAttribute="centerX" secondItem="QVC-ST-mMt" secondAttribute="centerX" id="JfF-M2-rYo"/>
                                             <constraint firstItem="n0F-jT-dpB" firstAttribute="centerY" secondItem="QVC-ST-mMt" secondAttribute="centerY" id="Rk4-Ss-qR5"/>
@@ -109,7 +107,7 @@
                                                 </connections>
                                             </button>
                                         </subviews>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="rnO-er-7hL" firstAttribute="centerX" secondItem="Kvj-rc-X1g" secondAttribute="centerX" id="3H3-nB-9TD"/>
                                             <constraint firstItem="rnO-er-7hL" firstAttribute="centerY" secondItem="Kvj-rc-X1g" secondAttribute="centerY" id="vBe-jj-lWR"/>
@@ -129,8 +127,7 @@
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="GA4-Rg-tYc" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" constant="-32" id="AdM-Bp-Lpx"/>
                             <constraint firstItem="s6C-7q-9yy" firstAttribute="top" secondItem="I5u-1U-t2h" secondAttribute="bottom" constant="16" id="LCg-0G-hSw"/>
@@ -153,13 +150,14 @@
                             <constraint firstItem="GhL-dq-xg9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="32" id="wEK-f6-9nT"/>
                             <constraint firstItem="I5u-1U-t2h" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="8" id="wvO-aJ-aCB"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <navigationItem key="navigationItem" id="mMf-58-0pZ"/>
                     <connections>
                         <outlet property="createAccountButton" destination="Aw2-vB-AM1" id="ExC-UE-xxk"/>
                         <outlet property="emailTextField" destination="s6C-7q-9yy" id="wvu-vq-ubC"/>
-                        <outlet property="facebookButton" destination="rnO-er-7hL" id="6bS-Le-QoM"/>
-                        <outlet property="googleButton" destination="n0F-jT-dpB" id="43o-yc-EcA"/>
+                        <outlet property="facebookButton" destination="rnO-er-7hL" id="2M3-QS-lE5"/>
+                        <outlet property="googleButton" destination="n0F-jT-dpB" id="3py-pk-YA9"/>
                         <outlet property="loginWithEmailButton" destination="rLa-fc-CgK" id="C0V-Q3-WQM"/>
                         <outlet property="passwordTextField" destination="GA4-Rg-tYc" id="gpB-dq-o6t"/>
                     </connections>
@@ -190,14 +188,5 @@
         <image name="Facebook" width="408.78799438476562" height="408.78799438476562"/>
         <image name="Google" width="512" height="512"/>
         <image name="Heroes" width="43.5" height="67.5"/>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemBlueColor">
-            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
-        <systemColor name="systemGray6Color">
-            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
     </resources>
 </document>
