@@ -18,7 +18,7 @@ class FacebookAuthService: AuthService, FacebookAuthServiceProtocol {
     func loginWithFacebook(_ viewController: UIViewController, _ completion: @escaping AuthCompletionHandlerType) {
         let loginManager = LoginManager()
         
-        loginManager.logIn(permissions: [], from: viewController) { (result, error) in
+        loginManager.logIn(permissions: ["public_profile", "email"], from: viewController) { (result, error) in
             guard error == nil else {
                 // Error occurred
                 print(error!.localizedDescription)
@@ -37,9 +37,8 @@ class FacebookAuthService: AuthService, FacebookAuthServiceProtocol {
                     print("Just logged in")
                     
                     if let username = authResult?.user.displayName,
-                        let uid = authResult?.user.uid {
-                        
-                        let email = authResult?.user.email ?? username
+                        let uid = authResult?.user.uid,
+                        let email = authResult?.user.email {
                         
                         let createCredentials = CreateAuthCredentialsModel(
                             username: username,
