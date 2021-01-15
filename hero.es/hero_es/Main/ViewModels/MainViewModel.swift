@@ -20,45 +20,49 @@ struct MainViewModel {
         self.service = service
     }
     
-    func getString(for message: MessageType) -> String {
+    func getString(for message: MainMessageType) -> String {
         return message.rawValue
     }
     
     func getTabBarItem(for item: TabBarItemTag) -> UITabBarItem {
-        let tabBarItem: UITabBarItem
-        
-        switch item {
-        case .heroes:
-            tabBarItem = UITabBarItem(
-                title: "Heroes",
-                image: UIImage(systemName: "person.3"),
-                tag: item.rawValue
-            )
-        case .comics:
-            tabBarItem = UITabBarItem(
-                title: "Comics",
-                image: UIImage(systemName: "book"),
-                tag: item.rawValue
-            )
-        case .favorites:
-            tabBarItem = UITabBarItem(
-                title: "Favorites",
-                image: UIImage(systemName: "heart"),
-                tag: item.rawValue
-            )
-        default:
-            tabBarItem = UITabBarItem(
-                title: "Config",
-                image: UIImage(systemName: "gear"),
-                tag: item.rawValue
-            )
-        }
-        
-        return tabBarItem
+        return UITabBarItem(
+            title: getTabBarItemTitleName(for: item),
+            image: getTabBarItemImage(for: item),
+            tag: item.rawValue
+        )
     }
     
-    func getController(for item: TabBarItemTag, withNagigation: Bool = true) -> UIViewController? {
-        
+    func getTabBarItemTitleName(for item: TabBarItemTag) -> String {
+        switch item {
+        case .heroes:
+            return "Heroes"
+        case .comics:
+            return "Comics"
+        case .favorites:
+            return "Favorites"
+        default:
+            return "Config"
+        }
+    }
+    
+    func getTabBarItemImageName(for item: TabBarItemTag) -> String {
+        switch item {
+        case .heroes:
+            return "person.3"
+        case .comics:
+            return "book"
+        case .favorites:
+            return "heart"
+        default:
+            return "gear"
+        }
+    }
+    
+    func getTabBarItemImage(for item: TabBarItemTag) -> UIImage? {
+        return UIImage(systemName: getTabBarItemImageName(for: item))
+    }
+    
+    func getController(for item: TabBarItemTag) -> UIViewController? {
         let storyBoardName: String
         
         switch item {
@@ -74,19 +78,24 @@ struct MainViewModel {
             storyBoardName = "HeroesList"
         }
         
-        
         if let viewController = UIStoryboard(name: storyBoardName, bundle: nil).instantiateInitialViewController() {
             viewController.tabBarItem = getTabBarItem(for: item)
-            
-            if withNagigation {
-                _ = UINavigationController(rootViewController: viewController)
-                viewController.title = storyBoardName
-            }
             
             return viewController
         }
         
         return nil
+    }
+    
+    func getController(for item: TabBarItemTag, withNagigation: Bool = true) -> UINavigationController? {
+        var navigation: UINavigationController? = nil
+        let viewController = getController(for: item)
+        
+        if let viewController = viewController, withNagigation == true  {
+            navigation = UINavigationController(rootViewController: viewController)
+        }
+        
+        return navigation
     }
     
     func isCorrectLoginWith(email: UITextField, password: UITextField) -> Bool {

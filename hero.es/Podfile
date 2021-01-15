@@ -12,6 +12,7 @@ target 'hero_es' do
   pod 'Alamofire', '~> 5.4'
   pod 'Kingfisher', '~> 5.15'
   pod 'SwiftyJSON', '~> 5.0'
+  pod 'FBSDKLoginKit'
 
   target 'hero_esTests' do
     inherit! :search_paths

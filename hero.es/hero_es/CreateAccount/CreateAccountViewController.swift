@@ -34,7 +34,7 @@ class CreateAccountViewController: UIViewController {
             let password: String = ValidatorService.getNormalizedData(passwordTextField)
             
             let createCredentials = CreateAuthCredentialsModel(username: username, email: email, password: password)
-            AuthService.shared.createAccount(createCredentials: createCredentials) { authCredentials, error in
+            EmailAuthService.shared.createAccount(createCredentials: createCredentials) { authCredentials, error in
                 if let error = error {
                     print(error.localizedDescription)
                     let alert = UIAlertController(title: "Create Account",

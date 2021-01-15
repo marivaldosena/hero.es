@@ -24,6 +24,6 @@ struct MainService: MainServiceProtocol {
         _ email: String,
         _ password: String,
         _ completion: @escaping (_ user: AuthCredentialsModel?, _ error: Error?) -> Void) {
-        AuthService.shared.loginWithEmailAndPassword(email, password, completion)
+        EmailAuthService.shared.loginWithEmailAndPassword(email, password, completion)
     }
 }
