@@ -15,9 +15,47 @@ class GoogleAuthService: AuthService {
     private let googleInstance = GIDSignIn.sharedInstance()
     
     // MARK: - Public Methods
-    func loginWithGoogle(_ viewController: UIViewController) {
+    func loginWithGoogle(_ viewController: UIViewController, _ completion: @escaping AuthCompletionHandlerType) {
         doInitialConfig(viewController)
-        googleInstance?.signIn()
+        
+        loadGoogleCredentials(from: viewController) { (user, error) in
+            if let error = error {
+                print(error.localizedDescription)
+               //completion(nil, error)
+            }
+            
+            if let user = user {
+                guard let authentication = user.authentication else { return }
+                let credential = GoogleAuthProvider.credential(
+                    withIDToken: authentication.idToken,
+                    accessToken: authentication.accessToken
+                )
+                
+                Auth.auth().signIn(with: credential) { (authResult, error) in
+                    if let error = error {
+                        print(error.localizedDescription)
+                        completion(nil, error)
+                    }
+                    
+                    if let username = authResult?.user.displayName,
+                        let uid = authResult?.user.uid,
+                        let email = authResult?.user.email {
+                        
+                        let createCredentials = CreateAuthCredentialsModel(
+                            username: username,
+                            email: email,
+                            password: ""
+                        )
+                        
+                        super.createAccount(createCredentials: createCredentials, userId: uid) { (authCredentials, error) in
+                            completion(authCredentials, error)
+                        }
+                    } else {
+                        completion(nil, error)
+                    }
+                }
+            }
+        }
     }
     
     // MARK: - Private Methods
@@ -25,6 +63,18 @@ class GoogleAuthService: AuthService {
         googleInstance?.presentingViewController = viewController
         googleInstance?.delegate = viewController
         googleInstance?.clientID = FirebaseApp.app()?.options.clientID
+    }
+    
+    private func loadGoogleCredentials(from viewController: UIViewController, _ completion: @escaping (_ user: GIDGoogleUser?, _ error: Error?) -> Void) {
+        googleInstance?.signIn()
+
+        guard let user = googleInstance?.currentUser else {
+            print("Uh oh. The user cancelled the Google login.")
+            completion(nil, AuthErrorEnumType.googleLoginError)
+            return
+        }
+        
+        completion(user, nil)
     }
 }
 
@@ -35,38 +85,6 @@ extension UIViewController: GIDSignInDelegate {
             print(error.localizedDescription)
           return
         }
-
-        guard let authentication = user.authentication else { return }
-        let credential = GoogleAuthProvider.credential(
-            withIDToken: authentication.idToken,
-            accessToken: authentication.accessToken
-        )
-        print(credential.provider)
-        guard let user = user else {
-            print("Uh oh. The user cancelled the Google login.")
-            return
-        }
-        let userId = user.userID ?? ""
-        print("Google User ID: \(userId)")
-        
-        let userIdToken = user.authentication.idToken ?? ""
-        print("Google ID Token: \(userIdToken)")
-        
-        let userFirstName = user.profile.givenName ?? ""
-        print("Google User First Name: \(userFirstName)")
-        
-        let userLastName = user.profile.familyName ?? ""
-        print("Google User Last Name: \(userLastName)")
-        
-        let userFullName = "\(userFirstName) \(userLastName)"
-        print("Google User Full Name: \(userFullName)")
-        
-        let userEmail = user.profile.email ?? ""
-        print("Google User Email: \(userEmail)")
-        
-        let googleProfilePicURL = user.profile.imageURL(withDimension: 150)?.absoluteString ?? ""
-        print("Google Profile Avatar URL: \(googleProfilePicURL)")
-        
     }
     
     public func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
@@ -75,4 +93,3 @@ extension UIViewController: GIDSignInDelegate {
         print("Signing out from Google")
     }
 }
-
