@@ -8,20 +8,18 @@
 import UIKit
 import CoreData
 import Firebase
+import GoogleSignIn
 import FBSDKCoreKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
         // Firebase
         FirebaseApp.configure()
         
-        // Facebook
+        // Facebook Login
         ApplicationDelegate.shared.application(
             application,
             didFinishLaunchingWithOptions: launchOptions
@@ -45,6 +43,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     // Facebook
+    @available(iOS 9.0, *)
     func application(
         _ app: UIApplication,
         open url: URL,
@@ -57,6 +56,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             sourceApplication: options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
             annotation: options[UIApplication.OpenURLOptionsKey.annotation]
         )
-
-    }  
+        
+        return GIDSignIn.sharedInstance().handle(url)
+    }
 }

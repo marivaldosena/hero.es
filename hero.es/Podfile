@@ -13,6 +13,7 @@ target 'hero_es' do
   pod 'Kingfisher', '~> 5.15'
   pod 'SwiftyJSON', '~> 5.0'
   pod 'FBSDKLoginKit'
+  pod 'GoogleSignIn'
 
   target 'hero_esTests' do
     inherit! :search_paths

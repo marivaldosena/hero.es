@@ -56,7 +56,7 @@ extension MainViewController {
     }
     
     private func loginWithGoogleAccount() {
-        
+        GoogleAuthService().loginWithGoogle(self)
     }
     
     private func loginWithFacebookAccount() {
@@ -70,7 +70,7 @@ extension MainViewController {
                 )
             }
             
-            if let authCredentials = authCredentials {
+            if let _ = authCredentials {
                 self.doLoginIfCredentialsAreCorrect()
             }
         }

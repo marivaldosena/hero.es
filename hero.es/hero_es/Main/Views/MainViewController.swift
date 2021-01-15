@@ -6,9 +6,6 @@
 //
 
 import UIKit
-import Firebase
-import FBSDKLoginKit
-
 
 //MARK: - MainViewController: UIViewController
 class MainViewController: UIViewController {
