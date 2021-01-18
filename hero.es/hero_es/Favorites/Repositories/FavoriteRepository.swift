@@ -13,16 +13,18 @@ struct FavoriteRepository {
     static var shared = FavoriteRepository()
     private let container = DBManager.shared.getContainer()
     private let favoriteCoreDataDAO: FavoriteCoreDataDAO
+    private let favoriteFirebaseDAO: FavoriteFirebaseDAO
     
     private init() {
         favoriteCoreDataDAO = FavoriteCoreDataDAO(container: container)
+        favoriteFirebaseDAO = FavoriteFirebaseDAO.shared
     }
     
     // MARK: - Public Methods
     func find(userId: String, itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [FavoriteModel] {
         switch persistentMethod {
-        case .coreData:
-            return findInCoreData(userId: userId, itemType: itemType, limit: limit, offset: offset, in: persistentMethod)
+        case .coreData: return findInCoreData(userId: userId, itemType: itemType, limit: limit, offset: offset)
+        case .firebase: return findInFirebase(userId: userId, itemType: itemType, limit: limit, offset: offset)
         default: return []
         }
     }
@@ -30,14 +32,15 @@ struct FavoriteRepository {
     func find(id: Int, userId: String, itemType: SearchItemType = .all, in persistentMethod: PersistentMethodEnum = .coreData) -> FavoriteModel? {
         switch persistentMethod {
         case .coreData: return findOneInCoreData(id: id, userId: userId, itemType: itemType)
+        case .firebase: return findOneInFirebase(id: id, userId: userId, itemType: itemType)
         default: return nil
         }
     }
     
     func find(term: String, userId: String, itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [FavoriteModel] {
         switch persistentMethod {
-        case .coreData:
-            return findInCoreData(term: term, userId: userId, itemType: itemType, limit: limit, offset: offset, in: persistentMethod)
+        case .coreData: return findInCoreData(term: term, userId: userId, itemType: itemType, limit: limit, offset: offset)
+        case .firebase: return findInFirebase(term: term, userId: userId, itemType: itemType, limit: limit, offset: offset)
         default: return []
         }
     }
@@ -96,13 +99,13 @@ struct FavoriteRepository {
     }
     
     // MARK: - Private Methods
+    // MARK: - Core Data
     private func findInCoreData(
         term: String? = nil,
         userId: String,
         itemType: SearchItemType = .all,
         limit: Int = 0,
-        offset: Int = 0,
-        in persistentMethod: PersistentMethodEnum = .coreData
+        offset: Int = 0
     ) -> [FavoriteModel] {
         if let term = term {
             return favoriteCoreDataDAO.find(
@@ -145,5 +148,14 @@ struct FavoriteRepository {
         }
         
         return false
+    }
+    
+    // MARK: - Firebase
+    private func findInFirebase(term: String? = nil, userId: String, itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0) -> [FavoriteModel] {
+        return favoriteFirebaseDAO.find(term: term, userId: userId, itemType: itemType, limit: limit, offset: offset)
+    }
+    
+    private func findOneInFirebase(id: Int, userId: String, itemType: SearchItemType = .all) -> FavoriteModel? {
+        return nil
     }
 }

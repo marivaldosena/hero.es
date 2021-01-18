@@ -88,6 +88,8 @@
 		C9BBE65C25A65E650034832F /* ItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBE65B25A65E650034832F /* ItemType.swift */; };
 		C9BBE66025A65FA20034832F /* SearchItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BBE65F25A65FA20034832F /* SearchItemType.swift */; };
 		C9BF6C2425A14B3400469EBD /* MockComicService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BF6C2325A14B3400469EBD /* MockComicService.swift */; };
+		C9CACF4725B5C95B00D2C6D9 /* FavoriteFirebaseDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CACF4625B5C95B00D2C6D9 /* FavoriteFirebaseDAO.swift */; };
+		C9CACF4925B5CBB500D2C6D9 /* FavoriteDAOProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9CACF4825B5CBB500D2C6D9 /* FavoriteDAOProtocol.swift */; };
 		C9CD7E3C254330B1001E5E54 /* CreateAccount.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */; };
 		C9D3B14A25A48F680055DE95 /* ComicDetails.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9D3B14925A48F680055DE95 /* ComicDetails.storyboard */; };
 		C9D3B14C25A48FE80055DE95 /* ComicDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D3B14B25A48FE80055DE95 /* ComicDetailsViewController.swift */; };
@@ -214,6 +216,8 @@
 		C9BBE65F25A65FA20034832F /* SearchItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemType.swift; sourceTree = "<group>"; };
 		C9BF6C2325A14B3400469EBD /* MockComicService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockComicService.swift; sourceTree = "<group>"; };
 		C9CACF4525B5B6A900D2C6D9 /* hero_es_v05_add_uid_to_favorite_entity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hero_es_v05_add_uid_to_favorite_entity.xcdatamodel; sourceTree = "<group>"; };
+		C9CACF4625B5C95B00D2C6D9 /* FavoriteFirebaseDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteFirebaseDAO.swift; sourceTree = "<group>"; };
+		C9CACF4825B5CBB500D2C6D9 /* FavoriteDAOProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteDAOProtocol.swift; sourceTree = "<group>"; };
 		C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
 		C9D3B14925A48F680055DE95 /* ComicDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ComicDetails.storyboard; sourceTree = "<group>"; };
 		C9D3B14B25A48FE80055DE95 /* ComicDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailsViewController.swift; sourceTree = "<group>"; };
@@ -390,7 +394,9 @@
 		C92FF71625A544B60011F44F /* DAO */ = {
 			isa = PBXGroup;
 			children = (
+				C9CACF4825B5CBB500D2C6D9 /* FavoriteDAOProtocol.swift */,
 				C92FF71725A544C70011F44F /* FavoriteCoreDataDAO.swift */,
+				C9CACF4625B5C95B00D2C6D9 /* FavoriteFirebaseDAO.swift */,
 			);
 			path = DAO;
 			sourceTree = "<group>";
@@ -1054,6 +1060,7 @@
 				C9B52A3A2543AFCD00F9957D /* UIKitUtils.swift in Sources */,
 				C92FF71125A5418F0011F44F /* FavoriteParser.swift in Sources */,
 				C972A3EC25AF65B500D2A349 /* HeroDetailsViewController+Extensions.swift in Sources */,
+				C9CACF4725B5C95B00D2C6D9 /* FavoriteFirebaseDAO.swift in Sources */,
 				C9BBE65825A65B670034832F /* FavoritesViewModel.swift in Sources */,
 				C92FF70625A538FB0011F44F /* FavoritesViewController.swift in Sources */,
 				C9F5D4DD25AF48E000887AF3 /* AuthViewModel.swift in Sources */,
@@ -1090,6 +1097,7 @@
 				C9415875258E7CD500CC81A6 /* PersistentMethodEnum.swift in Sources */,
 				C927C75A2598E64400187456 /* MasterDetailNavigationProtocol.swift in Sources */,
 				C9B76B2525A21B60001596B1 /* RelatedHeroCoreDataDAO.swift in Sources */,
+				C9CACF4925B5CBB500D2C6D9 /* FavoriteDAOProtocol.swift in Sources */,
 				C91CC750259E4F3B0060B798 /* ComicsListViewModel.swift in Sources */,
 				C97A236425A12E2100AD4C28 /* ComicsListViewController+Extensions.swift in Sources */,
 				C972A3D425AF61D600D2A349 /* HeroCoreDataDAO.swift in Sources */,

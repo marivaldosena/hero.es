@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-struct FavoriteCoreDataDAO: CoreDataDAOProtocol {
+struct FavoriteCoreDataDAO: FavoriteDAOProtocol {
     typealias Model = FavoriteModel
     private let container: NSPersistentContainer
     private let context: NSManagedObjectContext
