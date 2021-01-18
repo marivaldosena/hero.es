@@ -213,6 +213,7 @@
 		C9BBE65B25A65E650034832F /* ItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemType.swift; sourceTree = "<group>"; };
 		C9BBE65F25A65FA20034832F /* SearchItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchItemType.swift; sourceTree = "<group>"; };
 		C9BF6C2325A14B3400469EBD /* MockComicService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockComicService.swift; sourceTree = "<group>"; };
+		C9CACF4525B5B6A900D2C6D9 /* hero_es_v05_add_uid_to_favorite_entity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hero_es_v05_add_uid_to_favorite_entity.xcdatamodel; sourceTree = "<group>"; };
 		C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CreateAccount.storyboard; sourceTree = "<group>"; };
 		C9D3B14925A48F680055DE95 /* ComicDetails.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = ComicDetails.storyboard; sourceTree = "<group>"; };
 		C9D3B14B25A48FE80055DE95 /* ComicDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailsViewController.swift; sourceTree = "<group>"; };
@@ -1396,12 +1397,13 @@
 		C921E2B4258E92C200E4E8DC /* hero_es.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				C9CACF4525B5B6A900D2C6D9 /* hero_es_v05_add_uid_to_favorite_entity.xcdatamodel */,
 				C92FF70E25A53FE70011F44F /* hero_es_v04_add_favorite_entity.xcdatamodel */,
 				C970291A25A0DB8E00133FE8 /* hero_es_v03_refactor_comic_entity.xcdatamodel */,
 				C94792F42596C6A4009888BE /* hero_es_v02_renaming_comic_entity.xcdatamodel */,
 				C921E2B5258E92C200E4E8DC /* hero_es.xcdatamodel */,
 			);
-			currentVersion = C92FF70E25A53FE70011F44F /* hero_es_v04_add_favorite_entity.xcdatamodel */;
+			currentVersion = C9CACF4525B5B6A900D2C6D9 /* hero_es_v05_add_uid_to_favorite_entity.xcdatamodel */;
 			path = hero_es.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

@@ -18,10 +18,13 @@ struct FavoriteCoreDataDAO: CoreDataDAOProtocol {
         self.context = container.viewContext
     }
     
-    
     // MARK: - Public Methods
     func save(_ model: FavoriteModel) {
-        if exists(model) {
+        save(model, userId: "")
+    }
+    
+    func save(_ model: FavoriteModel, userId: String) {
+        if exists(model, userId: userId) {
            return
         }
         
@@ -33,7 +36,7 @@ struct FavoriteCoreDataDAO: CoreDataDAOProtocol {
             entity.resourceURI = model.resourceURI
             entity.thumbnail = model.thumbnailString
             entity.descriptionText = model.description
-            
+            entity.userId = userId
             try context.save()
         } catch {
             print(error.localizedDescription)
@@ -41,15 +44,15 @@ struct FavoriteCoreDataDAO: CoreDataDAOProtocol {
     }
     
     func find(term: String? = nil, limit: Int = 0, offset: Int = 0) -> [FavoriteModel] {
-        return find(term: term, itemType: .all, limit: limit, offset: offset)
+        return find(term: term, userId: "", itemType: .all, limit: limit, offset: offset)
     }
     
-    func find(term: String? = nil, itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0) -> [FavoriteModel] {
+    func find(term: String? = nil, userId: String, itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0) -> [FavoriteModel] {
         var modelsArray: [FavoriteModel] = []
         var entitiesArray: [FavoriteEntity] = []
         
         do {
-            entitiesArray = find(term: term, itemType: itemType, limit: limit, offset: offset)
+            entitiesArray = find(term: term, userId: userId, itemType: itemType, limit: limit, offset: offset)
             modelsArray = FavoriteParser.from(entitiesArray)
         } catch {
             print(error.localizedDescription)
@@ -58,13 +61,13 @@ struct FavoriteCoreDataDAO: CoreDataDAOProtocol {
         return modelsArray
     }
     
-    func find(term: String? = nil, itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0) -> [FavoriteEntity] {
+    func find(term: String? = nil, userId: String, itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0) -> [FavoriteEntity] {
         var entitiesArray: [FavoriteEntity] = []
         
         do {
             let request: NSFetchRequest<FavoriteEntity> = FavoriteEntity.fetchRequest()
             
-            request.predicate = getPredicates(term: term, itemType: itemType)
+            request.predicate = getPredicates(term: term, userId: userId, itemType: itemType)
             
             if limit != 0 {
                 request.fetchLimit = limit
@@ -80,14 +83,14 @@ struct FavoriteCoreDataDAO: CoreDataDAOProtocol {
     }
     
     func find(id: Int) -> FavoriteModel? {
-        return find(id: id, itemType: .all)
+        return find(id: id, userId: "", itemType: .all)
     }
     
-    func find(id: Int, itemType: SearchItemType = .all) -> FavoriteModel? {
+    func find(id: Int, userId: String, itemType: SearchItemType = .all) -> FavoriteModel? {
         var model: FavoriteModel? = nil
         
         do {
-            if let entity: FavoriteEntity = find(id: id, itemType: itemType) {
+            if let entity: FavoriteEntity = find(id: id, userId: userId, itemType: itemType) {
                 model = FavoriteParser.from(entity)
             }
         } catch {
@@ -97,14 +100,14 @@ struct FavoriteCoreDataDAO: CoreDataDAOProtocol {
         return model
     }
     
-    func find(id: Int, itemType: SearchItemType = .all) -> FavoriteEntity? {
+    func find(id: Int, userId: String, itemType: SearchItemType = .all) -> FavoriteEntity? {
         var entitiesArray: [FavoriteEntity] = []
         
         do {
             let request: NSFetchRequest = FavoriteEntity.fetchRequest()
             
             request.fetchLimit = 1
-            request.predicate = getPredicates(id: id, itemType: itemType)
+            request.predicate = getPredicates(id: id, userId: userId, itemType: itemType)
         
             entitiesArray = try context.fetch(request)
         } catch {
@@ -118,34 +121,34 @@ struct FavoriteCoreDataDAO: CoreDataDAOProtocol {
         return nil
     }
     
-    func exists(_ model: FavoriteModel) -> Bool {
-        return exists(id: model.id, itemType: getItemType(of: model))
+    func exists(_ model: FavoriteModel, userId: String) -> Bool {
+        return exists(id: model.id, userId: userId, itemType: getItemType(of: model))
     }
     
-    func exists(id: Int, itemType: SearchItemType = .hero) -> Bool {
-        if let _: FavoriteModel =  find(id: id, itemType: itemType) {
+    func exists(id: Int, userId: String, itemType: SearchItemType = .hero) -> Bool {
+        if let _: FavoriteModel =  find(id: id, userId: userId, itemType: itemType) {
             return true
         }
         return false
     }
     
-    func delete(_ model: FavoriteModel) {
-        if !exists(model) {
+    func delete(_ model: FavoriteModel, userId: String) {
+        if !exists(model, userId: userId) {
             return
         }
         
-        delete(id: model.id, itemType: getItemType(of: model))
+        delete(id: model.id, userId: userId, itemType: getItemType(of: model))
     }
     
-    func delete(id: Int, itemType: SearchItemType = .all) {
-        if !exists(id: id, itemType: itemType) {
+    func delete(id: Int, userId: String, itemType: SearchItemType = .all) {
+        if !exists(id: id, userId: userId, itemType: itemType) {
             return
         }
 
         do {
             let request: NSFetchRequest<FavoriteEntity> =  FavoriteEntity.fetchRequest()
             request.fetchLimit = 1
-            request.predicate = getPredicates(id: id, itemType: itemType)
+            request.predicate = getPredicates(id: id, userId: userId, itemType: itemType)
             
             let entitiesArray: [FavoriteEntity] = try context.fetch(request)
             
@@ -157,22 +160,22 @@ struct FavoriteCoreDataDAO: CoreDataDAOProtocol {
         }
     }
     
-    func isFavorite(_ model: FavoriteModel) -> Bool {
-        if let _: FavoriteModel = find(id: model.id, itemType: getItemType(of: model)) {
+    func isFavorite(_ model: FavoriteModel, userId: String) -> Bool {
+        if let _: FavoriteModel = find(id: model.id, userId: userId, itemType: getItemType(of: model)) {
             return true
         }
         return false
     }
     
-    func isFavorite(id: Int, itemType: SearchItemType = .all) -> Bool {
-        if let _: FavoriteModel = find(id: id, itemType: itemType) {
+    func isFavorite(id: Int, userId: String, itemType: SearchItemType = .all) -> Bool {
+        if let _: FavoriteModel = find(id: id, userId: userId, itemType: itemType) {
             return true
         }
         return false
     }
     
     // MARK: - Private Methods
-    private func getPredicates(id: Int? = nil, term: String? = nil, itemType: SearchItemType = .all) -> NSCompoundPredicate {
+    private func getPredicates(id: Int? = nil, term: String? = nil, userId: String, itemType: SearchItemType = .all) -> NSCompoundPredicate {
         var predicates: [NSPredicate] = []
         
         if itemType != .all {
@@ -186,6 +189,8 @@ struct FavoriteCoreDataDAO: CoreDataDAOProtocol {
         if let id = id {
             predicates.append(NSPredicate(format: "id == %i", id))
         }
+        
+        predicates.append(NSPredicate(format: "userId == %@", userId))
         
         let result = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
         
