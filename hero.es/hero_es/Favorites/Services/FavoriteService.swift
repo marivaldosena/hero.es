@@ -31,7 +31,7 @@ struct FavoriteService {
         // TODO: Implement online version.
         guard let userId = getUserId() else { return nil }
         if persistentMethod != .online {
-            return repository.find(id: id, userId: userId, itemType: itemType)
+            return repository.find(id: id, userId: userId, itemType: itemType, in: persistentMethod)
         }
         return nil
     }
@@ -40,7 +40,7 @@ struct FavoriteService {
         // TODO: Implement online version.
         guard let userId = getUserId() else { return [] }
         if persistentMethod != .online {
-            return repository.find(userId: userId, itemType: itemType, limit: limit, offset: offset)
+            return repository.find(userId: userId, itemType: itemType, limit: limit, offset: offset, in: persistentMethod)
         }
         return []
     }
@@ -49,7 +49,7 @@ struct FavoriteService {
         // TODO: Implement online version.
         guard let userId = getUserId() else { return [] }
         if persistentMethod != .online {
-            return repository.find(term: term, userId: userId, itemType: itemType, limit: limit, offset: offset)
+            return repository.find(term: term, userId: userId, itemType: itemType, limit: limit, offset: offset, in: persistentMethod)
         }
         return []
     }

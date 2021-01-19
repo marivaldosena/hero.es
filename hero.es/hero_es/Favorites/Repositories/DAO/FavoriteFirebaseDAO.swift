@@ -20,6 +20,7 @@ class FavoriteFirebaseDAO: FavoriteDAOProtocol {
     static var shared = FavoriteFirebaseDAO()
     private let db: Firestore = Firestore.firestore()
     private let favorites: CollectionReference
+    private var modelsArray: [FavoriteModel] = []
     
     init() {
          favorites = db.collection("favorites")
@@ -30,9 +31,12 @@ class FavoriteFirebaseDAO: FavoriteDAOProtocol {
         
     }
     
-    func find(term: String?, userId: String, itemType: SearchItemType, limit: Int, offset: Int) -> [FavoriteModel] {
-        var modelsArray: [FavoriteModel] = []
-        favorites.getDocuments { (snapshot, error) in
+    func find(term: String? = nil, userId: String, itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0) -> [FavoriteModel] {
+        favorites
+            .whereField("userId", isEqualTo: userId)
+            .whereField("itemType", isEqualTo: itemType)
+            .addSnapshotListener { (snapshot, error) in
+            print("Listening documents")
             if let error = error {
                 print(error.localizedDescription)
             }
@@ -41,7 +45,8 @@ class FavoriteFirebaseDAO: FavoriteDAOProtocol {
             for document in documents {
                 print("===== Beginning of Firebase =====")
                 if let model = FavoriteParser.from(document) {
-                    modelsArray.append(model)
+                    print("Got model!")
+                    self.modelsArray.append(model)
                 }
                 print("===== End of Firebase =====")
             }
