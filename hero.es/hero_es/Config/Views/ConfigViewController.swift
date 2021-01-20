@@ -8,6 +8,10 @@
 import UIKit
 import Firebase
 
+protocol ConfigViewControllerDelegate {
+    func didDarkModeChange()
+}
+
 class ConfigViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var oldPasswordTextField: UITextField!
@@ -16,10 +20,14 @@ class ConfigViewController: UIViewController {
     @IBOutlet weak var changeDataButton: UIButton!
     @IBOutlet weak var deleteUserButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var darkModeSwitch: UISwitch!
     
+    var delegate: ConfigViewControllerDelegate?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        darkModeSwitch.setOn(darkModeSwitch.isOn, animated: true)
     }
     
     @IBAction func changeUserData(_ sender: UIButton) {
@@ -42,5 +50,11 @@ class ConfigViewController: UIViewController {
         DispatchQueue.main.async {
             self.navigationController?.popToRootViewController(animated: true)
         }
+    }
+    
+    @IBAction func darkModeChanged(_ sender: Any) {
+        let defaults: UserDefaults = UserDefaults.standard
+        defaults.setValue(darkModeSwitch.isOn, forKey: "darkModeKey")
+        delegate?.didDarkModeChange()
     }
 }

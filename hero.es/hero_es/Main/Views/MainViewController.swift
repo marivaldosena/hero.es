@@ -23,11 +23,13 @@ class MainViewController: UIViewController {
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         doLoginIfCredentialsAreCorrect()
     }
     
@@ -46,7 +48,23 @@ class MainViewController: UIViewController {
     
     @IBAction func register(_ sender: UIButton) {
         if let viewController = UIStoryboard(name: "CreateAccount", bundle: nil).instantiateInitialViewController() as? CreateAccountViewController {
-            navigationController?.pushViewController(viewController, animated: true)
+            //TODO: glayce (pesquisar como abrir a tela e mostrar a navigation com o botao de voltar)
+//            navigationController?.pushViewController(viewController, animated: true)
+            navigationController?.present(viewController, animated: true, completion: nil)
         }
+    }
+    
+    private func setupUI() {
+        setupView()
+    }
+    
+    private func setupView() {
+        view.backgroundColor = StyleGuide.View.background
+    }
+}
+
+extension MainViewController: ConfigViewControllerDelegate {
+    func didDarkModeChange() {
+        setupUI()
     }
 }

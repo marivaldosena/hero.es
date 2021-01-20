@@ -14,7 +14,8 @@ extension MainViewController {
     func login(with service: LoginServiceType) {
         switch service {
         case .email:
-            self.loginWithEmail()
+//            self.loginWithEmail()
+            self.createTabBarNavigation()
         case .facebook:
             self.loginWithFacebookAccount()
         case .google:
@@ -105,8 +106,13 @@ extension MainViewController {
         
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = arrayTabVC
-            
-        navigationController?.pushViewController(tabBarController, animated: true)
+            //TODO: glayce (pesquisar como abrir a tela e mostrar a navigation com o botao de voltar)
+//        navigationController?.pushViewController(tabBarController, animated: true)
+        
+        let configViewController: ConfigViewController = ConfigViewController()
+        configViewController.delegate = self
+        
+        navigationController?.present(tabBarController, animated: true, completion: nil)
     }
     
     private func clearFields() {
