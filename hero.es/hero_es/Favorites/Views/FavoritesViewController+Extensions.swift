@@ -28,7 +28,7 @@ extension FavoritesViewController {
         default:
             option = .all
         }
-        viewModel.getItems(itemType: option)
+        viewModel.getItems(itemType: option, in: .firebase)
         updateUIInterface()
     }
 }
