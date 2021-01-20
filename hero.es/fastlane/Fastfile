@@ -1,0 +1,34 @@
+# This file contains the fastlane.tools configuration
+# You can find the documentation at https://docs.fastlane.tools
+#
+# For a list of all available actions, check out
+#
+#     https://docs.fastlane.tools/actions
+#
+# For a list of all available plugins, check out
+#
+#     https://docs.fastlane.tools/plugins/available-plugins
+#
+
+# Uncomment the line if you want fastlane to automatically update itself
+# update_fastlane
+
+default_platform(:ios)
+
+platform :ios do
+  desc "Running tests on emulator..."
+  lane :tests do
+    
+    run_tests(
+      workspace: "hero_es.xcworkspace",
+      devices: ["iPhone 11"],
+      scheme: "hero_es")
+  end
+
+  desc "Running tests on physical device..."
+  lane :testDevice do
+    install_on_device(
+    device_id: "8ae356fa72908f17d09e62e05b62d7ab4d618a2b")
+    #ipa: "./app.ipa")
+  end
+end
