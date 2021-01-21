@@ -13,158 +13,149 @@ struct FavoriteRepository {
     static var shared = FavoriteRepository()
     private let container = DBManager.shared.getContainer()
     private let favoriteCoreDataDAO: FavoriteCoreDataDAO
+    private let favoriteFirebaseDAO: FavoriteFirebaseDAO
     
     private init() {
         favoriteCoreDataDAO = FavoriteCoreDataDAO(container: container)
+        favoriteFirebaseDAO = FavoriteFirebaseDAO.shared
     }
     
     // MARK: - Public Methods
-    func find(limit: Int = 0, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [FavoriteModel] {
+    func find(userId: String, itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [FavoriteModel] {
         switch persistentMethod {
-        case .coreData:
-            return find(itemType: .all, limit: limit, offset: offset, in: persistentMethod)
+        case .coreData: return findInCoreData(userId: userId, itemType: itemType, limit: limit, offset: offset)
+        case .firebase: return findInFirebase(userId: userId, itemType: itemType, limit: limit, offset: offset)
         default: return []
         }
     }
     
-    func find(itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [FavoriteModel] {
+    func find(id: Int, userId: String, itemType: SearchItemType = .all, in persistentMethod: PersistentMethodEnum = .coreData) -> FavoriteModel? {
         switch persistentMethod {
-        case .coreData:
-            return findInCoreData(itemType: itemType, limit: limit, offset: offset, in: persistentMethod)
-        default: return []
-        }
-    }
-    
-    func find(id: Int, in persistentMethod: PersistentMethodEnum = .coreData) -> FavoriteModel? {
-        switch persistentMethod {
-        case .coreData: return find(id: id, itemType: .all, in: persistentMethod)
+        case .coreData: return findOneInCoreData(id: id, userId: userId, itemType: itemType)
+        case .firebase: return findOneInFirebase(id: id, userId: userId, itemType: itemType)
         default: return nil
         }
     }
     
-    func find(id: Int, itemType: SearchItemType = .all, in persistentMethod: PersistentMethodEnum = .coreData) -> FavoriteModel? {
+    func find(term: String, userId: String, itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [FavoriteModel] {
         switch persistentMethod {
-        case .coreData: return findOneInCoreData(id: id, itemType: itemType)
-        default: return nil
-        }
-    }
-    
-    func find(term: String, limit: Int = 0, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [FavoriteModel] {
-        switch persistentMethod {
-        case .coreData:
-            return find(term: term, itemType: .all, limit: limit, offset: offset, in: persistentMethod)
+        case .coreData: return findInCoreData(term: term, userId: userId, itemType: itemType, limit: limit, offset: offset)
+        case .firebase: return findInFirebase(term: term, userId: userId, itemType: itemType, limit: limit, offset: offset)
         default: return []
         }
     }
     
-    func find(term: String, itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [FavoriteModel] {
+    func save(_ model: FavoriteModel, userId: String, in persistentMethod: PersistentMethodEnum = .coreData) {
         switch persistentMethod {
-        case .coreData:
-            return findInCoreData(term: term, itemType: itemType, limit: limit, offset: offset, in: persistentMethod)
-        default: return []
-        }
-    }
-    
-    func save(_ model: FavoriteModel, in persistentMethod: PersistentMethodEnum = .coreData) {
-        switch persistentMethod {
-        case .coreData: saveInCoreData(model)
+        case .coreData: saveInCoreData(model, userId: userId)
         default: break
         }
     }
     
-    func save(_ array: [FavoriteModel], in persistentMethod: PersistentMethodEnum = .coreData) {
+    func save(_ array: [FavoriteModel], userId: String, in persistentMethod: PersistentMethodEnum = .coreData) {
         for item in array {
-            save(item, in: persistentMethod)
+            save(item, userId: userId, in: persistentMethod)
         }
     }
     
-    func delete(_ array: [FavoriteModel], in persistentMethod: PersistentMethodEnum = .coreData) {
+    func delete(_ array: [FavoriteModel], userId: String, in persistentMethod: PersistentMethodEnum = .coreData) {
         for item in array {
-            delete(item, in: persistentMethod)
+            delete(item, userId: userId, in: persistentMethod)
         }
     }
     
-    func delete(_ model: FavoriteModel, in persistentMethod: PersistentMethodEnum = .coreData) {
+    func delete(_ model: FavoriteModel, userId: String, in persistentMethod: PersistentMethodEnum = .coreData) {
         switch persistentMethod {
         case .coreData:
-            deleteInCoreData(model)
+            deleteInCoreData(model, userId: userId)
         default: break
         }
     }
     
-    func delete(id: Int, itemType: SearchItemType = .hero, in persistentMethod: PersistentMethodEnum = .coreData) {
+    func delete(id: Int, userId: String, itemType: SearchItemType = .hero, in persistentMethod: PersistentMethodEnum = .coreData) {
         switch persistentMethod {
         case .coreData:
-            deleteInCoreData(id: id, itemType: itemType)
+            deleteInCoreData(id: id, userId: userId, itemType: itemType)
         default: break
         }
     }
     
-    func isFavorite(_ model: FavoriteModel, in persistentMethod: PersistentMethodEnum = .coreData) -> Bool {
+    func isFavorite(_ model: FavoriteModel, userId: String, in persistentMethod: PersistentMethodEnum = .coreData) -> Bool {
         switch persistentMethod {
         case .coreData:
-            return isFavoriteInCoreData(model)
+            return isFavoriteInCoreData(model, userId: userId)
         default:
             return false
         }
     }
     
-    func isFavorite(id: Int, itemType: SearchItemType = .hero, in persistentMethod: PersistentMethodEnum = .coreData) -> Bool {
+    func isFavorite(id: Int, userId: String, itemType: SearchItemType = .hero, in persistentMethod: PersistentMethodEnum = .coreData) -> Bool {
         switch persistentMethod {
         case .coreData:
-            return isFavoriteInCoreData(id: id, itemType: itemType)
+            return isFavoriteInCoreData(id: id, userId: userId, itemType: itemType)
         default:
             return false
         }
     }
     
     // MARK: - Private Methods
+    // MARK: - Core Data
     private func findInCoreData(
         term: String? = nil,
+        userId: String,
         itemType: SearchItemType = .all,
         limit: Int = 0,
-        offset: Int = 0,
-        in persistentMethod: PersistentMethodEnum = .coreData
+        offset: Int = 0
     ) -> [FavoriteModel] {
         if let term = term {
             return favoriteCoreDataDAO.find(
                 term: term,
+                userId: userId,
                 itemType: itemType,
                 limit: limit,
                 offset: offset
             )
         }
         
-        return favoriteCoreDataDAO.find(itemType: itemType, limit: limit, offset: offset)
+        return favoriteCoreDataDAO.find(userId: userId, itemType: itemType, limit: limit, offset: offset)
     }
     
-    private func findOneInCoreData(id: Int, itemType: SearchItemType = .all) -> FavoriteModel? {
-        return favoriteCoreDataDAO.find(id: id, itemType: itemType)
+    private func findOneInCoreData(id: Int, userId: String, itemType: SearchItemType = .all) -> FavoriteModel? {
+        return favoriteCoreDataDAO.find(id: id, userId: userId, itemType: itemType)
     }
     
-    private func saveInCoreData(_ model: FavoriteModel) {
-        favoriteCoreDataDAO.save(model)
+    private func saveInCoreData(_ model: FavoriteModel, userId: String) {
+        favoriteCoreDataDAO.save(model, userId: userId)
     }
     
-    private func deleteInCoreData(_ model: FavoriteModel? = nil, id: Int? = nil, itemType: SearchItemType = .hero) {
+    private func deleteInCoreData(_ model: FavoriteModel? = nil, id: Int? = nil, userId: String, itemType: SearchItemType = .hero) {
         if let model = model {
-            favoriteCoreDataDAO.delete(model)
+            favoriteCoreDataDAO.delete(model, userId: userId)
         }
         
         if let id = id {
-            favoriteCoreDataDAO.delete(id: id, itemType: itemType)
+            favoriteCoreDataDAO.delete(id: id, userId: userId, itemType: itemType)
         }
     }
     
-    private func isFavoriteInCoreData(_ model: FavoriteModel? = nil, id: Int? = nil, itemType: SearchItemType = .hero) -> Bool {
+    private func isFavoriteInCoreData(_ model: FavoriteModel? = nil, id: Int? = nil, userId: String, itemType: SearchItemType = .hero) -> Bool {
         if let id = id {
-            return favoriteCoreDataDAO.isFavorite(id: id, itemType: itemType)
+            return favoriteCoreDataDAO.isFavorite(id: id, userId: userId, itemType: itemType)
         }
         
         if let model = model {
-            return favoriteCoreDataDAO.isFavorite(model)
+            return favoriteCoreDataDAO.isFavorite(model, userId: userId)
         }
         
         return false
+    }
+    
+    // MARK: - Firebase
+    private func findInFirebase(term: String? = nil, userId: String, itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0) -> [FavoriteModel] {
+        return favoriteFirebaseDAO.find(term: term, userId: userId, itemType: itemType, limit: limit, offset: offset)
+    }
+    
+    private func findOneInFirebase(id: Int, userId: String, itemType: SearchItemType = .all) -> FavoriteModel? {
+        return nil
     }
 }
