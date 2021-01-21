@@ -107,6 +107,7 @@
 		C9F5D4F225AF4A4400887AF3 /* ConfigViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F5D4EF25AF4A4300887AF3 /* ConfigViewController.swift */; };
 		C9F5D4F325AF4A4400887AF3 /* ConfigService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F5D4F025AF4A4300887AF3 /* ConfigService.swift */; };
 		C9F5D4F425AF4A4400887AF3 /* Config.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C9F5D4F125AF4A4300887AF3 /* Config.storyboard */; };
+		EB9A0BD425B92B2300117247 /* UIView+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A0BD325B92B2300117247 /* UIView+Appearance.swift */; };
 		EBAB205725B68BF600280E7C /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAB205625B68BF600280E7C /* StyleGuide.swift */; };
 		EBAB205B25B68E1000280E7C /* UIColor+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAB205A25B68E1000280E7C /* UIColor+Appearance.swift */; };
 /* End PBXBuildFile section */
@@ -235,6 +236,7 @@
 		C9F5D4F025AF4A4300887AF3 /* ConfigService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigService.swift; sourceTree = "<group>"; };
 		C9F5D4F125AF4A4300887AF3 /* Config.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Config.storyboard; sourceTree = "<group>"; };
 		E3B9DEA949D2073B5B912AEA /* Pods_hero_esTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hero_esTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB9A0BD325B92B2300117247 /* UIView+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Appearance.swift"; sourceTree = "<group>"; };
 		EBAB205625B68BF600280E7C /* StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
 		EBAB205A25B68E1000280E7C /* UIColor+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Appearance.swift"; sourceTree = "<group>"; };
 		EC45140287CA96D17DA631E2 /* Pods-hero_es.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero_es.debug.xcconfig"; path = "Target Support Files/Pods-hero_es/Pods-hero_es.debug.xcconfig"; sourceTree = "<group>"; };
@@ -678,6 +680,7 @@
 				C9B52A392543AFCD00F9957D /* UIKitUtils.swift */,
 				EBAB205625B68BF600280E7C /* StyleGuide.swift */,
 				EBAB205A25B68E1000280E7C /* UIColor+Appearance.swift */,
+				EB9A0BD325B92B2300117247 /* UIView+Appearance.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1066,6 +1069,7 @@
 				C972A3EA25AF65B500D2A349 /* HeroesListViewController.swift in Sources */,
 				C90A096625ABCBE100AE516B /* CellItemProtocol+Favorite.swift in Sources */,
 				C9BBE66025A65FA20034832F /* SearchItemType.swift in Sources */,
+				EB9A0BD425B92B2300117247 /* UIView+Appearance.swift in Sources */,
 				EBAB205725B68BF600280E7C /* StyleGuide.swift in Sources */,
 				C92FF71825A544C70011F44F /* FavoriteCoreDataDAO.swift in Sources */,
 				C9D3B14C25A48FE80055DE95 /* ComicDetailsViewController.swift in Sources */,

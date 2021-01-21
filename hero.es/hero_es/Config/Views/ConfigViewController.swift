@@ -27,7 +27,9 @@ class ConfigViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        darkModeSwitch.setOn(darkModeSwitch.isOn, animated: true)
+        title = "Config"
+        
+        setupDarkModeSwitch()
     }
     
     @IBAction func changeUserData(_ sender: UIButton) {
@@ -56,5 +58,11 @@ class ConfigViewController: UIViewController {
         let defaults: UserDefaults = UserDefaults.standard
         defaults.setValue(darkModeSwitch.isOn, forKey: "darkModeKey")
         delegate?.didDarkModeChange()
+    }
+    
+    private func setupDarkModeSwitch() {
+        let defaults: UserDefaults = UserDefaults.standard
+        let isDarkMode: Bool = defaults.bool(forKey: "darkModeKey")
+        darkModeSwitch.setOn(isDarkMode, animated: true)
     }
 }

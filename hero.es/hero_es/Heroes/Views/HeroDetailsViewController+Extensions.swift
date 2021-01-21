@@ -29,7 +29,7 @@ extension HeroDetailsViewController {
         heroNameLabel?.accessibilityIdentifier = viewModel.getIdentifier(for: .heroName)
         heroPublisherNameLabel?.accessibilityIdentifier = viewModel.getIdentifier(for: .heroPublisher)
         heroDescriptionTextView?.accessibilityIdentifier = viewModel.getIdentifier(for: .heroDescription)
-        shareButton?.accessibilityIdentifier  = viewModel.getIdentifier(for: .shareButton)
         favoriteButton?.accessibilityIdentifier  = viewModel.getIdentifier(for: .favoriteButton)
+        shareBarButtonItem?.accessibilityIdentifier  = viewModel.getIdentifier(for: .shareButton)
     }
 }

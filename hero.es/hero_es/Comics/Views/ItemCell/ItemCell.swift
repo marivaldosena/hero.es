@@ -21,6 +21,7 @@ class ItemCell: UITableViewCell {
     @IBOutlet weak var itemImageView: UIImageView!
     @IBOutlet weak var shareButton: UIButton!
     @IBOutlet weak var likeButton: UIButton!
+    @IBOutlet weak var containerView: UIView!
     
     weak var delegate: ShareAndLikeItemProtocol?
     private var item: CellItemProtocol?
@@ -28,6 +29,8 @@ class ItemCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        backgroundColor = StyleGuide.Color.secondaryWhite
     }
     
     @IBAction func shareItem(_ sender: UIButton) {
@@ -50,15 +53,31 @@ class ItemCell: UITableViewCell {
             self.itemDescription.text = self.item?.description ?? "Item Description"
             self.itemImageView.image = self.item?.getImage()
             self.likeButton.setImage(self.getLikeButtonImage(), for: .normal)
+            
+            self.setupImageView()
+            self.setupContainerView()
         }
+    }
+    
+    private func setupImageView() {
+        itemImageView.layer.cornerRadius = 20
+        itemImageView.clipsToBounds = true
+        itemImageView.layer.borderWidth = 2
+        itemImageView.layer.borderColor = StyleGuide.Color.blue.cgColor
+    }
+    
+    private func setupContainerView() {
+        containerView.layer.cornerRadius = 20
+        containerView.clipsToBounds = true
+        containerView.backgroundColor = StyleGuide.Color.white
     }
     
     private func getLikeButtonImage() -> UIImage? {
         if let item = item  {
             if item.isFavorite() == true {
-                return UIImage(systemName: "heart.fill")
+                return UIImage(named: "like")
             }
         }
-        return UIImage(systemName: "heart")
+        return UIImage(named: "like2")
     }
 }

@@ -30,6 +30,9 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        let configViewController = ConfigViewController()
+        configViewController.delegate = self
+        setupUI()
         doLoginIfCredentialsAreCorrect()
     }
     

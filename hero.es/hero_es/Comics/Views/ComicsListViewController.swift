@@ -19,6 +19,8 @@ class ComicsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Comics"
+        
         viewModel.delegate = self
         viewModel.loadItems()
         

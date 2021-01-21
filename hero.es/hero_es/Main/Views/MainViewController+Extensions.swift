@@ -14,6 +14,7 @@ extension MainViewController {
     func login(with service: LoginServiceType) {
         switch service {
         case .email:
+            //TODO: glayce: voltar após os testes
 //            self.loginWithEmail()
             self.createTabBarNavigation()
         case .facebook:
@@ -95,7 +96,7 @@ extension MainViewController {
         guard let comicsController = viewModel.getController(for: .comics, withNagigation: true) else { return }
         guard let favoritesController = viewModel.getController(for: .favorites, withNagigation: true) else { return }
         // TODO: Fix ConfigViewController to work with both and navigation and not
-        guard let configController = viewModel.getController(for: .config) else { return }
+        guard let configController = viewModel.getController(for: .config, withNagigation: true) else { return }
         
         let arrayTabVC: [UIViewController] = [
             heroesController,
@@ -107,12 +108,12 @@ extension MainViewController {
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = arrayTabVC
             //TODO: glayce (pesquisar como abrir a tela e mostrar a navigation com o botao de voltar)
-//        navigationController?.pushViewController(tabBarController, animated: true)
+        navigationController?.pushViewController(tabBarController, animated: true)
         
         let configViewController: ConfigViewController = ConfigViewController()
         configViewController.delegate = self
         
-        navigationController?.present(tabBarController, animated: true, completion: nil)
+//        navigationController?.present(tabBarController, animated: true, completion: nil)
     }
     
     private func clearFields() {

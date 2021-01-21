@@ -20,6 +20,8 @@ class HeroesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = "Heroes"
+        
         viewModel.delegate = self
         viewModel.loadAllHeroes()
         
@@ -85,6 +87,10 @@ extension HeroesListViewController: UITableViewDataSource {
         cell.delegate = self
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 160
     }
 }
 

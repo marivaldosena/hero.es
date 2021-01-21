@@ -14,13 +14,16 @@ class HeroDetailsViewController: UIViewController {
     @IBOutlet weak var heroNameLabel: UILabel?
     @IBOutlet weak var heroPublisherNameLabel: UILabel?
     @IBOutlet weak var heroDescriptionTextView: UITextView?
-    @IBOutlet weak var shareButton: UIButton?
-    @IBOutlet weak var favoriteButton: UIBarButtonItem?
+    @IBOutlet weak var favoriteButton: UIButton?
+    @IBOutlet weak var shareBarButtonItem: UIBarButtonItem?
     
     private var viewModel: HeroDetailsViewModel? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let cornersToRound: UIRectCorner = [.bottomRight, .bottomLeft]
+        heroImageView?.roundCorners(cornerRadius: 30, corners: cornersToRound)
         
         self.updateUIInterface()
         self.setAllIdentifiers()
