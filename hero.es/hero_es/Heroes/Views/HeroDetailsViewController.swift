@@ -24,7 +24,7 @@ class HeroDetailsViewController: UIViewController {
         
         self.updateUIInterface()
         self.setAllIdentifiers()
-        self.setupImageView()
+        self.setupUI()
     }
     
     static func getViewController(_ item: HeroModel?) -> HeroDetailsViewController? {
@@ -43,5 +43,26 @@ class HeroDetailsViewController: UIViewController {
     func setViewModel(_ viewModel: HeroDetailsViewModel) {
         self.viewModel = viewModel
         self.updateUIInterface()
+    }
+}
+
+//MARK: - HeroDetailsViewController: Setup UI
+extension HeroDetailsViewController {
+    private func setupUI() {
+        setupImageView()
+        setupLabels()
+    }
+    
+    private func setupImageView() {
+        let cornersToRound: UIRectCorner = [.bottomRight, .bottomLeft]
+        heroImageView?.roundCorners(cornerRadius: 30, corners: cornersToRound)
+        heroImageView?.layer.borderWidth = 1
+        heroImageView?.layer.borderColor = StyleGuide.Color.gray.cgColor
+    }
+    
+    private func setupLabels() {
+        heroNameLabel?.textColor = StyleGuide.Color.darkGray
+        heroPublisherNameLabel?.textColor = StyleGuide.Color.gray
+        heroDescriptionTextView?.textColor = StyleGuide.Color.gray
     }
 }

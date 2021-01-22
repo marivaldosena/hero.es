@@ -23,7 +23,7 @@ class ComicDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         updateUIInterface()
-        setupImageView()
+        setupUI()
     }
     
     @IBAction func share(_ sender: UIButton) {
@@ -45,5 +45,27 @@ class ComicDetailsViewController: UIViewController {
     
     func getViewModel() -> ComicDetailsViewModel? {
         return viewModel
+    }
+}
+
+extension ComicDetailsViewController {
+    private func setupUI() {
+        setupImageView()
+        setupLabels()
+    }
+    
+    private func setupImageView() {
+        let cornersToRound: UIRectCorner = [.bottomRight, .bottomLeft]
+        imageView.roundCorners(cornerRadius: 30, corners: cornersToRound)
+        imageView.layer.borderWidth = 1
+        imageView.layer.borderColor = StyleGuide.Color.gray.cgColor
+    }
+    
+    private func setupLabels() {
+        comicNameLabel.textColor = StyleGuide.Color.darkGray
+        comicTypeLabel.textColor = StyleGuide.Color.gray
+        comicDescriptionTextView.textColor = StyleGuide.Color.gray
+        comicPageCountLabel.textColor = StyleGuide.Color.gray
+        comicUpcLabel.textColor = StyleGuide.Color.gray
     }
 }

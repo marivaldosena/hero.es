@@ -22,6 +22,8 @@ class HeroesListViewController: UIViewController {
         
         title = "Heroes"
         
+        setupUI()
+        
         viewModel.delegate = self
         viewModel.loadAllHeroes()
         
@@ -60,6 +62,16 @@ extension HeroesListViewController {
         if let viewController = HeroDetailsViewController.getViewController(item) {
             navigationController?.pushViewController(viewController, animated: true)
         }
+    }
+    
+    private func setupUI() {
+        view.backgroundColor = StyleGuide.Color.lightSecondaryGray
+        
+        heroTableView?.roundCorners(cornerRadius: 15, corners: .allCorners)
+        heroTableView?.backgroundColor = StyleGuide.Color.lightGray
+        
+        heroSearchBar?.backgroundColor = StyleGuide.Color.white
+        heroSearchBar?.roundCorners(cornerRadius: 10, corners: .allCorners)
     }
 }
 

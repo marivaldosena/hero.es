@@ -32,9 +32,4 @@ extension HeroDetailsViewController {
         favoriteButton?.accessibilityIdentifier  = viewModel.getIdentifier(for: .favoriteButton)
         shareBarButtonItem?.accessibilityIdentifier  = viewModel.getIdentifier(for: .shareButton)
     }
-    
-    func setupImageView() {
-        let cornersToRound: UIRectCorner = [.bottomRight, .bottomLeft]
-        heroImageView?.roundCorners(cornerRadius: 30, corners: cornersToRound)
-    }
 }

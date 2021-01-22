@@ -60,16 +60,16 @@ class ItemCell: UITableViewCell {
     }
     
     private func setupImageView() {
-        itemImageView.layer.cornerRadius = 20
-        itemImageView.clipsToBounds = true
+        itemImageView.roundCorners(cornerRadius: 15, corners: .allCorners)
         itemImageView.layer.borderWidth = 2
-        itemImageView.layer.borderColor = StyleGuide.Color.blue.cgColor
+        itemImageView.layer.borderColor = StyleGuide.Color.darkBlue.cgColor
     }
     
     private func setupContainerView() {
-        containerView.layer.cornerRadius = 20
-        containerView.clipsToBounds = true
-        containerView.backgroundColor = StyleGuide.View.containerCellViewBackground
+        containerView.roundCorners(cornerRadius: 15, corners: .allCorners)
+        containerView.backgroundColor = StyleGuide.Color.white
+        containerView.layer.borderWidth = 1
+        containerView.layer.borderColor = StyleGuide.Color.gray.cgColor
     }
     
     private func getLikeButtonImage() -> UIImage? {
