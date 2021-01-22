@@ -27,4 +27,9 @@ extension ComicDetailsViewController {
     func share(_ item: ComicModel) {
         ShareItemUtils.share(item, on: self)
     }
+    
+    func setupImageView() {
+        let cornersToRound: UIRectCorner = [.bottomRight, .bottomLeft]
+        imageView.roundCorners(cornerRadius: 30, corners: cornersToRound)
+    }
 }

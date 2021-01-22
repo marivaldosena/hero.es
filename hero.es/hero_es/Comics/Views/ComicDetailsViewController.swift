@@ -23,6 +23,7 @@ class ComicDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         updateUIInterface()
+        setupImageView()
     }
     
     @IBAction func share(_ sender: UIButton) {

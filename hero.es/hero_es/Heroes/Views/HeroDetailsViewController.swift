@@ -22,11 +22,9 @@ class HeroDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let cornersToRound: UIRectCorner = [.bottomRight, .bottomLeft]
-        heroImageView?.roundCorners(cornerRadius: 30, corners: cornersToRound)
-        
         self.updateUIInterface()
         self.setAllIdentifiers()
+        self.setupImageView()
     }
     
     static func getViewController(_ item: HeroModel?) -> HeroDetailsViewController? {
