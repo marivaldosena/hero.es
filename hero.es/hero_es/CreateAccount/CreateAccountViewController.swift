@@ -14,9 +14,16 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var createAccountButton: UIButton!
     @IBOutlet weak var acceptTermsOfServiceSwitch: UISwitch!
+    @IBOutlet weak var termsServiceButton: UIButton!
+    @IBOutlet weak var appNameLabel: UILabel!
+    @IBOutlet weak var createAccountDescriptionLabel: UILabel!
+    @IBOutlet weak var haveAccountButton: UIButton!
+    @IBOutlet weak var termsDescriptionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupUI()
         
         nameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -83,6 +90,71 @@ class CreateAccountViewController: UIViewController {
     
     private func askUserForAcceptingTermsOfService() {
         AlertUtils.displayMessage(self, title: "Create Account", message: "You should accept the Terms of Service.", okButton: "OK")
+    }
+}
+
+//MARK: - CreateAccountViewController: Private Methods - Setup UI
+extension CreateAccountViewController {
+    private func setupUI() {
+        setupView()
+        setupButtons()
+        setupNameTextField()
+        setupEmailTextField()
+        setupPasswordTextField()
+        setupLabels()
+    }
+    
+    private func setupView() {
+        view.backgroundColor = StyleGuide.Color.lightGray
+    }
+    
+    private func setupButtons() {
+        createAccountButton.backgroundColor = StyleGuide.Button.loginButton
+        createAccountButton.setTitleColor(StyleGuide.Color.white, for: .normal)
+        createAccountButton.roundCorners(cornerRadius: 10, corners: .allCorners)
+        
+        termsServiceButton.backgroundColor = StyleGuide.Button.createAccountButton
+        termsServiceButton.setTitleColor(StyleGuide.Color.darkGray, for: .normal)
+        termsServiceButton.roundCorners(cornerRadius: 10, corners: .allCorners)
+        
+        haveAccountButton.backgroundColor = StyleGuide.Color.clear
+        haveAccountButton.setTitleColor(StyleGuide.Color.blue, for: .normal)
+    }
+    
+    private func setupNameTextField() {
+        nameTextField.backgroundColor = StyleGuide.Color.clear
+        nameTextField.textColor = StyleGuide.Color.gray
+        nameTextField.layer.borderWidth = 1
+        nameTextField.layer.borderColor = StyleGuide.Color.gray.cgColor
+        nameTextField.roundCorners(cornerRadius: 10, corners: .allCorners)
+        nameTextField.attributedPlaceholder = NSAttributedString(string: "Name",
+                                                                  attributes: [NSAttributedString.Key.foregroundColor: StyleGuide.Color.gray])
+    }
+    
+    private func setupEmailTextField() {
+        emailTextField.backgroundColor = StyleGuide.Color.clear
+        emailTextField.textColor = StyleGuide.Color.gray
+        emailTextField.layer.borderWidth = 1
+        emailTextField.layer.borderColor = StyleGuide.Color.gray.cgColor
+        emailTextField.roundCorners(cornerRadius: 10, corners: .allCorners)
+        emailTextField.attributedPlaceholder = NSAttributedString(string: "E-mail",
+                                                                  attributes: [NSAttributedString.Key.foregroundColor: StyleGuide.Color.gray])
+    }
+    
+    private func setupPasswordTextField() {
+        passwordTextField.backgroundColor = StyleGuide.Color.clear
+        passwordTextField.textColor = StyleGuide.Color.gray
+        passwordTextField.layer.borderWidth = 1
+        passwordTextField.layer.borderColor = StyleGuide.Color.gray.cgColor
+        passwordTextField.roundCorners(cornerRadius: 10, corners: .allCorners)
+        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password",
+                                                                     attributes: [NSAttributedString.Key.foregroundColor: StyleGuide.Color.gray])
+    }
+    
+    private func setupLabels() {
+        appNameLabel.textColor = StyleGuide.Color.gray
+        createAccountDescriptionLabel.textColor = StyleGuide.Color.gray
+        termsDescriptionLabel.textColor = StyleGuide.Color.gray
     }
 }
 

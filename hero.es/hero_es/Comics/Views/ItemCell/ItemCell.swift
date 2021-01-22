@@ -69,7 +69,7 @@ class ItemCell: UITableViewCell {
     private func setupContainerView() {
         containerView.layer.cornerRadius = 20
         containerView.clipsToBounds = true
-        containerView.backgroundColor = StyleGuide.Color.white
+        containerView.backgroundColor = StyleGuide.View.containerCellViewBackground
     }
     
     private func getLikeButtonImage() -> UIImage? {

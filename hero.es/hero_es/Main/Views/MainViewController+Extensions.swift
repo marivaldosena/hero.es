@@ -8,14 +8,13 @@
 import Foundation
 import UIKit
 
-// MARK: - MainViewController
+// MARK: - MainViewController Public Methods
 extension MainViewController {
-    // MARK: - MainViewController: Public Methods
     func login(with service: LoginServiceType) {
         switch service {
         case .email:
             //TODO: glayce: voltar após os testes
-//            self.loginWithEmail()
+            //            self.loginWithEmail()
             self.createTabBarNavigation()
         case .facebook:
             self.loginWithFacebookAccount()
@@ -34,8 +33,10 @@ extension MainViewController {
             }
         }
     }
-    
-    // MARK: - MainViewController: Private Methods
+}
+
+// MARK: - MainViewController Private Methods
+extension MainViewController {
     private func loginWithEmail() {
         if viewModel.isCorrectLoginWith(email: emailTextField, password: passwordTextField) {
             let email = ValidatorService.getNormalizedData(emailTextField)
@@ -107,13 +108,13 @@ extension MainViewController {
         
         let tabBarController = UITabBarController()
         tabBarController.viewControllers = arrayTabVC
-            //TODO: glayce (pesquisar como abrir a tela e mostrar a navigation com o botao de voltar)
+        //TODO: glayce (pesquisar como abrir a tela e mostrar a navigation com o botao de voltar)
         navigationController?.pushViewController(tabBarController, animated: true)
         
         let configViewController: ConfigViewController = ConfigViewController()
         configViewController.delegate = self
         
-//        navigationController?.present(tabBarController, animated: true, completion: nil)
+        //        navigationController?.present(tabBarController, animated: true, completion: nil)
     }
     
     private func clearFields() {
