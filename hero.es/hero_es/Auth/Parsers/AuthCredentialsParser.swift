@@ -29,13 +29,11 @@ struct AuthCredentialsParser {
             let lastLoginAt = defaults.double(forKey: "lastLoginAt")
             let registrationDate = defaults.double(forKey: "registrationDate")
 
-            let authCredentials = AuthCredentialsModel(
-                userId: userId,
-                username: username,
-                email: email,
-                lastLoginAt: Date(timeIntervalSince1970: lastLoginAt),
-                registrationDate: Date(timeIntervalSince1970: registrationDate)
-            )
+            let authCredentials = AuthCredentialsModel(userId: userId,
+                                            username: username,
+                                            email: email,
+                                            lastLoginAt: Date(timeIntervalSince1970: lastLoginAt),
+                                            registrationDate: Date(timeIntervalSince1970: registrationDate))
 
             return authCredentials
         }
@@ -51,13 +49,11 @@ struct AuthCredentialsParser {
         let registrationDate = dictionary["registrationDate"] as? Date ?? Date()
         
         if !username.isEmpty {
-            let authCredentials = AuthCredentialsModel(
-                userId: userId,
-                username: username,
-                email: email,
-                lastLoginAt: lastLoginAt,
-                registrationDate: registrationDate
-            )
+            let authCredentials = AuthCredentialsModel(userId: userId,
+                                            username: username,
+                                            email: email,
+                                            lastLoginAt: lastLoginAt,
+                                            registrationDate: registrationDate)
             return authCredentials
         }
         

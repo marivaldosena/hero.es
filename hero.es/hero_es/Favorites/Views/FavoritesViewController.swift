@@ -21,14 +21,14 @@ class FavoritesViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        viewModel.getItems(in: .firebase)
+        viewModel.getItems()
         updateUIInterface()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        viewModel.getItems(in: .firebase)
+        viewModel.getItems()
         updateUIInterface()
     }
     

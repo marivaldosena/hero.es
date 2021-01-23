@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Firebase
 
 struct FavoriteParser {
     static func from(_ entities: [FavoriteEntity]) -> [FavoriteModel] {
@@ -43,53 +42,7 @@ struct FavoriteParser {
     }
     
     static func from(_ item: CellItemProtocol, itemType: SearchItemType? = nil) -> FavoriteModel? {
-        let favoriteItemType: ItemType = getItemType(of: itemType)
-        
-        let model = FavoriteModel(
-            id: item.id,
-            itemType: favoriteItemType,
-            name: item.name,
-            resourceURI: item.resourceURI,
-            thumbnailString: item.thumbnailString,
-            description: item.description
-        )
-        
-        return model
-    }
-    
-    static func from(_ item: QueryDocumentSnapshot) -> FavoriteModel? {
-        return from(item.data())
-    }
-    
-    static func from(_ item: [String: Any]) -> FavoriteModel? {
-        var model: FavoriteModel? = nil
-        
-        do {
-            let id = item["id"] as! Int
-            let itemType = getItemType(of: item["itemType"])
-            let name = item["name"] as! String
-            let description = item["description"] as! String
-            let resourceURI = item["resourceURI"] as! String
-            let thumbnail = item["thumbnail"] as! String
-            
-            model = FavoriteModel(
-                id: id,
-                itemType: itemType,
-                name: name,
-                resourceURI: resourceURI,
-                thumbnailString: thumbnail,
-                description: description
-            )
-        } catch {
-            print(error.localizedDescription)
-        }
-        
-        return model
-    }
-    
-    // MARK: - Private Methods
-    private static func getItemType(of item: CellItemProtocol, itemType: SearchItemType? = nil) -> ItemType {
-        let favoriteItemType: ItemType
+        var favoriteItemType: ItemType
         
         if let itemType = itemType {
             if itemType == .comic {
@@ -105,15 +58,15 @@ struct FavoriteParser {
             }
         }
         
-        return favoriteItemType
-    }
-    
-    private static func getItemType(of item: Any?) -> ItemType {
-        let itemString = item as? String ?? ""
+        let model = FavoriteModel(
+            id: item.id,
+            itemType: favoriteItemType,
+            name: item.name,
+            resourceURI: item.resourceURI,
+            thumbnailString: item.thumbnailString,
+            description: item.description
+        )
         
-        switch itemString {
-        case "Comic": return .comic
-        default: return .hero
-        }
+        return model
     }
 }

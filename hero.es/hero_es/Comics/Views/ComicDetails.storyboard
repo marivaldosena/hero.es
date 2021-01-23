@@ -95,23 +95,19 @@
                             <constraint firstItem="W9W-HS-Huk" firstAttribute="top" secondItem="y4Z-0j-SpG" secondAttribute="bottom" constant="6" id="jrc-pF-mbM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="5Ur-Se-ClP">
-                        <barButtonItem key="rightBarButtonItem" title="Favorite" image="heart" catalog="system" landscapeImage="heart" largeContentSizeImage="heart" id="B7f-UV-0tu"/>
-                    </navigationItem>
                     <connections>
                         <outlet property="comicDescriptionTextView" destination="eAZ-D4-Alv" id="Oug-AF-vGt"/>
                         <outlet property="comicNameLabel" destination="y4Z-0j-SpG" id="5Em-ZK-sJ4"/>
                         <outlet property="comicPageCountLabel" destination="zWF-98-SXn" id="QPf-Td-qBg"/>
                         <outlet property="comicTypeLabel" destination="W9W-HS-Huk" id="4L4-ea-Zqc"/>
                         <outlet property="comicUpcLabel" destination="nEW-bW-Zje" id="vpW-j6-6ND"/>
-                        <outlet property="favoriteButton" destination="B7f-UV-0tu" id="WuJ-Z2-fz2"/>
                         <outlet property="imageView" destination="5jf-cS-UQD" id="dXx-xu-ejF"/>
                         <outlet property="shareButton" destination="Ofi-vi-xXY" id="h8W-II-LN9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0sf-BJ-TdX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="404.34782608695656" y="-2.0089285714285712"/>
+            <point key="canvasLocation" x="-505.79710144927537" y="-2.0089285714285712"/>
         </scene>
     </scenes>
     <resources>
