@@ -845,6 +845,7 @@
 				C9B14368253FBA400013DC42 /* Resources */,
 				8E26BA1F20AF34219724D2D1 /* [CP] Embed Pods Frameworks */,
 				09EB4A9C12F0CA3770540771 /* [CP] Copy Pods Resources */,
+				C93BD6C125BF6D9200C96448 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -1021,6 +1022,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hero_es/Pods-hero_es-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		C93BD6C125BF6D9200C96448 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/FirebaseCrashlytics/run\"\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
