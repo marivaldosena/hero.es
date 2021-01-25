@@ -48,6 +48,7 @@ struct FavoriteRepository {
     func save(_ model: FavoriteModel, userId: String, in persistentMethod: PersistentMethodEnum = .coreData) {
         switch persistentMethod {
         case .coreData: saveInCoreData(model, userId: userId)
+        case .firebase: saveInFirebase(model, userId: userId)
         default: break
         }
     }
@@ -66,35 +67,33 @@ struct FavoriteRepository {
     
     func delete(_ model: FavoriteModel, userId: String, in persistentMethod: PersistentMethodEnum = .coreData) {
         switch persistentMethod {
-        case .coreData:
-            deleteInCoreData(model, userId: userId)
+        case .coreData: deleteInCoreData(model, userId: userId)
+        case .firebase: deleteInFirebase(model, userId: userId)
         default: break
         }
     }
     
     func delete(id: Int, userId: String, itemType: SearchItemType = .hero, in persistentMethod: PersistentMethodEnum = .coreData) {
         switch persistentMethod {
-        case .coreData:
-            deleteInCoreData(id: id, userId: userId, itemType: itemType)
+        case .coreData: deleteInCoreData(id: id, userId: userId, itemType: itemType)
+        case .firebase: deleteInFirebase(id: id, userId: userId, itemType: itemType)
         default: break
         }
     }
     
     func isFavorite(_ model: FavoriteModel, userId: String, in persistentMethod: PersistentMethodEnum = .coreData) -> Bool {
         switch persistentMethod {
-        case .coreData:
-            return isFavoriteInCoreData(model, userId: userId)
-        default:
-            return false
+        case .coreData: return isFavoriteInCoreData(model, userId: userId)
+        case .firebase: return isFavoriteInFirebase(model, userId: userId)
+        default: return false
         }
     }
     
     func isFavorite(id: Int, userId: String, itemType: SearchItemType = .hero, in persistentMethod: PersistentMethodEnum = .coreData) -> Bool {
         switch persistentMethod {
-        case .coreData:
-            return isFavoriteInCoreData(id: id, userId: userId, itemType: itemType)
-        default:
-            return false
+        case .coreData: return isFavoriteInCoreData(id: id, userId: userId, itemType: itemType)
+        case .firebase: return isFavoriteInFirebase(id: id, userId: userId, itemType: itemType)
+        default: return false
         }
     }
     
@@ -156,6 +155,28 @@ struct FavoriteRepository {
     }
     
     private func findOneInFirebase(id: Int, userId: String, itemType: SearchItemType = .all) -> FavoriteModel? {
-        return nil
+        return favoriteFirebaseDAO.find(id: id, userId: userId, itemType: itemType)
+    }
+    
+    private func saveInFirebase(_ model: FavoriteModel, userId: String) {
+        favoriteFirebaseDAO.save(model, userId: userId)
+    }
+    
+    private func deleteInFirebase(_ model: FavoriteModel? = nil, id: Int? = nil, userId: String, itemType: SearchItemType = .hero) {
+        if let model = model {
+            favoriteFirebaseDAO.delete(id: model.id, userId: userId, itemType: model.itemType.getSearchItemType())
+        }
+        
+        if let id = id {
+            favoriteFirebaseDAO.delete(id: id, userId: userId, itemType: itemType)
+        }
+    }
+    
+    private func isFavoriteInFirebase(_ model: FavoriteModel? = nil, id: Int? = nil, userId: String, itemType: SearchItemType = .hero) -> Bool {
+        if let model = model {
+            return favoriteFirebaseDAO.isFavorite(id: model.id, userId: userId, itemType: model.getSearchItemType())
+        }
+        
+        return favoriteFirebaseDAO.isFavorite(id: id ?? 0, userId: userId, itemType: itemType)
     }
 }

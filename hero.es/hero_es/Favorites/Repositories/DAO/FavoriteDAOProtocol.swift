@@ -14,5 +14,6 @@ protocol FavoriteDAOProtocol {
     func find(id: Int, userId: String, itemType: SearchItemType) -> Model?
     func exists(id: Int, userId: String, itemType: SearchItemType) -> Bool
     func delete(id: Int, userId: String, itemType: SearchItemType)
+    func delete(_ model: Model, userId: String)
     func isFavorite(id: Int, userId: String, itemType: SearchItemType) -> Bool
 }

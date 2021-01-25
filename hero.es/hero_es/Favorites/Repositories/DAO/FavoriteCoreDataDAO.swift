@@ -68,7 +68,7 @@ struct FavoriteCoreDataDAO: FavoriteDAOProtocol {
     }
     
     func exists(_ model: FavoriteModel, userId: String) -> Bool {
-        return exists(id: model.id, userId: userId, itemType: getItemType(of: model))
+        return exists(id: model.id, userId: userId, itemType: model.itemType.getSearchItemType())
     }
     
     func exists(id: Int, userId: String, itemType: SearchItemType = .hero) -> Bool {
@@ -83,7 +83,7 @@ struct FavoriteCoreDataDAO: FavoriteDAOProtocol {
             return
         }
         
-        delete(id: model.id, userId: userId, itemType: getItemType(of: model))
+        delete(id: model.id, userId: userId, itemType: model.itemType.getSearchItemType())
     }
     
     func delete(id: Int, userId: String, itemType: SearchItemType = .all) {
@@ -107,7 +107,7 @@ struct FavoriteCoreDataDAO: FavoriteDAOProtocol {
     }
     
     func isFavorite(_ model: FavoriteModel, userId: String) -> Bool {
-        if let _: FavoriteModel = find(id: model.id, userId: userId, itemType: getItemType(of: model)) {
+        if let _: FavoriteModel = find(id: model.id, userId: userId, itemType: model.itemType.getSearchItemType()) {
             return true
         }
         return false
@@ -183,12 +183,5 @@ struct FavoriteCoreDataDAO: FavoriteDAOProtocol {
         let result = NSCompoundPredicate(andPredicateWithSubpredicates: predicates)
         
         return result
-    }
-    
-    private func getItemType(of model: FavoriteModel) -> SearchItemType {
-        switch model.itemType {
-        case .comic: return .comic
-        default: return .hero
-        }
     }
 }

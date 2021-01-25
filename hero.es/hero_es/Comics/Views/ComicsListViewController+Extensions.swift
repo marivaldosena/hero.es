@@ -58,7 +58,7 @@ extension ComicsListViewController: ShareAndLikeItemProtocol {
     func like(item: CellItemProtocol?) {
         guard let item = item else { return }
         let service = FavoriteService.shared
-        service.toggleFavorite(item, itemType: .comic)
+        service.toggleFavorite(item, itemType: .comic, in: .firebase)
         updateUIInterface()
     }
 }
