@@ -30,6 +30,10 @@
 [curso-ios-url]: https://www.digitalhouse.com/br/curso/desenvolvimento-mobile-ios
 [marvel-api-url]: https://developer.marvel.com/
 [clean-architecture-url]: https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
+[fastlane-url]: https://fastlane.tools/
+[android-url]: https://www.android.com/
+[ios-url]: https://www.apple.com/ios/ios-14/
+[bitrise-url]: https://www.bitrise.io/
 
 # Digital House | Projeto Integrador | Heroes
 
@@ -48,6 +52,7 @@ Este projeto utiliza a API da [Marvel][marvel-api-url] como base. Dessa forma, a
   - [Swift](#swift)
   - [Xcode](#xcode)
   - [CocoaPods](#cocoapods)
+  - [Fastlane](#fastlane)
   - [macOS](#macos)
 - [Descrição](#descrição)
 - [Funcionalidades Previstas](#funcionalidades-previstas)
@@ -139,7 +144,21 @@ SwiftyJSON é uma biblioteca para serialização e desserialização Swift com f
 
 Para obter mais informações, clique em [SwiftyJSON][swiftyjson-url].
 
-[Voltar ao menu](#tópicos)
+## Fastlane
+
+É uma ferramenta de automação de testes, deploys, screenshots, entre outros. É uma das mais utilizadas para Desenvolvimento Mobile [iOS][ios-url] e [Android][android-url].
+
+É ideal para projetos de médio e grande porte, já que permite a automação e criação de pipeline de deploys.
+
+Para saber mais detalhes, clique em [Fastlane][fastlane-url].
+
+## Bitrise
+
+É um serviço de computação em nuvem para gerenciamento de pipelines de CD/CI (Continuous Development/Continuous Integration).
+
+Foi utilizado para acompanhar e controlar a evolução de funcionalidades por intermédio de entregas contínuas.
+
+Para obter mais informações e planos disponíveis, por favor, vá ao site do [Bitrise][bitrise-url].
 
 ## macOS
 
@@ -151,7 +170,7 @@ Para obter mais informações, clique em [SwiftyJSON][swiftyjson-url].
 
 # Descrição
 
-Este projeto visa criar um aplicativo iOS 13+ para aficionados em super-heróis, principalmente da Marvel, onde poderão compartilhar heróis favoritos e revistas, inicialmente.
+Este projeto visa criar um aplicativo [iOS 13+][ios-url] para aficionados em super-heróis, principalmente da Marvel, onde poderão compartilhar heróis favoritos e revistas, inicialmente.
 
 # Funcionalidades Previstas
 
@@ -227,7 +246,7 @@ Para obter o Certificado de Conclusão, é necessário implementar o projeto ate
 
 - <span style="color: green;">&check;</span> Deve possuir um design em todas as telas utilizando auto layout;
 - <span style="color: green;">&check;</span> Aplicação do POO.
-- <span style="color: red;">&cross;</span> Deve possuir navegação entre telas (Navigation e Modal);
+- <span style="color: green;">&check;</span> Deve possuir navegação entre telas (Navigation e Modal);
 - <span style="color: green;">&check;</span> Tratativas de erros;
 - <span style="color: green;">&check;</span> Deve consumir uma API;
 - <span style="color: green;">&check;</span> Deve funcionar em modo offline;
@@ -238,10 +257,10 @@ Para obter o Certificado de Conclusão, é necessário implementar o projeto ate
 UIButton, UILabel, UICollectionView e UITableView).
 - <span style="color: red;">&cross;</span> O app deve possuir as seguintes features:
     - <span style="color: red;">&cross;</span> Tela de carregamento;
-    - <span style="color: red;">&cross;</span> Tela de login (Facebook e Google são obrigatórios);
+    - <span style="color: green;">&check;</span> Tela de login (Facebook e Google são obrigatórios);
     - <span style="color: red;">&cross;</span> Tela inicial que deve conter um resumo das funcionalidades do app;
-    - <span style="color: red;">&cross;</span> Tela de descrição do item;
-    - <span style="color: red;">&cross;</span> Tela de listagem de características;
+    - <span style="color: green;">&check;</span> Tela de descrição do item;
+    - <span style="color: green;">&check;</span> Tela de listagem de características;
     - <span style="color: green;">&check;</span> Opções para compartilhamento em redes sociais;
 - <span style="color: green;">&check;</span> Todo o trabalho deve ser feito utilizando o GitFlow;
 - <span style="color: red;">&cross;</span> Ao final, o ReadMe deve estar atualizado com screenshots das telas do app e descrição detalhada das funcionalidades.
