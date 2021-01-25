@@ -48,6 +48,7 @@ struct FavoriteRepository {
     func save(_ model: FavoriteModel, userId: String, in persistentMethod: PersistentMethodEnum = .coreData) {
         switch persistentMethod {
         case .coreData: saveInCoreData(model, userId: userId)
+        case .firebase: saveInFirebase(model, userId: userId)
         default: break
         }
     }
@@ -66,8 +67,8 @@ struct FavoriteRepository {
     
     func delete(_ model: FavoriteModel, userId: String, in persistentMethod: PersistentMethodEnum = .coreData) {
         switch persistentMethod {
-        case .coreData:
-            deleteInCoreData(model, userId: userId)
+        case .coreData: deleteInCoreData(model, userId: userId)
+        case .firebase: deleteInFirebase(model, userId: userId)
         default: break
         }
     }
@@ -156,6 +157,20 @@ struct FavoriteRepository {
     }
     
     private func findOneInFirebase(id: Int, userId: String, itemType: SearchItemType = .all) -> FavoriteModel? {
-        return nil
+        return favoriteFirebaseDAO.find(id: id, userId: userId, itemType: itemType)
+    }
+    
+    private func saveInFirebase(_ model: FavoriteModel, userId: String) {
+        favoriteFirebaseDAO.save(model, userId: userId)
+    }
+    
+    private func deleteInFirebase(_ model: FavoriteModel? = nil, id: Int? = nil, userId: String, itemType: SearchItemType = .hero) {
+        if let model = model {
+            favoriteFirebaseDAO.delete(id: model.id, userId: userId, itemType: model.itemType.getSearchItemType())
+        }
+        
+        if let id = id {
+            favoriteFirebaseDAO.delete(id: id, userId: userId, itemType: itemType)
+        }
     }
 }

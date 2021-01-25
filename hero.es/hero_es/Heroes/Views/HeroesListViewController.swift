@@ -125,7 +125,7 @@ extension HeroesListViewController: ShareAndLikeItemProtocol {
     func like(item: CellItemProtocol?) {
         guard let item = item else { return }
         let service = FavoriteService.shared
-        service.toggleFavorite(item, itemType: .hero)
+        service.toggleFavorite(item, itemType: .hero, in: .firebase)
         updateUIInterface()
     }
 }

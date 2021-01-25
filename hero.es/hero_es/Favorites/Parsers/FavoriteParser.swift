@@ -56,6 +56,18 @@ struct FavoriteParser {
         
         return model
     }
+     
+    static func from(_ array: [QueryDocumentSnapshot]) -> [FavoriteModel] {
+        var modelsArray: [FavoriteModel] = []
+        
+        for item in array {
+            if let model = from(item) {
+                modelsArray.append(model)
+            }
+        }
+        
+        return modelsArray
+    }
     
     static func from(_ item: QueryDocumentSnapshot) -> FavoriteModel? {
         return from(item.data())

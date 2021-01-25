@@ -15,7 +15,7 @@ struct FavoriteService {
     
     // MARK: - Public Methods
     func loadItems(completion: @escaping ([FavoriteModel]?, Error?) -> Void) {
-        // TODO: Implement this.
+        
     }
     
     func getItems(itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [FavoriteModel] {
@@ -76,24 +76,6 @@ struct FavoriteService {
         }
     }
     
-    func addFavorite(_ item: CellItemProtocol, itemType: SearchItemType? = nil, in persistentMethod: PersistentMethodEnum = .coreData) {
-        guard let model = FavoriteParser.from(item, itemType: itemType) else { return }
-        save(model, in: persistentMethod)
-    }
-    
-    func addFavorite(_ model: FavoriteModel, userId: String, in persistentMethod: PersistentMethodEnum = .coreData) {
-        save(model, in: persistentMethod)
-    }
-    
-    func deleteFavorite(_ item: CellItemProtocol, itemType: SearchItemType? = nil, in persistentMethod: PersistentMethodEnum = .coreData) {
-        guard let model = FavoriteParser.from(item, itemType: itemType) else { return }
-        deleteFavorite(model, in: persistentMethod)
-    }
-    
-    func deleteFavorite(_ model: FavoriteModel, userId: String, in persistentMethod: PersistentMethodEnum = .coreData) {
-        delete(model, in: persistentMethod)
-    }
-    
     func toggleFavorite(_ model: FavoriteModel, in persistentMethod: PersistentMethodEnum = .coreData) {
         guard let userId = getUserId() else { return }
         if isFavorite(model, userId: userId, in: persistentMethod) {
@@ -135,5 +117,23 @@ struct FavoriteService {
     private func getUserId() -> String? {
         guard let authCredentials = AuthService.shared.getCurrentUser() else { return nil }
         return authCredentials.userId
+    }
+    
+    private func addFavorite(_ item: CellItemProtocol, itemType: SearchItemType? = nil, in persistentMethod: PersistentMethodEnum = .coreData) {
+        guard let model = FavoriteParser.from(item, itemType: itemType) else { return }
+        save(model, in: persistentMethod)
+    }
+    
+    private func addFavorite(_ model: FavoriteModel, userId: String, in persistentMethod: PersistentMethodEnum = .coreData) {
+        save(model, in: persistentMethod)
+    }
+    
+    private func deleteFavorite(_ item: CellItemProtocol, itemType: SearchItemType? = nil, in persistentMethod: PersistentMethodEnum = .coreData) {
+        guard let model = FavoriteParser.from(item, itemType: itemType) else { return }
+        deleteFavorite(model, in: persistentMethod)
+    }
+    
+    private func deleteFavorite(_ model: FavoriteModel, userId: String, in persistentMethod: PersistentMethodEnum = .coreData) {
+        delete(model, in: persistentMethod)
     }
 }
