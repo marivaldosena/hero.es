@@ -9,6 +9,8 @@ target 'hero_es' do
   pod 'Firebase/Core', '~> 7.3'
   pod 'Firebase/Auth', '~> 7.3'
   pod 'Firebase/Firestore', '~> 7.3'
+  pod 'Firebase/Crashlytics', '~> 7.3'
+  pod 'Firebase/Analytics', '~> 7.3'
   pod 'Alamofire', '~> 5.4'
   pod 'Kingfisher', '~> 5.15'
   pod 'SwiftyJSON', '~> 5.0'
