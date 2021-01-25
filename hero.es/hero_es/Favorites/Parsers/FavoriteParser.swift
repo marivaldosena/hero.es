@@ -36,7 +36,7 @@ struct FavoriteParser {
                 description: entity.descriptionText ?? ""
             )
         } catch {
-            print(error.localizedDescription)
+            print("DEBUG: FavoriteParser.from - \(error.localizedDescription)")
         }
         
         return model
@@ -44,15 +44,20 @@ struct FavoriteParser {
     
     static func from(_ item: CellItemProtocol, itemType: SearchItemType? = nil) -> FavoriteModel? {
         let favoriteItemType: ItemType = getItemType(of: itemType)
+        var model: FavoriteModel? = nil
         
-        let model = FavoriteModel(
-            id: item.id,
-            itemType: favoriteItemType,
-            name: item.name,
-            resourceURI: item.resourceURI,
-            thumbnailString: item.thumbnailString,
-            description: item.description
-        )
+        do {
+            model = FavoriteModel(
+                id: item.id,
+                itemType: favoriteItemType,
+                name: item.name,
+                resourceURI: item.resourceURI,
+                thumbnailString: item.thumbnailString,
+                description: item.description
+            )
+        } catch {
+            print("DEBUG: FavoriteParser.from - \(error.localizedDescription)")
+        }
         
         return model
     }
@@ -93,7 +98,7 @@ struct FavoriteParser {
                 description: description
             )
         } catch {
-            print(error.localizedDescription)
+            print("DEBUG: FavoriteParser.from - \(error.localizedDescription)")
         }
         
         return model
@@ -121,11 +126,16 @@ struct FavoriteParser {
     }
     
     private static func getItemType(of item: Any?) -> ItemType {
-        let itemString = item as? String ?? ""
-        
-        switch itemString {
-        case "Comic": return .comic
-        default: return .hero
+        do {
+            let itemString = item as? String ?? ""
+            
+            switch itemString {
+            case "Comic": return .comic
+            default: return .hero
+            }
+        } catch {
+            print("DEBUG: FavoriteParser.getItemType - \(error.localizedDescription)")
         }
+        return .hero
     }
 }

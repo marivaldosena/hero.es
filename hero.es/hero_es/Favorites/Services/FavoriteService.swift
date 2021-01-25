@@ -15,7 +15,7 @@ struct FavoriteService {
     
     // MARK: - Public Methods
     func loadItems(completion: @escaping ([FavoriteModel]?, Error?) -> Void) {
-        
+        // TODO: Implement online version.
     }
     
     func getItems(itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [FavoriteModel] {
@@ -120,7 +120,7 @@ struct FavoriteService {
     }
     
     private func addFavorite(_ item: CellItemProtocol, itemType: SearchItemType? = nil, in persistentMethod: PersistentMethodEnum = .coreData) {
-        guard let model = FavoriteParser.from(item, itemType: itemType) else { return }
+        guard let model: FavoriteModel = FavoriteParser.from(item, itemType: itemType) else { return }
         save(model, in: persistentMethod)
     }
     
@@ -129,8 +129,9 @@ struct FavoriteService {
     }
     
     private func deleteFavorite(_ item: CellItemProtocol, itemType: SearchItemType? = nil, in persistentMethod: PersistentMethodEnum = .coreData) {
-        guard let model = FavoriteParser.from(item, itemType: itemType) else { return }
-        deleteFavorite(model, in: persistentMethod)
+        guard let model: FavoriteModel = FavoriteParser.from(item, itemType: itemType) else { return }
+        guard let userId = getUserId() else { return }
+        deleteFavorite(model, userId: userId, in: persistentMethod)
     }
     
     private func deleteFavorite(_ model: FavoriteModel, userId: String, in persistentMethod: PersistentMethodEnum = .coreData) {

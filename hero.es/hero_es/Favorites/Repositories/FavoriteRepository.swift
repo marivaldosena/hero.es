@@ -75,27 +75,25 @@ struct FavoriteRepository {
     
     func delete(id: Int, userId: String, itemType: SearchItemType = .hero, in persistentMethod: PersistentMethodEnum = .coreData) {
         switch persistentMethod {
-        case .coreData:
-            deleteInCoreData(id: id, userId: userId, itemType: itemType)
+        case .coreData: deleteInCoreData(id: id, userId: userId, itemType: itemType)
+        case .firebase: deleteInFirebase(id: id, userId: userId, itemType: itemType)
         default: break
         }
     }
     
     func isFavorite(_ model: FavoriteModel, userId: String, in persistentMethod: PersistentMethodEnum = .coreData) -> Bool {
         switch persistentMethod {
-        case .coreData:
-            return isFavoriteInCoreData(model, userId: userId)
-        default:
-            return false
+        case .coreData: return isFavoriteInCoreData(model, userId: userId)
+        case .firebase: return isFavoriteInFirebase(model, userId: userId)
+        default: return false
         }
     }
     
     func isFavorite(id: Int, userId: String, itemType: SearchItemType = .hero, in persistentMethod: PersistentMethodEnum = .coreData) -> Bool {
         switch persistentMethod {
-        case .coreData:
-            return isFavoriteInCoreData(id: id, userId: userId, itemType: itemType)
-        default:
-            return false
+        case .coreData: return isFavoriteInCoreData(id: id, userId: userId, itemType: itemType)
+        case .firebase: return isFavoriteInFirebase(id: id, userId: userId, itemType: itemType)
+        default: return false
         }
     }
     
@@ -172,5 +170,13 @@ struct FavoriteRepository {
         if let id = id {
             favoriteFirebaseDAO.delete(id: id, userId: userId, itemType: itemType)
         }
+    }
+    
+    private func isFavoriteInFirebase(_ model: FavoriteModel? = nil, id: Int? = nil, userId: String, itemType: SearchItemType = .hero) -> Bool {
+        if let model = model {
+            return favoriteFirebaseDAO.isFavorite(id: model.id, userId: userId, itemType: model.getSearchItemType())
+        }
+        
+        return favoriteFirebaseDAO.isFavorite(id: id ?? 0, userId: userId, itemType: itemType)
     }
 }

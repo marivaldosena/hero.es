@@ -66,7 +66,7 @@ extension FavoritesViewController: ShareAndLikeItemProtocol {
         guard let item = item else { return }
         guard let model = FavoriteParser.from(item) else { return }
         let service = FavoriteService.shared
-        service.toggleFavorite(model)
+        service.toggleFavorite(model, in: .firebase)
         filterFavorites()
     }
 }
