@@ -18,17 +18,11 @@ default_platform(:ios)
 platform :ios do
   desc "Running tests on emulator..."
   lane :tests do
-    
+    cocoapods
     run_tests(
       workspace: "hero_es.xcworkspace",
       devices: ["iPhone 11"],
-      scheme: "hero_es")
-  end
-
-  desc "Running tests on physical device..."
-  lane :testDevice do
-    install_on_device(
-    device_id: "8ae356fa72908f17d09e62e05b62d7ab4d618a2b")
-    #ipa: "./app.ipa")
+      scheme: "hero_es"
+    )
   end
 end

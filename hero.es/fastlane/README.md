@@ -21,11 +21,6 @@ or alternatively using `brew install fastlane`
 fastlane ios tests
 ```
 Running tests on emulator...
-### ios testDevice
-```
-fastlane ios testDevice
-```
-Running tests on physical device...
 
 ----
 

@@ -12,3 +12,16 @@ enum SearchItemType {
     case hero
     case comic
 }
+
+extension SearchItemType {
+    func getFirebaseItemTypeValues() -> [String] {
+        switch self {
+        case .comic:
+            return ["Comic"]
+        case .hero:
+            return ["Hero"]
+        default:
+            return ["Comic", "Hero"]
+        }
+    }
+}

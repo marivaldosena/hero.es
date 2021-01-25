@@ -15,3 +15,12 @@ struct FavoriteModel: CellItemProtocol {
     var thumbnailString: String
     var description: String
 }
+
+extension FavoriteModel {
+    func getSearchItemType() -> SearchItemType {
+        switch self.itemType {
+        case .comic: return .comic
+        default: return .hero
+        }
+    }
+}

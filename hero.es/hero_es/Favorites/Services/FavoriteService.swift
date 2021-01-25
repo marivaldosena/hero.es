@@ -15,84 +15,77 @@ struct FavoriteService {
     
     // MARK: - Public Methods
     func loadItems(completion: @escaping ([FavoriteModel]?, Error?) -> Void) {
-        // TODO: Implement this.
+        // TODO: Implement online version.
     }
     
     func getItems(itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [FavoriteModel] {
         // TODO: Implement online version.
+        guard let userId = getUserId() else { return [] }
         if persistentMethod != .online {
-            return repository.find(itemType: itemType, limit: limit, offset: offset, in: persistentMethod)
+            return repository.find(userId: userId, itemType: itemType, limit: limit, offset: offset, in: persistentMethod)
         }
         return []
     }
     
     func find(id: Int, itemType: SearchItemType = .all, in persistentMethod: PersistentMethodEnum = .coreData) -> FavoriteModel? {
         // TODO: Implement online version.
+        guard let userId = getUserId() else { return nil }
         if persistentMethod != .online {
-            return repository.find(id: id, itemType: itemType)
+            return repository.find(id: id, userId: userId, itemType: itemType, in: persistentMethod)
         }
         return nil
     }
     
     func find(itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [FavoriteModel] {
         // TODO: Implement online version.
+        guard let userId = getUserId() else { return [] }
         if persistentMethod != .online {
-            return repository.find(itemType: itemType, limit: limit, offset: offset)
+            return repository.find(userId: userId, itemType: itemType, limit: limit, offset: offset, in: persistentMethod)
         }
         return []
     }
         
     func find(term: String, itemType: SearchItemType = .all, limit: Int = 0, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [FavoriteModel] {
         // TODO: Implement online version.
+        guard let userId = getUserId() else { return [] }
         if persistentMethod != .online {
-            return repository.find(term: term, itemType: itemType, limit: limit, offset: offset)
+            return repository.find(term: term, userId: userId, itemType: itemType, limit: limit, offset: offset, in: persistentMethod)
         }
         return []
     }
     
     func save(_ model: FavoriteModel, in persistentMethod: PersistentMethodEnum = .coreData) {
         // TODO: Implement online version.
+        guard let userId = getUserId() else { return }
         if persistentMethod != .online {
-            repository.save(model, in: persistentMethod)
+            repository.save(model, userId: userId, in: persistentMethod)
+        }
+    }
+    
+    func save(_ array: [FavoriteModel], userId: String, in persistentMethod: PersistentMethodEnum = .coreData) {
+        for item in array {
+            save(item, in: persistentMethod)
         }
     }
     
     func delete(_ model: FavoriteModel, in persistentMethod: PersistentMethodEnum = .coreData) {
         // TODO: Implement online version.
+        guard let userId = getUserId() else { return }
         if persistentMethod != .online {
-            repository.delete(model)
+            repository.delete(model, userId: userId, in: persistentMethod)
         }
     }
     
-    func addFavorite(_ item: CellItemProtocol, itemType: SearchItemType? = nil, in persistentMethod: PersistentMethodEnum = .coreData) {
-        guard let model = FavoriteParser.from(item, itemType: itemType) else { return }
-        
-        save(model, in: persistentMethod)
-    }
-    
-    func addFavorite(_ model: FavoriteModel, in persistentMethod: PersistentMethodEnum = .coreData) {
-        save(model, in: persistentMethod)
-    }
-    
-    func deleteFavorite(_ item: CellItemProtocol, itemType: SearchItemType? = nil, in persistentMethod: PersistentMethodEnum = .coreData) {
-        guard let model = FavoriteParser.from(item, itemType: itemType) else { return }
-        deleteFavorite(model, in: persistentMethod)
-    }
-    
-    func deleteFavorite(_ model: FavoriteModel, in persistentMethod: PersistentMethodEnum = .coreData) {
-        delete(model, in: persistentMethod)
-    }
-    
     func toggleFavorite(_ model: FavoriteModel, in persistentMethod: PersistentMethodEnum = .coreData) {
-        if isFavorite(model, in: persistentMethod) {
-            deleteFavorite(model, in: persistentMethod)
+        guard let userId = getUserId() else { return }
+        if isFavorite(model, userId: userId, in: persistentMethod) {
+            deleteFavorite(model, userId: userId, in: persistentMethod)
         } else {
-            addFavorite(model, in: persistentMethod)
+            addFavorite(model, userId: userId, in: persistentMethod)
         }
     }
     
     func toggleFavorite(_ item: CellItemProtocol, itemType: SearchItemType? = nil, in persistentMethod: PersistentMethodEnum = .coreData) {
-        
         if isFavorite(item, itemType: itemType, in: persistentMethod) {
             deleteFavorite(item, itemType: itemType, in: persistentMethod)
         } else {
@@ -100,27 +93,48 @@ struct FavoriteService {
         }
     }
     
-    func isFavorite(_ model: FavoriteModel, in persistentMethod: PersistentMethodEnum = .coreData) -> Bool {
+    func isFavorite(_ model: FavoriteModel, userId: String, in persistentMethod: PersistentMethodEnum = .coreData) -> Bool {
         // TODO: Implement online functionality.
+        guard let userId = getUserId() else { return false }
         if persistentMethod != .online {
-            return repository.isFavorite(model, in: persistentMethod)
+            return repository.isFavorite(model, userId: userId, in: persistentMethod)
         }
         return false
     }
     
     func isFavorite(_ item: CellItemProtocol, itemType: SearchItemType? = nil, in persistentMethod: PersistentMethodEnum = .coreData) -> Bool {
+        guard let userId = getUserId() else { return false }
         if persistentMethod != .online {
             guard let model = FavoriteParser.from(item, itemType: itemType) else {
                 return false
             }
-            return repository.isFavorite(model, in: persistentMethod)
+            return repository.isFavorite(model, userId: userId, in: persistentMethod)
         }
         return false
     }
     
-    func save(_ array: [FavoriteModel], in persistentMethod: PersistentMethodEnum = .coreData) {
-        for item in array {
-            save(item, in: persistentMethod)
-        }
+    // MARK: - Private Methods
+    private func getUserId() -> String? {
+        guard let authCredentials = AuthService.shared.getCurrentUser() else { return nil }
+        return authCredentials.userId
+    }
+    
+    private func addFavorite(_ item: CellItemProtocol, itemType: SearchItemType? = nil, in persistentMethod: PersistentMethodEnum = .coreData) {
+        guard let model: FavoriteModel = FavoriteParser.from(item, itemType: itemType) else { return }
+        save(model, in: persistentMethod)
+    }
+    
+    private func addFavorite(_ model: FavoriteModel, userId: String, in persistentMethod: PersistentMethodEnum = .coreData) {
+        save(model, in: persistentMethod)
+    }
+    
+    private func deleteFavorite(_ item: CellItemProtocol, itemType: SearchItemType? = nil, in persistentMethod: PersistentMethodEnum = .coreData) {
+        guard let model: FavoriteModel = FavoriteParser.from(item, itemType: itemType) else { return }
+        guard let userId = getUserId() else { return }
+        deleteFavorite(model, userId: userId, in: persistentMethod)
+    }
+    
+    private func deleteFavorite(_ model: FavoriteModel, userId: String, in persistentMethod: PersistentMethodEnum = .coreData) {
+        delete(model, in: persistentMethod)
     }
 }
