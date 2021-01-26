@@ -14,6 +14,8 @@
 [unit-tests-image]: ./assets/images/unit-tests-coverage.png
 [clean-architecture-image]: ./assets/images/clean-architecture.png
 [main-components-image]: ./assets/images/main-components.png
+[fastlane-image]: ./assets/images/fastlane.png
+[google-analytics-image]: ./assets/images/google-analytics.png
 
 <!-- URLs -->
 [xcode-url]: https://developer.apple.com/xcode/
@@ -30,6 +32,11 @@
 [curso-ios-url]: https://www.digitalhouse.com/br/curso/desenvolvimento-mobile-ios
 [marvel-api-url]: https://developer.marvel.com/
 [clean-architecture-url]: https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html
+[fastlane-url]: https://fastlane.tools/
+[android-url]: https://www.android.com/
+[ios-url]: https://www.apple.com/ios/ios-14/
+[bitrise-url]: https://www.bitrise.io/
+[google-analytics-url]: https://firebase.google.com/products-release
 
 # Digital House | Projeto Integrador | Heroes
 
@@ -48,10 +55,21 @@ Este projeto utiliza a API da [Marvel][marvel-api-url] como base. Dessa forma, a
   - [Swift](#swift)
   - [Xcode](#xcode)
   - [CocoaPods](#cocoapods)
+  - [Fastlane](#fastlane)
   - [macOS](#macos)
 - [Descrição](#descrição)
 - [Funcionalidades Previstas](#funcionalidades-previstas)
 - [Imagens do Projeto](#imagens-do-projeto)
+  - [Aplicativo Rodando](#aplicativo-rodando)
+  - [Tela Inicial](#tela-inicial)
+  - [Cadastro](#cadastro)
+  - [Lista de Heróis](#lista-de-heróis)
+  - [Detalhes de Herói](#detalhes-de-herói)
+  - [Lista de Revistas](#lista-de-revistas)
+  - [Configuração](#configuração)
+  - [Testes Unitários](#testes-unitários)
+  - [Execução do Fastlane](#execução-do-fastlane)
+  - [Relatório do Google Analytics](#relatório-do-google-analytics)
 - [Requisitos do Projeto](#requisitos-do-projeto)
 - [Como Executar o Projeto](#como-executar-o-projeto)
   - [Etapas](#etapas)
@@ -121,6 +139,12 @@ A biblioteca utiliza os serviços de autenticação de usuários e banco de dado
 
 Para obter mais informações, clique em [pod Firebase][firebase-pod-url].
 
+### Crashlytics and Google Analytics
+
+São serviços do Google integrados ao [Firebase][firebase-url] e permitem monitorar o uso do aplicativo em tempo real, engajamento e aderência do público-alvo, além de acompanhar casos de falhas sistêmicas no dispositivo móvel.
+
+É possível obter mais detalhes no indo clicando [aqui][google-analytics-url].
+
 ### Alamofire
 
 Alamofire é uma biblioteca de requisições HTTP para iOS/Swift. É uma das mais utilizadas por desenvolvedores, pois facilita o gerenciamento de requisições HTTP, parsing de JSON, entre outros.
@@ -139,7 +163,21 @@ SwiftyJSON é uma biblioteca para serialização e desserialização Swift com f
 
 Para obter mais informações, clique em [SwiftyJSON][swiftyjson-url].
 
-[Voltar ao menu](#tópicos)
+## Fastlane
+
+É uma ferramenta de automação de testes, deploys, screenshots, entre outros. É uma das mais utilizadas para Desenvolvimento Mobile [iOS][ios-url] e [Android][android-url].
+
+É ideal para projetos de médio e grande porte, já que permite a automação e criação de pipeline de deploys.
+
+Para saber mais detalhes, clique em [Fastlane][fastlane-url].
+
+## Bitrise
+
+É um serviço de computação em nuvem para gerenciamento de pipelines de CD/CI (Continuous Development/Continuous Integration).
+
+Foi utilizado para acompanhar e controlar a evolução de funcionalidades por intermédio de entregas contínuas.
+
+Para obter mais informações e planos disponíveis, por favor, vá ao site do [Bitrise][bitrise-url].
 
 ## macOS
 
@@ -151,7 +189,7 @@ Para obter mais informações, clique em [SwiftyJSON][swiftyjson-url].
 
 # Descrição
 
-Este projeto visa criar um aplicativo iOS 13+ para aficionados em super-heróis, principalmente da Marvel, onde poderão compartilhar heróis favoritos e revistas, inicialmente.
+Este projeto visa criar um aplicativo [iOS 13+][ios-url] para aficionados em super-heróis, principalmente da Marvel, onde poderão compartilhar heróis favoritos e revistas, inicialmente.
 
 # Funcionalidades Previstas
 
@@ -177,11 +215,15 @@ Amostra do aplicativo em execução.
 
 ![Aplicativo em Execução][app-running-image]
 
+[Voltar ao menu](#tópicos)
+
 ## Tela Inicial
 
 Tela de início da aplicação. Permite o login social por meio do Facebook e do Google. Além disso, é possível navegar para o cadastro de usuário.
 
 ![Tela Inicial][home-image]
+
+[Voltar ao menu](#tópicos)
 
 ## Cadastro
 
@@ -189,11 +231,15 @@ Permite o cadastro de usuário por meio de e-mail e senha mediante o aceite dos 
 
 ![Cadastro][registration-image]
 
+[Voltar ao menu](#tópicos)
+
 ## Lista de Heróis
 
 Lista de todos os heróis disponíveis. É possível favoritar ou compartilhar, além de busca por termo.
 
 ![Lista de Heróis][heroes-list-image]
+
+[Voltar ao menu](#tópicos)
 
 ## Detalhes de Herói
 
@@ -201,17 +247,23 @@ Permite visualizar os detalhes do heróis e as revistas relacionadas. É possív
 
 ![Detalhes de Herói][heroes-details-image]
 
+[Voltar ao menu](#tópicos)
+
 ## Lista de Revistas
 
 Mostra todas as revistas disponíveis. É possível compartilhar, filtrar e favoritar revistas.
 
 ![Lista de Revistas][comics-list-image]
 
+[Voltar ao menu](#tópicos)
+
 ## Configuração
 
 Permite configurar os dados da conta, tais como: troca de senha exclusão de conta.
 
 ![Configuração][configuration-image]
+
+[Voltar ao menu](#tópicos)
 
 ## Testes Unitários
 
@@ -221,13 +273,29 @@ Abaixo mostra a cobertura atual dos testes unitários da aplicação.
 
 [Voltar ao menu](#tópicos)
 
+## Execução do Fastlane
+
+A imagem a seguir mostra a execução do Fastlane após uma execução com êxito.
+
+![Fastlane][fastlane-image]
+
+[Voltar ao menu](#tópicos)
+
+## Relatório do Google Analytics
+
+A imagem abaixo é referente ao monitoramento de uso do Google Analytics.
+
+![Google Analytics][google-analytics-image]
+
+[Voltar ao menu](#tópicos)
+
 # Requisitos do Projeto
 
 Para obter o Certificado de Conclusão, é necessário implementar o projeto atendendo os seguintes requisitos:
 
 - <span style="color: green;">&check;</span> Deve possuir um design em todas as telas utilizando auto layout;
 - <span style="color: green;">&check;</span> Aplicação do POO.
-- <span style="color: red;">&cross;</span> Deve possuir navegação entre telas (Navigation e Modal);
+- <span style="color: green;">&check;</span> Deve possuir navegação entre telas (Navigation e Modal);
 - <span style="color: green;">&check;</span> Tratativas de erros;
 - <span style="color: green;">&check;</span> Deve consumir uma API;
 - <span style="color: green;">&check;</span> Deve funcionar em modo offline;
@@ -238,10 +306,10 @@ Para obter o Certificado de Conclusão, é necessário implementar o projeto ate
 UIButton, UILabel, UICollectionView e UITableView).
 - <span style="color: red;">&cross;</span> O app deve possuir as seguintes features:
     - <span style="color: red;">&cross;</span> Tela de carregamento;
-    - <span style="color: red;">&cross;</span> Tela de login (Facebook e Google são obrigatórios);
+    - <span style="color: green;">&check;</span> Tela de login (Facebook e Google são obrigatórios);
     - <span style="color: red;">&cross;</span> Tela inicial que deve conter um resumo das funcionalidades do app;
-    - <span style="color: red;">&cross;</span> Tela de descrição do item;
-    - <span style="color: red;">&cross;</span> Tela de listagem de características;
+    - <span style="color: green;">&check;</span> Tela de descrição do item;
+    - <span style="color: green;">&check;</span> Tela de listagem de características;
     - <span style="color: green;">&check;</span> Opções para compartilhamento em redes sociais;
 - <span style="color: green;">&check;</span> Todo o trabalho deve ser feito utilizando o GitFlow;
 - <span style="color: red;">&cross;</span> Ao final, o ReadMe deve estar atualizado com screenshots das telas do app e descrição detalhada das funcionalidades.
