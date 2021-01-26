@@ -14,6 +14,8 @@
 [unit-tests-image]: ./assets/images/unit-tests-coverage.png
 [clean-architecture-image]: ./assets/images/clean-architecture.png
 [main-components-image]: ./assets/images/main-components.png
+[fastlane-image]: ./assets/images/fastlane.png
+[google-analytics-image]: ./assets/images/google-analytics.png
 
 <!-- URLs -->
 [xcode-url]: https://developer.apple.com/xcode/
@@ -34,6 +36,7 @@
 [android-url]: https://www.android.com/
 [ios-url]: https://www.apple.com/ios/ios-14/
 [bitrise-url]: https://www.bitrise.io/
+[google-analytics-url]: https://firebase.google.com/products-release
 
 # Digital House | Projeto Integrador | Heroes
 
@@ -57,6 +60,16 @@ Este projeto utiliza a API da [Marvel][marvel-api-url] como base. Dessa forma, a
 - [Descrição](#descrição)
 - [Funcionalidades Previstas](#funcionalidades-previstas)
 - [Imagens do Projeto](#imagens-do-projeto)
+  - [Aplicativo Rodando](#aplicativo-rodando)
+  - [Tela Inicial](#tela-inicial)
+  - [Cadastro](#cadastro)
+  - [Lista de Heróis](#lista-de-heróis)
+  - [Detalhes de Herói](#detalhes-de-herói)
+  - [Lista de Revistas](#lista-de-revistas)
+  - [Configuração](#configuração)
+  - [Testes Unitários](#testes-unitários)
+  - [Execução do Fastlane](#execução-do-fastlane)
+  - [Relatório do Google Analytics](#relatório-do-google-analytics)
 - [Requisitos do Projeto](#requisitos-do-projeto)
 - [Como Executar o Projeto](#como-executar-o-projeto)
   - [Etapas](#etapas)
@@ -125,6 +138,12 @@ Firebase é um serviço Serverless para hospedagem de sites estáticos, banco de
 A biblioteca utiliza os serviços de autenticação de usuários e banco de dados Firestore.
 
 Para obter mais informações, clique em [pod Firebase][firebase-pod-url].
+
+### Crashlytics and Google Analytics
+
+São serviços do Google integrados ao [Firebase][firebase-url] e permitem monitorar o uso do aplicativo em tempo real, engajamento e aderência do público-alvo, além de acompanhar casos de falhas sistêmicas no dispositivo móvel.
+
+É possível obter mais detalhes no indo clicando [aqui][google-analytics-url].
 
 ### Alamofire
 
@@ -196,11 +215,15 @@ Amostra do aplicativo em execução.
 
 ![Aplicativo em Execução][app-running-image]
 
+[Voltar ao menu](#tópicos)
+
 ## Tela Inicial
 
 Tela de início da aplicação. Permite o login social por meio do Facebook e do Google. Além disso, é possível navegar para o cadastro de usuário.
 
 ![Tela Inicial][home-image]
+
+[Voltar ao menu](#tópicos)
 
 ## Cadastro
 
@@ -208,11 +231,15 @@ Permite o cadastro de usuário por meio de e-mail e senha mediante o aceite dos 
 
 ![Cadastro][registration-image]
 
+[Voltar ao menu](#tópicos)
+
 ## Lista de Heróis
 
 Lista de todos os heróis disponíveis. É possível favoritar ou compartilhar, além de busca por termo.
 
 ![Lista de Heróis][heroes-list-image]
+
+[Voltar ao menu](#tópicos)
 
 ## Detalhes de Herói
 
@@ -220,11 +247,15 @@ Permite visualizar os detalhes do heróis e as revistas relacionadas. É possív
 
 ![Detalhes de Herói][heroes-details-image]
 
+[Voltar ao menu](#tópicos)
+
 ## Lista de Revistas
 
 Mostra todas as revistas disponíveis. É possível compartilhar, filtrar e favoritar revistas.
 
 ![Lista de Revistas][comics-list-image]
+
+[Voltar ao menu](#tópicos)
 
 ## Configuração
 
@@ -232,11 +263,29 @@ Permite configurar os dados da conta, tais como: troca de senha exclusão de con
 
 ![Configuração][configuration-image]
 
+[Voltar ao menu](#tópicos)
+
 ## Testes Unitários
 
 Abaixo mostra a cobertura atual dos testes unitários da aplicação.
 
 ![Testes Unitários][unit-tests-image]
+
+[Voltar ao menu](#tópicos)
+
+## Execução do Fastlane
+
+A imagem a seguir mostra a execução do Fastlane após uma execução com êxito.
+
+![Fastlane][fastlane-image]
+
+[Voltar ao menu](#tópicos)
+
+## Relatório do Google Analytics
+
+A imagem abaixo é referente ao monitoramento de uso do Google Analytics.
+
+![Google Analytics][google-analytics-image]
 
 [Voltar ao menu](#tópicos)
 
