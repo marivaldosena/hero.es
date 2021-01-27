@@ -11,6 +11,7 @@ import UIKit
 // MARK: - MainViewModel
 struct MainViewModel {
     private let service: MainServiceProtocol
+    private let localizationService: LocalizationServiceProtocol = LocalizationService.shared
     
     init() {
         self.service = MainService()
@@ -18,10 +19,6 @@ struct MainViewModel {
     
     init(with service: MainServiceProtocol) {
         self.service = service
-    }
-    
-    func getString(for message: MainMessageType) -> String {
-        return message.rawValue
     }
     
     func getTabBarItem(for item: TabBarItemTag) -> UITabBarItem {
@@ -35,13 +32,13 @@ struct MainViewModel {
     func getTabBarItemTitleName(for item: TabBarItemTag) -> String {
         switch item {
         case .heroes:
-            return "Heroes"
+            return localizationService.getTranslation(for: "main.tabitem.heroes")
         case .comics:
-            return "Comics"
+            return localizationService.getTranslation(for: "main.tabitem.comics")
         case .favorites:
-            return "Favorites"
+            return localizationService.getTranslation(for: "main.tabitem.favorites")
         default:
-            return "Config"
+            return localizationService.getTranslation(for: "main.tabitem.config")
         }
     }
     
@@ -100,5 +97,37 @@ struct MainViewModel {
     
     func isCorrectLoginWith(email: UITextField, password: UITextField) -> Bool {
         return service.isCorrectLoginWith(email: email, password: password)
+    }
+    
+    func getLocalizationService() -> LocalizationService? {
+        return localizationService as? LocalizationService
+    }
+    
+    func getLoginButtonTitle() -> String {
+        return localizationService.getTranslation(for: "main.login")
+    }
+    
+    func getFailedLoginMessage() -> String {
+        return localizationService.getTranslation(for: "main.messages.failed-login")
+    }
+    
+    func getPositiveButtonString() -> String {
+        return localizationService.getTranslation(for: "main.positive-button")
+    }
+    
+    func getEmailString() -> String {
+        return localizationService.getTranslation(for: "main.email")
+    }
+    
+    func getPasswordString() -> String {
+        return localizationService.getTranslation(for: "main.password")
+    }
+    
+    func getDontHaveAccountString() -> String {
+        return localizationService.getTranslation(for: "main.dont-have-account")
+    }
+    
+    func getCreateAccountButtonTitle() -> String {
+        return localizationService.getTranslation(for: "main.create-account")
     }
 }

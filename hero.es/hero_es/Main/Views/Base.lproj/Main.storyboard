@@ -155,6 +155,7 @@
                     <navigationItem key="navigationItem" id="mMf-58-0pZ"/>
                     <connections>
                         <outlet property="createAccountButton" destination="Aw2-vB-AM1" id="ExC-UE-xxk"/>
+                        <outlet property="dontHaveAccountLabel" destination="GhL-dq-xg9" id="gmb-V2-Jpg"/>
                         <outlet property="emailTextField" destination="s6C-7q-9yy" id="wvu-vq-ubC"/>
                         <outlet property="facebookButton" destination="rnO-er-7hL" id="2M3-QS-lE5"/>
                         <outlet property="googleButton" destination="n0F-jT-dpB" id="3py-pk-YA9"/>

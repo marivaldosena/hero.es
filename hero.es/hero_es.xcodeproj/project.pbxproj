@@ -41,6 +41,7 @@
 		C94BCAD025C1A970003F3A4A /* LocalizationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BCACF25C1A970003F3A4A /* LocalizationRepository.swift */; };
 		C94BCAD225C1A9F6003F3A4A /* ConfigViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BCAD125C1A9F6003F3A4A /* ConfigViewModel.swift */; };
 		C94BCAD425C1B19A003F3A4A /* ConfigViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BCAD325C1B19A003F3A4A /* ConfigViewController+Extensions.swift */; };
+		C94BCAD625C1BC10003F3A4A /* LocalizationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BCAD525C1BC10003F3A4A /* LocalizationServiceProtocol.swift */; };
 		C970291625A0D7B400133FE8 /* ComicRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970291525A0D7B400133FE8 /* ComicRepository.swift */; };
 		C970291925A0D9F200133FE8 /* ComicCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970291825A0D9F200133FE8 /* ComicCoreDataDAO.swift */; };
 		C972A3B625AF5ED600D2A349 /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C972A3B125AF5ED500D2A349 /* HeroModel.swift */; };
@@ -70,7 +71,6 @@
 		C9A5A89E25A3DF2C00286EF2 /* MainViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A5A89C25A3DF2C00286EF2 /* MainViewModel_Tests.swift */; };
 		C9A5A89F25A3DF2C00286EF2 /* MockMainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A5A89D25A3DF2C00286EF2 /* MockMainService.swift */; };
 		C9A5A8C725A3E09F00286EF2 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A5A8C625A3E09F00286EF2 /* MainViewModel.swift */; };
-		C9A5A92625A3E44D00286EF2 /* MainMessageType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A5A92025A3E44C00286EF2 /* MainMessageType.swift */; };
 		C9A5A92725A3E44D00286EF2 /* LoginServiceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A5A92125A3E44C00286EF2 /* LoginServiceType.swift */; };
 		C9A5A92825A3E44D00286EF2 /* TabBarItemTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A5A92225A3E44C00286EF2 /* TabBarItemTag.swift */; };
 		C9A5A92B25A3E44D00286EF2 /* MainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9A5A92525A3E44D00286EF2 /* MainService.swift */; };
@@ -171,6 +171,7 @@
 		C94BCACF25C1A970003F3A4A /* LocalizationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationRepository.swift; sourceTree = "<group>"; };
 		C94BCAD125C1A9F6003F3A4A /* ConfigViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewModel.swift; sourceTree = "<group>"; };
 		C94BCAD325C1B19A003F3A4A /* ConfigViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConfigViewController+Extensions.swift"; sourceTree = "<group>"; };
+		C94BCAD525C1BC10003F3A4A /* LocalizationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationServiceProtocol.swift; sourceTree = "<group>"; };
 		C970291525A0D7B400133FE8 /* ComicRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicRepository.swift; sourceTree = "<group>"; };
 		C970291825A0D9F200133FE8 /* ComicCoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCoreDataDAO.swift; sourceTree = "<group>"; };
 		C970291A25A0DB8E00133FE8 /* hero_es_v03_refactor_comic_entity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hero_es_v03_refactor_comic_entity.xcdatamodel; sourceTree = "<group>"; };
@@ -201,7 +202,6 @@
 		C9A5A89C25A3DF2C00286EF2 /* MainViewModel_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewModel_Tests.swift; sourceTree = "<group>"; };
 		C9A5A89D25A3DF2C00286EF2 /* MockMainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MockMainService.swift; sourceTree = "<group>"; };
 		C9A5A8C625A3E09F00286EF2 /* MainViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewModel.swift; path = ViewModels/MainViewModel.swift; sourceTree = "<group>"; };
-		C9A5A92025A3E44C00286EF2 /* MainMessageType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMessageType.swift; sourceTree = "<group>"; };
 		C9A5A92125A3E44C00286EF2 /* LoginServiceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginServiceType.swift; sourceTree = "<group>"; };
 		C9A5A92225A3E44C00286EF2 /* TabBarItemTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItemTag.swift; sourceTree = "<group>"; };
 		C9A5A92525A3E44D00286EF2 /* MainService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainService.swift; sourceTree = "<group>"; };
@@ -468,6 +468,7 @@
 			isa = PBXGroup;
 			children = (
 				C94BCAC725C1960D003F3A4A /* LocalizationService.swift */,
+				C94BCAD525C1BC10003F3A4A /* LocalizationServiceProtocol.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -656,7 +657,6 @@
 			isa = PBXGroup;
 			children = (
 				C9A5A92125A3E44C00286EF2 /* LoginServiceType.swift */,
-				C9A5A92025A3E44C00286EF2 /* MainMessageType.swift */,
 				C9A5A92225A3E44C00286EF2 /* TabBarItemTag.swift */,
 			);
 			path = Models;
@@ -1123,7 +1123,6 @@
 				C9A5A94625A3E54100286EF2 /* MainViewController.swift in Sources */,
 				C9A5A94725A3E54100286EF2 /* MainViewController+Extensions.swift in Sources */,
 				C94BCAD025C1A970003F3A4A /* LocalizationRepository.swift in Sources */,
-				C9A5A92625A3E44D00286EF2 /* MainMessageType.swift in Sources */,
 				C972A3EB25AF65B500D2A349 /* HeroDetailsViewController.swift in Sources */,
 				C9A5A92725A3E44D00286EF2 /* LoginServiceType.swift in Sources */,
 				C9A5A92825A3E44D00286EF2 /* TabBarItemTag.swift in Sources */,
@@ -1191,6 +1190,7 @@
 				C972A3B925AF5ED600D2A349 /* ComicHeroModel.swift in Sources */,
 				C94BCAD225C1A9F6003F3A4A /* ConfigViewModel.swift in Sources */,
 				C9415875258E7CD500CC81A6 /* PersistentMethodEnum.swift in Sources */,
+				C94BCAD625C1BC10003F3A4A /* LocalizationServiceProtocol.swift in Sources */,
 				C927C75A2598E64400187456 /* MasterDetailNavigationProtocol.swift in Sources */,
 				C9B76B2525A21B60001596B1 /* RelatedHeroCoreDataDAO.swift in Sources */,
 				C9CACF4925B5CBB500D2C6D9 /* FavoriteDAOProtocol.swift in Sources */,

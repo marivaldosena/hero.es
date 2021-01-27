@@ -3,6 +3,15 @@
 "main.tabitem.favorites" = "Favorites";
 "main.tabitem.config" = "Config";
 
+"main.login" = "Login";
+"main.email" = "E-mail";
+"main.password" = "Password";
+"main.dont-have-account" = "Don't have an account?";
+"main.create-account" = "Create Account";
+"main.positive-button" = "OK";
+
+"main.messages.failed-login" = "E-mail and/or password are wrong.";
+
 "config.edituserdata" = "Edit user's data:";
 "config.email" = "E-mail";
 "config.old-password" = "Old Password";

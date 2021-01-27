@@ -27,7 +27,7 @@ extension ConfigViewController {
     
     @objc func updateUILanguage() {
         let actionSheet = UIAlertController(title: "Available Languages", message: "Switch Language", preferredStyle: UIAlertController.Style.actionSheet)
-        let availableLanguages = LocalizationService().getAvailableLanguages()
+        let availableLanguages = LocalizationService.shared.getAvailableLanguages()
         
         for language in availableLanguages {
             let languageAction = UIAlertAction(title: language.languageName, style: .default, handler: {
@@ -43,5 +43,12 @@ extension ConfigViewController {
         
         actionSheet.addAction(cancelAction)
         self.present(actionSheet, animated: true, completion: nil)
+    }
+}
+
+// MARK: - ConfigViewController: UpdateLanguageProtocol
+extension ConfigViewController: UpdateLanguageProtocol {
+    func languageDidChange(_ language: AvailableLanguage) {
+        updateUIInterface()
     }
 }

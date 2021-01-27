@@ -16,17 +16,20 @@ class MainViewController: UIViewController {
     @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var loginWithEmailButton: UIButton!
     @IBOutlet weak var createAccountButton: UIButton!
+    @IBOutlet weak var dontHaveAccountLabel: UILabel!
     
     var viewModel: MainViewModel = MainViewModel()
-    /*
-     Internationalização está funcionando!!!! Saí para lanchar, retorno em breve.
-     */
+    private var appTabBarController = UITabBarController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        
+        let localization = viewModel.getLocalizationService()
+        localization?.addObserver(self)
+        updateUIInterface()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -52,6 +55,10 @@ class MainViewController: UIViewController {
         if let viewController = UIStoryboard(name: "CreateAccount", bundle: nil).instantiateInitialViewController() as? CreateAccountViewController {
             navigationController?.pushViewController(viewController, animated: true)
         }
+    }
+    
+    func getTabBarController() -> UITabBarController {
+        return appTabBarController
     }
 }
 

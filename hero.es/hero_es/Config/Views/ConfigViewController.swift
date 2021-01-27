@@ -24,10 +24,12 @@ class ConfigViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(updateUILanguage), name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
+        updateUIInterface()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        updateUIInterface()
         NotificationCenter.default.removeObserver(self)
     }
     
