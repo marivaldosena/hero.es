@@ -28,3 +28,8 @@
 "create-account.create-account" = "Create Account";
 "create-account.terms-of-service-agreement" = "I agree with the Terms of Service";
 "create-account.read-the-terms-service" = "Read the Terms of Service";
+
+"favorites.options.all" = "All";
+"favorites.options.heroes" = "Heroes";
+"favorites.options.comics" = "Comics";
+"favorites.favorites-label" = "Favorites";

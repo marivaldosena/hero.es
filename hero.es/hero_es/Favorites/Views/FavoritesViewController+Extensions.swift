@@ -10,9 +10,12 @@ import UIKit
 
 // MARK: - FavoritesViewController
 extension FavoritesViewController {
+    // MARK: - Public Methods
     func updateUIInterface() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
+            self.updateSegmentedControlTitles()
+            self.favoritesLabel?.text = self.viewModel.getFavoritesLabelString()
         }
     }
     
@@ -30,6 +33,13 @@ extension FavoritesViewController {
         }
         viewModel.getItems(itemType: option, in: .firebase)
         updateUIInterface()
+    }
+    
+    // MARK: - Private Methods
+    private func updateSegmentedControlTitles() {
+        filterSegmentedControl.setTitle(viewModel.getSegmentTitle(for: .all), forSegmentAt: 0)
+        filterSegmentedControl.setTitle(viewModel.getSegmentTitle(for: .hero), forSegmentAt: 1)
+        filterSegmentedControl.setTitle(viewModel.getSegmentTitle(for: .comic), forSegmentAt: 2)
     }
 }
 
@@ -68,5 +78,12 @@ extension FavoritesViewController: ShareAndLikeItemProtocol {
         let service = FavoriteService.shared
         service.toggleFavorite(model, in: .firebase)
         filterFavorites()
+    }
+}
+
+// MARK: - FavoritesViewController: UpdateLanguageProtocol
+extension FavoritesViewController: UpdateLanguageProtocol {
+    func languageDidChange(_ language: AvailableLanguage) {
+        updateUIInterface()
     }
 }

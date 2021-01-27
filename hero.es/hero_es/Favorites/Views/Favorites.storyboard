@@ -23,7 +23,7 @@
                                     <constraint firstAttribute="width" constant="84" id="dFf-qA-4FC"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Category" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZB-i7-7If">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Favorites" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ZB-i7-7If">
                                 <rect key="frame" x="108" y="52" width="290" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
@@ -63,6 +63,7 @@
                         <viewLayoutGuide key="safeArea" id="cWK-xS-qb1"/>
                     </view>
                     <connections>
+                        <outlet property="favoritesLabel" destination="1ZB-i7-7If" id="sjs-1Z-nPM"/>
                         <outlet property="filterSegmentedControl" destination="76A-Es-3bD" id="xBQ-Mi-8Dl"/>
                         <outlet property="tableView" destination="Wac-rZ-lB6" id="2i6-1x-gX3"/>
                     </connections>
