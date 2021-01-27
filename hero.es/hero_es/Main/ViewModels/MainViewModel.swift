@@ -99,8 +99,8 @@ struct MainViewModel {
         return service.isCorrectLoginWith(email: email, password: password)
     }
     
-    func getLocalizationService() -> LocalizationService? {
-        return localizationService as? LocalizationService
+    func getLocalizationService() -> LocalizationService {
+        return localizationService as? LocalizationService ?? LocalizationService.shared
     }
     
     func getLoginButtonTitle() -> String {

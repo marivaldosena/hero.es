@@ -14,7 +14,12 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var createAccountButton: UIButton!
     @IBOutlet weak var acceptTermsOfServiceSwitch: UISwitch!
+    @IBOutlet weak var acceptTermsOfServiceAgreementLabel: UILabel!
+    @IBOutlet weak var openTermsOfServiceButton: UIButton!
     
+    var viewModel = CreateAccountViewModel()
+    
+    // MARK: - Public Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,6 +77,7 @@ class CreateAccountViewController: UIViewController {
         }
     }
     
+    // MARK: - Private Methods
     private func hasUserAcceptedTermsOfService() -> Bool {
         if ValidatorService.isSwitchOn(acceptTermsOfServiceSwitch) {
             return true
@@ -83,23 +89,5 @@ class CreateAccountViewController: UIViewController {
     
     private func askUserForAcceptingTermsOfService() {
         AlertUtils.displayMessage(self, title: "Create Account", message: "You should accept the Terms of Service.", okButton: "OK")
-    }
-}
-
-// MARK: - CreateAccountViewController: UITextFieldDelegate
-extension CreateAccountViewController: UITextFieldDelegate {
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        switch textField {
-        case nameTextField:
-            UITextFieldUtils.setFocus(on: emailTextField, from: nameTextField)
-        case emailTextField:
-            UITextFieldUtils.setFocus(on: passwordTextField, from: emailTextField)
-        case passwordTextField:
-            UITextFieldUtils.setFocus(on: nil, from: passwordTextField)
-        default:
-            UITextFieldUtils.setFocus(on: nil, from: nil)
-        }
-        
-        return true
     }
 }

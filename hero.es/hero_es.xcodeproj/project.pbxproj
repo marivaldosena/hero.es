@@ -42,6 +42,9 @@
 		C94BCAD225C1A9F6003F3A4A /* ConfigViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BCAD125C1A9F6003F3A4A /* ConfigViewModel.swift */; };
 		C94BCAD425C1B19A003F3A4A /* ConfigViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BCAD325C1B19A003F3A4A /* ConfigViewController+Extensions.swift */; };
 		C94BCAD625C1BC10003F3A4A /* LocalizationServiceProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BCAD525C1BC10003F3A4A /* LocalizationServiceProtocol.swift */; };
+		C94BCADA25C1E08D003F3A4A /* CreateAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BCAD925C1E08D003F3A4A /* CreateAccountViewModel.swift */; };
+		C94BCADC25C1F7D2003F3A4A /* CreateAccountViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BCADB25C1F7D2003F3A4A /* CreateAccountViewController+Extensions.swift */; };
+		C94BCADE25C20E33003F3A4A /* HeroesListViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BCADD25C20E31003F3A4A /* HeroesListViewController+Extensions.swift */; };
 		C970291625A0D7B400133FE8 /* ComicRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970291525A0D7B400133FE8 /* ComicRepository.swift */; };
 		C970291925A0D9F200133FE8 /* ComicCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970291825A0D9F200133FE8 /* ComicCoreDataDAO.swift */; };
 		C972A3B625AF5ED600D2A349 /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C972A3B125AF5ED500D2A349 /* HeroModel.swift */; };
@@ -172,6 +175,9 @@
 		C94BCAD125C1A9F6003F3A4A /* ConfigViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewModel.swift; sourceTree = "<group>"; };
 		C94BCAD325C1B19A003F3A4A /* ConfigViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConfigViewController+Extensions.swift"; sourceTree = "<group>"; };
 		C94BCAD525C1BC10003F3A4A /* LocalizationServiceProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationServiceProtocol.swift; sourceTree = "<group>"; };
+		C94BCAD925C1E08D003F3A4A /* CreateAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountViewModel.swift; sourceTree = "<group>"; };
+		C94BCADB25C1F7D2003F3A4A /* CreateAccountViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CreateAccountViewController+Extensions.swift"; sourceTree = "<group>"; };
+		C94BCADD25C20E31003F3A4A /* HeroesListViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeroesListViewController+Extensions.swift"; sourceTree = "<group>"; };
 		C970291525A0D7B400133FE8 /* ComicRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicRepository.swift; sourceTree = "<group>"; };
 		C970291825A0D9F200133FE8 /* ComicCoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCoreDataDAO.swift; sourceTree = "<group>"; };
 		C970291A25A0DB8E00133FE8 /* hero_es_v03_refactor_comic_entity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hero_es_v03_refactor_comic_entity.xcdatamodel; sourceTree = "<group>"; };
@@ -497,6 +503,25 @@
 			path = Repositories;
 			sourceTree = "<group>";
 		};
+		C94BCAD725C1E051003F3A4A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */,
+				C999616A2587F3D6001156E3 /* TermsOfService.storyboard */,
+				C90A32DC25869F7300C3272C /* CreateAccountViewController.swift */,
+				C94BCADB25C1F7D2003F3A4A /* CreateAccountViewController+Extensions.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		C94BCAD825C1E063003F3A4A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C94BCAD925C1E08D003F3A4A /* CreateAccountViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		C970291725A0D9DD00133FE8 /* DAO */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,6 +607,7 @@
 				C972A3E425AF655F00D2A349 /* HeroesList.storyboard */,
 				C972A3E825AF65B500D2A349 /* HeroDetails.storyboard */,
 				C972A3E525AF656900D2A349 /* HeroesListViewController.swift */,
+				C94BCADD25C20E31003F3A4A /* HeroesListViewController+Extensions.swift */,
 				C972A3E625AF659B00D2A349 /* HeroDetailsViewController.swift */,
 				C972A3E725AF65B200D2A349 /* HeroDetailsViewController+Extensions.swift */,
 			);
@@ -712,13 +738,13 @@
 		C9B1436C253FBA400013DC42 /* hero_es */ = {
 			isa = PBXGroup;
 			children = (
-				C94BCAC325C193FE003F3A4A /* Localization */,
 				C9D7E3E12586E55800D65E1E /* Auth */,
 				C99441F32550820C004F2D82 /* Comics */,
 				C994421A2550CB0E004F2D82 /* Config */,
 				C9CD7E3525432FBC001E5E54 /* CreateAccount */,
 				C99442072550C15C004F2D82 /* Favorites */,
 				C972A3BD25AF5F7900D2A349 /* Heroes */,
+				C94BCAC325C193FE003F3A4A /* Localization */,
 				C98D7CF72540586900D95BC8 /* Main */,
 				C9CD7E40254340E5001E5E54 /* Shared */,
 				C9B1436D253FBA400013DC42 /* AppDelegate.swift */,
@@ -783,9 +809,8 @@
 		C9CD7E3525432FBC001E5E54 /* CreateAccount */ = {
 			isa = PBXGroup;
 			children = (
-				C9CD7E3B254330B1001E5E54 /* CreateAccount.storyboard */,
-				C999616A2587F3D6001156E3 /* TermsOfService.storyboard */,
-				C90A32DC25869F7300C3272C /* CreateAccountViewController.swift */,
+				C94BCAD725C1E051003F3A4A /* Views */,
+				C94BCAD825C1E063003F3A4A /* ViewModels */,
 			);
 			path = CreateAccount;
 			sourceTree = "<group>";
@@ -1119,6 +1144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C94BCADE25C20E33003F3A4A /* HeroesListViewController+Extensions.swift in Sources */,
 				C94BCACD25C1A256003F3A4A /* LanguageParser.swift in Sources */,
 				C9A5A94625A3E54100286EF2 /* MainViewController.swift in Sources */,
 				C9A5A94725A3E54100286EF2 /* MainViewController+Extensions.swift in Sources */,
@@ -1153,6 +1179,7 @@
 				C92FF71125A5418F0011F44F /* FavoriteParser.swift in Sources */,
 				C972A3EC25AF65B500D2A349 /* HeroDetailsViewController+Extensions.swift in Sources */,
 				C9CACF4725B5C95B00D2C6D9 /* FavoriteFirebaseDAO.swift in Sources */,
+				C94BCADA25C1E08D003F3A4A /* CreateAccountViewModel.swift in Sources */,
 				C9BBE65825A65B670034832F /* FavoritesViewModel.swift in Sources */,
 				C92FF70625A538FB0011F44F /* FavoritesViewController.swift in Sources */,
 				C9F5D4DD25AF48E000887AF3 /* AuthViewModel.swift in Sources */,
@@ -1164,6 +1191,7 @@
 				C9D3B14C25A48FE80055DE95 /* ComicDetailsViewController.swift in Sources */,
 				C9F5D4BC25AF47DA00887AF3 /* CreateAuthCredentialsModel.swift in Sources */,
 				C9AE6A0D259FA257000D3857 /* ItemCell.swift in Sources */,
+				C94BCADC25C1F7D2003F3A4A /* CreateAccountViewController+Extensions.swift in Sources */,
 				C972A3D325AF61D600D2A349 /* RelatedComicCoreDataDAO.swift in Sources */,
 				C91FDB4F25B1097D003BE7C8 /* FacebookAuthService.swift in Sources */,
 				C94BCAD425C1B19A003F3A4A /* ConfigViewController+Extensions.swift in Sources */,

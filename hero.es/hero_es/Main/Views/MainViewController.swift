@@ -28,7 +28,7 @@ class MainViewController: UIViewController {
         passwordTextField.delegate = self
         
         let localization = viewModel.getLocalizationService()
-        localization?.addObserver(self)
+        localization.addObserver(self)
         updateUIInterface()
     }
     
@@ -53,6 +53,9 @@ class MainViewController: UIViewController {
     
     @IBAction func register(_ sender: UIButton) {
         if let viewController = UIStoryboard(name: "CreateAccount", bundle: nil).instantiateInitialViewController() as? CreateAccountViewController {
+            let localization = viewModel.getLocalizationService()
+            localization.addObserver(viewController)
+            localization.loadTranslations()
             navigationController?.pushViewController(viewController, animated: true)
         }
     }

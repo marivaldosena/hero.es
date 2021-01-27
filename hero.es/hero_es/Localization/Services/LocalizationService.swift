@@ -32,8 +32,8 @@ class LocalizationService: LocalizationServiceProtocol {
     }
     
     func setCurrent(language: AvailableLanguage) {
-        saveLanguageInUserPreferences(language: language)
         currentLanguage = language
+        saveLanguageInUserPreferences(language: currentLanguage)
         Localize.setCurrentLanguage(currentLanguage.abbreviation)
         notifyObservers()
     }
@@ -52,6 +52,10 @@ class LocalizationService: LocalizationServiceProtocol {
     
     func addObserver(_ observer: UpdateLanguageProtocol?) {
         self.observers.append(observer)
+    }
+    
+    func loadTranslations() {
+        notifyObservers()
     }
     
     // MARK: - Private Methods

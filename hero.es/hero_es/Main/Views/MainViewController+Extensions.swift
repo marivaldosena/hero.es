@@ -140,7 +140,8 @@ extension MainViewController {
     
     private func configureLocalization(controller: UIViewController) {
         let localization = viewModel.getLocalizationService()
-        localization?.addObserver(controller as? UpdateLanguageProtocol)
+        guard let observer = controller as? UpdateLanguageProtocol else { return }
+        localization.addObserver(observer)
     }
 }
 

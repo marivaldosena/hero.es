@@ -21,3 +21,10 @@
 "config.change-language" = "Alterar Idioma";
 "config.delete-user" = "Excluir Usuário";
 "config.logout" = "Sair";
+
+"create-account.name" = "Nome";
+"create-account.email" = "E-mail";
+"create-account.password" = "Senha";
+"create-account.create-account" = "Criar Conta";
+"create-account.terms-of-service-agreement" = "Aceito os Termos de Serviço";
+"create-account.read-the-terms-service" = "Leia os Termos de Serviço";
