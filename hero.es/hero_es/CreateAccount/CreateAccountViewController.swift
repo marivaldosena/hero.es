@@ -66,6 +66,10 @@ class CreateAccountViewController: UIViewController {
         navigationController?.popToRootViewController(animated: true)
     }
     
+    @IBAction func haveAccountBackSignIn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @objc func textFieldDidChange(_ textField: UITextField) {
         switch textField {
         case nameTextField:

@@ -70,4 +70,8 @@ class HeroesListViewModel {
     func getActiveHero() -> HeroModel? {
         return self.activeHero
     }
+    
+    func getTitleView() -> String {
+        return "Heroes"
+    }
 }

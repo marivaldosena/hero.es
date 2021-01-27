@@ -15,7 +15,9 @@ class FavoritesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Favorites"
+        title = viewModel.getTitleView()
+        
+        setupUI()
         
         tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell")
         tableView.dataSource = self
@@ -39,5 +41,13 @@ class FavoritesViewController: UIViewController {
         default:
             break
         }
+    }
+    
+    private func setupUI() {
+        view.backgroundColor = StyleGuide.Color.lightSecondaryGray
+        
+        tableView?.roundCorners(cornerRadius: 15, corners: .allCorners)
+        tableView?.backgroundColor = StyleGuide.Color.lightGray
+        tableView.separatorStyle = .none
     }
 }

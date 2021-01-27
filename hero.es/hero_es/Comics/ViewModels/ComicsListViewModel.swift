@@ -74,6 +74,10 @@ class ComicsListViewModel {
         return self.modelsArray.count
     }
     
+    func getTitleView() -> String {
+        return "Comics"
+    }
+    
     // MARK: - Private Methods
     private func isIndexAvailable(index: Int = 0) -> Bool {
         if index >= 0 && index < modelsArray.count {

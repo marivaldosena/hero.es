@@ -89,6 +89,9 @@
                                     <constraint firstAttribute="width" constant="330" id="CUf-g6-xGU"/>
                                 </constraints>
                                 <state key="normal" title="Already have an account? Sign in"/>
+                                <connections>
+                                    <action selector="haveAccountBackSignIn:" destination="H59-2y-Hpg" eventType="touchUpInside" id="jtd-54-N1d"/>
+                                </connections>
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4G2-n4-ku4">
                                 <rect key="frame" x="52" y="759" width="51" height="31"/>

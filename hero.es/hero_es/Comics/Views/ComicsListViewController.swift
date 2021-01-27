@@ -19,7 +19,9 @@ class ComicsListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Comics"
+        title = viewModel.getTitleView()
+        
+        setupUI()
         
         viewModel.delegate = self
         viewModel.loadItems()
@@ -53,5 +55,16 @@ class ComicsListViewController: UIViewController {
     
     func getNumberOfItems() -> Int {
         return modelsArray.count
+    }
+    
+    private func setupUI() {
+        view.backgroundColor = StyleGuide.Color.lightSecondaryGray
+        
+        comicsTableView?.roundCorners(cornerRadius: 15, corners: .allCorners)
+        comicsTableView?.backgroundColor = StyleGuide.Color.lightGray
+        comicsTableView.separatorStyle = .none
+        
+        searchBar?.backgroundColor = StyleGuide.Color.white
+        searchBar?.roundCorners(cornerRadius: 10, corners: .allCorners)
     }
 }

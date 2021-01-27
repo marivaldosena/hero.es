@@ -35,6 +35,10 @@ struct FavoritesViewModel {
         return nil
     }
     
+    func getTitleView() -> String {
+        return "Favorites"
+    }
+    
     // MARK: - Private Methods
     private func isIndexValid(index: Int) -> Bool {
         if index >= 0 && index < modelsArray.count {

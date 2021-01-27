@@ -20,7 +20,7 @@ class HeroesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        title = "Heroes"
+        title = viewModel.getTitleView()
         
         setupUI()
         
@@ -69,6 +69,7 @@ extension HeroesListViewController {
         
         heroTableView?.roundCorners(cornerRadius: 15, corners: .allCorners)
         heroTableView?.backgroundColor = StyleGuide.Color.lightGray
+        heroTableView?.separatorStyle = .none
         
         heroSearchBar?.backgroundColor = StyleGuide.Color.white
         heroSearchBar?.roundCorners(cornerRadius: 10, corners: .allCorners)
