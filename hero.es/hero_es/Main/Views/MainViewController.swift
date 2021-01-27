@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 //MARK: - MainViewController: UIViewController
 class MainViewController: UIViewController {
@@ -17,6 +18,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak var createAccountButton: UIButton!
     
     var viewModel: MainViewModel = MainViewModel()
+    /*
+     Internationalização está funcionando!!!! Saí para lanchar, retorno em breve.
+     */
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,3 +54,4 @@ class MainViewController: UIViewController {
         }
     }
 }
+

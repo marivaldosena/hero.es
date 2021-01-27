@@ -1,0 +1,14 @@
+"main.tabitem.heroes" = "Heróis";
+"main.tabitem.comics" = "Revistas";
+"main.tabitem.favorites" = "Favoritos";
+"main.tabitem.config" = "Config";
+
+"config.edituserdata" = "Editar dados do usuário:";
+"config.email" = "E-mail";
+"config.old-password" = "Senha Antiga";
+"config.new-password" = "Senha Nova";
+"config.confirm-password" = "Confirmar Senha Nova";
+"config.change-data" = "Alterar Dados";
+"config.change-language" = "Alterar Idioma";
+"config.delete-user" = "Excluir Usuário";
+"config.logout" = "Sair";

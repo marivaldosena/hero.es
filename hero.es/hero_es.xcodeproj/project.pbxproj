@@ -34,6 +34,13 @@
 		C944B98625B1C49A00CBD68A /* GoogleAuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C944B98525B1C49A00CBD68A /* GoogleAuthService.swift */; };
 		C945BD04259FF61000F8FCBC /* ComicsListViewModel_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C945BD03259FF61000F8FCBC /* ComicsListViewModel_Tests.swift */; };
 		C94792F32596B915009888BE /* CoreDataDAOProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94792F22596B915009888BE /* CoreDataDAOProtocol.swift */; };
+		C94BCABF25C19111003F3A4A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C94BCAC125C19111003F3A4A /* Localizable.strings */; };
+		C94BCAC825C1960D003F3A4A /* LocalizationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BCAC725C1960D003F3A4A /* LocalizationService.swift */; };
+		C94BCACA25C19655003F3A4A /* AvailableLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BCAC925C19655003F3A4A /* AvailableLanguage.swift */; };
+		C94BCACD25C1A256003F3A4A /* LanguageParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BCACC25C1A256003F3A4A /* LanguageParser.swift */; };
+		C94BCAD025C1A970003F3A4A /* LocalizationRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BCACF25C1A970003F3A4A /* LocalizationRepository.swift */; };
+		C94BCAD225C1A9F6003F3A4A /* ConfigViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BCAD125C1A9F6003F3A4A /* ConfigViewModel.swift */; };
+		C94BCAD425C1B19A003F3A4A /* ConfigViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C94BCAD325C1B19A003F3A4A /* ConfigViewController+Extensions.swift */; };
 		C970291625A0D7B400133FE8 /* ComicRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970291525A0D7B400133FE8 /* ComicRepository.swift */; };
 		C970291925A0D9F200133FE8 /* ComicCoreDataDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = C970291825A0D9F200133FE8 /* ComicCoreDataDAO.swift */; };
 		C972A3B625AF5ED600D2A349 /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C972A3B125AF5ED500D2A349 /* HeroModel.swift */; };
@@ -156,6 +163,14 @@
 		C945BD03259FF61000F8FCBC /* ComicsListViewModel_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ComicsListViewModel_Tests.swift; sourceTree = "<group>"; };
 		C94792F22596B915009888BE /* CoreDataDAOProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataDAOProtocol.swift; sourceTree = "<group>"; };
 		C94792F42596C6A4009888BE /* hero_es_v02_renaming_comic_entity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hero_es_v02_renaming_comic_entity.xcdatamodel; sourceTree = "<group>"; };
+		C94BCAC025C19111003F3A4A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		C94BCAC225C19121003F3A4A /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		C94BCAC725C1960D003F3A4A /* LocalizationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationService.swift; sourceTree = "<group>"; };
+		C94BCAC925C19655003F3A4A /* AvailableLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvailableLanguage.swift; sourceTree = "<group>"; };
+		C94BCACC25C1A256003F3A4A /* LanguageParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageParser.swift; sourceTree = "<group>"; };
+		C94BCACF25C1A970003F3A4A /* LocalizationRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationRepository.swift; sourceTree = "<group>"; };
+		C94BCAD125C1A9F6003F3A4A /* ConfigViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigViewModel.swift; sourceTree = "<group>"; };
+		C94BCAD325C1B19A003F3A4A /* ConfigViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ConfigViewController+Extensions.swift"; sourceTree = "<group>"; };
 		C970291525A0D7B400133FE8 /* ComicRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicRepository.swift; sourceTree = "<group>"; };
 		C970291825A0D9F200133FE8 /* ComicCoreDataDAO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicCoreDataDAO.swift; sourceTree = "<group>"; };
 		C970291A25A0DB8E00133FE8 /* hero_es_v03_refactor_comic_entity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = hero_es_v03_refactor_comic_entity.xcdatamodel; sourceTree = "<group>"; };
@@ -430,6 +445,57 @@
 			path = PresentationLayer;
 			sourceTree = "<group>";
 		};
+		C94BCAC325C193FE003F3A4A /* Localization */ = {
+			isa = PBXGroup;
+			children = (
+				C94BCAC625C1942A003F3A4A /* Models */,
+				C94BCACB25C1A237003F3A4A /* Parsers */,
+				C94BCACE25C1A94D003F3A4A /* Repositories */,
+				C94BCAC525C19415003F3A4A /* Services */,
+			);
+			path = Localization;
+			sourceTree = "<group>";
+		};
+		C94BCAC425C1940A003F3A4A /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				C94BCAD125C1A9F6003F3A4A /* ConfigViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		C94BCAC525C19415003F3A4A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C94BCAC725C1960D003F3A4A /* LocalizationService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C94BCAC625C1942A003F3A4A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C94BCAC925C19655003F3A4A /* AvailableLanguage.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		C94BCACB25C1A237003F3A4A /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				C94BCACC25C1A256003F3A4A /* LanguageParser.swift */,
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
+		C94BCACE25C1A94D003F3A4A /* Repositories */ = {
+			isa = PBXGroup;
+			children = (
+				C94BCACF25C1A970003F3A4A /* LocalizationRepository.swift */,
+			);
+			path = Repositories;
+			sourceTree = "<group>";
+		};
 		C970291725A0D9DD00133FE8 /* DAO */ = {
 			isa = PBXGroup;
 			children = (
@@ -564,6 +630,7 @@
 				C9F5D4FA25AF4A7500887AF3 /* Models */,
 				C9F5D4F725AF4A6400887AF3 /* Services */,
 				C9F5D4FB25AF4A8000887AF3 /* Views */,
+				C94BCAC425C1940A003F3A4A /* ViewModels */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -645,6 +712,7 @@
 		C9B1436C253FBA400013DC42 /* hero_es */ = {
 			isa = PBXGroup;
 			children = (
+				C94BCAC325C193FE003F3A4A /* Localization */,
 				C9D7E3E12586E55800D65E1E /* Auth */,
 				C99441F32550820C004F2D82 /* Comics */,
 				C994421A2550CB0E004F2D82 /* Config */,
@@ -660,6 +728,7 @@
 				C9B1437E253FBA6F0013DC42 /* Info.plist */,
 				C9E1C5502571E3E10068EB7C /* GoogleService-Info.plist */,
 				C921E2B4258E92C200E4E8DC /* hero_es.xcdatamodeld */,
+				C94BCAC125C19111003F3A4A /* Localizable.strings */,
 			);
 			path = hero_es;
 			sourceTree = "<group>";
@@ -818,6 +887,7 @@
 			children = (
 				C9F5D4F125AF4A4300887AF3 /* Config.storyboard */,
 				C9F5D4EF25AF4A4300887AF3 /* ConfigViewController.swift */,
+				C94BCAD325C1B19A003F3A4A /* ConfigViewController+Extensions.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -900,6 +970,7 @@
 			knownRegions = (
 				en,
 				Base,
+				"pt-BR",
 			);
 			mainGroup = C9B14361253FBA400013DC42;
 			productRefGroup = C9B1436B253FBA400013DC42 /* Products */;
@@ -930,6 +1001,7 @@
 				C999616B2587F3D7001156E3 /* TermsOfService.storyboard in Resources */,
 				C9AE6A0E259FA257000D3857 /* ItemCell.xib in Resources */,
 				C9CD7E3C254330B1001E5E54 /* CreateAccount.storyboard in Resources */,
+				C94BCABF25C19111003F3A4A /* Localizable.strings in Resources */,
 				C99441F525508225004F2D82 /* ComicsList.storyboard in Resources */,
 				C925330B259F774400D2615B /* comics-list.json in Resources */,
 			);
@@ -1047,8 +1119,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C94BCACD25C1A256003F3A4A /* LanguageParser.swift in Sources */,
 				C9A5A94625A3E54100286EF2 /* MainViewController.swift in Sources */,
 				C9A5A94725A3E54100286EF2 /* MainViewController+Extensions.swift in Sources */,
+				C94BCAD025C1A970003F3A4A /* LocalizationRepository.swift in Sources */,
 				C9A5A92625A3E44D00286EF2 /* MainMessageType.swift in Sources */,
 				C972A3EB25AF65B500D2A349 /* HeroDetailsViewController.swift in Sources */,
 				C9A5A92725A3E44D00286EF2 /* LoginServiceType.swift in Sources */,
@@ -1062,6 +1136,7 @@
 				C972A3CF25AF618300D2A349 /* RelatedComicParser.swift in Sources */,
 				C972A3D725AF61E400D2A349 /* HeroRepository.swift in Sources */,
 				C94792F32596B915009888BE /* CoreDataDAOProtocol.swift in Sources */,
+				C94BCACA25C19655003F3A4A /* AvailableLanguage.swift in Sources */,
 				C9EEEFAC25A4D19200431984 /* ComicDetailsViewModel.swift in Sources */,
 				C91CC754259E54AE0060B798 /* ComicParser.swift in Sources */,
 				C9EEEFAE25A4F0CF00431984 /* ComicDetailsViewController+Extensions.swift in Sources */,
@@ -1092,7 +1167,9 @@
 				C9AE6A0D259FA257000D3857 /* ItemCell.swift in Sources */,
 				C972A3D325AF61D600D2A349 /* RelatedComicCoreDataDAO.swift in Sources */,
 				C91FDB4F25B1097D003BE7C8 /* FacebookAuthService.swift in Sources */,
+				C94BCAD425C1B19A003F3A4A /* ConfigViewController+Extensions.swift in Sources */,
 				C9BBE65C25A65E650034832F /* ItemType.swift in Sources */,
+				C94BCAC825C1960D003F3A4A /* LocalizationService.swift in Sources */,
 				C972A3D525AF61D600D2A349 /* ComicHeroRelationshipCoreDataDAO.swift in Sources */,
 				C9B76B2725A21EC1001596B1 /* RelatedHeroParser.swift in Sources */,
 				C9B1436E253FBA400013DC42 /* AppDelegate.swift in Sources */,
@@ -1112,6 +1189,7 @@
 				C92FF71325A544750011F44F /* FavoriteRepository.swift in Sources */,
 				C9E66C7C258C357D00CF9F17 /* DBManager.swift in Sources */,
 				C972A3B925AF5ED600D2A349 /* ComicHeroModel.swift in Sources */,
+				C94BCAD225C1A9F6003F3A4A /* ConfigViewModel.swift in Sources */,
 				C9415875258E7CD500CC81A6 /* PersistentMethodEnum.swift in Sources */,
 				C927C75A2598E64400187456 /* MasterDetailNavigationProtocol.swift in Sources */,
 				C9B76B2525A21B60001596B1 /* RelatedHeroCoreDataDAO.swift in Sources */,
@@ -1153,6 +1231,15 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		C94BCAC125C19111003F3A4A /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C94BCAC025C19111003F3A4A /* en */,
+				C94BCAC225C19121003F3A4A /* pt-BR */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		C9B14373253FBA410013DC42 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1176,6 +1263,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -1238,6 +1326,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
