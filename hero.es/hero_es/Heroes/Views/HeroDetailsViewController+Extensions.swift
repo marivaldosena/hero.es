@@ -33,3 +33,10 @@ extension HeroDetailsViewController {
         favoriteButton?.accessibilityIdentifier  = viewModel.getIdentifier(for: .favoriteButton)
     }
 }
+
+// MARK: - HeroDetailsViewController: UpdateLanguageProtocol
+extension HeroDetailsViewController: UpdateLanguageProtocol {
+    func languageDidChange(_ language: AvailableLanguage) {
+        updateUIInterface()
+    }
+}

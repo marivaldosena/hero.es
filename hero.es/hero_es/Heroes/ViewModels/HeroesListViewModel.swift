@@ -28,8 +28,10 @@ class HeroesListViewModel {
                       completion: @escaping (_ heroes: [HeroModel], _ error: Error?) -> Void) {
         self.service.getAllHeroes(completion: { (heroes, error) in
             if let heroes = heroes {
+                self.modelsArray = heroes
                 completion(heroes, nil)
             } else {
+                self.modelsArray = []
                 completion([], error)
             }
         })
@@ -37,6 +39,7 @@ class HeroesListViewModel {
     
     func loadAllHeroes(in persistentMethod: PersistentMethodEnum = .coreData) {
         loadAllHeroes { (heroes, error) in
+            self.modelsArray = heroes
             self.delegate?.getItemsListDidFinish(heroes, error)
         }
     }
@@ -69,5 +72,13 @@ class HeroesListViewModel {
     
     func getActiveHero() -> HeroModel? {
         return self.activeHero
+    }
+    
+    func getItem(at index: Int) -> HeroModel {
+        return modelsArray[index]
+    }
+    
+    func getNumberOfItems() -> Int {
+        return modelsArray.count
     }
 }

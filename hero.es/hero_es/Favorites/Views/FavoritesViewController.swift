@@ -10,6 +10,7 @@ import UIKit
 class FavoritesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var filterSegmentedControl: UISegmentedControl!
+    @IBOutlet weak var favoritesLabel: UILabel!
     var viewModel: FavoritesViewModel = FavoritesViewModel()
     
     override func viewDidLoad() {

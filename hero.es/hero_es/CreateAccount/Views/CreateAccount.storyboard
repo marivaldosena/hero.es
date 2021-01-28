@@ -62,8 +62,8 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4G2-n4-ku4">
                                 <rect key="frame" x="32" y="771" width="51" height="31"/>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree with the Terms of Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kx2-Cr-p3O">
-                                <rect key="frame" x="101" y="776" width="250.5" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I agree with the Terms of Service" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="15" adjustsLetterSpacingToFitWidth="YES" adjustsFontForContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kx2-Cr-p3O">
+                                <rect key="frame" x="101" y="776.5" width="281" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -85,7 +85,7 @@
                                     <constraint firstAttribute="height" constant="36" id="CoQ-SE-zmF"/>
                                     <constraint firstAttribute="width" constant="36" id="QxZ-Ew-SG3"/>
                                 </constraints>
-                                <state key="normal">
+                                <state key="normal" image="chevron.left" catalog="system">
                                     <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large"/>
                                 </state>
                                 <connections>
@@ -114,6 +114,7 @@
                             <constraint firstItem="z4m-mc-OTw" firstAttribute="leading" secondItem="3B6-nF-OZH" secondAttribute="leading" constant="32" id="eaN-ZW-yBi"/>
                             <constraint firstItem="hA4-q3-wtK" firstAttribute="leading" secondItem="3B6-nF-OZH" secondAttribute="leading" constant="32" id="g1X-Gd-ipe"/>
                             <constraint firstItem="3B6-nF-OZH" firstAttribute="trailing" secondItem="z4m-mc-OTw" secondAttribute="trailing" constant="32" id="gtq-HO-zjd"/>
+                            <constraint firstItem="3B6-nF-OZH" firstAttribute="trailing" secondItem="kx2-Cr-p3O" secondAttribute="trailing" constant="32" id="okC-NN-Bse"/>
                             <constraint firstItem="Su2-5z-sV3" firstAttribute="centerX" secondItem="q2p-3V-BbQ" secondAttribute="centerX" id="qmC-4z-8l9"/>
                             <constraint firstItem="3B6-nF-OZH" firstAttribute="trailing" secondItem="TGl-99-8IU" secondAttribute="trailing" constant="32" id="tYH-E6-QFE"/>
                             <constraint firstItem="4G2-n4-ku4" firstAttribute="leading" secondItem="3B6-nF-OZH" secondAttribute="leading" constant="32" id="ymk-Av-FtR"/>
@@ -122,10 +123,12 @@
                         <viewLayoutGuide key="safeArea" id="3B6-nF-OZH"/>
                     </view>
                     <connections>
+                        <outlet property="acceptTermsOfServiceAgreementLabel" destination="kx2-Cr-p3O" id="6Cp-kP-eIj"/>
                         <outlet property="acceptTermsOfServiceSwitch" destination="4G2-n4-ku4" id="Zkl-6V-re7"/>
                         <outlet property="createAccountButton" destination="6eu-5l-Yif" id="GUu-os-EBd"/>
                         <outlet property="emailTextField" destination="z4m-mc-OTw" id="hrC-Z1-uJI"/>
                         <outlet property="nameTextField" destination="TGl-99-8IU" id="Mdk-WL-gOb"/>
+                        <outlet property="openTermsOfServiceButton" destination="2VB-2t-NEE" id="ac5-Bs-bIY"/>
                         <outlet property="passwordTextField" destination="hA4-q3-wtK" id="ZoG-cj-AKn"/>
                     </connections>
                 </viewController>
@@ -136,5 +139,6 @@
     </scenes>
     <resources>
         <image name="Heroes" width="43.5" height="67.5"/>
+        <image name="chevron.left" catalog="system" width="48" height="64"/>
     </resources>
 </document>

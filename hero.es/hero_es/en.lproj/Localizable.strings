@@ -1,0 +1,35 @@
+"main.tabitem.heroes" = "Heroes";
+"main.tabitem.comics" = "Comics";
+"main.tabitem.favorites" = "Favorites";
+"main.tabitem.config" = "Config";
+
+"main.login" = "Login";
+"main.email" = "E-mail";
+"main.password" = "Password";
+"main.dont-have-account" = "Don't have an account?";
+"main.create-account" = "Create Account";
+"main.positive-button" = "OK";
+
+"main.messages.failed-login" = "E-mail and/or password are wrong.";
+
+"config.edituserdata" = "Edit user's data:";
+"config.email" = "E-mail";
+"config.old-password" = "Old Password";
+"config.new-password" = "New Password";
+"config.confirm-password" = "Confirm New Password";
+"config.change-data" = "Change Data";
+"config.change-language" = "Change Language";
+"config.delete-user" = "Delete User";
+"config.logout" = "Log out";
+
+"create-account.name" = "Name";
+"create-account.email" = "E-mail";
+"create-account.password" = "Password";
+"create-account.create-account" = "Create Account";
+"create-account.terms-of-service-agreement" = "I agree with the Terms of Service";
+"create-account.read-the-terms-service" = "Read the Terms of Service";
+
+"favorites.options.all" = "All";
+"favorites.options.heroes" = "Heroes";
+"favorites.options.comics" = "Comics";
+"favorites.favorites-label" = "Favorites";

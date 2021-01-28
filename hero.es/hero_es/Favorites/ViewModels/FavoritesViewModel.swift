@@ -11,6 +11,7 @@ import Foundation
 struct FavoritesViewModel {
     // MARK: - Private Properties
     private let service: FavoriteService = FavoriteService.shared
+    private let localizationService: LocalizationServiceProtocol = LocalizationService.shared
     private var modelsArray: [FavoriteModel] = []
     
     // MARK: - Public Methods
@@ -33,6 +34,18 @@ struct FavoritesViewModel {
             return modelsArray[index]
         }
         return nil
+    }
+    
+    func getSegmentTitle(for option: SearchItemType) -> String {
+        switch option {
+        case .comic: return localizationService.getTranslation(for: "favorites.options.comics")
+        case .hero: return localizationService.getTranslation(for: "favorites.options.heroes")
+        default: return localizationService.getTranslation(for: "favorites.options.all")
+        }
+    }
+    
+    func getFavoritesLabelString() -> String {
+        return localizationService.getTranslation(for: "favorites.favorites-label")
     }
     
     // MARK: - Private Methods

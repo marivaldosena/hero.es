@@ -1,0 +1,35 @@
+"main.tabitem.heroes" = "Heróis";
+"main.tabitem.comics" = "Revistas";
+"main.tabitem.favorites" = "Favoritos";
+"main.tabitem.config" = "Config";
+
+"main.login" = "Entrar";
+"main.email" = "E-mail";
+"main.password" = "Senha";
+"main.dont-have-account" = "Não possui conta?";
+"main.create-account" = "Criar Conta";
+"main.positive-button" = "OK";
+
+"main.messages.failed-login" = "E-mail e/ou senha estão errados.";
+
+"config.edituserdata" = "Editar dados do usuário:";
+"config.email" = "E-mail";
+"config.old-password" = "Senha Antiga";
+"config.new-password" = "Senha Nova";
+"config.confirm-password" = "Confirmar Senha Nova";
+"config.change-data" = "Alterar Dados";
+"config.change-language" = "Alterar Idioma";
+"config.delete-user" = "Excluir Usuário";
+"config.logout" = "Sair";
+
+"create-account.name" = "Nome";
+"create-account.email" = "E-mail";
+"create-account.password" = "Senha";
+"create-account.create-account" = "Criar Conta";
+"create-account.terms-of-service-agreement" = "Aceito os Termos de Serviço";
+"create-account.read-the-terms-service" = "Leia os Termos de Serviço";
+
+"favorites.options.all" = "Todos";
+"favorites.options.heroes" = "Heróis";
+"favorites.options.comics" = "Revistas";
+"favorites.favorites-label" = "Favoritos";

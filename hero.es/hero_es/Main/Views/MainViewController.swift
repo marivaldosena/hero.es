@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Localize_Swift
 
 //MARK: - MainViewController: UIViewController
 class MainViewController: UIViewController {
@@ -15,14 +16,20 @@ class MainViewController: UIViewController {
     @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var loginWithEmailButton: UIButton!
     @IBOutlet weak var createAccountButton: UIButton!
+    @IBOutlet weak var dontHaveAccountLabel: UILabel!
     
     var viewModel: MainViewModel = MainViewModel()
+    private var appTabBarController = UITabBarController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         emailTextField.delegate = self
         passwordTextField.delegate = self
+        
+        let localization = viewModel.getLocalizationService()
+        localization.addObserver(self)
+        updateUIInterface()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -46,7 +53,15 @@ class MainViewController: UIViewController {
     
     @IBAction func register(_ sender: UIButton) {
         if let viewController = UIStoryboard(name: "CreateAccount", bundle: nil).instantiateInitialViewController() as? CreateAccountViewController {
+            let localization = viewModel.getLocalizationService()
+            localization.addObserver(viewController)
+            localization.loadTranslations()
             navigationController?.pushViewController(viewController, animated: true)
         }
     }
+    
+    func getTabBarController() -> UITabBarController {
+        return appTabBarController
+    }
 }
+
