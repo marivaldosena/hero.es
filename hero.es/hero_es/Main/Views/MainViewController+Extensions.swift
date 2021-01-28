@@ -11,6 +11,17 @@ import UIKit
 // MARK: - MainViewController
 extension MainViewController {
     // MARK: - MainViewController: Public Methods
+    func updateUIInterface() {
+        DispatchQueue.main.async {
+            self.emailTextField.placeholder = self.viewModel.getEmailString()
+            self.passwordTextField.placeholder = self.viewModel.getPasswordString()
+            self.loginWithEmailButton.setTitle(self.viewModel.getLoginButtonTitle(), for: .normal)
+            self.dontHaveAccountLabel.text = self.viewModel.getDontHaveAccountString()
+            self.createAccountButton.setTitle(self.viewModel.getCreateAccountButtonTitle(), for: .normal)
+            self.updateTabBarItemsTitle()
+        }
+    }
+    
     func login(with service: LoginServiceType) {
         switch service {
         case .email:
@@ -44,9 +55,9 @@ extension MainViewController {
                     print(error.localizedDescription)
                     AlertUtils.displayMessage(
                         self,
-                        title: self.viewModel.getString(for: .loginButtonTitle),
-                        message: self.viewModel.getString(for: .failedLoginMessage),
-                        okButton: self.viewModel.getString(for: .positiveButton)
+                        title: self.viewModel.getLoginButtonTitle(),
+                        message: self.viewModel.getFailedLoginMessage(),
+                        okButton: self.viewModel.getPositiveButtonString()
                     )
                 }
                 
@@ -103,7 +114,11 @@ extension MainViewController {
             configController
         ]
         
-        let tabBarController = UITabBarController()
+        for controller in arrayTabVC {
+            configureLocalization(controller: controller)
+        }
+        
+        let tabBarController = getTabBarController()
         tabBarController.viewControllers = arrayTabVC
             
         navigationController?.pushViewController(tabBarController, animated: true)
@@ -112,6 +127,21 @@ extension MainViewController {
     private func clearFields() {
         emailTextField.text = nil
         passwordTextField.text = nil
+    }
+    
+    private func updateTabBarItemsTitle() {
+        guard let items = getTabBarController().tabBar.items else { return }
+        
+        items[0].title = viewModel.getTabBarItemTitleName(for: .heroes)
+        items[1].title = viewModel.getTabBarItemTitleName(for: .comics)
+        items[2].title = viewModel.getTabBarItemTitleName(for: .favorites)
+        items[3].title = viewModel.getTabBarItemTitleName(for: .config)
+    }
+    
+    private func configureLocalization(controller: UIViewController) {
+        let localization = viewModel.getLocalizationService()
+        guard let observer = controller as? UpdateLanguageProtocol else { return }
+        localization.addObserver(observer)
     }
 }
 
@@ -132,5 +162,12 @@ extension MainViewController: UITextFieldDelegate {
             UITextFieldUtils.setFocus(on: nil, from: nil)
         }
         return true
+    }
+}
+
+// MARK: - MainViewController: UpdateLanguageProtocol
+extension MainViewController: UpdateLanguageProtocol {
+    func languageDidChange(_ language: AvailableLanguage) {
+        updateUIInterface()
     }
 }

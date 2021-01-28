@@ -16,6 +16,7 @@ target 'hero_es' do
   pod 'SwiftyJSON', '~> 5.0'
   pod 'FBSDKLoginKit'
   pod 'GoogleSignIn'
+  pod 'Localize-Swift', '~> 3.2'
 
   target 'hero_esTests' do
     inherit! :search_paths

@@ -23,14 +23,13 @@ class MainViewModel_Tests: XCTestCase {
 
     func testLoginButtonTitle() {
         let buttonTitle = "Login"
-        let fromViewModel = viewModel?.getString(for: .loginButtonTitle) ?? ""
-        viewModel?.getString(for: .loginButtonTitle)
+        let fromViewModel = viewModel?.getLoginButtonTitle() ?? ""
         XCTAssertEqual(buttonTitle, fromViewModel, "Button title is not equal to viewModel data.")
     }
     
     func testFailedLoginErrorMessage() {
-        let errorMessage = "Login and/or password are wrong."
-        let fromViewModel = viewModel?.getString(for: .failedLoginMessage) ?? ""
+        let errorMessage = "E-mail and/or password are wrong."
+        let fromViewModel = viewModel?.getFailedLoginMessage() ?? ""
         XCTAssertEqual(errorMessage, fromViewModel, "Failed login message is different from viewModel.")
     }
     
