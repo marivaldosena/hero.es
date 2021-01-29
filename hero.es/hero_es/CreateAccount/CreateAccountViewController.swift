@@ -102,63 +102,30 @@ extension CreateAccountViewController {
     private func setupUI() {
         setupView()
         setupButtons()
-        setupNameTextField()
-        setupEmailTextField()
-        setupPasswordTextField()
+        setupTextFields()
         setupLabels()
     }
     
     private func setupView() {
-        view.backgroundColor = StyleGuide.Color.lightGray
+        SetupViewsManager.setupView(with: view)
     }
     
     private func setupButtons() {
-        createAccountButton.backgroundColor = StyleGuide.Button.loginButton
-        createAccountButton.setTitleColor(StyleGuide.Color.white, for: .normal)
-        createAccountButton.roundCorners(cornerRadius: 10, corners: .allCorners)
-        
-        termsServiceButton.backgroundColor = StyleGuide.Button.createAccountButton
-        termsServiceButton.setTitleColor(StyleGuide.Color.darkGray, for: .normal)
-        termsServiceButton.roundCorners(cornerRadius: 10, corners: .allCorners)
-        
-        haveAccountButton.backgroundColor = StyleGuide.Color.clear
-        haveAccountButton.setTitleColor(StyleGuide.Color.blue, for: .normal)
+        SetupViewsManager.setupButtons(with: createAccountButton, backgroundColor: StyleGuide.Button.loginButton, titleColor: StyleGuide.Color.white)
+        SetupViewsManager.setupButtons(with: termsServiceButton, backgroundColor: StyleGuide.Button.createAccountButton, titleColor: StyleGuide.Color.darkGray)
+        SetupViewsManager.setupButtons(with: haveAccountButton, backgroundColor: StyleGuide.Color.clear, titleColor: StyleGuide.Color.blue)
     }
     
-    private func setupNameTextField() {
-        nameTextField.backgroundColor = StyleGuide.Color.clear
-        nameTextField.textColor = StyleGuide.Color.gray
-        nameTextField.layer.borderWidth = 1
-        nameTextField.layer.borderColor = StyleGuide.Color.gray.cgColor
-        nameTextField.roundCorners(cornerRadius: 10, corners: .allCorners)
-        nameTextField.attributedPlaceholder = NSAttributedString(string: "Name",
-                                                                  attributes: [NSAttributedString.Key.foregroundColor: StyleGuide.Color.gray])
-    }
-    
-    private func setupEmailTextField() {
-        emailTextField.backgroundColor = StyleGuide.Color.clear
-        emailTextField.textColor = StyleGuide.Color.gray
-        emailTextField.layer.borderWidth = 1
-        emailTextField.layer.borderColor = StyleGuide.Color.gray.cgColor
-        emailTextField.roundCorners(cornerRadius: 10, corners: .allCorners)
-        emailTextField.attributedPlaceholder = NSAttributedString(string: "E-mail",
-                                                                  attributes: [NSAttributedString.Key.foregroundColor: StyleGuide.Color.gray])
-    }
-    
-    private func setupPasswordTextField() {
-        passwordTextField.backgroundColor = StyleGuide.Color.clear
-        passwordTextField.textColor = StyleGuide.Color.gray
-        passwordTextField.layer.borderWidth = 1
-        passwordTextField.layer.borderColor = StyleGuide.Color.gray.cgColor
-        passwordTextField.roundCorners(cornerRadius: 10, corners: .allCorners)
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password",
-                                                                     attributes: [NSAttributedString.Key.foregroundColor: StyleGuide.Color.gray])
+    private func setupTextFields() {
+        SetupViewsManager.setupTextFields(with: nameTextField, placeHolder: "Name")
+        SetupViewsManager.setupTextFields(with: emailTextField, placeHolder: "E-mail")
+        SetupViewsManager.setupTextFields(with: passwordTextField, placeHolder: "Password")
     }
     
     private func setupLabels() {
-        appNameLabel.textColor = StyleGuide.Color.gray
-        createAccountDescriptionLabel.textColor = StyleGuide.Color.gray
-        termsDescriptionLabel.textColor = StyleGuide.Color.gray
+        SetupViewsManager.setupLabels(with: appNameLabel)
+        SetupViewsManager.setupLabels(with: createAccountDescriptionLabel)
+        SetupViewsManager.setupLabels(with: termsDescriptionLabel)
     }
 }
 

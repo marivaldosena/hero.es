@@ -36,7 +36,8 @@ class MainViewController: UIViewController {
         let configViewController = ConfigViewController()
         configViewController.delegate = self
         setupUI()
-        doLoginIfCredentialsAreCorrect()
+        //TODO: glayce (reverter apos os testes)
+//        doLoginIfCredentialsAreCorrect()
     }
     
     @IBAction func login(_ sender: UIButton) {
@@ -66,49 +67,29 @@ extension MainViewController {
     private func setupUI() {
         setupView()
         setupButtons()
-        setupEmailTextField()
-        setupPasswordTextField()
+        setupTextFields()
         setupLabels()
     }
     
     private func setupView() {
-        view.backgroundColor = StyleGuide.Color.lightGray
+        SetupViewsManager.setupView(with: view)
     }
     
     private func setupButtons() {
-        loginWithEmailButton.backgroundColor = StyleGuide.Button.loginButton
-        loginWithEmailButton.setTitleColor(StyleGuide.Color.white, for: .normal)
-        loginWithEmailButton.roundCorners(cornerRadius: 10, corners: .allCorners)
+        SetupViewsManager.setupButtons(with: loginWithEmailButton, backgroundColor: StyleGuide.Button.loginButton, titleColor: StyleGuide.Color.white)
         
-        createAccountButton.backgroundColor = StyleGuide.Button.createAccountButton
-        createAccountButton.setTitleColor(StyleGuide.Color.darkGray, for: .normal)
-        createAccountButton.roundCorners(cornerRadius: 10, corners: .allCorners)
+        SetupViewsManager.setupButtons(with: createAccountButton, backgroundColor: StyleGuide.Button.createAccountButton, titleColor: StyleGuide.Color.darkGray)
     }
     
-    private func setupEmailTextField() {
-        emailTextField.backgroundColor = StyleGuide.Color.clear
-        emailTextField.textColor = StyleGuide.Color.gray
-        emailTextField.layer.borderWidth = 1
-        emailTextField.layer.borderColor = StyleGuide.Color.gray.cgColor
-        emailTextField.roundCorners(cornerRadius: 10, corners: .allCorners)
-        emailTextField.attributedPlaceholder = NSAttributedString(string: "E-mail",
-                                                                  attributes: [NSAttributedString.Key.foregroundColor: StyleGuide.Color.gray])
-    }
-    
-    private func setupPasswordTextField() {
-        passwordTextField.backgroundColor = StyleGuide.Color.clear
-        passwordTextField.textColor = StyleGuide.Color.gray
-        passwordTextField.layer.borderWidth = 1
-        passwordTextField.layer.borderColor = StyleGuide.Color.gray.cgColor
-        passwordTextField.roundCorners(cornerRadius: 10, corners: .allCorners)
-        passwordTextField.attributedPlaceholder = NSAttributedString(string: "Password",
-                                                                     attributes: [NSAttributedString.Key.foregroundColor: StyleGuide.Color.gray])
+    private func setupTextFields() {
+        SetupViewsManager.setupTextFields(with: emailTextField, placeHolder: "E-mail")
+        SetupViewsManager.setupTextFields(with: passwordTextField, placeHolder: "Password")
     }
     
     private func setupLabels() {
-        loginSocialDescriptionLabel.textColor = StyleGuide.Color.gray
-        appNameLabel.textColor = StyleGuide.Color.gray
-        welcomeDescriptionLabel.textColor = StyleGuide.Color.gray
+        SetupViewsManager.setupLabels(with: loginSocialDescriptionLabel)
+        SetupViewsManager.setupLabels(with: appNameLabel)
+        SetupViewsManager.setupLabels(with: welcomeDescriptionLabel)
     }
 }
 

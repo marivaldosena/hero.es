@@ -110,6 +110,7 @@
 		EB9A0BD425B92B2300117247 /* UIView+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB9A0BD325B92B2300117247 /* UIView+Appearance.swift */; };
 		EBAB205725B68BF600280E7C /* StyleGuide.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAB205625B68BF600280E7C /* StyleGuide.swift */; };
 		EBAB205B25B68E1000280E7C /* UIColor+Appearance.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBAB205A25B68E1000280E7C /* UIColor+Appearance.swift */; };
+		EBFD6F9225C3BD6D00527532 /* SetupViewsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBFD6F9125C3BD6D00527532 /* SetupViewsManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -239,6 +240,7 @@
 		EB9A0BD325B92B2300117247 /* UIView+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Appearance.swift"; sourceTree = "<group>"; };
 		EBAB205625B68BF600280E7C /* StyleGuide.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StyleGuide.swift; sourceTree = "<group>"; };
 		EBAB205A25B68E1000280E7C /* UIColor+Appearance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Appearance.swift"; sourceTree = "<group>"; };
+		EBFD6F9125C3BD6D00527532 /* SetupViewsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupViewsManager.swift; sourceTree = "<group>"; };
 		EC45140287CA96D17DA631E2 /* Pods-hero_es.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero_es.debug.xcconfig"; path = "Target Support Files/Pods-hero_es/Pods-hero_es.debug.xcconfig"; sourceTree = "<group>"; };
 		EDDA5B6CC32C52B810ECA6A4 /* Pods-hero_esTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero_esTests.debug.xcconfig"; path = "Target Support Files/Pods-hero_esTests/Pods-hero_esTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FE327854AE97F86AFD175E5B /* Pods-hero_es-hero_esUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hero_es-hero_esUITests.release.xcconfig"; path = "Target Support Files/Pods-hero_es-hero_esUITests/Pods-hero_es-hero_esUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -681,6 +683,7 @@
 				EBAB205625B68BF600280E7C /* StyleGuide.swift */,
 				EBAB205A25B68E1000280E7C /* UIColor+Appearance.swift */,
 				EB9A0BD325B92B2300117247 /* UIView+Appearance.swift */,
+				EBFD6F9125C3BD6D00527532 /* SetupViewsManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -1102,6 +1105,7 @@
 				C927C75A2598E64400187456 /* MasterDetailNavigationProtocol.swift in Sources */,
 				C9B76B2525A21B60001596B1 /* RelatedHeroCoreDataDAO.swift in Sources */,
 				C91CC750259E4F3B0060B798 /* ComicsListViewModel.swift in Sources */,
+				EBFD6F9225C3BD6D00527532 /* SetupViewsManager.swift in Sources */,
 				C97A236425A12E2100AD4C28 /* ComicsListViewController+Extensions.swift in Sources */,
 				C972A3D425AF61D600D2A349 /* HeroCoreDataDAO.swift in Sources */,
 				C9253307259F748100D2615B /* ComicService.swift in Sources */,

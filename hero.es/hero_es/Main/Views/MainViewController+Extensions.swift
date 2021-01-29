@@ -13,7 +13,9 @@ extension MainViewController {
     func login(with service: LoginServiceType) {
         switch service {
         case .email:
-            self.loginWithEmail()
+            //TODO: glayce: voltar após os testes
+//            self.loginWithEmail()
+            self.createTabBarNavigation()
         case .facebook:
             self.loginWithFacebookAccount()
         case .google:
