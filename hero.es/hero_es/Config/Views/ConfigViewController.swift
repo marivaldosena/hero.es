@@ -20,14 +20,38 @@ class ConfigViewController: UIViewController {
     @IBOutlet weak var changeDataButton: UIButton!
     @IBOutlet weak var deleteUserButton: UIButton!
     @IBOutlet weak var logoutButton: UIButton!
+    @IBOutlet weak var changeLanguageButton: UIButton!
     @IBOutlet weak var darkModeSwitch: UISwitch!
+    @IBOutlet weak var appNameDescriptionLabel: UILabel!
+    @IBOutlet weak var usersDataDescriptionLabel: UILabel!
+    @IBOutlet weak var changeAppThemeLabel: UILabel!
+    @IBOutlet weak var darkModeDescriptionLabel: UILabel!
     
-    var delegate: ConfigViewControllerDelegate?
+    static var darkModeTeste: Bool?
+    
+    var didDarkModeChanged: Bool = false {
+        didSet {
+            ConfigViewController.darkModeTeste = didDarkModeChanged
+            setupUI()
+        }
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         title = "Config"
+        
+        //TODO glayce (ver como mudar a cor dinamicamente)
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = StyleGuide.Color.darkGray
+        appearance.titleTextAttributes = [.foregroundColor: StyleGuide.Label.labelsDescription]
+        appearance.largeTitleTextAttributes = [.foregroundColor: StyleGuide.Label.labelsDescription]
+        
+        navigationController?.navigationBar.standardAppearance = appearance
+        
+        let defaults: UserDefaults = UserDefaults.standard
+        let isDarkMode: Bool = defaults.bool(forKey: "darkModeKey")
+        ConfigViewController.darkModeTeste = isDarkMode
         
         setupUI()
         setupDarkModeSwitch()
@@ -56,9 +80,9 @@ class ConfigViewController: UIViewController {
     }
     
     @IBAction func darkModeChanged(_ sender: Any) {
+        didDarkModeChanged = darkModeSwitch.isOn
         let defaults: UserDefaults = UserDefaults.standard
         defaults.setValue(darkModeSwitch.isOn, forKey: "darkModeKey")
-        delegate?.didDarkModeChange()
     }
     
     private func setupDarkModeSwitch() {
@@ -74,6 +98,7 @@ extension ConfigViewController {
         setupView()
         setupButtonsWithValues()
         setupTextFields()
+        setupLabels()
     }
     
     private func setupView() {
@@ -81,9 +106,10 @@ extension ConfigViewController {
     }
     
     private func setupButtonsWithValues() {
-        SetupViewsManager.setupButtons(with: changeDataButton, backgroundColor: StyleGuide.Button.loginButton, titleColor: StyleGuide.Color.white)
-        SetupViewsManager.setupButtons(with: deleteUserButton, backgroundColor: StyleGuide.Button.createAccountButton, titleColor: StyleGuide.Color.darkGray)
-        SetupViewsManager.setupButtons(with: logoutButton, backgroundColor: StyleGuide.Color.gray, titleColor: StyleGuide.Color.white)
+        SetupViewsManager.setupButtons(with: changeDataButton, backgroundColor: StyleGuide.Button.changeDataButton, titleColor: StyleGuide.Button.ButtonTextColor.changeDataTextButton)
+        SetupViewsManager.setupButtons(with: deleteUserButton, backgroundColor: StyleGuide.Button.deleteUserButton, titleColor: StyleGuide.Button.ButtonTextColor.deleteUserTextButton)
+        SetupViewsManager.setupButtons(with: logoutButton, backgroundColor: StyleGuide.Button.changeLanguageButton, titleColor: StyleGuide.Button.ButtonTextColor.changeLanguageTextButton)
+        SetupViewsManager.setupButtons(with: changeLanguageButton, backgroundColor: StyleGuide.Button.changeLanguageButton, titleColor: StyleGuide.Button.ButtonTextColor.changeLanguageTextButton)
     }
     
     private func setupTextFields() {
@@ -91,5 +117,12 @@ extension ConfigViewController {
         SetupViewsManager.setupTextFields(with: oldPasswordTextField, placeHolder: "Old password")
         SetupViewsManager.setupTextFields(with: newPasswordTextField, placeHolder: "New password")
         SetupViewsManager.setupTextFields(with: confirmNewPasswordTextField, placeHolder: "Confirm new password")
+    }
+    
+    private func setupLabels() {
+        SetupViewsManager.setupLabels(with: appNameDescriptionLabel)
+        SetupViewsManager.setupLabels(with: usersDataDescriptionLabel)
+        SetupViewsManager.setupLabels(with: changeAppThemeLabel)
+        SetupViewsManager.setupLabels(with: darkModeDescriptionLabel)
     }
 }

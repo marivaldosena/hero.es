@@ -33,8 +33,6 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        let configViewController = ConfigViewController()
-        configViewController.delegate = self
         setupUI()
         //TODO: glayce (reverter apos os testes)
 //        doLoginIfCredentialsAreCorrect()
@@ -47,6 +45,7 @@ class MainViewController: UIViewController {
         case facebookButton:
             self.login(with: .facebook)
         case googleButton:
+            
             self.login(with: .google)
         default:
             break

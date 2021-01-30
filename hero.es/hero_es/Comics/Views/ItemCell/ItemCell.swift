@@ -68,7 +68,7 @@ class ItemCell: UITableViewCell {
     private func setupContainerView() {
         containerView.roundCorners(cornerRadius: 15, corners: .allCorners)
         containerView.backgroundColor = StyleGuide.Color.white
-        containerView.layer.borderWidth = 1
+        containerView.layer.borderWidth = 2
         containerView.layer.borderColor = StyleGuide.Color.gray.cgColor
     }
     

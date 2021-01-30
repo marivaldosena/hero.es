@@ -111,9 +111,6 @@ extension MainViewController {
         //TODO: glayce (pesquisar como abrir a tela e mostrar a navigation com o botao de voltar)
         navigationController?.pushViewController(tabBarController, animated: true)
         
-        let configViewController: ConfigViewController = ConfigViewController()
-        configViewController.delegate = self
-        
         //        navigationController?.present(tabBarController, animated: true, completion: nil)
     }
     

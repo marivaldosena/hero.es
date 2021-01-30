@@ -22,7 +22,7 @@ class HeroesListViewController: UIViewController {
         
         title = viewModel.getTitleView()
         
-        setupUI()
+//        setupUI()
         
         viewModel.delegate = self
         viewModel.loadAllHeroes()
@@ -34,6 +34,12 @@ class HeroesListViewController: UIViewController {
             forCellReuseIdentifier: "ItemCell")
         
         heroSearchBar?.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -65,7 +71,7 @@ extension HeroesListViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = StyleGuide.Color.lightSecondaryGray
+        view.backgroundColor = StyleGuide.View.background
         
         heroTableView?.roundCorners(cornerRadius: 15, corners: .allCorners)
         heroTableView?.backgroundColor = StyleGuide.Color.lightGray
