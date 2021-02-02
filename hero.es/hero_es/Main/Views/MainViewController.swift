@@ -16,7 +16,10 @@ class MainViewController: UIViewController {
     @IBOutlet weak var googleButton: UIButton!
     @IBOutlet weak var loginWithEmailButton: UIButton!
     @IBOutlet weak var createAccountButton: UIButton!
-    @IBOutlet weak var dontHaveAccountLabel: UILabel!
+    @IBOutlet weak var loginSocialDescriptionLabel: UILabel!
+    @IBOutlet weak var appNameLabel: UILabel!
+    @IBOutlet weak var welcomeDescriptionLabel: UILabel!
+    @IBOutlet weak var socialLoginContainer: UIStackView!
     
     var viewModel: MainViewModel = MainViewModel()
     private var appTabBarController = UITabBarController()
@@ -30,11 +33,13 @@ class MainViewController: UIViewController {
         let localization = viewModel.getLocalizationService()
         localization.addObserver(self)
         updateUIInterface()
+        setupUI()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
+        setupUI()
         doLoginIfCredentialsAreCorrect()
     }
     
@@ -65,3 +70,48 @@ class MainViewController: UIViewController {
     }
 }
 
+//MARK: - MainViewController: Private Methods - Setup UI
+extension MainViewController {
+    private func setupUI() {
+        setupView()
+        setupButtons()
+        setupTextFields()
+        setupLabels()
+        setupSocialLoginButtons()
+    }
+    
+    private func setupView() {
+        SetupViewsManager.setupView(with: view)
+    }
+    
+    private func setupButtons() {
+        SetupViewsManager.setupButtons(with: loginWithEmailButton, backgroundColor: StyleGuide.Button.loginButton, titleColor: StyleGuide.Color.white)
+        
+        SetupViewsManager.setupButtons(with: createAccountButton, backgroundColor: StyleGuide.Button.createAccountButton, titleColor: StyleGuide.Color.darkGray)
+    }
+    
+    private func setupTextFields() {
+        SetupViewsManager.setupTextFields(with: emailTextField, placeHolder: viewModel.getEmailString())
+        SetupViewsManager.setupTextFields(with: passwordTextField, placeHolder: viewModel.getPasswordString())
+    }
+    
+    private func setupLabels() {
+        SetupViewsManager.setupLabels(with: loginSocialDescriptionLabel)
+        SetupViewsManager.setupLabels(with: appNameLabel)
+        SetupViewsManager.setupLabels(with: welcomeDescriptionLabel)
+    }
+    
+    private func setupSocialLoginButtons() {
+        SetupViewsManager.setupView(with: socialLoginContainer, backgroundColor: StyleGuide.Color.lightGray)
+        
+        for item in socialLoginContainer.subviews {
+            SetupViewsManager.setupView(with: item, backgroundColor: StyleGuide.Color.lightGray)
+        }
+    }
+}
+
+extension MainViewController: ConfigViewControllerDelegate {
+    func didDarkModeChange() {
+        setupUI()
+    }
+}

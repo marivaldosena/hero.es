@@ -60,12 +60,4 @@ class ComicDetailsViewModel_Tests: XCTestCase {
         let fromViewModel = viewModel?.getImageUrlString() ?? "viewModel"
         XCTAssertEqual(fromModel, fromViewModel, "Something went wrong with viewModel.getImageUrlString().")
     }
-
-    func testPerformanceExample()  {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

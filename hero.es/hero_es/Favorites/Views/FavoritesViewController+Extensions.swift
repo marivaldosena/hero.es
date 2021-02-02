@@ -15,7 +15,7 @@ extension FavoritesViewController {
         DispatchQueue.main.async {
             self.tableView.reloadData()
             self.updateSegmentedControlTitles()
-            self.favoritesLabel?.text = self.viewModel.getFavoritesLabelString()
+            self.favoritesLabel?.text = self.viewModel.getTitleView()
         }
     }
     
@@ -31,7 +31,7 @@ extension FavoritesViewController {
         default:
             option = .all
         }
-        viewModel.getItems(itemType: option, in: .firebase)
+        viewModel.getItems(itemType: option)
         updateUIInterface()
     }
     
@@ -62,6 +62,10 @@ extension FavoritesViewController: UITableViewDataSource {
         cell.configure(with: model)
         cell.delegate = self
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 160
     }
 }
 

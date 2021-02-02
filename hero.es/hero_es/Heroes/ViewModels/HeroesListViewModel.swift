@@ -81,4 +81,8 @@ class HeroesListViewModel {
     func getNumberOfItems() -> Int {
         return modelsArray.count
     }
+
+    func getTitleView() -> String {
+        return "Heroes"
+    }
 }

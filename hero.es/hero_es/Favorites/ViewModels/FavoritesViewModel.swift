@@ -44,7 +44,7 @@ struct FavoritesViewModel {
         }
     }
     
-    func getFavoritesLabelString() -> String {
+    func getTitleView() -> String {
         return localizationService.getTranslation(for: "favorites.favorites-label")
     }
     

@@ -14,14 +14,19 @@ class CreateAccountViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var createAccountButton: UIButton!
     @IBOutlet weak var acceptTermsOfServiceSwitch: UISwitch!
-    @IBOutlet weak var acceptTermsOfServiceAgreementLabel: UILabel!
-    @IBOutlet weak var openTermsOfServiceButton: UIButton!
+    @IBOutlet weak var termsServiceButton: UIButton!
+    @IBOutlet weak var appNameLabel: UILabel!
+    @IBOutlet weak var createAccountDescriptionLabel: UILabel!
+    @IBOutlet weak var haveAccountButton: UIButton!
+    @IBOutlet weak var termsDescriptionLabel: UILabel!
     
     var viewModel = CreateAccountViewModel()
     
     // MARK: - Public Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        setupUI()
         
         nameTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
         emailTextField.addTarget(self, action: #selector(textFieldDidChange(_:)), for: .editingChanged)
@@ -64,6 +69,10 @@ class CreateAccountViewController: UIViewController {
         navigationController?.popToRootViewController(animated: true)
     }
     
+    @IBAction func haveAccountBackSignIn(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
     @objc func textFieldDidChange(_ textField: UITextField) {
         switch textField {
         case nameTextField:
@@ -89,5 +98,37 @@ class CreateAccountViewController: UIViewController {
     
     private func askUserForAcceptingTermsOfService() {
         AlertUtils.displayMessage(self, title: "Create Account", message: "You should accept the Terms of Service.", okButton: "OK")
+    }
+}
+
+//MARK: - CreateAccountViewController: Private Methods - Setup UI
+extension CreateAccountViewController {
+    private func setupUI() {
+        setupView()
+        setupButtons()
+        setupTextFields()
+        setupLabels()
+    }
+    
+    private func setupView() {
+        SetupViewsManager.setupView(with: view)
+    }
+    
+    private func setupButtons() {
+        SetupViewsManager.setupButtons(with: createAccountButton, backgroundColor: StyleGuide.Button.loginButton, titleColor: StyleGuide.Color.white)
+        SetupViewsManager.setupButtons(with: termsServiceButton, backgroundColor: StyleGuide.Button.createAccountButton, titleColor: StyleGuide.Color.darkGray)
+        SetupViewsManager.setupButtons(with: haveAccountButton, backgroundColor: StyleGuide.Color.clear, titleColor: StyleGuide.Color.blue)
+    }
+    
+    private func setupTextFields() {
+        SetupViewsManager.setupTextFields(with: nameTextField, placeHolder: "Name")
+        SetupViewsManager.setupTextFields(with: emailTextField, placeHolder: "E-mail")
+        SetupViewsManager.setupTextFields(with: passwordTextField, placeHolder: "Password")
+    }
+    
+    private func setupLabels() {
+        SetupViewsManager.setupLabels(with: appNameLabel)
+        SetupViewsManager.setupLabels(with: createAccountDescriptionLabel)
+        SetupViewsManager.setupLabels(with: termsDescriptionLabel)
     }
 }

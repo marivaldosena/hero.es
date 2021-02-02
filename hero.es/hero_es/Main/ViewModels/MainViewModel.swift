@@ -95,6 +95,10 @@ struct MainViewModel {
         return navigation
     }
     
+    func setLanguage(language: AvailableLanguagesOptions) {
+        localizationService.setLanguage(language: language)
+    }
+    
     func isCorrectLoginWith(email: UITextField, password: UITextField) -> Bool {
         return service.isCorrectLoginWith(email: email, password: password)
     }
@@ -129,5 +133,9 @@ struct MainViewModel {
     
     func getCreateAccountButtonTitle() -> String {
         return localizationService.getTranslation(for: "main.create-account")
+    }
+    
+    func getWelcomeMessage() -> String {
+        return localizationService.getTranslation(for: "main.welcome")
     }
 }

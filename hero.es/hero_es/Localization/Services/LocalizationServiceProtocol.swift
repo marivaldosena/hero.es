@@ -9,8 +9,10 @@ import Foundation
 
 protocol LocalizationServiceProtocol {
     func getAvailableLanguages() -> [AvailableLanguage]
+    func setLanguage(language: AvailableLanguagesOptions)
     func setCurrent(language: AvailableLanguage)
     func getCurrentLanguage() -> AvailableLanguage
+    func getTranslation(for item: String, language: AvailableLanguagesOptions) -> String
     func getTranslation(for item: String, language: AvailableLanguage) -> String
     func getTranslation(for item: String) -> String
 }

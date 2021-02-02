@@ -16,18 +16,22 @@ class FavoritesViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = viewModel.getTitleView()
+        
+        setupUI()
+        
         tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell")
         tableView.dataSource = self
         tableView.delegate = self
         
-        viewModel.getItems(in: .firebase)
+        viewModel.getItems()
         updateUIInterface()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        viewModel.getItems(in: .firebase)
+        viewModel.getItems()
         updateUIInterface()
     }
     
@@ -38,5 +42,13 @@ class FavoritesViewController: UIViewController {
         default:
             break
         }
+    }
+    
+    private func setupUI() {
+        view.backgroundColor = StyleGuide.Color.lightSecondaryGray
+        
+        tableView?.roundCorners(cornerRadius: 15, corners: .allCorners)
+        tableView?.backgroundColor = StyleGuide.Color.lightGray
+        tableView.separatorStyle = .none
     }
 }
