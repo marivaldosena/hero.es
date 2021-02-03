@@ -108,6 +108,7 @@
 		C9E1C52C2571E0050068EB7C /* ValidatorService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E1C52A2571E0050068EB7C /* ValidatorService.swift */; };
 		C9E1C5512571E3E20068EB7C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C9E1C5502571E3E10068EB7C /* GoogleService-Info.plist */; };
 		C9E66C7C258C357D00CF9F17 /* DBManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9E66C7B258C357D00CF9F17 /* DBManager.swift */; };
+		C9ED596025CAEBAB00B49CA2 /* HeroModel+CellItemProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9ED595F25CAEBA800B49CA2 /* HeroModel+CellItemProtocol.swift */; };
 		C9EEEFAC25A4D19200431984 /* ComicDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EEEFAB25A4D19100431984 /* ComicDetailsViewModel.swift */; };
 		C9EEEFAE25A4F0CF00431984 /* ComicDetailsViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9EEEFAD25A4F0CE00431984 /* ComicDetailsViewController+Extensions.swift */; };
 		C9F5D4BA25AF47DA00887AF3 /* GetUserFromEnumType.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9F5D4B725AF47DA00887AF3 /* GetUserFromEnumType.swift */; };
@@ -252,6 +253,7 @@
 		C9E1C52A2571E0050068EB7C /* ValidatorService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValidatorService.swift; sourceTree = "<group>"; };
 		C9E1C5502571E3E10068EB7C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C9E66C7B258C357D00CF9F17 /* DBManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBManager.swift; sourceTree = "<group>"; };
+		C9ED595F25CAEBA800B49CA2 /* HeroModel+CellItemProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HeroModel+CellItemProtocol.swift"; sourceTree = "<group>"; };
 		C9EEEFAB25A4D19100431984 /* ComicDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComicDetailsViewModel.swift; sourceTree = "<group>"; };
 		C9EEEFAD25A4F0CE00431984 /* ComicDetailsViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ComicDetailsViewController+Extensions.swift"; sourceTree = "<group>"; };
 		C9F5D4B725AF47DA00887AF3 /* GetUserFromEnumType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserFromEnumType.swift; sourceTree = "<group>"; };
@@ -312,7 +314,6 @@
 		C91CC749259E4E820060B798 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C9AE6A0A259FA1B5000D3857 /* ItemCell */,
 				C99441F425508225004F2D82 /* ComicsList.storyboard */,
 				C9D3B14925A48F680055DE95 /* ComicDetails.storyboard */,
 				C99441FC25508241004F2D82 /* ComicsListViewController.swift */,
@@ -561,6 +562,7 @@
 				C972A3B425AF5ED500D2A349 /* ComicHeroModel.swift */,
 				C972A3B325AF5ED500D2A349 /* DataClass.swift */,
 				C972A3B125AF5ED500D2A349 /* HeroModel.swift */,
+				C9ED595F25CAEBA800B49CA2 /* HeroModel+CellItemProtocol.swift */,
 				C972A3B525AF5ED500D2A349 /* RelatedComicModel.swift */,
 			);
 			path = Models;
@@ -750,6 +752,7 @@
 			isa = PBXGroup;
 			children = (
 				C9D7E3E12586E55800D65E1E /* Auth */,
+				C9ED595825CA3A8D00B49CA2 /* Cells */,
 				C99441F32550820C004F2D82 /* Comics */,
 				C994421A2550CB0E004F2D82 /* Config */,
 				C9CD7E3525432FBC001E5E54 /* CreateAccount */,
@@ -874,6 +877,14 @@
 				C9B76B2825A2288E001596B1 /* ModelUtils.swift */,
 			);
 			path = Managers;
+			sourceTree = "<group>";
+		};
+		C9ED595825CA3A8D00B49CA2 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				C9AE6A0A259FA1B5000D3857 /* ItemCell */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		C9F5D4C025AF47FF00887AF3 /* Models */ = {
@@ -1255,6 +1266,7 @@
 				C97A236425A12E2100AD4C28 /* ComicsListViewController+Extensions.swift in Sources */,
 				C972A3D425AF61D600D2A349 /* HeroCoreDataDAO.swift in Sources */,
 				C9253307259F748100D2615B /* ComicService.swift in Sources */,
+				C9ED596025CAEBAB00B49CA2 /* HeroModel+CellItemProtocol.swift in Sources */,
 				C970291625A0D7B400133FE8 /* ComicRepository.swift in Sources */,
 				C972A3E225AF64D600D2A349 /* HeroesListViewModel.swift in Sources */,
 				C91FDB5325B13AEB003BE7C8 /* AuthErrorEnumType.swift in Sources */,
@@ -1568,11 +1580,11 @@
 		C9D5FD9D25C9908D00E3C943 /* hero_es.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				C9D5FD9E25C9908D00E3C943 /* hero_es.xcdatamodel */,
-				C9D5FD9F25C9908D00E3C943 /* hero_es_v04_add_favorite_entity.xcdatamodel */,
 				C9D5FDA025C9908D00E3C943 /* hero_es_v05_add_uid_to_favorite_entity.xcdatamodel */,
+				C9D5FD9F25C9908D00E3C943 /* hero_es_v04_add_favorite_entity.xcdatamodel */,
 				C9D5FDA125C9908D00E3C943 /* hero_es_v03_refactor_comic_entity.xcdatamodel */,
 				C9D5FDA225C9908D00E3C943 /* hero_es_v02_renaming_comic_entity.xcdatamodel */,
+				C9D5FD9E25C9908D00E3C943 /* hero_es.xcdatamodel */,
 			);
 			currentVersion = C9D5FDA025C9908D00E3C943 /* hero_es_v05_add_uid_to_favorite_entity.xcdatamodel */;
 			path = hero_es.xcdatamodeld;

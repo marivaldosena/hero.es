@@ -70,6 +70,14 @@ class ItemCell: UITableViewCell {
         containerView.backgroundColor = StyleGuide.Color.white
         containerView.layer.borderWidth = 2
         containerView.layer.borderColor = StyleGuide.Color.gray.cgColor
+        
+        // Shadow
+        containerView.layer.shadowColor = StyleGuide.Color.darkGray.cgColor
+        containerView.layer.shadowOpacity = 1
+        containerView.layer.shadowOffset = .zero
+        containerView.layer.shadowRadius = 10
+        containerView.layer.shouldRasterize = true
+        containerView.layer.rasterizationScale = UIScreen.main.scale
     }
     
     private func getLikeButtonImage() -> UIImage? {

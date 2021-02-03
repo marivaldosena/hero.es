@@ -10,21 +10,38 @@ import Kingfisher
 
 //MARK: - HeroDetailsViewController: UIViewController
 class HeroDetailsViewController: UIViewController {
-    @IBOutlet weak var heroImageView: UIImageView?
-    @IBOutlet weak var heroNameLabel: UILabel?
-    @IBOutlet weak var heroPublisherNameLabel: UILabel?
-    @IBOutlet weak var heroDescriptionTextView: UITextView?
-    @IBOutlet weak var favoriteButton: UIButton?
+    @IBOutlet weak var heroImageView: UIImageView!
+    @IBOutlet weak var heroNameLabel: UILabel!
+    @IBOutlet weak var heroPublisherNameLabel: UILabel!
+    @IBOutlet weak var heroDescriptionTextView: UITextView!
+    @IBOutlet weak var favoriteButton: UIButton!
     @IBOutlet weak var shareBarButtonItem: UIBarButtonItem?
     
     private var viewModel: HeroDetailsViewModel? = nil
+    weak var shareDelegate: ShareAndLikeItemProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.shareDelegate = self
+        self.updateUIInterface()
+        self.setAllIdentifiers()
+        self.setupUI()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
         self.updateUIInterface()
         self.setAllIdentifiers()
         self.setupUI()
+    }
+    
+    @IBAction func favoriteHero(_ sender: UIButton) {
+        shareDelegate?.like(item: viewModel?.getCellItem())
+    }
+    
+    @IBAction func shareHero(_ sender: UIBarButtonItem) {
+        shareDelegate?.share(item: viewModel?.getCellItem())
     }
     
     static func getViewController(_ item: HeroModel?) -> HeroDetailsViewController? {

@@ -19,6 +19,7 @@ extension HeroDetailsViewController {
             self.heroNameLabel?.text = viewModel.getName()
             self.heroPublisherNameLabel?.text = viewModel.getPublisherName()
             self.heroDescriptionTextView?.text = viewModel.getDescription()
+            self.favoriteButton.setImage(viewModel.getLikeButtonImage(), for: .normal)
         }
     }
     
@@ -31,6 +32,21 @@ extension HeroDetailsViewController {
         heroDescriptionTextView?.accessibilityIdentifier = viewModel.getIdentifier(for: .heroDescription)
         favoriteButton?.accessibilityIdentifier  = viewModel.getIdentifier(for: .favoriteButton)
         shareBarButtonItem?.accessibilityIdentifier  = viewModel.getIdentifier(for: .shareButton)
+    }
+}
+
+// MARK: - HeroDetailsViewController: ShareAndLikeItemProtocol
+extension HeroDetailsViewController: ShareAndLikeItemProtocol {
+    func share(item: CellItemProtocol?) {
+        guard let item = item else { return }
+        ShareItemUtils.share(item, on: self)
+    }
+    
+    func like(item: CellItemProtocol?) {
+        guard let item = item else { return }
+        let service = FavoriteService.shared
+        service.toggleFavorite(item, itemType: .hero, in: .firebase)
+        updateUIInterface()
     }
 }
 

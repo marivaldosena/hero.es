@@ -21,7 +21,7 @@ class HeroesListViewController: UIViewController {
         
         title = viewModel.getTitleView()
         
-//        setupUI()
+        setupUI()
         
         viewModel.delegate = self
         viewModel.loadAllHeroes()

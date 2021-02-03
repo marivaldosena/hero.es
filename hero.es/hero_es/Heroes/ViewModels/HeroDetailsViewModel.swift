@@ -40,6 +40,7 @@ struct HeroDetailsViewModel {
             description = """
             We have no words to say about this incredible hero! Literally.
             Maybe some gibberish may help to fill the void we left.
+            Does is it really necessary? Some philosophical questions might be answered with our PR. :)
             
             Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.
             """
@@ -66,7 +67,8 @@ struct HeroDetailsViewModel {
     }
     
     func isFavorite() -> Bool {
-        return false
+        guard let model = model else { return false }
+        return model.isFavorite(itemType: .hero, in: .firebase)
     }
     
     func getModel() -> HeroModel? {
@@ -93,5 +95,16 @@ struct HeroDetailsViewModel {
     
     func getIdentifier(for view: HeroDetailsUIIdentifier) -> String {
         return view.rawValue
+    }
+    
+    func getCellItem() -> CellItemProtocol? {
+        return model?.getCellItem()
+    }
+    
+    func getLikeButtonImage() -> UIImage? {
+        if self.isFavorite() {
+            return UIImage(named: "like")
+        }
+        return UIImage(named: "like2")
     }
 }
