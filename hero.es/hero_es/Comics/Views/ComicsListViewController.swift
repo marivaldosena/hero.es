@@ -14,7 +14,6 @@ class ComicsListViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     var viewModel = ComicsListViewModel()
-    private var modelsArray: [ComicModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,16 +44,11 @@ class ComicsListViewController: UIViewController {
     }
     
     func updateTable(with array: [ComicModel]) {
-        modelsArray = array
         updateUIInterface()
     }
     
-    func getItem(at index: Int) -> ComicModel {
-        return modelsArray[index]
-    }
-    
     func getNumberOfItems() -> Int {
-        return modelsArray.count
+        return viewModel.getNumberOfItems()
     }
     
     private func setupUI() {

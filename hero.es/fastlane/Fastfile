@@ -24,4 +24,5 @@ platform :ios do
       devices: ["iPhone 11"],
       scheme: "hero_es"
     )
+  end
 end
