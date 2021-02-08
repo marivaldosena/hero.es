@@ -32,6 +32,7 @@ class ComicsListViewModel {
         service.loadItems(limit: limit, offset: offset) { (models, error) in
             if let models = models {
                 self.modelsArray = models
+                self.modelsArray.shuffle()
                 self.delegate?.getItemsListDidLoad(models, nil)
             } else {
                 self.delegate?.getItemsListDidLoad([], nil)
@@ -45,8 +46,10 @@ class ComicsListViewModel {
                   in persistentMethod: PersistentMethodEnum = .coreData) -> [ComicModel] {
         if let term = term {
             modelsArray = service.find(term: term, limit: limit, offset: offset, in: persistentMethod)
+            self.modelsArray.shuffle()
         } else {
             modelsArray = service.getItems(limit: limit, offset: offset, in: persistentMethod)
+            self.modelsArray.shuffle()
         }
         
         return modelsArray

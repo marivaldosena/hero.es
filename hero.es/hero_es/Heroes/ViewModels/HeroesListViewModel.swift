@@ -29,6 +29,7 @@ class HeroesListViewModel {
         self.service.getAllHeroes(limit: limit, offset: offset, completion: { (heroes, error) in
             if let heroes = heroes {
                 self.modelsArray = heroes
+                self.modelsArray.shuffle()
                 completion(heroes, nil)
             } else {
                 self.modelsArray = []
@@ -40,6 +41,7 @@ class HeroesListViewModel {
     func loadAllHeroes(limit: Int = 20, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) {
         loadAllHeroes(limit: limit, offset: offset) { (heroes, error) in
             self.modelsArray = heroes
+            self.modelsArray.shuffle()
             self.delegate?.getItemsListDidFinish(heroes, error)
         }
     }
@@ -48,6 +50,7 @@ class HeroesListViewModel {
         DispatchQueue.global(qos: .background).sync {
             loadAllHeroes(limit: limit, offset: offset) { (heroes, _) in
                 self.modelsArray = heroes
+                self.modelsArray.shuffle()
             }
         }
         
@@ -58,8 +61,10 @@ class HeroesListViewModel {
                 offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [HeroModel] {
         if !term.isEmpty {
             modelsArray = self.service.find(term: term, limit: limit, offset: offset, in: persistentMethod)
+            self.modelsArray.shuffle()
         } else {
             modelsArray = self.service.find(limit: limit, offset: offset, in: persistentMethod)
+            self.modelsArray.shuffle()
         }
         return modelsArray
     }

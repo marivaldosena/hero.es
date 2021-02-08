@@ -18,7 +18,7 @@ extension ConfigViewController {
             self.oldPasswordTextField?.placeholder = self.viewModel.getOldPasswordString()
             self.newPasswordTextField?.placeholder = self.viewModel.getNewPasswordString()
             self.confirmNewPasswordTextField?.placeholder = self.viewModel.getConfirmPasswordString()
-            //self.changeDataButton.setTitle(self.viewModel.getChangeDataString(), for: .normal)
+            self.changeDataButton.setTitle(self.viewModel.getChangeDataString(), for: .normal)
             self.changeLanguageButton.setTitle(self.viewModel.getChangeLanguageString(), for: .normal)
             self.deleteUserButton.setTitle(self.viewModel.getDeleteUserString(), for: .normal)
             self.logoutButton.setTitle(self.viewModel.getLogoutString(), for: .normal)
