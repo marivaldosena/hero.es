@@ -24,9 +24,9 @@ class HeroesListViewModel {
         }
     }
     
-    func loadAllHeroes(in persistentMethod: PersistentMethodEnum = .coreData,
+    func loadAllHeroes(limit: Int = 20, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData,
                       completion: @escaping (_ heroes: [HeroModel], _ error: Error?) -> Void) {
-        self.service.getAllHeroes(completion: { (heroes, error) in
+        self.service.getAllHeroes(limit: limit, offset: offset, completion: { (heroes, error) in
             if let heroes = heroes {
                 self.modelsArray = heroes
                 completion(heroes, nil)
@@ -37,31 +37,29 @@ class HeroesListViewModel {
         })
     }
     
-    func loadAllHeroes(in persistentMethod: PersistentMethodEnum = .coreData) {
-        loadAllHeroes { (heroes, error) in
+    func loadAllHeroes(limit: Int = 20, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) {
+        loadAllHeroes(limit: limit, offset: offset) { (heroes, error) in
             self.modelsArray = heroes
             self.delegate?.getItemsListDidFinish(heroes, error)
         }
     }
     
-    func getAllHeroes(in persistentMethod: PersistentMethodEnum = .coreData) -> [HeroModel] {
-        var modelsArray: [HeroModel] = []
-        
+    func getAllHeroes(limit: Int = 20, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [HeroModel] {
         DispatchQueue.global(qos: .background).sync {
-            loadAllHeroes { (heroes, _) in
-                modelsArray = heroes
+            loadAllHeroes(limit: limit, offset: offset) { (heroes, _) in
+                self.modelsArray = heroes
             }
         }
         
         return modelsArray
     }
     
-    func search(term: String = "", in persistentMethod: PersistentMethodEnum = .coreData) -> [HeroModel] {
-        var modelsArray: [HeroModel] = []
+    func search(term: String = "", limit: Int = 20,
+                offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [HeroModel] {
         if !term.isEmpty {
-            modelsArray = self.service.find(term: term, in: persistentMethod)
+            modelsArray = self.service.find(term: term, limit: limit, offset: offset, in: persistentMethod)
         } else {
-            modelsArray = self.service.find()
+            modelsArray = self.service.find(limit: limit, offset: offset, in: persistentMethod)
         }
         return modelsArray
     }

@@ -39,7 +39,6 @@ extension ComicsListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         
         let model = viewModel.getItem(at: indexPath.row)
-        print("ComicModel: \(model?.thumbnailString)")
         cell.configure(with: model, itemType: .comic)
         cell.delegate = self
         

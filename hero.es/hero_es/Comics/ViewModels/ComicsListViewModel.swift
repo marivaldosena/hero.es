@@ -28,8 +28,8 @@ class ComicsListViewModel {
         self.service = service
     }
     
-    func loadItems() {
-        service.loadItems { (models, error) in
+    func loadItems(limit: Int = 0, offset: Int = 0) {
+        service.loadItems(limit: limit, offset: offset) { (models, error) in
             if let models = models {
                 self.modelsArray = models
                 self.delegate?.getItemsListDidLoad(models, nil)

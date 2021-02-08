@@ -23,7 +23,7 @@ class ComicsListViewController: UIViewController {
         setupUI()
         
         viewModel.delegate = self
-        viewModel.loadItems()
+        viewModel.loadItems(offset: 20)
         
         comicsTableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell")
         comicsTableView.dataSource = self
@@ -34,7 +34,7 @@ class ComicsListViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.loadItems()
+        viewModel.loadItems(offset: 20)
     }
     
     func updateUIInterface() {

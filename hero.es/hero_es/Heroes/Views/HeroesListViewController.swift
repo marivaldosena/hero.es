@@ -24,7 +24,7 @@ class HeroesListViewController: UIViewController {
         setupUI()
         
         viewModel.delegate = self
-        viewModel.loadAllHeroes()
+        viewModel.loadAllHeroes(offset: 20)
         
         heroTableView?.delegate = self
         heroTableView?.dataSource = self
@@ -37,13 +37,13 @@ class HeroesListViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        viewModel.loadAllHeroes(offset: 20)
         setupUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.loadAllHeroes()
+        viewModel.loadAllHeroes(offset: 20)
     }
     
     private func setupUI() {

@@ -6,15 +6,20 @@
 //
 
 import Foundation
+import Alamofire
 
 typealias ComicServiceFinishHandlerType = (_ comics: [ComicModel]?, _ error: Error?) -> Void
+
+enum MarvelAPIError: Error {
+    case invalidData
+}
 
 // MARK: - ServiceProtocol
 protocol ServiceProtocol {
     associatedtype Model = CellItemProtocol
     associatedtype RelatedModel = ItemProtocol
     
-    func loadItems(completion: @escaping (_ items: [Model]?, _ error: Error?) -> Void)
+    func loadItems(limit: Int, offset: Int, completion: @escaping (_ items: [Model]?, _ error: Error?) -> Void)
     func getItems(limit: Int, offset: Int, in persistentMethod: PersistentMethodEnum) -> [Model]
     func find(limit: Int, offset: Int, in persistentMethod: PersistentMethodEnum) -> [Model]
     func find(term: String, limit: Int, offset: Int, in persistentMethod: PersistentMethodEnum) -> [Model]
@@ -34,42 +39,54 @@ class ComicService: ComicServiceProtocol {
     typealias RelatedModel = RelatedHeroModel
     
     static var shared = ComicService()
+    static var apiManager: MarvelAPIManagerProtocol = MarvelAPIManager.shared
     private var repository = ComicRepository.shared
     
-    private func requestComics(completion: @escaping ComicServiceFinishHandlerType) {
-        guard let path = Bundle.main.path(forResource: "comics-list", ofType: "json") else { return }
-        guard let json = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe) else { return }
-        let modelsArray = ComicParser.from(json: json)
-        completion(modelsArray, nil)
-    }
     
-    func loadItems(completion: @escaping ComicServiceFinishHandlerType) {
-        let modelsArray = repository.find()
+    private func requestComics(limit: Int = 0, offset: Int = 0, completion: @escaping ComicServiceFinishHandlerType) {
+        var params = [String:Any]()
         
-        if modelsArray.count > 0 {
-            completion(modelsArray, nil)
-        } else {
-            self.requestComics { (comics, error) in
-                if let comics = comics {
-                    self.save(comics)
-                    completion(comics, error)
-                } else {
-                    completion(modelsArray, error)
-                }
+        if limit != 0 {
+            params["limit"] = limit
+        }
+        
+        if offset != 0 {
+            params["offset"] = offset
+        }
+        
+        let urlString: String = ComicService.apiManager.buildUrl(url: "/v1/public/comics", params: params)
+        
+        AF.request(urlString).responseJSON { (response) in
+            if let json = response.data {
+                let modelsArray = ComicParser.from(json: json)
+                completion(modelsArray, nil)
+            } else {
+                completion([], MarvelAPIError.invalidData)
             }
         }
     }
     
-    func getItems(limit: Int = 0,
-                  offset: Int = 0,
-                  in persistentMethod: PersistentMethodEnum = .coreData) -> [ComicModel] {
+    func loadItems(limit: Int = 0, offset: Int = 0, completion: @escaping ComicServiceFinishHandlerType) {
+        let modelsArray = repository.find()
+        
+        self.requestComics(limit: limit, offset: offset) { (comics, error) in
+            if let comics = comics {
+                self.save(comics)
+                completion(comics, error)
+            } else {
+                completion(modelsArray, error)
+            }
+        }
+    }
+    
+    func getItems(limit: Int = 0, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData) -> [ComicModel] {
         var modelsArray: [ComicModel] = []
         
         if persistentMethod != .online {
             modelsArray = repository.find(limit: limit, offset: offset, in: persistentMethod)
         } else {
             DispatchQueue.global(qos: .background).sync {
-                self.loadItems { (comics, error) in
+                self.loadItems(limit: limit, offset: offset) { (comics, error) in
                     modelsArray = comics ?? []
                 }
             }
