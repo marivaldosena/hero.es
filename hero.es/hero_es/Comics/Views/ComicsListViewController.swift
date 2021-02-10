@@ -21,8 +21,6 @@ class ComicsListViewController: UIViewController {
         
         title = viewModel.getTitleView()
         
-        setupUI()
-        
         viewModel.delegate = self
         viewModel.loadItems()
         
@@ -31,6 +29,12 @@ class ComicsListViewController: UIViewController {
         comicsTableView.delegate = self
         
         searchBar.delegate = self
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -58,13 +62,10 @@ class ComicsListViewController: UIViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = StyleGuide.Color.lightSecondaryGray
-        
-        comicsTableView?.roundCorners(cornerRadius: 15, corners: .allCorners)
-        comicsTableView?.backgroundColor = StyleGuide.Color.lightGray
-        comicsTableView.separatorStyle = .none
-        
-        searchBar?.backgroundColor = StyleGuide.Color.white
+        SetupViewsManager.setupView(with: view)
+        SetupViewsManager.setupTableView(with: comicsTableView ?? nil)
+        SetupViewsManager.setupNavigationController(with: navigationController)
+        searchBar.barTintColor = StyleGuide.TableView.background
         searchBar?.roundCorners(cornerRadius: 10, corners: .allCorners)
     }
 }

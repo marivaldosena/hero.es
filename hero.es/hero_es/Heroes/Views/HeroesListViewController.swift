@@ -22,8 +22,6 @@ class HeroesListViewController: UIViewController {
         
         title = viewModel.getTitleView()
         
-//        setupUI()
-        
         viewModel.delegate = self
         viewModel.loadAllHeroes()
         
@@ -71,13 +69,10 @@ extension HeroesListViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = StyleGuide.View.background
-        
-        heroTableView?.roundCorners(cornerRadius: 15, corners: .allCorners)
-        heroTableView?.backgroundColor = StyleGuide.Color.lightGray
-        heroTableView?.separatorStyle = .none
-        
-        heroSearchBar?.backgroundColor = StyleGuide.Color.white
+        SetupViewsManager.setupView(with: view)
+        SetupViewsManager.setupTableView(with: heroTableView ?? nil)
+        SetupViewsManager.setupNavigationController(with: navigationController)
+        heroSearchBar?.backgroundColor = StyleGuide.TableView.background
         heroSearchBar?.roundCorners(cornerRadius: 10, corners: .allCorners)
     }
 }
@@ -104,6 +99,8 @@ extension HeroesListViewController: UITableViewDataSource {
         let hero = itemsList[indexPath.row]
         cell.configure(with: hero)
         cell.delegate = self
+        cell.selectionStyle = .none
+        cell.backgroundColor = StyleGuide.View.background
         
         return cell
     }

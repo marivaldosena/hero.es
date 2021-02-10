@@ -30,7 +30,7 @@ class ItemCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        backgroundColor = StyleGuide.Color.secondaryWhite
+        backgroundColor = StyleGuide.View.background
     }
     
     @IBAction func shareItem(_ sender: UIButton) {
@@ -56,20 +56,26 @@ class ItemCell: UITableViewCell {
             
             self.setupImageView()
             self.setupContainerView()
+            self.setupLabels()
         }
     }
     
     private func setupImageView() {
         itemImageView.roundCorners(cornerRadius: 15, corners: .allCorners)
         itemImageView.layer.borderWidth = 2
-        itemImageView.layer.borderColor = StyleGuide.Color.darkBlue.cgColor
+        itemImageView.layer.borderColor = StyleGuide.ItemCell.borderColor.cgColor
     }
     
     private func setupContainerView() {
         containerView.roundCorners(cornerRadius: 15, corners: .allCorners)
-        containerView.backgroundColor = StyleGuide.Color.white
+        containerView.backgroundColor = StyleGuide.ContainerViewCell.background
         containerView.layer.borderWidth = 2
-        containerView.layer.borderColor = StyleGuide.Color.gray.cgColor
+        containerView.layer.borderColor = StyleGuide.ItemCell.borderColor.cgColor
+    }
+    
+    private func setupLabels() {
+        SetupViewsManager.setupLabels(with: itemName)
+        SetupViewsManager.setupLabels(with: itemDescription)
     }
     
     private func getLikeButtonImage() -> UIImage? {

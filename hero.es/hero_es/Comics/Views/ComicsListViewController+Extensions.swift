@@ -43,6 +43,8 @@ extension ComicsListViewController: UITableViewDataSource {
         let model = getItem(at: indexPath.row)
         cell.configure(with: model, itemType: .comic)
         cell.delegate = self
+        cell.selectionStyle = .none
+        cell.backgroundColor = StyleGuide.View.background
         
         return cell
     }
