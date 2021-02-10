@@ -23,6 +23,11 @@ class ComicDetailsViewController: UIViewController {
         super.viewDidLoad()
         
         updateUIInterface()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         setupUI()
     }
     
@@ -50,22 +55,36 @@ class ComicDetailsViewController: UIViewController {
 
 extension ComicDetailsViewController {
     private func setupUI() {
+        setupView()
         setupImageView()
         setupLabels()
+        setupIcons()
+    }
+    
+    private func setupView() {
+        SetupViewsManager.setupView(with: view)
+        SetupViewsManager.setupNavigationController(with: navigationController)
     }
     
     private func setupImageView() {
-        let cornersToRound: UIRectCorner = [.bottomRight, .bottomLeft]
-        imageView.roundCorners(cornerRadius: 30, corners: cornersToRound)
-        imageView.layer.borderWidth = 1
-        imageView.layer.borderColor = StyleGuide.Color.gray.cgColor
+        SetupViewsManager.setupImageView(with: imageView ?? nil)
     }
     
     private func setupLabels() {
-        comicNameLabel.textColor = StyleGuide.Color.darkGray
-        comicTypeLabel.textColor = StyleGuide.Color.gray
-        comicDescriptionTextView.textColor = StyleGuide.Color.gray
-        comicPageCountLabel.textColor = StyleGuide.Color.gray
-        comicUpcLabel.textColor = StyleGuide.Color.gray
+        SetupViewsManager.setupLabels(with: comicNameLabel)
+        SetupViewsManager.setupLabels(with: comicTypeLabel)
+        SetupViewsManager.setupLabels(with: comicPageCountLabel)
+        SetupViewsManager.setupLabels(with: comicUpcLabel)
+        
+        comicDescriptionTextView.textColor = StyleGuide.Label.labelsDescription
+        comicDescriptionTextView.backgroundColor = StyleGuide.View.background
+    }
+    
+    private func setupIcons() {
+        shareButton?.setImage(getShareButtonImage(), for: .normal)
+    }
+    
+    private func getShareButtonImage() -> UIImage? {
+        return UIImage(named: "share2")?.withTintColor(StyleGuide.Icons.tintColor)
     }
 }

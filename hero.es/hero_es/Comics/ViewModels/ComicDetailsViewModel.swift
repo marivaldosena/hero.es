@@ -78,11 +78,11 @@ struct ComicDetailsViewModel {
         
         let captionText = NSMutableAttributedString(
             string: caption,
-            attributes: [.foregroundColor: UIColor.black]
+            attributes: [.foregroundColor: StyleGuide.Label.labelsDescription]
         )
         let valueText = NSAttributedString(
             string: "\(value)",
-            attributes: [.foregroundColor: UIColor.darkGray]
+            attributes: [.foregroundColor: StyleGuide.Label.labelsDescription]
         )
         
         formattedString.append(captionText)

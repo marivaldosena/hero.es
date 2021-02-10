@@ -91,6 +91,7 @@ extension StyleGuide {
     
     struct NavigationBar {
         static var background: UIColor { isDarkMode ? StyleGuide.Color.darkGray : StyleGuide.Color.secondaryWhite }
+        static var tintColor: UIColor { isDarkMode ? StyleGuide.Color.white : StyleGuide.Color.darkGray }
     }
     
     struct TableView {
@@ -103,5 +104,9 @@ extension StyleGuide {
     
     struct ContainerViewCell {
         static var background: UIColor { isDarkMode ? StyleGuide.Color.secondaryBlack : StyleGuide.Color.white }
+    }
+    
+    struct Icons {
+        static var tintColor: UIColor { isDarkMode ? StyleGuide.Color.white : StyleGuide.Color.darkGray }
     }
 }

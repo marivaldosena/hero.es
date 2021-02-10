@@ -38,6 +38,7 @@ class SetupViewsManager {
         appearance.titleTextAttributes = [.foregroundColor: StyleGuide.Label.labelsDescription]
         
         navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.tintColor = StyleGuide.NavigationBar.tintColor
     }
     
     static func setupTableView(with tableView: UITableView?) {
@@ -45,5 +46,12 @@ class SetupViewsManager {
         tableView.roundCorners(cornerRadius: 15, corners: .allCorners)
         tableView.backgroundColor = StyleGuide.TableView.background
         tableView.separatorStyle = .none
+    }
+    
+    static func setupImageView(with imageView: UIImageView?) {
+        let cornersToRound: UIRectCorner = [.bottomRight, .bottomLeft]
+        imageView?.roundCorners(cornerRadius: 30, corners: cornersToRound)
+        imageView?.layer.borderWidth = 1
+        imageView?.layer.borderColor = StyleGuide.ItemCell.borderColor.cgColor
     }
 }

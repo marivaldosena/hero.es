@@ -53,7 +53,7 @@ class ItemCell: UITableViewCell {
             self.itemDescription.text = self.item?.description ?? "Item Description"
             self.itemImageView.image = self.item?.getImage()
             self.likeButton.setImage(self.getLikeButtonImage(), for: .normal)
-            
+            self.shareButton.setImage(self.getShareButtonImage(), for: .normal)
             self.setupImageView()
             self.setupContainerView()
             self.setupLabels()
@@ -81,9 +81,13 @@ class ItemCell: UITableViewCell {
     private func getLikeButtonImage() -> UIImage? {
         if let item = item  {
             if item.isFavorite() == true {
-                return UIImage(named: "like")
+                return UIImage(named: "like")?.withTintColor(StyleGuide.Icons.tintColor)
             }
         }
-        return UIImage(named: "like2")
+        return UIImage(named: "like2")?.withTintColor(StyleGuide.Icons.tintColor)
+    }
+    
+    private func getShareButtonImage() -> UIImage? {
+        return UIImage(named: "share2")?.withTintColor(StyleGuide.Icons.tintColor)
     }
 }
