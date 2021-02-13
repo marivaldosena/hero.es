@@ -25,6 +25,12 @@ class ComicDetailsViewController: UIViewController {
         updateUIInterface()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupUI()
+    }
+    
     @IBAction func share(_ sender: UIButton) {
         guard let model = viewModel?.getModel() else { return }
         share(model)
@@ -44,5 +50,41 @@ class ComicDetailsViewController: UIViewController {
     
     func getViewModel() -> ComicDetailsViewModel? {
         return viewModel
+    }
+}
+
+extension ComicDetailsViewController {
+    private func setupUI() {
+        setupView()
+        setupImageView()
+        setupLabels()
+        setupIcons()
+    }
+    
+    private func setupView() {
+        SetupViewsManager.setupView(with: view)
+        SetupViewsManager.setupNavigationController(with: navigationController)
+    }
+    
+    private func setupImageView() {
+        SetupViewsManager.setupImageView(with: imageView ?? nil)
+    }
+    
+    private func setupLabels() {
+        SetupViewsManager.setupLabels(with: comicNameLabel)
+        SetupViewsManager.setupLabels(with: comicTypeLabel)
+        SetupViewsManager.setupLabels(with: comicPageCountLabel)
+        SetupViewsManager.setupLabels(with: comicUpcLabel)
+        
+        comicDescriptionTextView.textColor = StyleGuide.Label.labelsDescription
+        comicDescriptionTextView.backgroundColor = StyleGuide.View.background
+    }
+    
+    private func setupIcons() {
+        shareButton?.setImage(getShareButtonImage(), for: .normal)
+    }
+    
+    private func getShareButtonImage() -> UIImage? {
+        return UIImage(named: "share2")?.withTintColor(StyleGuide.Icons.tintColor)
     }
 }

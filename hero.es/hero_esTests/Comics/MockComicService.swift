@@ -68,7 +68,7 @@ class MockComicService: ComicService {
         )
     ]
     
-    override func loadItems(completion: @escaping ([ComicModel]?, Error?) -> Void) {
+    override func loadItems(limit: Int = 20, offset: Int = 0, completion: @escaping ([ComicModel]?, Error?) -> Void) {
         completion(modelsArray, nil)
     }
     

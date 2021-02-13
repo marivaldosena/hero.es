@@ -19,8 +19,13 @@ class HeroesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = viewModel.getTitleView()
+        
+        setupUI()
+        
         viewModel.delegate = self
-        viewModel.loadAllHeroes()
+        let offset = Int.random(in: 0..<100)
+        viewModel.loadAllHeroes(limit: 0, offset: offset)
         
         heroTableView?.delegate = self
         heroTableView?.dataSource = self
@@ -31,8 +36,24 @@ class HeroesListViewController: UIViewController {
         heroSearchBar?.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let offset = Int.random(in: 0..<100)
+        viewModel.loadAllHeroes(limit: 0, offset: offset)
+        setupUI()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.loadAllHeroes()
+        let offset = Int.random(in: 0..<100)
+        viewModel.loadAllHeroes(limit: 0, offset: offset)
+    }
+    
+    private func setupUI() {
+        SetupViewsManager.setupView(with: view)
+        SetupViewsManager.setupTableView(with: heroTableView ?? nil)
+        SetupViewsManager.setupNavigationController(with: navigationController)
+        heroSearchBar?.backgroundColor = StyleGuide.TableView.background
+        heroSearchBar?.roundCorners(cornerRadius: 10, corners: .allCorners)
     }
 }

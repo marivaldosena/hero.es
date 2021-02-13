@@ -146,11 +146,4 @@ class HeroDetailsViewModel_Tests: XCTestCase {
     func testImageUrl() {
         XCTAssertEqual(model?.thumbnailString, viewModel?.getImageUrlString(), "Image Url from model and viewModel are divergent.")
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
 }

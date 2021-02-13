@@ -72,7 +72,7 @@ extension HeroesListViewController: UISearchBarDelegate {
     }
     
     private func doHeroesSearch(term: String) {
-        viewModel.search(term: term)
+        viewModel.search(term: term, in: .coreData)
         self.updateUIInterface()
     }
 }

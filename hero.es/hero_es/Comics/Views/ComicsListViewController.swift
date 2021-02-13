@@ -14,13 +14,15 @@ class ComicsListViewController: UIViewController {
     @IBOutlet weak var segmentedControl: UISegmentedControl!
     
     var viewModel = ComicsListViewModel()
-    private var modelsArray: [ComicModel] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        title = viewModel.getTitleView()
+        
         viewModel.delegate = self
-        viewModel.loadItems()
+        let offset = Int.random(in: 0..<100)
+        viewModel.loadItems(limit: 0, offset: offset)
         
         comicsTableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell")
         comicsTableView.dataSource = self
@@ -29,9 +31,16 @@ class ComicsListViewController: UIViewController {
         searchBar.delegate = self
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupUI()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        viewModel.loadItems()
+        let offset = Int.random(in: 0..<100)
+        viewModel.loadItems(limit: 0, offset: offset)
     }
     
     func updateUIInterface() {
@@ -41,15 +50,18 @@ class ComicsListViewController: UIViewController {
     }
     
     func updateTable(with array: [ComicModel]) {
-        modelsArray = array
         updateUIInterface()
     }
     
-    func getItem(at index: Int) -> ComicModel {
-        return modelsArray[index]
+    func getNumberOfItems() -> Int {
+        return viewModel.getNumberOfItems()
     }
     
-    func getNumberOfItems() -> Int {
-        return modelsArray.count
+    private func setupUI() {
+        SetupViewsManager.setupView(with: view)
+        SetupViewsManager.setupTableView(with: comicsTableView ?? nil)
+        SetupViewsManager.setupNavigationController(with: navigationController)
+        searchBar.barTintColor = StyleGuide.TableView.background
+        searchBar?.roundCorners(cornerRadius: 10, corners: .allCorners)
     }
 }

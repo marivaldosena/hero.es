@@ -31,6 +31,11 @@ class LocalizationService: LocalizationServiceProtocol {
         return modelsArray
     }
     
+    func setLanguage(language: AvailableLanguagesOptions) {
+        let availableLanguage = AvailableLanguage(languageName: language.languageName, abbreviation: language.abbreviation)
+        setCurrent(language: availableLanguage)
+    }
+    
     func setCurrent(language: AvailableLanguage) {
         currentLanguage = language
         saveLanguageInUserPreferences(language: currentLanguage)
@@ -40,6 +45,11 @@ class LocalizationService: LocalizationServiceProtocol {
     
     func getCurrentLanguage() -> AvailableLanguage {
         return currentLanguage
+    }
+    
+    func getTranslation(for item: String, language: AvailableLanguagesOptions) -> String {
+        let availableLanguage = AvailableLanguage(languageName: language.languageName, abbreviation: language.abbreviation)
+        return repository.getTranslation(for: item, language: availableLanguage)
     }
     
     func getTranslation(for item: String, language: AvailableLanguage) -> String {

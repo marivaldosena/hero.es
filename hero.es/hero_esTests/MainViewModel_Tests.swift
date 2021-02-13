@@ -4,7 +4,6 @@
 //
 //  Created by Marivaldo Sena on 04/01/21.
 //
-
 import XCTest
 @testable import hero_es
 
@@ -15,6 +14,7 @@ class MainViewModel_Tests: XCTestCase {
     override func setUp() {
         service = MockMainService()
         viewModel = MainViewModel(with: service)
+        viewModel?.setLanguage(language: .en)
     }
 
     override func tearDown() {
@@ -53,12 +53,4 @@ class MainViewModel_Tests: XCTestCase {
             }
         }
     }
-
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

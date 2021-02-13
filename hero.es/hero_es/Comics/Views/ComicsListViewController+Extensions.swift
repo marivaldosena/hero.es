@@ -19,12 +19,12 @@ extension ComicsListViewController: ComicsListDelegate {
 // MARK: - ComicsListViewController: UITableViewDelegate
 extension ComicsListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let model = getItem(at: indexPath.row)
-        let viewModel = ComicDetailsViewModel(with: model)
+        guard let model = viewModel.getItem(at: indexPath.row) else { return }
+        let detailsViewModel = ComicDetailsViewModel(with: model)
         
         tableView.deselectRow(at: indexPath, animated: true)
         
-        guard let controller = ComicDetailsViewController.getController(viewModel) else { return }
+        guard let controller = ComicDetailsViewController.getController(detailsViewModel) else { return }
         navigationController?.pushViewController(controller, animated: true)
     }
 }
@@ -38,13 +38,17 @@ extension ComicsListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ItemCell", for: indexPath) as! ItemCell
         
-        // TODO: Refactor to use viewModel getItem(at:).
-        // TODO: Also create a method for taking the current model when using pagination.
-        let model = getItem(at: indexPath.row)
+        let model = viewModel.getItem(at: indexPath.row)
         cell.configure(with: model, itemType: .comic)
         cell.delegate = self
+        cell.selectionStyle = .none
+        cell.backgroundColor = StyleGuide.View.background
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 160
     }
 }
 

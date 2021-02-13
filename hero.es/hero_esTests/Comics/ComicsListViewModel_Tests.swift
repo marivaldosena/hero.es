@@ -53,12 +53,4 @@ class ComicsListViewModel_Tests: XCTestCase {
         
         XCTAssertEqual(fromModel, fromViewModel, "There is something wrong with get item test.")
     }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }

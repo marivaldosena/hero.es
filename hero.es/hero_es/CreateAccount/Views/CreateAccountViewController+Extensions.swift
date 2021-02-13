@@ -16,12 +16,12 @@ extension CreateAccountViewController {
                 self.nameTextField?.placeholder = self.viewModel.getNameString()
                 self.emailTextField?.placeholder = self.viewModel.getEmailString()
                 self.passwordTextField?.placeholder = self.viewModel.getPasswordString()
-                self.createAccountButton.setTitle(self.viewModel.getCreateAccountButtonTitle(), for: .normal)
-                self.acceptTermsOfServiceAgreementLabel?.text = self.viewModel.getTermsOfServiceAgreementString()
-                self.openTermsOfServiceButton.setTitle(self.viewModel.getCreateAccountButtonTitle(), for: .normal)
+                //self.createAccountButton.setTitle(self.viewModel.getCreateAccountButtonTitle(), for: .normal)
+                self.termsDescriptionLabel?.text = self.viewModel.getTermsOfServiceAgreementString()
+                //self.termsServiceButton.setTitle(self.viewModel.getCreateAccountButtonTitle(), for: .normal)
             }
         } catch {
-            print("DEBUG: CreateAccountViewController - \(error.localizedDescription)")
+            print("DEBUG: CreateAccountViewController.updateUIInterface - \(error.localizedDescription)")
         }
     }
 }
