@@ -3,6 +3,7 @@
 "main.tabitem.favorites" = "Favorites";
 "main.tabitem.config" = "Config";
 
+"main.welcome" = "Welcome";
 "main.login" = "Login";
 "main.email" = "E-mail";
 "main.password" = "Password";

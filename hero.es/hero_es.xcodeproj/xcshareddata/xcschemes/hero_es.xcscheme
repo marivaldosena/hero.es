@@ -89,6 +89,18 @@
             ReferencedContainer = "container:hero_es.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "MARVEL_PUBLIC_KEY"
+            value = "55e29352a49977269192553b620b7018"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+         <EnvironmentVariable
+            key = "MARVEL_PRIVATE_KEY"
+            value = "3d0711143f460cb032d3efa0396bc323e3c27aa8"
+            isEnabled = "YES">
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"

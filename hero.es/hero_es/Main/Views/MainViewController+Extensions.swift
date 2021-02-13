@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-// MARK: - MainViewController
+// MARK: - MainViewController Public Methods
 extension MainViewController {
     // MARK: - MainViewController: Public Methods
     func updateUIInterface() {
@@ -16,9 +16,10 @@ extension MainViewController {
             self.emailTextField.placeholder = self.viewModel.getEmailString()
             self.passwordTextField.placeholder = self.viewModel.getPasswordString()
             self.loginWithEmailButton.setTitle(self.viewModel.getLoginButtonTitle(), for: .normal)
-            self.dontHaveAccountLabel.text = self.viewModel.getDontHaveAccountString()
+            self.loginSocialDescriptionLabel.text = self.viewModel.getDontHaveAccountString()
             self.createAccountButton.setTitle(self.viewModel.getCreateAccountButtonTitle(), for: .normal)
             self.updateTabBarItemsTitle()
+            self.welcomeDescriptionLabel.text = self.viewModel.getWelcomeMessage()
         }
     }
     
@@ -26,6 +27,7 @@ extension MainViewController {
         switch service {
         case .email:
             self.loginWithEmail()
+            self.createTabBarNavigation()
         case .facebook:
             self.loginWithFacebookAccount()
         case .google:
@@ -43,8 +45,10 @@ extension MainViewController {
             }
         }
     }
-    
-    // MARK: - MainViewController: Private Methods
+}
+
+// MARK: - MainViewController Private Methods
+extension MainViewController {
     private func loginWithEmail() {
         if viewModel.isCorrectLoginWith(email: emailTextField, password: passwordTextField) {
             let email = ValidatorService.getNormalizedData(emailTextField)
@@ -104,7 +108,6 @@ extension MainViewController {
         guard let heroesController = viewModel.getController(for: .heroes, withNagigation: true) else { return }
         guard let comicsController = viewModel.getController(for: .comics, withNagigation: true) else { return }
         guard let favoritesController = viewModel.getController(for: .favorites, withNagigation: true) else { return }
-        // TODO: Fix ConfigViewController to work with both and navigation and not
         guard let configController = viewModel.getController(for: .config) else { return }
         
         let arrayTabVC: [UIViewController] = [
@@ -120,8 +123,10 @@ extension MainViewController {
         
         let tabBarController = getTabBarController()
         tabBarController.viewControllers = arrayTabVC
-            
+        //TODO: glayce (pesquisar como abrir a tela e mostrar a navigation com o botao de voltar)
         navigationController?.pushViewController(tabBarController, animated: true)
+        
+        //        navigationController?.present(tabBarController, animated: true, completion: nil)
     }
     
     private func clearFields() {

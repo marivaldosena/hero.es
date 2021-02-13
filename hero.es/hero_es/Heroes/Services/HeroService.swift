@@ -16,50 +16,47 @@ class HeroService {
     
     private init() {}
     
-    func requestHeroes(completion: @escaping HeroServiceFinishHandlerType) {
-        if let path = Bundle.main.path(forResource: "heroes-list", ofType: "json") {
-            guard let json = try? Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe) else { return }
-            let heroes = HeroParser.from(json: json)
-            completion(heroes, nil)
+    func requestHeroes(limit: Int = 0, offset: Int = 0, completion: @escaping HeroServiceFinishHandlerType) {
+        var params = [String:Any]()
+        
+        if limit != 0 {
+            params["limit"] = limit
+        }
+        
+        if offset != 0 {
+            params["offset"] = offset
+        }
+        
+        let urlString: String = ComicService.apiManager.buildUrl(url: "/v1/public/characters", params: params)
+        
+        AF.request(urlString).responseJSON { (response) in
+            if let json = response.data {
+                let heroes = HeroParser.from(json: json)
+                completion(heroes, nil)
+            } else {
+                completion([], MarvelAPIError.invalidData)
+            }
         }
     }
     
-    func getAllHeroes(in persistentMethod: PersistentMethodEnum = .coreData,
-                      limit: Int = 0,
+    func getAllHeroes(limit: Int = 0,
                       offset: Int = 0,
+                      in persistentMethod: PersistentMethodEnum = .coreData,
                       completion: @escaping HeroServiceFinishHandlerType) {
         var modelsArray: [HeroModel] = []
         
-        // TODO: Refactor this method
-        if persistentMethod != .online {
-            modelsArray = repository.find(in: persistentMethod)
-            // TODO: 1.1.2 Verificar no Realm
-            
-            if modelsArray.count > 0 {
-                completion(modelsArray, nil)
-            } else {
-                self.requestHeroes { (heroes, error) in
-                    if let heroes = heroes {
-                        self.saveAll(array: heroes)
-                        modelsArray = self.repository.find(in: persistentMethod)
-                    }
-                    completion(modelsArray, error)
-                }
+        self.requestHeroes(limit: limit, offset: offset) { (heroes, error) in
+            if let error = error {
+                print(error.localizedDescription)
+                completion(modelsArray, error)
             }
-        } else {
-            self.requestHeroes { (heroes, error) in
-                if let error = error {
-                    print(error.localizedDescription)
-                    completion(modelsArray, error)
-                }
-                
-                if let heroes = heroes {
-                    self.saveAll(array: heroes, in: persistentMethod)
-                    modelsArray = self.repository.find(in: persistentMethod)
-                    completion(modelsArray, error)
-                } else {
-                    completion(modelsArray, error)
-                }
+            
+            if let heroes = heroes {
+                self.saveAll(array: heroes, in: persistentMethod)
+                modelsArray = self.repository.find(in: persistentMethod)
+                completion(modelsArray, error)
+            } else {
+                completion(modelsArray, error)
             }
         }
     }

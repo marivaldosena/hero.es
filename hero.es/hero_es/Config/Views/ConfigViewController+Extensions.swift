@@ -13,7 +13,7 @@ import Localize_Swift
 extension ConfigViewController {
     func updateUIInterface() {
         DispatchQueue.main.async {
-            self.editUserDataLabel?.text = self.viewModel.getEditUserDataString()
+            self.usersDataDescriptionLabel?.text = self.viewModel.getEditUserDataString()
             self.emailTextField?.placeholder = self.viewModel.getEmailString()
             self.oldPasswordTextField?.placeholder = self.viewModel.getOldPasswordString()
             self.newPasswordTextField?.placeholder = self.viewModel.getNewPasswordString()
