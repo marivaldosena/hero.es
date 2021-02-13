@@ -50,13 +50,10 @@ class HeroesListViewController: UIViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = StyleGuide.View.background
-        
-        heroTableView?.roundCorners(cornerRadius: 15, corners: .allCorners)
-        heroTableView?.backgroundColor = StyleGuide.Color.lightGray
-        heroTableView?.separatorStyle = .none
-        
-        heroSearchBar?.backgroundColor = StyleGuide.Color.white
+        SetupViewsManager.setupView(with: view)
+        SetupViewsManager.setupTableView(with: heroTableView ?? nil)
+        SetupViewsManager.setupNavigationController(with: navigationController)
+        heroSearchBar?.backgroundColor = StyleGuide.TableView.background
         heroSearchBar?.roundCorners(cornerRadius: 10, corners: .allCorners)
     }
 }

@@ -10,7 +10,8 @@ import UIKit
 class FavoritesViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var filterSegmentedControl: UISegmentedControl!
-    @IBOutlet weak var favoritesLabel: UILabel!
+    @IBOutlet weak var categoryDescriptionLabel: UILabel!
+    
     var viewModel: FavoritesViewModel = FavoritesViewModel()
     
     override func viewDidLoad() {
@@ -18,14 +19,18 @@ class FavoritesViewController: UIViewController {
         
         title = viewModel.getTitleView()
         
-        setupUI()
-        
         tableView.register(UINib(nibName: "ItemCell", bundle: nil), forCellReuseIdentifier: "ItemCell")
         tableView.dataSource = self
         tableView.delegate = self
         
         viewModel.getItems()
         updateUIInterface()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        setupUI()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -45,10 +50,9 @@ class FavoritesViewController: UIViewController {
     }
     
     private func setupUI() {
-        view.backgroundColor = StyleGuide.Color.lightSecondaryGray
-        
-        tableView?.roundCorners(cornerRadius: 15, corners: .allCorners)
-        tableView?.backgroundColor = StyleGuide.Color.lightGray
-        tableView.separatorStyle = .none
+        SetupViewsManager.setupView(with: view)
+        SetupViewsManager.setupTableView(with: tableView ?? nil)
+        SetupViewsManager.setupLabels(with: categoryDescriptionLabel)
+        SetupViewsManager.setupNavigationController(with: navigationController)
     }
 }

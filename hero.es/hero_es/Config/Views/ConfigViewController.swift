@@ -33,7 +33,6 @@ class ConfigViewController: UIViewController {
     
     var didDarkModeChanged: Bool = false {
         didSet {
-            ConfigViewController.darkModeTeste = didDarkModeChanged
             setupUI()
         }
     }
@@ -44,12 +43,6 @@ class ConfigViewController: UIViewController {
         
         NotificationCenter.default.addObserver(self, selector: #selector(updateUILanguage), name: NSNotification.Name(LCLLanguageChangeNotification), object: nil)
         
-        let appearance = UINavigationBarAppearance()
-        appearance.backgroundColor = StyleGuide.Color.darkGray
-        appearance.titleTextAttributes = [.foregroundColor: StyleGuide.Label.labelsDescription]
-        appearance.largeTitleTextAttributes = [.foregroundColor: StyleGuide.Label.labelsDescription]
-        
-        navigationController?.navigationBar.standardAppearance = appearance
         
         let defaults: UserDefaults = UserDefaults.standard
         let isDarkMode: Bool = defaults.bool(forKey: "darkModeKey")
@@ -67,6 +60,8 @@ class ConfigViewController: UIViewController {
         
         updateUIInterface()
         NotificationCenter.default.removeObserver(self)
+        setupDarkModeSwitch()
+        setupUI()
     }
     
     @IBAction func changeUserData(_ sender: UIButton) {
@@ -92,9 +87,9 @@ class ConfigViewController: UIViewController {
     }
     
     @IBAction func darkModeChanged(_ sender: Any) {
-        didDarkModeChanged = darkModeSwitch.isOn
         let defaults: UserDefaults = UserDefaults.standard
         defaults.setValue(darkModeSwitch.isOn, forKey: "darkModeKey")
+        didDarkModeChanged = darkModeSwitch.isOn
     }
     
     private func setupDarkModeSwitch() {
@@ -115,6 +110,7 @@ extension ConfigViewController {
         setupButtonsWithValues()
         setupTextFields()
         setupLabels()
+        setupNavigationBar()
     }
     
     private func setupView() {
@@ -140,5 +136,9 @@ extension ConfigViewController {
         SetupViewsManager.setupLabels(with: usersDataDescriptionLabel)
         SetupViewsManager.setupLabels(with: changeAppThemeLabel)
         SetupViewsManager.setupLabels(with: darkModeDescriptionLabel)
+    }
+    
+    private func setupNavigationBar() {
+        SetupViewsManager.setupNavigationController(with: navigationController)
     }
 }

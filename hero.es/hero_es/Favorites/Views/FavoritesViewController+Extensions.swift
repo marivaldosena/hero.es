@@ -15,7 +15,7 @@ extension FavoritesViewController {
         DispatchQueue.main.async {
             self.tableView.reloadData()
             self.updateSegmentedControlTitles()
-            self.favoritesLabel?.text = self.viewModel.getTitleView()
+            self.categoryDescriptionLabel?.text = self.viewModel.getTitleView()
         }
     }
     
@@ -61,6 +61,8 @@ extension FavoritesViewController: UITableViewDataSource {
         let model = viewModel.getItem(at: indexPath.row)
         cell.configure(with: model)
         cell.delegate = self
+        cell.selectionStyle = .none
+        cell.backgroundColor = StyleGuide.View.background
         return cell
     }
     

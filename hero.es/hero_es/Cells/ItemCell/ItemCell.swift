@@ -30,7 +30,7 @@ class ItemCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        backgroundColor = StyleGuide.Color.secondaryWhite
+        backgroundColor = StyleGuide.View.background
     }
     
     @IBAction func shareItem(_ sender: UIButton) {
@@ -53,39 +53,49 @@ class ItemCell: UITableViewCell {
             self.itemDescription.text = self.item?.description ?? "Item Description"
             self.itemImageView.image = self.item?.getImage()
             self.likeButton.setImage(self.getLikeButtonImage(), for: .normal)
-            
+            self.shareButton.setImage(self.getShareButtonImage(), for: .normal)
             self.setupImageView()
             self.setupContainerView()
+            self.setupLabels()
         }
     }
     
     private func setupImageView() {
         itemImageView.roundCorners(cornerRadius: 15, corners: .allCorners)
         itemImageView.layer.borderWidth = 2
-        itemImageView.layer.borderColor = StyleGuide.Color.darkBlue.cgColor
+        itemImageView.layer.borderColor = StyleGuide.ItemCell.borderColor.cgColor
     }
     
     private func setupContainerView() {
         containerView.roundCorners(cornerRadius: 15, corners: .allCorners)
-        containerView.backgroundColor = StyleGuide.Color.white
+        containerView.backgroundColor = StyleGuide.ContainerViewCell.background
         containerView.layer.borderWidth = 2
-        containerView.layer.borderColor = StyleGuide.Color.gray.cgColor
+        containerView.layer.borderColor = StyleGuide.ItemCell.borderColor.cgColor
         
         // Shadow
-        containerView.layer.shadowColor = StyleGuide.Color.darkGray.cgColor
-        containerView.layer.shadowOpacity = 1
-        containerView.layer.shadowOffset = .zero
-        containerView.layer.shadowRadius = 10
-        containerView.layer.shouldRasterize = true
-        containerView.layer.rasterizationScale = UIScreen.main.scale
+//        containerView.layer.shadowColor = StyleGuide.Color.darkGray.cgColor
+//        containerView.layer.shadowOpacity = 1
+//        containerView.layer.shadowOffset = .zero
+//        containerView.layer.shadowRadius = 10
+//        containerView.layer.shouldRasterize = true
+//        containerView.layer.rasterizationScale = UIScreen.main.scale
+    }
+    
+    private func setupLabels() {
+        SetupViewsManager.setupLabels(with: itemName)
+        SetupViewsManager.setupLabels(with: itemDescription)
     }
     
     private func getLikeButtonImage() -> UIImage? {
         if let item = item  {
             if item.isFavorite() == true {
-                return UIImage(named: "like")
+                return UIImage(named: "like")?.withTintColor(StyleGuide.Icons.tintColor)
             }
         }
-        return UIImage(named: "like2")
+        return UIImage(named: "like2")?.withTintColor(StyleGuide.Icons.tintColor)
+    }
+    
+    private func getShareButtonImage() -> UIImage? {
+        return UIImage(named: "share2")?.withTintColor(StyleGuide.Icons.tintColor)
     }
 }

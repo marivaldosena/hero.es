@@ -25,7 +25,6 @@ class SetupViewsManager {
     }
     
     static func setupView(with view: UIView, backgroundColor: UIColor = StyleGuide.View.background) {
-//        view.backgroundColor = StyleGuide.Color.lightGray
         view.backgroundColor = backgroundColor
     }
     
@@ -33,7 +32,26 @@ class SetupViewsManager {
         label.textColor = StyleGuide.Label.labelsDescription
     }
     
-    static func setupNavigationControllet() {
+    static func setupNavigationController(with navigationController: UINavigationController?) {
+        let appearance = UINavigationBarAppearance()
+        appearance.backgroundColor = StyleGuide.NavigationBar.background
+        appearance.titleTextAttributes = [.foregroundColor: StyleGuide.Label.labelsDescription]
         
+        navigationController?.navigationBar.standardAppearance = appearance
+        navigationController?.navigationBar.tintColor = StyleGuide.NavigationBar.tintColor
+    }
+    
+    static func setupTableView(with tableView: UITableView?) {
+        guard let tableView = tableView else { return }
+        tableView.roundCorners(cornerRadius: 15, corners: .allCorners)
+        tableView.backgroundColor = StyleGuide.TableView.background
+        tableView.separatorStyle = .none
+    }
+    
+    static func setupImageView(with imageView: UIImageView?) {
+        let cornersToRound: UIRectCorner = [.bottomRight, .bottomLeft]
+        imageView?.roundCorners(cornerRadius: 30, corners: cornersToRound)
+        imageView?.layer.borderWidth = 1
+        imageView?.layer.borderColor = StyleGuide.ItemCell.borderColor.cgColor
     }
 }

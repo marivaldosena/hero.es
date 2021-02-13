@@ -65,7 +65,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="favoritesLabel" destination="1ZB-i7-7If" id="sjs-1Z-nPM"/>
+                        <outlet property="categoryDescriptionLabel" destination="1ZB-i7-7If" id="oob-kk-1N1"/>
                         <outlet property="filterSegmentedControl" destination="76A-Es-3bD" id="xBQ-Mi-8Dl"/>
                         <outlet property="tableView" destination="Wac-rZ-lB6" id="2i6-1x-gX3"/>
                     </connections>

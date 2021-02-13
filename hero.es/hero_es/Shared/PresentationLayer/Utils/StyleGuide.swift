@@ -21,10 +21,8 @@ struct StyleGuide {
     //*************************************************
     
     static private var isDarkMode: Bool {
-//        let defaults: UserDefaults = UserDefaults.standard
-//        let value: Bool = defaults.bool(forKey: "darkModeKey")
-//        return value
-        let value = ConfigViewController.darkModeTeste ?? false
+        let defaults: UserDefaults = UserDefaults.standard
+        let value: Bool = defaults.bool(forKey: "darkModeKey")
         return value
     }
 }
@@ -91,8 +89,24 @@ extension StyleGuide {
         static var placeHolderColor: UIColor { isDarkMode ? StyleGuide.Color.white : StyleGuide.Color.gray }
     }
     
-    struct NavigationController {
+    struct NavigationBar {
+        static var background: UIColor { isDarkMode ? StyleGuide.Color.darkGray : StyleGuide.Color.secondaryWhite }
+        static var tintColor: UIColor { isDarkMode ? StyleGuide.Color.white : StyleGuide.Color.darkGray }
+    }
+    
+    struct TableView {
         static var background: UIColor { isDarkMode ? StyleGuide.Color.darkGray : StyleGuide.Color.secondaryWhite }
     }
     
+    struct ItemCell {
+        static var borderColor: UIColor { isDarkMode ? StyleGuide.Color.lightSecondaryGray : StyleGuide.Color.darkBlue }
+    }
+    
+    struct ContainerViewCell {
+        static var background: UIColor { isDarkMode ? StyleGuide.Color.secondaryBlack : StyleGuide.Color.white }
+    }
+    
+    struct Icons {
+        static var tintColor: UIColor { isDarkMode ? StyleGuide.Color.white : StyleGuide.Color.darkGray }
+    }
 }

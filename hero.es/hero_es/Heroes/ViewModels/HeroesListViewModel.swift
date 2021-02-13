@@ -24,6 +24,7 @@ class HeroesListViewModel {
         }
     }
     
+    //MARK: - Public Methods
     func loadAllHeroes(limit: Int = 20, offset: Int = 0, in persistentMethod: PersistentMethodEnum = .coreData,
                       completion: @escaping (_ heroes: [HeroModel], _ error: Error?) -> Void) {
         self.service.getAllHeroes(limit: limit, offset: offset, completion: { (heroes, error) in
@@ -77,8 +78,11 @@ class HeroesListViewModel {
         return self.activeHero
     }
     
-    func getItem(at index: Int) -> HeroModel {
-        return modelsArray[index]
+    func getItem(at index: Int) -> HeroModel? {
+        if self.isIndexAvailable(index: index) {
+            return self.modelsArray[index]
+        }
+        return nil
     }
     
     func getNumberOfItems() -> Int {
@@ -87,5 +91,13 @@ class HeroesListViewModel {
 
     func getTitleView() -> String {
         return "Heroes"
+    }
+    
+    //MARK: - Private Methods
+    private func isIndexAvailable(index: Int) -> Bool {
+        if index >= 0 && index < modelsArray.count {
+            return true
+        }
+        return false
     }
 }
